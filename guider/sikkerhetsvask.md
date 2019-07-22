@@ -1,5 +1,5 @@
-Sanering av Git-repositories
-============================
+Sikkerhetsvask av Git-repositories ved open sourcing
+====================================================
 
 Før et repository flyttes fra BitBucket til Github, må det gjøres en
 kvalitetssikring av det som legges ut. Dette skal sikre at ikke sensitiv
