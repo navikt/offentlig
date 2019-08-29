@@ -25,7 +25,7 @@ Eksempel `CODEOWNERS`-fil:
 ```
 
 ## Sanering av gammel kode
-Om det er flytting av eksisterende kode må både [kode og Git historikk saneres](sanering.md)
+Om det er flytting av eksisterende kode må både [kode og Git historikk saneres](sikkerhetsvask.md)
 
 ## Commit-meldinger
 Git historikken bør ha så mye verdi som mulig. Vi har derfor en [anbefaling til
