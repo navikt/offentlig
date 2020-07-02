@@ -38,10 +38,10 @@ All kode i NAV skal holde høy kvalitet, uavhengig om den er åpen eller lukket.
 Alle repositories på Github under NAV IKT skal uavhengig av synlighet, oppfylle følgende krav. Dersom repositoryet ditt oppfyller disse kravene, så er det opp til teamet selv om de ønsker å ha koden åpent eller lukket.
 
 ### Lisens: 
-Alle repoer må ha MIT-lisensen i en egen LICENSE-fil (plain text) eller en LICENSE.md-fil (markdown)
+Alle repoer må ha MIT-lisensen i en egen LICENSE-fil (plain text) eller en LICENSE.md-fil (markdown). Se [lisensiering.md](LISENSIERING.md)
 
 ### README.md: 
-Alle repoer må ha en forklarende Read Me, enten som plaintext (README) eller som markdown (README.md). Vi oppfordrer teams til å beskrive hensikten med repoet, hvordan man bygger/tester koden samt hvordan man kan komme i kontakt med teamet på (både som intern og ekstern bruker). Bruk [denne templated](README.template.md)
+Alle repoer må ha en forklarende Read Me, enten som plaintext (README) eller som markdown (README.md). Vi oppfordrer teams til å beskrive hensikten med repoet, hvordan man bygger/tester koden samt hvordan man kan komme i kontakt med teamet på (både som intern og ekstern bruker). Bruk [denne templaten](README.template.md).
 
 ### Eierskap: 
 GitHub har støtte for en spesiell fil som heter CODEOWNERS som angir hvilke team som eier koden, eller deler av den. Formatet i filen ligner mye på .gitignore, men følgende eksempel er et greit utgangspunkt for de fleste:
