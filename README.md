@@ -9,7 +9,7 @@ Det er avgjørende viktig for NAVs samfunnsoppdrag at det eksisterer et tillitsf
 Åpne standarder er felles regler som lar enhver bruker lage kompatible og konsistente produkter, prosesser og tjenester. De er designet i samarbeid, er offentlig tilgjengelige og gratis eller til lave kostnader. Vær oppmerksom på at det likevel kan påløpe kostnder ved åpen kildekode. Migreringskostnader (til og fra) bør tas med i vurderingen.
 
 ### Hvordan åpne kildekode.
-Kildekoden legges på github.com/navikt
+Kildekoden legges på https://github.com/navikt
 
 ## Hvordan bruke åpen kildekode 
 
