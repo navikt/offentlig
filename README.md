@@ -2,7 +2,7 @@ Retningslinjer for åpen kildekode i NAV
 ====================
 
 ## Introduksjon
-Det er avgjørende viktig for NAVs samfunnsoppdrag at det eksisterer et tillitsforhold mellom NAV og NAVs brukere. Et viktig element for å skape tillit er åpenhet og gjennomsiktighet i det NAV gjør. NAV mener derfor at mest mulig av koden og dokumentasjonen vi skriver bør være åpent tilgjengelige, på lik linje med lovene som vi implementerer. Offentlig finansierte løsninger bør være offentlig tilgjengelig. Motivasjonen er da ikke hovedsakelig gjenbruk, selv om det selvsagt er en heldig bieffekt. Motivasjonen er først og fremst åpenhet og gjennomsiktighet i de digitale løsningene.  Disse retningslinjene legger seg tett opptil retningslinjene fra tilsvarende retningslinjer fra gov.uk.
+Det er avgjørende viktig for NAVs samfunnsoppdrag at det eksisterer et tillitsforhold mellom NAV og NAVs brukere. Et viktig element for å skape tillit er åpenhet og gjennomsiktighet i det NAV gjør. Derfør bør mest mulig av koden og dokumentasjonen vi skriver være åpent tilgjengelig, på lik linje med lovene som vi implementerer. Offentlig finansierte løsninger bør være offentlig tilgjengelig. Motivasjonen er da ikke hovedsakelig gjenbruk, selv om det selvsagt er en heldig bieffekt. Motivasjonen er først og fremst åpenhet og gjennomsiktighet i de digitale løsningene.  Disse retningslinjene legger seg tett opptil retningslinjene fra tilsvarende retningslinjer fra gov.uk.
 
 ### Hvordan åpen kildekode skiller seg fra åpne standarder
 Åpen kildekode er en måte å utvikle og distribuere programvare på. Koden skrives ofte i samarbeid, og den kan lastes ned, brukes og endres av hvem som helst. Se her for detaljer for MIT-lisensen som NAV bruker https://tldrlegal.com/license/mit-license og https://en.wikipedia.org/wiki/MIT_License
@@ -24,8 +24,6 @@ Kildekoden legges på github.com/navikt
 * renere og godt strukturert kode som er enklere å vedlikeholde
 * klarhet rundt data som må forbli beskyttet og hvordan det oppnås
 * forslag til hvordan koden kan forbedres eller hvor sikkerheten kan forbedres
-
-NAVs applikasjoner er offentlig finansiert, og bør derfor være offentlig tilgjengelig. Offentlig tilgjengelig kildekode gir interessenter innsyn i den faktiske implementasjonen av allerede offentlig tilgjengelige lover og regler. Som en stor samfunnsaktør er det videre viktig at vi bidrar til open source-miljøet, spesielt når vi nyter godt av deres arbeid selv.
 
 ### Sikkerhet: 
 Åpen kildekode gir både muligheter og utfordringer for sikkerheten. Når vi åpner opp for innsyn kan eksterne melde fra om sikkerhetshull i koden vår, slik at vi ender opp med sikrere systemer. Samtidig må vi sørge for at sensitiv informasjon, slik som personopplysninger og tilgangsnøkler, ikke kommer i hendene til aktører med ondsinnede hensikter. En rekke verktøy er tilgjengelige for å sikre nødvendig sikkerhet ved å kode åpent, disse verktøyene gjør ting som skanning etter 3-parts biblioteker med kjente sårbarheter, finner feil/bugs i koden, automatisk penetrasjonstesting etc. Når man oppdager sårbarheter må man raskt kunne deploye ny kode, som lukker denne sårbarheten
