@@ -1,8 +1,8 @@
 Dette er NAV sine retningslinjer for hvordan open source code
 
-Les [OpenSource.md] først.
+Les [OpenSource.md](Opensource.md) først.
 
 TLDR;
-- [Lisens.md] - MIT
+- Lisens [MIT](LISENSIERING.md)
 - Ha en CODEOWNERS fil
-- Bruk [README.teamplate.md] som et utgangspunkt
+- Lag en  [README](README.teamplate.md)
