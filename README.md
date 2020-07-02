@@ -41,7 +41,7 @@ Alle repositories på Github under NAV IKT skal uavhengig av synlighet, oppfylle
 Alle repoer må ha MIT-lisensen i en egen LICENSE-fil (plain text) eller en LICENSE.md-fil (markdown)
 
 ### README.md: 
-Alle repoer må ha en forklarende Read Me, enten som plaintext (README) eller som markdown (README.md). Vi oppfordrer teams til å beskrive hensikten med repoet, hvordan man bygger/tester koden samt hvordan man kan komme i kontakt med teamet på (både som intern og ekstern bruker).
+Alle repoer må ha en forklarende Read Me, enten som plaintext (README) eller som markdown (README.md). Vi oppfordrer teams til å beskrive hensikten med repoet, hvordan man bygger/tester koden samt hvordan man kan komme i kontakt med teamet på (både som intern og ekstern bruker). Bruk [denne templated](README.template.md)
 
 ### Eierskap: 
 GitHub har støtte for en spesiell fil som heter CODEOWNERS som angir hvilke team som eier koden, eller deler av den. Formatet i filen ligner mye på .gitignore, men følgende eksempel er et greit utgangspunkt for de fleste:
