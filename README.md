@@ -50,7 +50,7 @@ Dette betyr at teamet navn-på-team eier hele kodebasen (* er wildcard). Vi øns
 Sanering av gammel kode: 
 Både git-historikk og kode må vaskes for eventuelle hemmeligheter og personsensitive opplysninger. Her finnes det mange ulike verktøy man kan benytte seg av, og det finnes en liten guide på GitHub om dette.
 Migrering av gammel kode: 
-Ved migrering av gammel kode bør man kjøre en risikovurdering. Team Tryggnok har lagd et verktøy for å gjennomføre en slik ROS-analyse
+Ved migrering av gammel kode bør man kjøre en risikovurdering. Team Tryggnok har lagd et verktøy for å gjennomføre en slik ROS-analyse. Ta kontakt med teamet på Slack i kanalen #tryggnok
  
 ## Kode som ikke kan åpnes
 Vi må holde noe data og kode lukket:
