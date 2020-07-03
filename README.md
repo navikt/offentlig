@@ -11,7 +11,7 @@ Det er avgjørende viktig for NAVs samfunnsoppdrag at det eksisterer et tillitsf
 ### Hvordan åpne kildekode.
 Kildekoden legges på https://github.com/navikt
 
-## Hvordan bruke åpen kildekode 
+## Åpen kildekode 
 
 ### Ved å bruke åpen kildekode kan du:
 * Nyttiggjøre deg allerede løste problemer med allmenn tilgjengelig teknologi
