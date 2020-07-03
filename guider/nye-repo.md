@@ -27,6 +27,9 @@ Eksempel `CODEOWNERS`-fil:
 ## Sanering av gammel kode
 Om det er flytting av eksisterende kode må både [kode og Git historikk saneres](sikkerhetsvask.md)
 
+## Scanning etter kjente sårbarheter i biblioteker
+Programbiblioteker man er avhengig av må være uten kjente [sikkerhetshull](sårbarhetsscan.md)
+
 ## Commit-meldinger
 Git historikken bør ha så mye verdi som mulig. Vi har derfor en [anbefaling til
 gode commit meldinger](commit-meldinger.md)
