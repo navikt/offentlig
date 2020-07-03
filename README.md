@@ -14,7 +14,7 @@ Kildekoden legges på https://github.com/navikt
 ## Hvordan bruke åpen kildekode 
 
 ### Ved å bruke åpen kildekode kan du:
-* Nyttiggjøre deg allerede løste problemer problemer med allmenn tilgjengelig teknologi
+* Nyttiggjøre deg allerede løste problemer med allmenn tilgjengelig teknologi
 * Sparer tid og ressurser på tilpassede løsninger for å løse sjeldne eller unike problemer
 * Oppnå lavere implementerings- og driftskostnader
 
@@ -45,7 +45,9 @@ Alle repoer må ha en forklarende Read Me, enten som plaintext (README) eller so
 
 ### Eierskap: 
 GitHub har støtte for en spesiell fil som heter CODEOWNERS som angir hvilke team som eier koden, eller deler av den. Formatet i filen ligner mye på .gitignore, men følgende eksempel er et greit utgangspunkt for de fleste:
-* @navikt/navn-på-team.
+```
+* @navikt/navn-på-team
+```
 Dette betyr at teamet navn-på-team eier hele kodebasen (* er wildcard). Vi ønsker ikke at enkeltpersoner skal stå oppført her.
 Sanering av gammel kode: 
 Både git-historikk og kode må vaskes for eventuelle hemmeligheter og personsensitive opplysninger. Her finnes det mange ulike verktøy man kan benytte seg av, og det finnes en liten guide på GitHub om dette.
@@ -66,7 +68,7 @@ Følg veiledningen for å håndtere sikkerhetsproblemer hvis du ved et uhell eks
 Du bør lukke alle algoritmer du bruker for å oppdage svindel. Du bør også skille kode som bruker disse algoritmene fra algoritmene selv. Separasjonen vil gjøre det lettere for deg å oppdatere algoritmene når du lærer mer om svindelforsøkene.
  
 ### Lovendringer og forskrifter som ikke er iverksatt.
-Hvis koden gir implementerer en lovendring eller forskrift som ennå ikke er kunngjort, kan denne koden ikke være åpen.Du bør imidlertid utvikle koden som om den allerede er åpen og fortsette å følge god utvikling og sikkerhetspraksis. Teamet bør vurdere å åpne koden så snart som mulig etter at lovendringen eller forskiften er kunngjort.
+Hvis koden implementerer en lovendring eller forskrift som ennå ikke er kunngjort, kan denne koden ikke være åpen. Du bør imidlertid utvikle koden som om den allerede er åpen og fortsette å følge god utvikling og sikkerhetspraksis. Teamet bør vurdere å åpne koden så snart som mulig etter at lovendringen eller forskiften er kunngjort.
 
 
 ## Er du klar?
