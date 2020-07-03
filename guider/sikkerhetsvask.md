@@ -3,8 +3,7 @@ Sikkerhetsvask av Git-repositories ved open sourcing
 
 Før et repository flyttes fra BitBucket til Github, må det gjøres en
 kvalitetssikring av det som legges ut. Dette skal sikre at ikke sensitiv
-informasjon kommer på avveie, og at vi fanger opp eventuelle sårbarheter i
-forkant av publisering.
+informasjon kommer på avveie.
 
 Sensitiv informasjon inkluderer:
 
@@ -15,7 +14,7 @@ Sensitiv informasjon inkluderer:
 
 Eksempler på sårbarheter kan være:
 
-* Avhengighet på programbiblioteker der det foreligger sikkerhetshull
+* Avhengighet på programbiblioteker der det foreligger sikkerhetshull (se [sårbarhetsscan](sårbarhetsscan.md))
 * API-endepunkter som ikke er tilstrekkelig sikret
 * Tilbøyelighet for Denial of Service (DoS-angrep)
 
@@ -39,10 +38,6 @@ for tips og råd.
 Dersom Git-historikken er omskrevet, må det gjøres en force push til upstream.
 Alle utviklere må slette sin lokale kopi, og sjekke ut repoet på nytt.
 
-Skann avhengighetslista etter kjente sårbarheter, og oppgrader avhengigheter
-til sikre versjoner. Vurder å bruke f.eks
-[Nessus](https://www.tenable.com/products/nessus/nessus-pro).
-
 
 Skrive om Git-historikk
 -----------------------
@@ -51,7 +46,7 @@ Bruk [BFG Repo Cleaner](https://rtyley.github.io/bfg-repo-cleaner/) og følg
 fremgangsmåten i dokumentasjonen.
 
 
-Søke etter sårbarheter
+Søke etter sensitiv informasjon
 ----------------------
 
 Blant verktøy for å søke, finnes
