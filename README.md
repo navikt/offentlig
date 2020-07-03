@@ -72,4 +72,4 @@ Hvis koden implementerer en lovendring eller forskrift som ennå ikke er kunngjo
 
 
 ## Er du klar?
-Sjekk ut guiden om [nye repo](guider/nye-repo.md). Husk at det er teamet selv og NAV som må bestemme om koden kan open sources eller ikke.
+Sjekk ut guiden om [nye repo](guider/nye-repo.md). Husk at det er teamet selv som tar det ansvarlige valget om koden kan open sources eller ikke.
