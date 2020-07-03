@@ -111,4 +111,5 @@ meldinger stiller både NAV og deg personlig i et dårlig lys.
 
 - https://github.com/erlang/otp/wiki/writing-good-commit-messages
 - https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53
+- [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
 
