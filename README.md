@@ -19,7 +19,7 @@ Kildekoden legges på https://github.com/navikt
 * Oppnå lavere implementerings- og driftskostnader
 
  
-### Hvordan blir din kode blir bedre om den er åpen:
+### Hvordan din kode kan bli bedre om den er åpen:
 Å publisere koden og dataene dine fra begynnelsen av kodebasens levetid eller programmet ditt vil oppmuntre til:
 * renere og godt strukturert kode som er enklere å vedlikeholde
 * klarhet rundt data som må forbli beskyttet og hvordan det oppnås
