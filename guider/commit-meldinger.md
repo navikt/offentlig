@@ -107,7 +107,7 @@ Helvete. Jeg hater java. NullPointerException kan ta seg en bolle.
 Husk at alle kan lese meldingene, de kan være offentlige. Slike
 meldinger stiller både NAV og deg personlig i et dårlig lys.
 
-## Litt litteratur på engelsk om teamet:
+## Litt litteratur på engelsk om temaet:
 
 - https://github.com/erlang/otp/wiki/writing-good-commit-messages
 - https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53
