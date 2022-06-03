@@ -60,6 +60,9 @@ Vi må holde noe data og kode lukket:
 * algoritmer som brukes til å oppdage svindel
 * kode som implementerer lovendringer og forskrifter som ikke er ferdig behandlet.
 
+> **Note**
+> Kodebaser som vurderes til å ikke kunne være åpne skal ha et avsnitt i README hvor beslutningen begrunnes så konkret som mulig.
+
 ### Nøkler og legitimasjon
 Du må holde hemmelige data som nøkler eller legitimasjon lukket, fordi denne informasjonen kan tillate noen å få tilgang til systemet ditt. Du må videre holde kode som bruker hemmeligheter borte fra hemmelighetene i seg selv. Dette inkluderer lagring av hemmelige nøkler og legitimasjon. Du kan deretter åpne koden mens du holder hemmelighetene lukket og sikker. Du skal bruke et separat system for å lagre og sikre hemmelighetene dine, men la applikasjoner bruke dem der det er nødvendig. Et slikt system sørger for at bare autoriserte ansatte får tilgang til nøklene. Systemet gjør det også lettere å tilby forskjellige nøkler for forskjellige miljøer og rotere nøkler om nødvendig.
 Følg veiledningen for å håndtere sikkerhetsproblemer hvis du ved et uhell eksponerer en hemmelighet. (TODO)
