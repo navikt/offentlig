@@ -6,7 +6,7 @@ Det er avgjørende viktig for NAVs samfunnsoppdrag at det eksisterer et tillitsf
 
 ### Hvordan åpen kildekode skiller seg fra åpne standarder
 Åpen kildekode er en måte å utvikle og distribuere programvare på. Koden skrives ofte i samarbeid, og den kan lastes ned, brukes og endres av hvem som helst. Se her for detaljer for MIT-lisensen som NAV bruker https://tldrlegal.com/license/mit-license og https://en.wikipedia.org/wiki/MIT_License.
-Åpne standarder er felles regler som lar enhver bruker lage kompatible og konsistente produkter, prosesser og tjenester. De er designet i samarbeid, er offentlig tilgjengelige og gratis eller til lave kostnader. Vær oppmerksom på at det likevel kan påløpe kostnder ved åpen kildekode. Migreringskostnader (til og fra) bør tas med i vurderingen.
+Åpne standarder er felles regler som lar enhver bruker lage kompatible og konsistente produkter, prosesser og tjenester. De er designet i samarbeid, er offentlig tilgjengelige og gratis eller til lave kostnader. Vær oppmerksom på at det likevel kan påløpe kostnader ved åpen kildekode. Migreringskostnader (til og fra) bør tas med i vurderingen.
 
 ### Hvordan åpne kildekode.
 Kildekoden legges på https://github.com/navikt
