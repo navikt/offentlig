@@ -32,7 +32,7 @@ etter sensitiv informasjon. Dersom slik informasjon foreligger, må
 Det er ikke nok å slette informasjonen i en ny commit.
 
 Gjør `git rebase` og skriv om commit-meldinger der det trengs. Se
-[om å skrive gode commit-meldinger](https://github.com/navikt/utvikling/blob/master/Commit-meldinger.MD)
+[om å skrive gode commit-meldinger](https://github.com/navikt/offentlig/blob/master/guider/commit-meldinger.md)
 for tips og råd.
 
 Dersom Git-historikken er omskrevet, må det gjøres en force push til upstream.
