@@ -25,7 +25,7 @@ Eksempel `CODEOWNERS`-fil:
 ```
 
 ## Sanering av gammel kode
-Om det er flytting av eksisterende kode må både [kode og Git historikk saneres](sikkerhetsvask.md)
+Om det er flytting av eksisterende kode må både [kode og Git historikk vaskes](sikkerhetsvask.md)
 
 ## Scanning etter kjente sårbarheter i biblioteker
 Programbiblioteker man er avhengig av må være uten kjente [sikkerhetshull](sårbarhetsscan.md)
