@@ -36,7 +36,7 @@ All kode i NAV skal holde høy kvalitet, uavhengig om den er åpen eller lukket.
 
 ## Krav til åpne repo under github.com/navikt
 Alle repositories på Github under NAV IKT skal uavhengig av synlighet, oppfylle følgende krav. 
-Dersom repositoryet ditt oppfyller disse kravene, så skal være koden være åpent med mindre den faller inn under Kode som ikke kan åpne(se punkt lenger nede)
+Dersom repositoryet ditt oppfyller disse kravene, så skal koden være åpent med mindre den faller inn under Kode som ikke kan åpne(se punkt lenger nede)
 
 ### Lisens: 
 Alle repoer må ha MIT-lisensen i en egen LICENSE-fil (plain text) eller en LICENSE.md-fil (markdown). Se [lisensiering.md](LISENSIERING.md)
