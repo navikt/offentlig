@@ -24,6 +24,31 @@ Eksempel `CODEOWNERS`-fil:
 *  @navikt/navn-på-team
 ```
 
+# Contributing
+Her kan vi oppgi hvordan andre både eksterne og evt interne kan bidra på kodebasen:
+
+Eksempel `CONTRIBUTING`-fil:
+```
+Dette prosjektet er åpent for å akseptere funksjonsforespørsler og bidrag fra åpen kildekode-fellesskapet.
+Vennligst fork repoen og start en ny branch å jobbe med.
+
+
+## bygge lokalt
+Dette prosjektet bruker [Gradle](https://gradle.org/) som byggeverktøy.
+En Gradle Wrapper er inkludert i koden, så du trenger ikke å administrere din egen installasjon.
+For å kjøre eit bygg, utfør følgende kommado:
+./gradlew clean build
+
+Dette vil kjøre alle trinnene som er definert i `build.gradle.kts` filen.
+
+
+## Testing
+Hvis du legger til en ny funksjon eller feilretting, sørg for at det er riktig testdekning.
+
+## Pull Request Tilbakemelding 
+Hvis du har en branch på forken din som er klar til å slås sammen, vennligst opprett en ny pull-request. Vedlikeholderne vil gå gjennom for å sikre at retningslinjene ovenfor er fulgt, og hvis endringene er nyttige for alle bibliotekbrukere, vil de bli slått sammen
+```
+
 ## Sanering av gammel kode
 Om det er flytting av eksisterende kode må både [kode og Git historikk vaskes](sikkerhetsvask.md)
 
