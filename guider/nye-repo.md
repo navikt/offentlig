@@ -29,28 +29,24 @@ Her kan vi oppgi hvordan andre både eksterne og evt interne kan bidra på kodeb
 
 Eksempel `CONTRIBUTING`-fil:
 ```
-This project is open to accept feature requests and contributions from the open source community.
-Please fork the repo and start a new branch to work on.
+Dette prosjektet er åpent for å akseptere funksjonsforespørsler og bidrag fra åpen kildekode-fellesskapet.
+Vennligst fork repoen og start en ny branch å jobbe med.
 
 
-## Building locally
-This project is using [Gradle](https://gradle.org/) for its build tool.
-A Gradle Wrapper is included in the code though, so you do not have to manage your own installation.
-
-To run a build simply exucute the following:
-
-``` bash
+## bygge lokalt
+Dette prosjektet bruker [Gradle](https://gradle.org/) som byggeverktøy.
+En Gradle Wrapper er inkludert i koden, så du trenger ikke å administrere din egen installasjon.
+For å kjøre eit bygg, utfør følgende kommado:
 ./gradlew clean build
-```
 
-This will run all the steps defined in the `build.gradle.kts` file.
+Dette vil kjøre alle trinnene som er definert i `build.gradle.kts` filen.
 
 
 ## Testing
-If you are adding a new feature or bug fix please ensure there is proper test coverage.
+Hvis du legger til en ny funksjon eller feilretting, sørg for at det er riktig testdekning.
 
-## Pull Request Review
-If you have a branch on your fork that is ready to be merged, please create a new pull request. The maintainers will review to make sure the above guidelines have been followed and if the changes are helpful to all library users, they will be merged.
+## Pull Request Tilbakemelding 
+Hvis du har en branch på forken din som er klar til å slås sammen, vennligst opprett en ny pull-request. Vedlikeholderne vil gå gjennom for å sikre at retningslinjene ovenfor er fulgt, og hvis endringene er nyttige for alle bibliotekbrukere, vil de bli slått sammen
 ```
 
 ## Sanering av gammel kode
