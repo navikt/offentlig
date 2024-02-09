@@ -53,7 +53,7 @@ Eksempler på uakseptabel oppførsel inkluderer:
 * Bruk av vulgært språk eller vulgære bilder og seksuelle tilnærmelser eller tilnærmelser av noe slag.
 * Ondsinnet provokasjon, fornærmende eller nedlatende kommentarer, personlige eller politiske angrep.
 * Offentlig eller privat trakassering.
-* Utlevering av andres private opplysninger, f.eks. deler sin e-post eller postadresse uten deres tillatelse.
+* Utlevering av andres private opplysninger, f.eks. dele e-post eller postadresse uten deres tillatelse.
 * Annen atferd som ikke hører hjemme i et fagmiljø.
 
 ## Ansvar for håndheving
