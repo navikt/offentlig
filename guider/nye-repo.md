@@ -58,9 +58,9 @@ Eksempler på uakseptabel oppførsel inkluderer:
 
 ## Ansvar for håndheving
 
-Fellesskapsledere er ansvarlige for å kommunisere og håndheve våre standarder for akseptabel oppførsel. Dette gjøres ved å irettesette oppførsel som de vurderer som uakseptabel, truende, støtende eller skadelig på en rettferdig og forholdsmessig måte.
+Eiere av repositoryet/bibliotek er ansvarlige for å kommunisere og håndheve våre standarder for akseptabel oppførsel. Dette gjøres ved å irettesette oppførsel som de vurderer som uakseptabel, truende, støtende eller skadelig på en rettferdig og forholdsmessig måte.
 
-Fellesskapsledere har rett og plikt til å fjerne, redigere eller avvise kommentarer, innsendt kode, wiki-redigeringer, forespørsler og andre bidrag som ikke er i samsvar med disse fellesskapsreglene. Årsaken til inngrepet vil bli kunngjort dersom det synes hensiktsmessig.
+Eiere av repositoryet/bibliotek har rett og plikt til å fjerne, redigere eller avvise kommentarer, innsendt kode, wiki-redigeringer, forespørsler og andre bidrag som ikke er i samsvar med disse fellesskapsreglene. Årsaken til inngrepet vil bli kunngjort dersom det synes hensiktsmessig.
 
 ## Grense
 
