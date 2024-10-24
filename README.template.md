@@ -15,7 +15,7 @@ Enten:
 Spørsmål knyttet til koden eller prosjektet kan stilles som issues her på GitHub
 
 Eller:
-Spørsmål knyttet til koden eller prosjektet kan stilles til teamalias@nav.no
+Spørsmål knyttet til koden eller prosjektet kan stilles til teamalias@nav.no (som evt må opprettes av noen ™️ Windows-mennesker) eller som issues her på GitHub (stryk det som ikke passer).
 
 ## For NAV-ansatte
 
