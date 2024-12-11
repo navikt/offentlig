@@ -1,11 +1,11 @@
-Retningslinjer for åpen kildekode i NAV
+Retningslinjer for åpen kildekode i Nav
 ====================
 
 ## Introduksjon
-Det er avgjørende viktig for NAVs samfunnsoppdrag at det eksisterer et tillitsforhold mellom NAV og NAVs brukere. Et viktig element for å skape tillit er åpenhet og gjennomsiktighet i det NAV gjør. Derfør bør mest mulig av koden og dokumentasjonen vi skriver være åpent tilgjengelig, på lik linje med lovene som vi implementerer. Offentlig finansierte løsninger bør være offentlig tilgjengelig. Motivasjonen er da ikke hovedsakelig gjenbruk, selv om det selvsagt er en heldig bieffekt. Motivasjonen er først og fremst åpenhet og gjennomsiktighet i de digitale løsningene.  Disse retningslinjene legger seg tett opptil retningslinjene fra tilsvarende retningslinjer fra gov.uk.
+Det er avgjørende viktig for Navs samfunnsoppdrag at det eksisterer et tillitsforhold mellom NAV og NAVs brukere. Et viktig element for å skape tillit er åpenhet og gjennomsiktighet i det NAV gjør. Derfør bør mest mulig av koden og dokumentasjonen vi skriver være åpent tilgjengelig, på lik linje med lovene som vi implementerer. Offentlig finansierte løsninger bør være offentlig tilgjengelig. Motivasjonen er da ikke hovedsakelig gjenbruk, selv om det selvsagt er en heldig bieffekt. Motivasjonen er først og fremst åpenhet og gjennomsiktighet i de digitale løsningene.  Disse retningslinjene legger seg tett opptil retningslinjene fra tilsvarende retningslinjer fra gov.uk.
 
 ### Hvordan åpen kildekode skiller seg fra åpne standarder
-Åpen kildekode er en måte å utvikle og distribuere programvare på. Koden skrives ofte i samarbeid, og den kan lastes ned, brukes og endres av hvem som helst. Se her for detaljer for MIT-lisensen som NAV bruker https://tldrlegal.com/license/mit-license og https://en.wikipedia.org/wiki/MIT_License.
+Åpen kildekode er en måte å utvikle og distribuere programvare på. Koden skrives ofte i samarbeid, og den kan lastes ned, brukes og endres av hvem som helst. Se her for detaljer for MIT-lisensen som Nav bruker https://tldrlegal.com/license/mit-license og https://en.wikipedia.org/wiki/MIT_License.
 Åpne standarder er felles regler som lar enhver bruker lage kompatible og konsistente produkter, prosesser og tjenester. De er designet i samarbeid, er offentlig tilgjengelige og gratis eller til lave kostnader. Vær oppmerksom på at det likevel kan påløpe kostnader ved åpen kildekode. Migreringskostnader (til og fra) bør tas med i vurderingen.
 
 ### Hvordan åpne kildekode.
@@ -32,10 +32,10 @@ Kildekoden legges på https://github.com/navikt
 Teamet som eier koden har ansvaret for vurdere om koden er trygg å distribuere som åpen kildekode. Dersom koden overføres til et nytt team, må dette teamet gjøre en ny vurdering. Dette ansvaret gjelder i kodens levetid. 
 
 ## Kvalitet og relevans: 
-All kode i NAV skal holde høy kvalitet, uavhengig om den er åpen eller lukket. At en kodebase har lav kodekvalitet er ikke i seg selv et argument for å la være å åpne den for innsyn, men et argument for å arbeide med å forbedre kodekvaliteten. 
+All kode i Nav skal holde høy kvalitet, uavhengig om den er åpen eller lukket. At en kodebase har lav kodekvalitet er ikke i seg selv et argument for å la være å åpne den for innsyn, men et argument for å arbeide med å forbedre kodekvaliteten. 
 
 ## Krav til åpne repo under github.com/navikt
-Alle repositories på Github under NAV IKT skal uavhengig av synlighet, oppfylle følgende krav. Dersom repositoryet ditt oppfyller disse kravene, så er det opp til teamet selv om de ønsker å ha koden åpent eller lukket.
+Alle repositories på Github under Nav IKT skal uavhengig av synlighet, oppfylle følgende krav. Dersom repositoryet ditt oppfyller disse kravene, så er det opp til teamet selv om de ønsker å ha koden åpent eller lukket.
 
 ### Lisens: 
 Alle repoer må ha MIT-lisensen i en egen LICENSE-fil (plain text) eller en LICENSE.md-fil (markdown). Se [lisensiering.md](LISENSIERING.md)
