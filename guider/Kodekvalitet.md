@@ -1,5 +1,5 @@
 # Kvalitet
-NAVs applikasjoner skal løse et problem noen har. Ettersom NAVs systemer modellerer deler av en velferdsstat i konstant endring, skal den kvaliteten vi optimaliserer for være endringsdyktighet. 
+Navs applikasjoner skal løse et problem noen har. Ettersom Navs systemer modellerer deler av en velferdsstat i konstant endring, skal den kvaliteten vi optimaliserer for være endringsdyktighet. 
 
 ## Kodekvalitet
 Vi verdsetter disse kvalitetene ved kildekoden vår:

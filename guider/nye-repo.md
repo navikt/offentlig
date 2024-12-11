@@ -3,7 +3,7 @@
 Dette er en liten sjekkliste repositories må oppfylle for å være på GitHub.
 
 ## Lisens
-NAV har valgt MIT som standard lisens. Alle repos [må ha en `LICENSE.md`](../LISENSIERING.md).
+Nav har valgt MIT som standard lisens. Alle repos [må ha en `LICENSE.md`](../LISENSIERING.md).
 
 ## Readme
 Vi har en [standard README](../README.template.md) man kan ta utgangspunkt i.
