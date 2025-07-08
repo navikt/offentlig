@@ -49,9 +49,11 @@ GitHub har støtte for en spesiell fil som heter CODEOWNERS som angir hvilke tea
 * @navikt/navn-på-team
 ```
 Dette betyr at teamet navn-på-team eier hele kodebasen (* er wildcard). Vi ønsker ikke at enkeltpersoner skal stå oppført her.
-Sanering av gammel kode: 
+
+#### Sanering av gammel kode: 
 Både git-historikk og kode må vaskes for eventuelle hemmeligheter og personsensitive opplysninger. Her finnes det mange ulike verktøy man kan benytte seg av, og det finnes en liten guide på GitHub om dette.
-Migrering av gammel kode: 
+
+#### Migrering av gammel kode: 
 Ved migrering av gammel kode bør man kjøre en risikovurdering. Team Tryggnok har lagd et verktøy for å gjennomføre en slik ROS-analyse. Ta kontakt med teamet på Slack i kanalen #tryggnok
  
 ## Kode som ikke kan åpnes
