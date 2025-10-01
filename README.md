@@ -79,3 +79,6 @@ Hvis koden implementerer en lovendring eller forskrift som ennå ikke er kunngjo
 
 ## Er du klar?
 Sjekk ut guiden om [nye repo](guider/nye-repo.md). Husk at det er teamet selv som tar det ansvarlige valget om koden kan open sources eller ikke.
+
+## Eller er du på vei bort? :(
+Da burde du sjekke ut [praktiske ting rundt det å slutte hos oss](guider/slutte-i-nav.md)!
