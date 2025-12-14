@@ -29,7 +29,8 @@ Kildekoden legges på https://github.com/navikt
 Åpen kildekode gir både muligheter og utfordringer for sikkerheten. Når vi åpner opp for innsyn kan eksterne melde fra om sikkerhetshull i koden vår, slik at vi ender opp med sikrere systemer. Samtidig må vi sørge for at sensitiv informasjon, slik som personopplysninger og tilgangsnøkler, ikke kommer i hendene til aktører med ondsinnede hensikter. En rekke verktøy er tilgjengelige for å sikre nødvendig sikkerhet ved å kode åpent, disse verktøyene gjør ting som skanning etter 3-parts biblioteker med kjente sårbarheter, finner feil/bugs i koden, automatisk penetrasjonstesting etc. Når man oppdager sårbarheter må man raskt kunne deploye ny kode, som lukker denne sårbarheten
 
 ### Ansvar: 
-Teamet som eier koden har ansvaret for vurdere om koden er trygg å distribuere som åpen kildekode. Dersom koden overføres til et nytt team, må dette teamet gjøre en ny vurdering. Dette ansvaret gjelder i kodens levetid. 
+Teamet som eier koden har ansvaret for vurdere om koden er trygg å distribuere som åpen kildekode. Dette gjøres ved å kjøre en risikovurdering. Team Tryggnok har lagd et verktøy for å gjennomføre en slik ROS-analyse. Ta kontakt med teamet på Slack i kanalen #tryggnok
+Dersom koden overføres til et nytt team, må dette teamet gjøre en ny vurdering. Dette ansvaret gjelder i kodens levetid. 
 
 ## Kvalitet og relevans: 
 All kode i Nav skal holde høy kvalitet, uavhengig om den er åpen eller lukket. At en kodebase har lav kodekvalitet er ikke i seg selv et argument for å la være å åpne den for innsyn, men et argument for å arbeide med å forbedre kodekvaliteten. 
