@@ -8,8 +8,13 @@ Det er avgjørende viktig for Navs samfunnsoppdrag at det eksisterer et tillitsf
 Åpen kildekode er en måte å utvikle og distribuere programvare på. Koden skrives ofte i samarbeid, og den kan lastes ned, brukes og endres av hvem som helst. Se her for detaljer for MIT-lisensen som Nav bruker https://tldrlegal.com/license/mit-license og https://en.wikipedia.org/wiki/MIT_License.
 Åpne standarder er felles regler som lar enhver bruker lage kompatible og konsistente produkter, prosesser og tjenester. De er designet i samarbeid, er offentlig tilgjengelige og gratis eller til lave kostnader. Vær oppmerksom på at det likevel kan påløpe kostnader ved åpen kildekode. Migreringskostnader (til og fra) bør tas med i vurderingen.
 
-### Hvordan åpne kildekode.
-Kildekoden legges på https://github.com/navikt
+### Hvordan åpne kildekode
+Følge disse stegene:
+
+1. **Risikovurdering**: Vurder om koden er trygg å distribuere som åpen kildekode. Team Tryggnok har et verktøy, TryggNok, som brukes til risikovurderinger, og det finnes en mal for ansvarsavklaring ved åpning av kildekode. Ta kontakt på Slack i #tryggnok for hjelp.
+2. **Sanering**: Vask både Git-historikk og kode for eventuelle hemmeligheter og personsensitive opplysninger
+3. **Oppfyll krav**: Sørg for at repository oppfyller kravene listet under "Krav til åpne repo"
+4. **Publiser**: Kildekoden legges på https://github.com/navikt
 
 ## Åpen kildekode 
 
