@@ -1,0 +1,815 @@
+{
+  "syncedAt": "2026-07-05T19:56:55.177Z",
+  "org": "navikt",
+  "npmPackage": "@navikt/aksel-icons",
+  "repos": {
+    "navikt/mock-oauth2-server": {
+      "stars": 394,
+      "language": "Kotlin",
+      "languageColor": "#A97BFF",
+      "pushedAt": "2026-07-03T11:48:35Z",
+      "isArchived": false
+    },
+    "navikt/aksel": {
+      "stars": 184,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "pushedAt": "2026-07-03T11:13:28Z",
+      "isArchived": false
+    },
+    "nais/naiserator": {
+      "stars": 48,
+      "language": "Go",
+      "languageColor": "#00ADD8",
+      "pushedAt": "2026-06-29T03:42:35Z",
+      "isArchived": false
+    },
+    "navikt/helse-spleis": {
+      "stars": 6,
+      "language": "Kotlin",
+      "languageColor": "#A97BFF",
+      "pushedAt": "2026-07-03T16:37:18Z",
+      "isArchived": false
+    },
+    "navikt/cplt": {
+      "stars": 98,
+      "language": "Rust",
+      "languageColor": "#dea584",
+      "pushedAt": "2026-07-05T19:35:39Z",
+      "isArchived": false
+    },
+    "navikt/pdfgen": {
+      "stars": 24,
+      "language": "Kotlin",
+      "languageColor": "#A97BFF",
+      "pushedAt": "2026-06-29T08:04:19Z",
+      "isArchived": false
+    },
+    "nais/wonderwall": {
+      "stars": 27,
+      "language": "Go",
+      "languageColor": "#00ADD8",
+      "pushedAt": "2026-06-22T07:02:56Z",
+      "isArchived": false
+    },
+    "navikt/rapids-and-rivers": {
+      "stars": 25,
+      "language": "Kotlin",
+      "languageColor": "#A97BFF",
+      "pushedAt": "2026-05-18T10:44:43Z",
+      "isArchived": false
+    },
+    "navikt/token-support": {
+      "stars": 19,
+      "language": "Kotlin",
+      "languageColor": "#A97BFF",
+      "pushedAt": "2026-07-02T14:44:21Z",
+      "isArchived": false
+    },
+    "navikt/fnrvalidator": {
+      "stars": 20,
+      "language": "TypeScript",
+      "languageColor": "#3178c6",
+      "pushedAt": "2026-06-29T10:32:22Z",
+      "isArchived": false
+    },
+    "nais/digdirator": {
+      "stars": 11,
+      "language": "Go",
+      "languageColor": "#00ADD8",
+      "pushedAt": "2026-06-29T07:03:28Z",
+      "isArchived": false
+    },
+    "navikt/DSF": {
+      "stars": 55,
+      "language": "COBOL",
+      "languageColor": null,
+      "pushedAt": "2020-10-05T21:29:41Z",
+      "isArchived": false
+    }
+  },
+  "stats": {
+    "publicRepos": 3102,
+    "commitsLast7Days": 5201,
+    "prsLast30Days": 15478,
+    "npmDownloadsLastMonth": 399223
+  },
+  "recentlyUpdated": [
+    {
+      "name": "cplt",
+      "url": "https://github.com/navikt/cplt",
+      "pushedAt": "2026-07-05T19:35:39Z",
+      "language": "Rust",
+      "languageColor": "#dea584"
+    },
+    {
+      "name": "homebrew-tap",
+      "url": "https://github.com/navikt/homebrew-tap",
+      "pushedAt": "2026-07-05T19:30:22Z",
+      "language": "Ruby",
+      "languageColor": "#701516"
+    },
+    {
+      "name": "copilot",
+      "url": "https://github.com/navikt/copilot",
+      "pushedAt": "2026-07-05T18:38:22Z",
+      "language": "Go",
+      "languageColor": "#00add8"
+    },
+    {
+      "name": "tiltakspenger-saksbehandling-api",
+      "url": "https://github.com/navikt/tiltakspenger-saksbehandling-api",
+      "pushedAt": "2026-07-05T18:08:54Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "tiltakspenger",
+      "url": "https://github.com/navikt/tiltakspenger",
+      "pushedAt": "2026-07-05T16:36:12Z",
+      "language": "Shell",
+      "languageColor": "#89e051"
+    },
+    {
+      "name": "tiltakspenger-libs",
+      "url": "https://github.com/navikt/tiltakspenger-libs",
+      "pushedAt": "2026-07-05T15:30:53Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    }
+  ],
+  "languages": {
+    "totalRepos": 1767,
+    "entries": [
+      {
+        "name": "Kotlin",
+        "count": 708,
+        "color": "#a97bff"
+      },
+      {
+        "name": "TypeScript",
+        "count": 337,
+        "color": "#3178c6"
+      },
+      {
+        "name": "Java",
+        "count": 137,
+        "color": "#b07219"
+      },
+      {
+        "name": "Python",
+        "count": 79,
+        "color": "#3572a5"
+      },
+      {
+        "name": "JavaScript",
+        "count": 58,
+        "color": "#f1e05a"
+      },
+      {
+        "name": "Shell",
+        "count": 51,
+        "color": "#89e051"
+      },
+      {
+        "name": "Go",
+        "count": 43,
+        "color": "#00add8"
+      },
+      {
+        "name": "Annet",
+        "count": 354,
+        "color": null
+      }
+    ]
+  },
+  "heatmap": {
+    "repoCount": 12,
+    "weeks": [
+      {
+        "week": 1762650000,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1763251200,
+        "days": [
+          0,
+          23,
+          34,
+          32,
+          26,
+          37,
+          0
+        ]
+      },
+      {
+        "week": 1763254800,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1763856000,
+        "days": [
+          0,
+          38,
+          11,
+          28,
+          25,
+          13,
+          0
+        ]
+      },
+      {
+        "week": 1763859600,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1764460800,
+        "days": [
+          0,
+          6,
+          22,
+          29,
+          25,
+          6,
+          0
+        ]
+      },
+      {
+        "week": 1764464400,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1765065600,
+        "days": [
+          1,
+          6,
+          7,
+          7,
+          15,
+          17,
+          0
+        ]
+      },
+      {
+        "week": 1765069200,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1765670400,
+        "days": [
+          0,
+          10,
+          26,
+          21,
+          5,
+          49,
+          0
+        ]
+      },
+      {
+        "week": 1765674000,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1766275200,
+        "days": [
+          0,
+          5,
+          3,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1766278800,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1766880000,
+        "days": [
+          0,
+          2,
+          1,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "week": 1766883600,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1767484800,
+        "days": [
+          1,
+          22,
+          4,
+          5,
+          14,
+          8,
+          0
+        ]
+      },
+      {
+        "week": 1767488400,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1768089600,
+        "days": [
+          0,
+          20,
+          18,
+          45,
+          25,
+          22,
+          0
+        ]
+      },
+      {
+        "week": 1768093200,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1768694400,
+        "days": [
+          1,
+          25,
+          19,
+          23,
+          42,
+          13,
+          0
+        ]
+      },
+      {
+        "week": 1768698000,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1769299200,
+        "days": [
+          0,
+          23,
+          19,
+          22,
+          11,
+          17,
+          0
+        ]
+      },
+      {
+        "week": 1769302800,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1769904000,
+        "days": [
+          0,
+          20,
+          36,
+          12,
+          16,
+          6,
+          0
+        ]
+      },
+      {
+        "week": 1769907600,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1770508800,
+        "days": [
+          0,
+          21,
+          33,
+          27,
+          25,
+          14,
+          0
+        ]
+      },
+      {
+        "week": 1770512400,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1771113600,
+        "days": [
+          0,
+          18,
+          20,
+          14,
+          18,
+          2,
+          1
+        ]
+      },
+      {
+        "week": 1771117200,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1771718400,
+        "days": [
+          0,
+          11,
+          3,
+          11,
+          14,
+          42,
+          0
+        ]
+      },
+      {
+        "week": 1771722000,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1772323200,
+        "days": [
+          0,
+          28,
+          20,
+          15,
+          25,
+          16,
+          0
+        ]
+      },
+      {
+        "week": 1772326800,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1772928000,
+        "days": [
+          0,
+          14,
+          26,
+          11,
+          11,
+          13,
+          0
+        ]
+      },
+      {
+        "week": 1772931600,
+        "days": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "week": 1773532800,
+        "days": [
+          0,
+          21,
+          18,
+          21,
+          20,
+          22,
+          5
+        ]
+      },
+      {
+        "week": 1774137600,
+        "days": [
+          0,
+          20,
+          1,
+          0,
+          12,
+          17,
+          0
+        ]
+      },
+      {
+        "week": 1774742400,
+        "days": [
+          0,
+          22,
+          17,
+          1,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "week": 1775347200,
+        "days": [
+          0,
+          2,
+          17,
+          32,
+          24,
+          57,
+          23
+        ]
+      },
+      {
+        "week": 1775952000,
+        "days": [
+          0,
+          29,
+          36,
+          13,
+          53,
+          16,
+          0
+        ]
+      },
+      {
+        "week": 1776556800,
+        "days": [
+          1,
+          25,
+          22,
+          17,
+          32,
+          18,
+          3
+        ]
+      },
+      {
+        "week": 1777161600,
+        "days": [
+          0,
+          27,
+          21,
+          17,
+          25,
+          1,
+          0
+        ]
+      },
+      {
+        "week": 1777766400,
+        "days": [
+          0,
+          20,
+          20,
+          21,
+          32,
+          23,
+          0
+        ]
+      },
+      {
+        "week": 1778371200,
+        "days": [
+          5,
+          24,
+          29,
+          31,
+          2,
+          11,
+          0
+        ]
+      },
+      {
+        "week": 1778976000,
+        "days": [
+          0,
+          43,
+          31,
+          30,
+          10,
+          26,
+          0
+        ]
+      },
+      {
+        "week": 1779580800,
+        "days": [
+          2,
+          8,
+          31,
+          29,
+          9,
+          10,
+          2
+        ]
+      },
+      {
+        "week": 1780185600,
+        "days": [
+          0,
+          19,
+          15,
+          18,
+          25,
+          7,
+          0
+        ]
+      },
+      {
+        "week": 1780790400,
+        "days": [
+          3,
+          28,
+          32,
+          13,
+          5,
+          11,
+          0
+        ]
+      },
+      {
+        "week": 1781395200,
+        "days": [
+          0,
+          27,
+          29,
+          10,
+          15,
+          25,
+          0
+        ]
+      },
+      {
+        "week": 1782000000,
+        "days": [
+          0,
+          35,
+          21,
+          31,
+          17,
+          16,
+          0
+        ]
+      },
+      {
+        "week": 1782604800,
+        "days": [
+          0,
+          48,
+          14,
+          10,
+          12,
+          11,
+          1
+        ]
+      },
+      {
+        "week": 1783209600,
+        "days": [
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  }
+}

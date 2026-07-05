@@ -1,0 +1,47 @@
+---
+import { monthYearNo, formatNumber } from "../lib/format.mjs";
+
+interface Props {
+  project: { repo: string; kategori: string; beskrivelse: string };
+  data?: {
+    stars: number;
+    language: string | null;
+    languageColor: string | null;
+    pushedAt: string;
+    isArchived: boolean;
+  };
+}
+
+const KATEGORIER: Record<string, { label: string; tag: string }> = {
+  plattform: { label: "Plattform", tag: "tag-info" },
+  designsystem: { label: "Designsystem", tag: "tag-magenta" },
+  biblioteker: { label: "Biblioteker", tag: "tag-accent" },
+  aapenhet: { label: "Åpenhet", tag: "tag-beige" },
+  "data-ki": { label: "Data og KI", tag: "tag-purple" },
+};
+
+const { project, data } = Astro.props;
+const kategori = KATEGORIER[project.kategori] ?? KATEGORIER.biblioteker;
+const name = project.repo.split("/")[1];
+const url = `https://github.com/${project.repo}`;
+---
+
+<li class="card">
+  <span class={`tag ${kategori.tag}`}>{kategori.label}</span>
+  {data?.isArchived && <span class="status detail">Arkivert</span>}
+  <h3><a href={url}>{name}</a></h3>
+  <p class="desc">{project.beskrivelse}</p>
+  {data && (
+    <p class="meta detail nums">
+      {data.language && (
+        <>
+          <span><span class="lang-dot" style={`background:${data.languageColor ?? "var(--border-strong)"}`}></span>{data.language}</span>
+          <span class="sep">·</span>
+        </>
+      )}
+      <span><svg class="star-icon" width="14" height="14" aria-hidden="true"><use href="#star" /></svg>{formatNumber(data.stars)}</span>
+      <span class="sep">·</span>
+      <span>Sist aktiv i {monthYearNo(data.pushedAt)}</span>
+    </p>
+  )}
+</li>

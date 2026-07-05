@@ -1,0 +1,64 @@
+# UTKAST — flyttes til .github/workflows/deploy.yml når siden får eget repo.
+#
+# Bygger og deployer til GitHub Pages ved push til main.
+# Bygget går aldri på nett — det leser kun committet data
+# (src/data/generated.json fra nattlig synk).
+
+name: Bygg og deploy til GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: site/pnpm-lock.yaml
+
+      - name: Installer avhengigheter
+        working-directory: site
+        run: pnpm install --frozen-lockfile
+
+      - name: Bygg
+        working-directory: site
+        run: pnpm build
+        env:
+          # Prosjektside (navikt.github.io/kildekode). Med eget domene:
+          # sett SITE_URL=https://kildekode.nav.no og fjern BASE_PATH.
+          SITE_URL: https://navikt.github.io
+          BASE_PATH: /kildekode
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

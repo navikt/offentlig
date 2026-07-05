@@ -1,0 +1,26 @@
+---
+interface Props {
+  gems: { repo: string; kicker: string; beskrivelse: string; meta: string }[];
+}
+
+const { gems } = Astro.props;
+---
+
+<section class="section gems" id="perler">
+  <div class="container">
+    <div class="section-head">
+      <h2>Skjulte perler</h2>
+      <p class="ingress">Ikke alt som er nyttig har mange stjerner. Tre prosjekter som fortjener flere blikk.</p>
+    </div>
+    <ul class="gem-grid" style="list-style:none">
+      {gems.map((gem) => (
+        <li class="gem">
+          <p class="kicker">{gem.kicker}</p>
+          <h3><a href={`https://github.com/${gem.repo}`}>{gem.repo.split("/")[1]}</a></h3>
+          <p>{gem.beskrivelse}</p>
+          <p class="meta detail">{gem.meta}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

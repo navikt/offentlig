@@ -1,0 +1,58 @@
+---
+import { parse as parseYaml } from "yaml";
+
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Icons from "../components/Icons.astro";
+import Hero from "../components/Hero.astro";
+import Stats from "../components/Stats.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Gems from "../components/Gems.astro";
+import Process from "../components/Process.astro";
+import Community from "../components/Community.astro";
+import Footer from "../components/Footer.astro";
+
+import generated from "../data/generated.json";
+import projectsRaw from "../data/projects.yaml?raw";
+import { formatNumber } from "../lib/format.mjs";
+
+/* Kuratert innhold (redaksjonelt) + generert data (nattlig synk).
+   Bygget går aldri på nett — alt leses fra disse to filene. */
+const curated = parseYaml(projectsRaw);
+const cards = curated.projects.filter((p: any) => !p.perle);
+const gems = curated.projects.filter((p: any) => p.perle);
+---
+
+<Layout
+  title="Åpen kildekode i Nav"
+  description="Nav bygger i det åpne. Utforsk åpen kildekode fra Norges arbeids- og velferdsforvaltning."
+>
+  <Header />
+  <main id="hoved">
+    <Icons />
+    <Hero />
+    <Stats generated={generated} />
+
+    <section class="section" id="prosjekter">
+      <div class="container">
+        <div class="section-head">
+          <h2>Utvalgte prosjekter</h2>
+          <p class="ingress">Et håndplukket utvalg fra over tre tusen åpne repoer&nbsp;— det andre bruker mest, og det vi er mest stolte av.</p>
+        </div>
+
+        <ul class="card-grid" style="list-style:none">
+          {cards.map((p: any) => (
+            <ProjectCard project={p} data={(generated.repos as any)[p.repo]} />
+          ))}
+        </ul>
+
+        <p class="see-all"><a class="link-arrow" href="https://github.com/navikt">Se alle {formatNumber(generated.stats.publicRepos)} repoene på github.com/navikt&nbsp;→</a></p>
+      </div>
+    </section>
+
+    <Gems gems={gems} />
+    <Process />
+    <Community />
+  </main>
+  <Footer syncedAt={generated.syncedAt} />
+</Layout>

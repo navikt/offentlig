@@ -1,0 +1,96 @@
+---
+import { relativeTimeNo, momentPhraseNo } from "../lib/format.mjs";
+
+interface Props {
+  generated: any;
+}
+
+const { generated } = Astro.props;
+const { heatmap, languages, recentlyUpdated, syncedAt } = generated;
+
+/* ---- Aktivitetskart: statisk genererte celler fra ekte commit-data ----
+   GitHub leverer uker som søndag–lørdag; mockupen tegner rad 0 = mandag.
+   Kolonne i får derfor man–lør fra uke i og søndagen fra uke i+1. */
+type Cell = { count: number; level: number };
+let columns: Cell[][] = [];
+if (heatmap?.weeks?.length) {
+  const weeks = heatmap.weeks;
+  const raw = weeks.map((w: any, i: number) => [
+    ...w.days.slice(1),
+    weeks[i + 1]?.days[0] ?? 0,
+  ]);
+  const nonzero = raw
+    .flat()
+    .filter((n: number) => n > 0)
+    .sort((a: number, b: number) => a - b);
+  const q = (p: number) => nonzero[Math.min(Math.floor(p * nonzero.length), nonzero.length - 1)] ?? 1;
+  const [q1, q2, q3] = [q(0.25), q(0.5), q(0.75)];
+  const level = (n: number) => (n === 0 ? 0 : n <= q1 ? 1 : n <= q2 ? 2 : n <= q3 ? 3 : 4);
+  columns = raw.map((days: number[]) => days.map((count) => ({ count, level: level(count) })));
+}
+
+/* ---- Språkfordeling: prosent av aktive repoer, «Annet» fyller opp til 100 ---- */
+const langTotal = languages.entries.reduce((s: number, e: any) => s + e.count, 0);
+const named = languages.entries
+  .filter((e: any) => e.name !== "Annet")
+  .map((e: any) => ({ ...e, pct: Math.round((e.count / langTotal) * 100) }));
+const annet = {
+  name: "Annet",
+  color: null,
+  pct: 100 - named.reduce((s: number, e: any) => s + e.pct, 0),
+};
+const langs = [...named, annet];
+const langLabel =
+  "Fordeling av primærspråk i åpne repoer: " +
+  langs
+    .map((l, i) => `${l.name === "Annet" ? "annet" : l.name} ${l.pct}${i === 0 ? " prosent" : ""}`)
+    .join(", ");
+---
+
+<div class="pulse">
+  <div>
+    <h3>Commits siste 52 uker</h3>
+    {columns.length > 0 && (
+      <>
+        <div class="heatmap-scroll">
+          <div class="heatmap" role="img" aria-label="Aktivitetskart: commits i de utvalgte prosjektene per dag de siste 52 ukene">
+            {columns.map((days) =>
+              days.map((c) => <i class={c.level ? `l${c.level}` : undefined} title={`${c.count} commits`}></i>)
+            )}
+          </div>
+        </div>
+        <div class="heatmap-legend detail" aria-hidden="true">
+          <span>Mindre</span><i></i><i class="l1"></i><i class="l2"></i><i class="l3"></i><i class="l4"></i><span>Mer</span>
+        </div>
+        <p class="caption detail">De utvalgte prosjektene, dag for dag. Fellesferien synes i begge ender.</p>
+      </>
+    )}
+
+    <div class="langs">
+      <h3>Språkene</h3>
+      <div class="lang-bar" role="img" aria-label={langLabel}>
+        {langs.map((l) => (
+          <i style={`flex:${l.pct};background:${l.color ?? "var(--border-strong)"}`}></i>
+        ))}
+      </div>
+      <ul class="lang-legend detail nums" aria-hidden="true">
+        {langs.map((l) => (
+          <li><span class="lang-dot" style={`background:${l.color ?? "var(--border-strong)"}`}></span>{l.name} {l.pct}&#8239;%</li>
+        ))}
+      </ul>
+      <p class="caption detail">JVM-tungt bakover, TypeScript forover&nbsp;— og litt av alt.</p>
+    </div>
+  </div>
+  <div>
+    <h3>Nylig oppdatert</h3>
+    <ul class="feed nums">
+      {recentlyUpdated.map((r: any) => (
+        <li>
+          <span><span class="lang-dot" style={`background:${r.languageColor ?? "var(--border-strong)"}`}></span><a href={r.url}>{r.name}</a></span>
+          <span class="when detail">{relativeTimeNo(r.pushedAt, syncedAt)}</span>
+        </li>
+      ))}
+    </ul>
+    <p class="caption detail">Levende produktutvikling, åpent&nbsp;— også {momentPhraseNo(syncedAt)}.</p>
+  </div>
+</div>

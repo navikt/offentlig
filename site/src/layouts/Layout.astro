@@ -1,0 +1,58 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const fontUrl = `${base}fonts/source-sans-3-latin.woff2`;
+
+/* Selv-hostet Source Sans 3 (variabel, latin-subsett). Skrives inline med
+   base-prefiks slik at fonten også lastes riktig under en prosjektside-URL. */
+const fontFace = `@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(${fontUrl}) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}`;
+---
+
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="preload" href={fontUrl} as="font" type="font/woff2" crossorigin />
+    <title>{title}</title>
+    <style set:html={fontFace}></style>
+  </head>
+  <body>
+    <a class="skip-link" href="#hoved">Hopp til hovedinnhold</a>
+    <slot />
+    <script is:inline>
+      (function () {
+        var root = document.documentElement;
+        var btn = document.querySelector(".theme-toggle");
+        if (!btn) return;
+        btn.addEventListener("click", function () {
+          var dark = root.dataset.theme
+            ? root.dataset.theme === "dark"
+            : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          root.dataset.theme = dark ? "light" : "dark";
+        });
+      })();
+    </script>
+  </body>
+</html>
