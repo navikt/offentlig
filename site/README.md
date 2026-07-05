@@ -5,9 +5,8 @@ et håndplukket utvalg prosjekter med håndskrevne norske beskrivelser,
 levende nøkkeltall fra GitHub og npm, aktivitetskart, språkfordeling
 og en kondensert versjon av [retningslinjene for åpen kildekode](https://github.com/navikt/offentlig).
 
-Bakgrunn, innhold og bindende designspesifikasjon:
-[PRD-open-source-showcase.md](../PRD-open-source-showcase.md).
-Godkjent designskisse: [mockup/index.html](../mockup/index.html).
+Bakgrunn, innhold og bindende designspesifikasjon: [PRD.md](PRD.md).
+(Den opprinnelige designskissen ligger i git-historikken under `mockup/`.)
 
 ## Kom i gang
 
