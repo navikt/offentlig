@@ -46,6 +46,7 @@ jobs:
           cache-dependency-path: site/pnpm-lock.yaml
 
       - name: Installer avhengigheter
+        id: deps
         working-directory: site
         run: pnpm install --frozen-lockfile
 
@@ -60,7 +61,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
 
       - name: Commit oppdatert generated.json til showcase
-        if: always()
+        if: always() && steps.deps.outcome == 'success'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -73,7 +74,7 @@ jobs:
           fi
 
       - name: Bygg
-        if: always()
+        if: always() && steps.deps.outcome == 'success'
         working-directory: site
         run: pnpm build
         env:
@@ -81,7 +82,7 @@ jobs:
           BASE_PATH: /offentlig
 
       - name: Deploy til gh-pages
-        if: always()
+        if: always() && steps.deps.outcome == 'success'
         working-directory: site/dist
         run: |
           touch .nojekyll
