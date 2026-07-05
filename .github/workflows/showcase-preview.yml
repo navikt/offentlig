@@ -1,0 +1,101 @@
+# Midlertidig forhåndsvisning av showcase-siden på GitHub Pages.
+#
+# Én selvstendig jobb: synker data, committer generated.json til showcase,
+# bygger og force-pusher dist/ til gh-pages. Alt i samme workflow — pushes
+# gjort med GITHUB_TOKEN trigger ikke andre workflows, så en delt
+# sync-→-deploy-kjede ville aldri ha startet av seg selv.
+#
+# NB: `schedule` fyres kun fra standardgrenen (main) — en kopi av denne
+# filen går til main i egen PR for nattlig kjøring; denne kopien på
+# showcase betjener push- og manuelle kjøringer.
+
+name: Showcase-forhåndsvisning
+
+on:
+  push:
+    branches: [showcase]
+    paths:
+      - "site/**"
+      - ".github/workflows/showcase-preview.yml"
+  schedule:
+    - cron: "28 3 * * *" # 05.28 norsk sommertid — utenom rushtid på API-ene
+  workflow_dispatch:
+
+concurrency:
+  group: showcase-preview
+
+permissions:
+  contents: write
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: showcase
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: site/pnpm-lock.yaml
+
+      - name: Installer avhengigheter
+        working-directory: site
+        run: pnpm install --frozen-lockfile
+
+      # Feiler synken, beholder generated.json forrige gode verdier —
+      # vi deployer likevel, men kjøringen går rød til slutt (PRD §7).
+      - name: Hent data fra GitHub og npm
+        id: sync
+        continue-on-error: true
+        working-directory: site
+        run: pnpm sync
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Commit oppdatert generated.json til showcase
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/src/data/generated.json
+          if git diff --cached --quiet; then
+            echo "Ingen endringer i data."
+          else
+            git commit -m "chore: datasynk for showcase-forhåndsvisning"
+            git push origin HEAD:showcase
+          fi
+
+      - name: Bygg
+        if: always()
+        working-directory: site
+        run: pnpm build
+        env:
+          SITE_URL: https://navikt.github.io
+          BASE_PATH: /offentlig
+
+      - name: Deploy til gh-pages
+        if: always()
+        working-directory: site/dist
+        run: |
+          touch .nojekyll
+          git init -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "deploy: showcase-forhåndsvisning fra ${{ github.sha }}"
+          git push --force "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" gh-pages
+
+      # PRD §7: feile høylytt. Deployen over gikk gjennom (med forrige gode
+      # data der synken sviktet), men kjøringen skal likevel gå rød.
+      - name: Marker kjøringen som feilet hvis synken sviktet
+        if: always() && steps.sync.outcome == 'failure'
+        run: |
+          echo "::error::Datasynken feilet — siden er deployet med forrige gode data. Se sync-steget for detaljer."
+          exit 1
