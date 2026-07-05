@@ -31,9 +31,10 @@ const { syncedAt } = Astro.props;
       <div>
         <h2>Om siden</h2>
         <ul>
-          <li><a href="#">Tilgjengelighetserklæring</a></li>
-          <li><a href="#">Kildekoden til denne siden</a></li>
-          <li><a href="#">Kontakt</a></li>
+          {/* Erklæringen skrives og lenkes opp før lansering — aldri en død lenke i mellomtiden */}
+          <li><span class="detail">Tilgjengelighetserklæring kommer før lansering</span></li>
+          <li><a href="https://github.com/navikt/offentlig/tree/showcase/site">Kildekoden til denne siden</a></li>
+          <li><a href="https://github.com/navikt/offentlig/issues">Kontakt</a></li>
         </ul>
       </div>
     </div>

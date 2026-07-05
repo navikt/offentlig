@@ -43,28 +43,20 @@ export function monthYearNo(iso) {
   }).format(new Date(iso));
 }
 
-/** Relativ tid regnet fra synk-tidspunktet: «for 18 minutter siden». */
+/** Relativ tid regnet fra synk-tidspunktet: «for 18 minutter siden».
+ *  Entall skrives ut: «for ett minutt siden», «for én time siden»,
+ *  «for én dag siden» — aldri «for 1 minutter siden»-varianter. */
 export function relativeTimeNo(iso, nowIso) {
   const diff = new Date(nowIso) - new Date(iso);
   const minutes = Math.floor(diff / 60_000);
   if (minutes < 1) return "for under ett minutt siden";
-  if (minutes < 60) return `for ${minutes} ${minutes === 1 ? "minutt" : "minutter"} siden`;
+  if (minutes === 1) return "for ett minutt siden";
+  if (minutes < 60) return `for ${minutes} minutter siden`;
   const hours = Math.floor(minutes / 60);
-  if (hours < 24) return `for ${hours} ${hours === 1 ? "time" : "timer"} siden`;
+  if (hours === 1) return "for én time siden";
+  if (hours < 24) return `for ${hours} timer siden`;
   const days = Math.floor(hours / 24);
-  if (days <= 30) return `for ${days} ${days === 1 ? "dag" : "dager"} siden`;
+  if (days === 1) return "for én dag siden";
+  if (days <= 30) return `for ${days} dager siden`;
   return dateNo(iso);
-}
-
-/** «en lørdagskveld i juli» — regnes fra synk-tidspunktet. */
-export function momentPhraseNo(iso) {
-  const d = new Date(iso);
-  const weekday = new Intl.DateTimeFormat("nb-NO", { timeZone: TZ, weekday: "long" }).format(d);
-  const month = new Intl.DateTimeFormat("nb-NO", { timeZone: TZ, month: "long" }).format(d);
-  const hour = Number(
-    new Intl.DateTimeFormat("nb-NO", { timeZone: TZ, hour: "numeric", hourCycle: "h23" }).format(d)
-  );
-  const tod =
-    hour < 5 ? "natt" : hour < 10 ? "morgen" : hour < 12 ? "formiddag" : hour < 18 ? "ettermiddag" : "kveld";
-  return `en ${weekday}s${tod} i ${month}`;
 }

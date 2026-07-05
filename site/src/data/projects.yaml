@@ -8,11 +8,20 @@
 # Kategorier: plattform · designsystem · biblioteker · aapenhet · data-ki
 # perle: true løfter prosjektet inn i «Skjulte perler»-seksjonen
 # (og krever da kicker + meta i tillegg).
+#
+# team: (valgfritt) vises som «Vedlikeholdes av …» på kortet (PRD §5.5).
+# Feltet står tomt til det er forankret med eierteamene (PRD §9 pkt. 4) —
+# aldri gjett et teamnavn.
+#
+# Plassholderen {{fnrNedlastinger}} byttes ved bygg ut med ferske npm-tall
+# fra generated.json (stats.fnrDownloadsLastMonth) — aldri et håndskrevet tall.
 
 projects:
   - repo: navikt/mock-oauth2-server
     kategori: biblioteker
-    beskrivelse: Mock av OAuth2 og OpenID Connect til testing — 5,4 millioner Docker-nedlastinger.
+    beskrivelse: >-
+      Mock av OAuth2 og OpenID Connect
+      til testing — brukt langt utenfor Nav.
     perle: false
 
   - repo: navikt/aksel
@@ -60,9 +69,9 @@ projects:
     perle: true
     kicker: Mest brukt, minst sett
     beskrivelse: >-
-      20 stjerner — og 53 000 nedlastinger i måneden. Den stille standarden
-      for å validere fødselsnummer i norsk JavaScript, også utenfor
-      forvaltningen.
+      20 stjerner — og {{fnrNedlastinger}} nedlastinger i måneden. Den
+      stille standarden for å validere fødselsnummer i norsk JavaScript,
+      også utenfor forvaltningen.
     meta: TypeScript · npm
 
   - repo: nais/digdirator

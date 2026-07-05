@@ -16,13 +16,14 @@ const figures = [
   { icon: "i-commit", value: formatNumber(stats.commitsLast7Days), label: "commits de siste sju dagene" },
   { icon: "i-pr", value: formatNumber(stats.prsLast30Days), label: "pull requests de siste 30 dagene" },
   { icon: "i-people", value: "~90", label: "produktteam som bygger i det åpne" },
-  { icon: "i-deploy", value: formatNumber(2400), label: "produksjonsdeployer i uka" },
+  { icon: "i-deploy", value: `~${formatNumber(2400)}`, label: "produksjonsdeployer i uka" },
   { icon: "i-download", value: formatNumber(stats.npmDownloadsLastMonth), label: "nedlastinger av Aksel-ikonene siste måned" },
 ];
 ---
 
 <section class="stats" aria-label="Nøkkeltall og aktivitet">
   <div class="container">
+    <h2 class="sr-only">Tallene</h2>
     <div class="stats-grid">
       {figures.map((f) => (
         <div class="stat">
@@ -35,6 +36,6 @@ const figures = [
 
     <Pulse generated={generated} />
 
-    <p class="stamp detail">Tallene hentes automatisk fra GitHub og npm. Sist oppdatert {dateTimeNo(syncedAt)}&nbsp;— bottene bidrar også.</p>
+    <p class="stamp detail">Tallene fra GitHub og npm hentes automatisk&nbsp;— bottene bidrar også. Produktteam og deployer er Nav-interne cirkatall. Sist oppdatert {dateTimeNo(syncedAt)}.</p>
   </div>
 </section>

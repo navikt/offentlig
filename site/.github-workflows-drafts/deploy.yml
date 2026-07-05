@@ -1,6 +1,10 @@
 # UTKAST — flyttes til .github/workflows/deploy.yml når siden får eget repo.
 #
-# Bygger og deployer til GitHub Pages ved push til main.
+# Bygger og deployer til GitHub Pages ved push til main — og etter den
+# nattlige datasynken. Synkens push gjøres med GITHUB_TOKEN og trigger
+# ikke push-hendelsen (GitHubs beskyttelse mot trigger-løkker), derfor
+# `workflow_run` på sync-workflowen i tillegg.
+#
 # Bygget går aldri på nett — det leser kun committet data
 # (src/data/generated.json fra nattlig synk).
 
@@ -9,12 +13,15 @@ name: Bygg og deploy til GitHub Pages
 on:
   push:
     branches: [main]
+  workflow_run:
+    # Navnet må matche `name:` i sync.yml
+    workflows: ["Nattlig datasynk"]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -56,6 +63,10 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    # Pages-/OIDC-rettighetene er avgrenset til deploy-jobben
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

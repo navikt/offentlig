@@ -46,11 +46,11 @@ const gems = curated.projects.filter((p: any) => p.perle);
           ))}
         </ul>
 
-        <p class="see-all"><a class="link-arrow" href="https://github.com/navikt">Se alle {formatNumber(generated.stats.publicRepos)} repoene på github.com/navikt&nbsp;→</a></p>
+        <p class="see-all"><a class="link-arrow" href="https://github.com/navikt">Se alle {formatNumber(generated.stats.publicRepos)} repoene på github.com/navikt<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a></p>
       </div>
     </section>
 
-    <Gems gems={gems} />
+    <Gems gems={gems} generated={generated} />
     <Process />
     <Community />
   </main>

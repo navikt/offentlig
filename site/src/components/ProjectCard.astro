@@ -2,7 +2,7 @@
 import { monthYearNo, formatNumber } from "../lib/format.mjs";
 
 interface Props {
-  project: { repo: string; kategori: string; beskrivelse: string };
+  project: { repo: string; kategori: string; beskrivelse: string; team?: string };
   data?: {
     stars: number;
     language: string | null;
@@ -44,4 +44,5 @@ const url = `https://github.com/${project.repo}`;
       <span>Sist aktiv i {monthYearNo(data.pushedAt)}</span>
     </p>
   )}
+  {project.team && <p class="team detail">Vedlikeholdes av {project.team}</p>}
 </li>

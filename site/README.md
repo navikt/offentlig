@@ -40,7 +40,7 @@ src/pages/index.astro       bygger hele siden fra de to datafilene
   Aktivitetskartet genereres statisk fra ekte commit-data ved bygg.
 - **Tall er aldri håndvedlikeholdt.** Feiler en delhenting i synken,
   beholdes forrige gode verdi og jobben feiler høylytt (PRD §5.7 og §7).
-  Unntak: «~90 produktteam» og «2 400 deployer i uka» er Nav-interne
+  Unntak: «~90 produktteam» og «~2 400 deployer i uka» er Nav-interne
   cirkatall uten API-kilde (PRD §4.2).
 - **Source Sans 3** (variabel, latin-subsett) er selv-hostet i `public/fonts/`.
 - Lys og mørk modus med samme tokensett; `prefers-color-scheme` er
@@ -48,11 +48,23 @@ src/pages/index.astro       bygger hele siden fra de to datafilene
 
 ## Deploy
 
-Workflow-utkast ligger i [`.github-workflows-drafts/`](.github-workflows-drafts/)
+**Forhåndsvisning (midlertidig):**
+[`.github/workflows/showcase-preview.yml`](../.github/workflows/showcase-preview.yml)
+holder `gh-pages` fersk fra `showcase`-grenen: én selvstendig jobb som
+synker data, committer `generated.json` til `showcase`, bygger og
+force-pusher `dist/` til `gh-pages` (`navikt.github.io/offentlig`).
+Trigges av push til `showcase` og manuelt; cron-triggeren fyrer kun fra
+standardgrenen, så en kopi av filen ligger på `main` for nattlig kjøring.
+Feiler synken, deployes siste gode data — og kjøringen går rød (PRD §7).
+
+**Permanent hjem:** workflow-utkast ligger i
+[`.github-workflows-drafts/`](.github-workflows-drafts/)
 (flyttes til `.github/workflows/` når siden får eget repo):
 
 - `sync.yml` — nattlig cron: kjører synken og committer `generated.json`
-- `deploy.yml` — bygger og deployer til GitHub Pages ved push
+- `deploy.yml` — bygger og deployer til GitHub Pages ved push til `main`
+  og via `workflow_run` etter datasynken (synkens `GITHUB_TOKEN`-push
+  trigger ikke push-hendelsen)
 
 `SITE_URL` og `BASE_PATH` styrer om siden bygges for eget domene
 (`kildekode.nav.no`) eller som prosjektside (`navikt.github.io/<repo>`),

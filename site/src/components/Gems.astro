@@ -1,9 +1,17 @@
 ---
+import { formatNumber } from "../lib/format.mjs";
+
 interface Props {
   gems: { repo: string; kicker: string; beskrivelse: string; meta: string }[];
+  generated: any;
 }
 
-const { gems } = Astro.props;
+const { gems, generated } = Astro.props;
+
+/* Plassholdere i redaksjonell tekst fylles med synkede tall — aldri et
+   håndskrevet, ferskvare-tall i YAML (jf. PRD §7 pkt. 1). */
+const fill = (text: string) =>
+  text.replaceAll("{{fnrNedlastinger}}", formatNumber(generated.stats.fnrDownloadsLastMonth));
 ---
 
 <section class="section gems" id="perler">
@@ -17,7 +25,7 @@ const { gems } = Astro.props;
         <li class="gem">
           <p class="kicker">{gem.kicker}</p>
           <h3><a href={`https://github.com/${gem.repo}`}>{gem.repo.split("/")[1]}</a></h3>
-          <p>{gem.beskrivelse}</p>
+          <p>{fill(gem.beskrivelse)}</p>
           <p class="meta detail">{gem.meta}</p>
         </li>
       ))}
