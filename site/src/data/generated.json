@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-06T11:44:39.002Z",
+  "syncedAt": "2026-07-06T12:23:35.171Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -15,7 +15,7 @@
       "stars": 184,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-07-06T09:42:58Z",
+      "pushedAt": "2026-07-06T12:17:39Z",
       "isArchived": false
     },
     "nais/naiserator": {
@@ -29,7 +29,7 @@
       "stars": 6,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-07-03T16:37:18Z",
+      "pushedAt": "2026-07-06T11:52:19Z",
       "isArchived": false
     },
     "navikt/cplt": {
@@ -91,53 +91,53 @@
   },
   "stats": {
     "publicRepos": 3105,
-    "commitsLast7Days": 4967,
-    "prsLast30Days": 15987,
+    "commitsLast7Days": 4895,
+    "prsLast30Days": 16010,
     "npmDownloadsLastMonth": 398571,
     "fnrDownloadsLastMonth": 51571
   },
   "recentlyUpdated": [
     {
-      "name": "oebs-order-exchange",
-      "url": "https://github.com/navikt/oebs-order-exchange",
-      "pushedAt": "2026-07-06T11:42:55Z",
-      "language": null,
-      "languageColor": null
-    },
-    {
-      "name": "syfo-dokumentporten",
-      "url": "https://github.com/navikt/syfo-dokumentporten",
-      "pushedAt": "2026-07-06T11:42:41Z",
+      "name": "pensjon-dokdist",
+      "url": "https://github.com/navikt/pensjon-dokdist",
+      "pushedAt": "2026-07-06T12:22:59Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "k9-punsj-frontend",
-      "url": "https://github.com/navikt/k9-punsj-frontend",
-      "pushedAt": "2026-07-06T11:42:35Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "mulighetsrommet",
-      "url": "https://github.com/navikt/mulighetsrommet",
-      "pushedAt": "2026-07-06T11:41:14Z",
+      "name": "veilarbaktivitet",
+      "url": "https://github.com/navikt/veilarbaktivitet",
+      "pushedAt": "2026-07-06T12:21:53Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "testnorge",
-      "url": "https://github.com/navikt/testnorge",
-      "pushedAt": "2026-07-06T11:40:43Z",
-      "language": "Java",
-      "languageColor": "#b07219"
+      "name": "sosialhjelp-modia-api",
+      "url": "https://github.com/navikt/sosialhjelp-modia-api",
+      "pushedAt": "2026-07-06T12:21:52Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
-      "name": "veilarbportefoljeflatefs",
-      "url": "https://github.com/navikt/veilarbportefoljeflatefs",
-      "pushedAt": "2026-07-06T11:38:00Z",
+      "name": "amt-deltakelser",
+      "url": "https://github.com/navikt/amt-deltakelser",
+      "pushedAt": "2026-07-06T12:19:12Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "aksel",
+      "url": "https://github.com/navikt/aksel",
+      "pushedAt": "2026-07-06T12:17:39Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
+    },
+    {
+      "name": "familie-oppdrag",
+      "url": "https://github.com/navikt/familie-oppdrag",
+      "pushedAt": "2026-07-06T12:16:09Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     }
   ],
   "languages": {
@@ -155,7 +155,7 @@
       },
       {
         "name": "Java",
-        "count": 137,
+        "count": 138,
         "color": "#b07219"
       },
       {
@@ -180,7 +180,7 @@
       },
       {
         "name": "Annet",
-        "count": 356,
+        "count": 355,
         "color": null
       }
     ]
