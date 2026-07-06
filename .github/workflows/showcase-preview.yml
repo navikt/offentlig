@@ -1,9 +1,9 @@
 # Midlertidig forhåndsvisning av showcase-siden på GitHub Pages.
 #
-# Én selvstendig jobb: synker data, committer generated.json til showcase,
-# bygger og force-pusher dist/ til gh-pages. Alt i samme workflow — pushes
-# gjort med GITHUB_TOKEN trigger ikke andre workflows, så en delt
-# sync-→-deploy-kjede ville aldri ha startet av seg selv.
+# Synker data, committer generated.json til showcase, bygger og deployer
+# til GitHub Pages som artefakt (build_type: workflow). Alt i samme
+# workflow — pushes gjort med GITHUB_TOKEN trigger ikke andre workflows,
+# så en delt sync-→-deploy-kjede ville aldri ha startet av seg selv.
 #
 # NB: `schedule` fyres kun fra standardgrenen (main) — en kopi av denne
 # filen går til main i egen PR for nattlig kjøring; denne kopien på
@@ -81,22 +81,37 @@ jobs:
           SITE_URL: https://navikt.github.io
           BASE_PATH: /offentlig
 
-      - name: Deploy til gh-pages
+      # Artefaktbasert Pages-deploy (build_type: workflow) — den gamle
+      # branch-baserte deployen (gh-pages + Jekyll-bygg) satt seg fast i
+      # GitHubs legacy-kø og serverte gammelt innhold.
+      - uses: actions/upload-pages-artifact@v3
         if: always() && steps.deps.outcome == 'success'
-        working-directory: site/dist
-        run: |
-          touch .nojekyll
-          git init -b gh-pages
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "deploy: showcase-forhåndsvisning fra ${{ github.sha }}"
-          git push --force "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" gh-pages
+        with:
+          path: site/dist
 
-      # PRD §7: feile høylytt. Deployen over gikk gjennom (med forrige gode
-      # data der synken sviktet), men kjøringen skal likevel gå rød.
-      - name: Marker kjøringen som feilet hvis synken sviktet
-        if: always() && steps.sync.outcome == 'failure'
-        run: |
+    outputs:
+      sync-utfall: ${{ steps.sync.outcome }}
+
+  deploy:
+    needs: preview
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  # PRD §7: feile høylytt. Deployen gikk gjennom (med forrige gode data
+  # der synken sviktet), men kjøringen skal likevel gå rød.
+  varsle:
+    needs: [preview, deploy]
+    if: always() && needs.preview.outputs.sync-utfall == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
           echo "::error::Datasynken feilet — siden er deployet med forrige gode data. Se sync-steget for detaljer."
           exit 1
