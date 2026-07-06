@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-06T11:05:58.670Z",
+  "syncedAt": "2026-07-06T11:08:56.682Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -36,7 +36,7 @@
       "stars": 98,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-07-05T22:36:55Z",
+      "pushedAt": "2026-07-06T11:08:13Z",
       "isArchived": false
     },
     "navikt/pdfgen": {
@@ -91,12 +91,19 @@
   },
   "stats": {
     "publicRepos": 3104,
-    "commitsLast7Days": 4995,
-    "prsLast30Days": 15957,
+    "commitsLast7Days": 4986,
+    "prsLast30Days": 15958,
     "npmDownloadsLastMonth": 398571,
     "fnrDownloadsLastMonth": 51571
   },
   "recentlyUpdated": [
+    {
+      "name": "eessi-pensjon-prefill",
+      "url": "https://github.com/navikt/eessi-pensjon-prefill",
+      "pushedAt": "2026-07-06T11:08:14Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
     {
       "name": "hm-finnhjelpemiddel",
       "url": "https://github.com/navikt/hm-finnhjelpemiddel",
@@ -131,13 +138,6 @@
       "pushedAt": "2026-07-06T11:02:25Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
-    },
-    {
-      "name": "tms-varsel-authority",
-      "url": "https://github.com/navikt/tms-varsel-authority",
-      "pushedAt": "2026-07-06T11:01:42Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
     }
   ],
   "languages": {
