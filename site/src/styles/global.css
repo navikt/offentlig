@@ -320,6 +320,10 @@ a:hover { color: var(--accent-hover); }
   margin-top: 3.5rem;
 }
 @media (max-width: 1023px) { .pulse { grid-template-columns: 1fr; } }
+/* Kolonnene må kunne krympe under innholdets min-bredde — ellers tvinger
+   aktivitetskartet (width: max-content) hele siden bredere enn viewporten;
+   rullingen skal skje i .heatmap-scroll, ikke på siden (PRD §5.9) */
+.pulse > div { min-width: 0; }
 .pulse h3 { margin-bottom: 1rem; }
 .pulse .caption { margin-top: 0.75rem; max-width: var(--prose); }
 

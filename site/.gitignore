@@ -1,5 +1,8 @@
 # build output
 dist/
+
+# sjekkpunkt for heatmap-backfill (scripts/sync.mjs)
+src/data/.heatmap-checkpoint.json
 # generated types
 .astro/
 

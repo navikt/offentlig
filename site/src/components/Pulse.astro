@@ -9,26 +9,23 @@ const { generated } = Astro.props;
 const { heatmap, languages, recentlyUpdated, syncedAt } = generated;
 
 /* ---- Aktivitetskart: statisk genererte celler fra ekte commit-data ----
-   GitHub leverer uker som søndag–lørdag (unix-uke-start + 7 dagstall).
-   Vi flater ut til dato-indekserte dager og tegner et rutenett med
-   mandag øverst: nøyaktig 52 kolonner (uker) som slutter på synk-datoen.
-   Dager etter synk-datoen finnes ikke — aldri fremtidsceller på 0. */
+   Synken leverer org-vide commits per dag (heatmap.days, kun standard-
+   grenene — commit-search indekserer ikke andre grener). Rutenettet har
+   mandag øverst: nøyaktig 52 kolonner (uker) som slutter på gårsdagen
+   regnet fra synk-tidspunktet — aldri fremtidsceller, aldri et påbegynt
+   døgn. */
 const DAY_MS = 86_400_000;
 type Cell = { count: number; level: number };
 let columns: Cell[][] = [];
-if (heatmap?.weeks?.length) {
+if (heatmap?.days?.length) {
   const byDay = new Map<number, number>(); // epoch-dag (UTC) → commits
-  for (const w of heatmap.weeks) {
-    const start = Math.floor((w.week * 1000) / DAY_MS); // normaliser til UTC-midnatt
-    w.days.forEach((n: number, i: number) => {
-      const d = start + i;
-      byDay.set(d, (byDay.get(d) ?? 0) + n);
-    });
+  for (const d of heatmap.days) {
+    byDay.set(Math.floor(Date.parse(d.date) / DAY_MS), d.count);
   }
 
-  const syncDay = Math.floor(new Date(syncedAt).getTime() / DAY_MS);
-  const dow = (syncDay + 4) % 7; // epoch-dag 0 = torsdag; 0 = søndag … 6 = lørdag
-  const lastMonday = syncDay - ((dow + 6) % 7);
+  const endDay = Math.floor(new Date(syncedAt).getTime() / DAY_MS) - 1; // i går (UTC)
+  const dow = (endDay + 4) % 7; // epoch-dag 0 = torsdag; 0 = søndag … 6 = lørdag
+  const lastMonday = endDay - ((dow + 6) % 7);
   const firstMonday = lastMonday - 51 * 7;
 
   const counts: number[][] = [];
@@ -36,7 +33,7 @@ if (heatmap?.weeks?.length) {
     const days: number[] = [];
     for (let row = 0; row < 7; row++) {
       const day = firstMonday + col * 7 + row;
-      if (day > syncDay) break; // kun i siste kolonne — ingen fremtid
+      if (day > endDay) break; // kun i siste kolonne — ingen fremtid
       days.push(byDay.get(day) ?? 0);
     }
     counts.push(days);
@@ -76,7 +73,7 @@ const langLabel =
     {columns.length > 0 && (
       <>
         <div class="heatmap-scroll">
-          <div class="heatmap" role="img" aria-label="Aktivitetskart: commits i de utvalgte prosjektene per dag de siste 52 ukene">
+          <div class="heatmap" role="img" aria-label="Aktivitetskart: commits på standardgrenene i alle åpne navikt-repoer per dag de siste 52 ukene">
             {columns.map((days) =>
               days.map((c) => <i class={c.level ? `l${c.level}` : undefined} title={`${c.count} ${c.count === 1 ? "commit" : "commits"}`}></i>)
             )}
@@ -85,7 +82,7 @@ const langLabel =
         <div class="heatmap-legend detail" aria-hidden="true">
           <span>Mindre</span><i></i><i class="l1"></i><i class="l2"></i><i class="l3"></i><i class="l4"></i><span>Mer</span>
         </div>
-        <p class="caption detail">Commits i de utvalgte prosjektene, dag for dag siste 52 uker.</p>
+        <p class="caption detail">Commits på standardgrenene i alle åpne navikt-repoer, dag for dag siste 52 uker.</p>
       </>
     )}
 

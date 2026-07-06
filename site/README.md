@@ -38,6 +38,14 @@ src/pages/index.astro       bygger hele siden fra de to datafilene
 
 - **Astro** uten klient-JavaScript — eneste script på siden er tematoggelen.
   Aktivitetskartet genereres statisk fra ekte commit-data ved bygg.
+- **Aktivitetskartet er org-vidt:** commits per dag i alle åpne navikt-repoer
+  via commit-search (`total_count` per dato — kun standardgrenene indekseres).
+  Rullerende vindu på de siste 364 hele UTC-døgnene t.o.m. i går, vedlikeholdt
+  inkrementelt i `generated.json`: engangs backfill er ~364 datoer, kvotestyrt
+  mot search-grensen på 30 kall/min (~20–25 min — retry ved
+  `incomplete_results` dobler gjerne kallene), deretter henter natt-synken
+  bare manglende datoer pluss de to siste på nytt (søkeindeksen henger
+  etter) — ~3 kall per natt.
 - **Tall er aldri håndvedlikeholdt.** Feiler en delhenting i synken,
   beholdes forrige gode verdi og jobben feiler høylytt (PRD §5.7 og §7).
   Unntak: «~90 produktteam» og «~2 400 deployer i uka» er Nav-interne

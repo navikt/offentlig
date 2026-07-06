@@ -210,7 +210,7 @@ WCAG 2.1 AA (lovkrav, uutilsynet): 4.5:1 kontrast, synlig fokus, semantisk HTML 
     - PR-tempo: `GET /search/issues?q=org:navikt+is:pr+created:>{30d}` → `total_count`
     - npm-nedlastinger: `api.npmjs.org/downloads/point/last-month/@navikt/aksel-icons`
     - «Nylig oppdatert»: `GET /search/repositories?q=org:navikt+archived:false+fork:false&sort=updated`
-    - aktivitetskart: commits per dag aggregert over kuraterte repoer (GraphQL `defaultBranchRef.target.history` per repo, eller `/repos/{r}/stats/commit_activity`) — begrenses til utvalget, ikke alle 3 102 repoer
+    - aktivitetskart: org-vide commits per dag via `GET /search/commits?q=org:navikt+committer-date:{dato}` → `total_count` (commit-search indekserer kun standardgrenene — teksten på siden sier det). Rullerende vindu på de siste 364 hele UTC-døgnene t.o.m. i går, vedlikeholdt inkrementelt i generated.json: engangs backfill er ~364 datoer, kvotestyrt mot search-grensen på 30 kall/min (~20–25 min — retry ved incomplete_results dobler gjerne kallene), deretter henter natt-synken bare manglende datoer pluss de to siste på nytt (søkeindeksen henger etter) — ~3 kall per natt
 - **Repoet er selv et forbilde:** MIT-lisens, README etter malen i dette repoet, CODEOWNERS (team, ikke enkeltpersoner), CONTRIBUTING, SECURITY, dokumentert datapipeline. Siden demonstrerer policyen den omtaler.
 
 ## 7. Motvirke forfall (lærdom fra code.gov, Netflix OSS og nav-aapen-kildekode)

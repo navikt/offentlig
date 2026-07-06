@@ -262,47 +262,163 @@ async function fetchRecentlyUpdated() {
     .slice(0, 6);
 }
 
+/* ---- Aktivitetskart, org-vidt ------------------------------------------- */
+
+const DAY_MS = 86_400_000;
+const HEATMAP_SOURCE = "search-org-daily";
+const HEATMAP_WINDOW_DAYS = 364; // 52 hele uker
+const SEARCH_PACE_MS = 1000; // høflig minsteavstand mellom search-kall
+const MAX_DAY_FETCHES = 400; // tak (datoer) per kjøring — full backfill er ~364
+
+const isoDay = (epochDay) => new Date(epochDay * DAY_MS).toISOString().slice(0, 10);
+
 /**
- * Aktivitetskart: commits per dag siste 52 uker, aggregert over de
- * kuraterte repoene (ikke alle tusen). /stats/commit_activity gir
- * 52 uker × 7 dager (søn–lør) per repo; vi summerer per uketimestamp
- * (normalisert til UTC-midnatt — enkelte repoer svarer med timeskjev
- * uke-start rundt sommertid).
- *
- * Repoer der statistikken ikke er klar (202) etter ett nytt forsøk,
- * utelates — kartet degraderer pent, men kjøringen markeres som delvis
- * feilet, og `includedRepos` viser dekningen. Gir ingen repoer data,
- * kastes det, slik at forrige kart beholdes.
+ * Ett search-kall med kvotestyrt pacing. Search-limiten (30 kall/min) er
+ * delt for hele search-API-et, og incomplete_results-retry kan i praksis
+ * doble antall kall — derfor styres tempoet av kvote-headerne: nærmer
+ * kvoten seg tom, soves det til X-RateLimit-Reset FØR neste kall i stedet
+ * for å kjøre inn i 403-er. På 403/429 respekteres Retry-After der den
+ * finnes.
  */
-async function fetchHeatmap(slugs) {
-  const byWeek = new Map(); // unix-uke (UTC-midnatt) → number[7]
-  const includedRepos = [];
-  for (const slug of slugs) {
-    try {
-      const weeks = await ghRest(`/repos/${slug}/stats/commit_activity`, { retry202: true });
-      if (!Array.isArray(weeks)) {
-        partialFail(`commit_activity ${slug}: uventet svar — utelatt fra kartet`);
-        continue;
-      }
-      for (const w of weeks) {
-        const week = Math.floor(w.week / 86400) * 86400; // normaliser til UTC-midnatt
-        const acc = byWeek.get(week) ?? [0, 0, 0, 0, 0, 0, 0];
-        w.days.forEach((n, i) => (acc[i] += n));
-        byWeek.set(week, acc);
-      }
-      includedRepos.push(slug);
-    } catch (e) {
-      partialFail(`commit_activity ${slug}: ${e.message} — utelatt fra kartet`);
+async function ghSearchThrottled(path) {
+  for (let attempt = 0; ; attempt++) {
+    const res = await fetch(`${GITHUB_API}${path}`, { headers: ghHeaders() });
+    const remaining = Number(res.headers.get("x-ratelimit-remaining"));
+    const reset = Number(res.headers.get("x-ratelimit-reset"));
+    const retryAfter = Number(res.headers.get("retry-after"));
+    if ((res.status === 403 || res.status === 429) && attempt < 4) {
+      const waitMs = retryAfter
+        ? retryAfter * 1000 + 500
+        : Math.max((reset || 0) * 1000 - Date.now(), 5_000) + 1_500;
+      console.warn(`  search rate limit (${res.status}) — venter ${Math.ceil(waitMs / 1000)} s`);
+      await sleep(waitMs);
+      continue;
+    }
+    if (!res.ok) throw new Error(`GET ${path} → ${res.status}`);
+    const data = await res.json();
+    if (remaining <= 1) {
+      const waitMs = Math.max((reset || 0) * 1000 - Date.now(), 1_000) + 1_500;
+      console.log(`  search-kvoten nesten tom — venter ${Math.ceil(waitMs / 1000)} s til reset`);
+      await sleep(waitMs);
+    }
+    return data;
+  }
+}
+
+/** Org-vidt antall commits på én UTC-dato. Commit-search indekserer kun
+ *  standardgrenene — teksten på siden sier det ærlig. Retry ved
+ *  incomplete_results; er svaret fortsatt ufullstendig, brukes verdien
+ *  med høylytt advarsel. */
+async function searchCommitCountForDay(date) {
+  const q = encodeURIComponent(`org:${ORG} is:public committer-date:${date}`);
+  const path = `/search/commits?q=${q}&per_page=1`;
+  let data = await ghSearchThrottled(path);
+  if (data.incomplete_results) {
+    await sleep(SEARCH_PACE_MS);
+    data = await ghSearchThrottled(path);
+    if (data.incomplete_results) {
+      console.warn(`  ADVARSEL: incomplete_results for ${date} — tallet kan være for lavt`);
     }
   }
-  if (includedRepos.length === 0) {
-    throw new Error("ingen repoer ga commit_activity — beholder forrige kart");
-  }
-  const weeks = [...byWeek.entries()]
+  if (typeof data.total_count !== "number") throw new Error(`uventet svar for ${date}`);
+  return data.total_count;
+}
+
+/**
+ * Aktivitetskart: commits per dag i ALLE åpne navikt-repoer, via
+ * commit-search (total_count per dato).
+ *
+ * Rullerende vindu på nøyaktig de siste 364 HELE UTC-døgnene, t.o.m.
+ * i går — aldri i dag: et påbegynt døgn ville låst inn for lave tall.
+ *
+ * Inkrementelt: dager fra forrige generated.json gjenbrukes; kun datoer
+ * som mangler i vinduet hentes, pluss alltid de to siste dagene på nytt
+ * (søkeindeksen henger etter). Engangs backfill er ~364 datoer
+ * (kvotebundet: ~20–25 min når incomplete_results-retry dobler kallene);
+ * nattlig vedlikehold er ~3 kall. Det gamle commit_activity-formatet i
+ * generated.json behandles som tomt (full backfill) — aldri krasj på
+ * gammel form.
+ *
+ * Feiler én dato, mangler den dagen i utdata og kjøringen markeres som
+ * delvis feilet (exit 1); kunne ingen datoer hentes når henting trengtes,
+ * kastes det, slik at forrige kart beholdes på steg-nivå.
+ */
+/* Sjekkpunkt under backfill: en avbrutt kjøring (kill, nettbrudd) skal
+   ikke kaste bort hundrevis av kvotebundne kall. Filen er utrackert
+   (.gitignore); i CI gjenopptas det fra committet generated.json. */
+const HEATMAP_CHECKPOINT = join(DATA_DIR, ".heatmap-checkpoint.json");
+
+function daysFromMap(known) {
+  return [...known.entries()]
     .sort(([a], [b]) => a - b)
-    .slice(-52)
-    .map(([week, days]) => ({ week, days }));
-  return { repoCount: includedRepos.length, includedRepos, weeks };
+    .map(([day, count]) => ({ date: isoDay(day), count }));
+}
+
+function mergeHeatmapDays(source, firstDay, lastDay, known) {
+  if (source?.source !== HEATMAP_SOURCE || !Array.isArray(source.days)) return 0;
+  let used = 0;
+  for (const d of source.days) {
+    const day = Math.floor(Date.parse(d.date) / DAY_MS);
+    if (day >= firstDay && day <= lastDay && typeof d.count === "number" && !known.has(day)) {
+      known.set(day, d.count);
+      used++;
+    }
+  }
+  return used;
+}
+
+async function fetchOrgHeatmap(previousHeatmap) {
+  const lastDay = Math.floor(Date.now() / DAY_MS) - 1; // i går (UTC)
+  const firstDay = lastDay - (HEATMAP_WINDOW_DAYS - 1);
+
+  const known = new Map(); // epoch-dag → count
+  mergeHeatmapDays(previousHeatmap, firstDay, lastDay, known);
+  if (existsSync(HEATMAP_CHECKPOINT)) {
+    try {
+      const cp = JSON.parse(readFileSync(HEATMAP_CHECKPOINT, "utf8"));
+      const used = mergeHeatmapDays(cp, firstDay, lastDay, known);
+      if (used) console.log(`\n  aktivitetskart: gjenopptar ${used} dag(er) fra sjekkpunkt`);
+    } catch {
+      /* korrupt sjekkpunkt ignoreres */
+    }
+  }
+
+  const toFetch = [];
+  for (let day = firstDay; day <= lastDay; day++) {
+    if (!known.has(day) || day >= lastDay - 1) toFetch.push(day);
+  }
+  const capped = toFetch.slice(0, MAX_DAY_FETCHES);
+  if (capped.length < toFetch.length) {
+    partialFail(
+      `aktivitetskart: ${toFetch.length - capped.length} datoer utsatt til neste kjøring ` +
+        `(tak på ${MAX_DAY_FETCHES} kall)`
+    );
+  }
+
+  console.log(`\n  aktivitetskart: henter ${capped.length} dato(er), gjenbruker ${known.size}`);
+  let fetched = 0;
+  for (const day of capped) {
+    const date = isoDay(day);
+    try {
+      known.set(day, await searchCommitCountForDay(date));
+      fetched++;
+      if (fetched % 25 === 0) {
+        writeFileSync(
+          HEATMAP_CHECKPOINT,
+          JSON.stringify({ source: HEATMAP_SOURCE, days: daysFromMap(known) }) + "\n"
+        );
+      }
+      if (fetched % 50 === 0) console.log(`  … ${fetched}/${capped.length}`);
+    } catch (e) {
+      partialFail(`aktivitetskart ${date}: ${e.message}`);
+    }
+    await sleep(SEARCH_PACE_MS);
+  }
+  if (capped.length > 0 && fetched === 0) {
+    throw new Error("ingen dagstall kunne hentes — beholder forrige kart");
+  }
+
+  return { source: HEATMAP_SOURCE, days: daysFromMap(known) };
 }
 
 /**
@@ -351,7 +467,7 @@ async function main() {
     ["stats.fnrDownloadsLastMonth", () => fetchNpmDownloads(FNR_PACKAGE)],
     ["recentlyUpdated", fetchRecentlyUpdated],
     ["languages", fetchLanguages],
-    ["heatmap", () => fetchHeatmap(slugs)],
+    ["heatmap", () => fetchOrgHeatmap(previous.heatmap)],
   ];
 
   let failures = 0;
