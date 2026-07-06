@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-06T11:08:56.682Z",
+  "syncedAt": "2026-07-06T11:44:39.002Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -36,7 +36,7 @@
       "stars": 98,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-07-06T11:08:13Z",
+      "pushedAt": "2026-07-06T11:26:29Z",
       "isArchived": false
     },
     "navikt/pdfgen": {
@@ -78,7 +78,7 @@
       "stars": 11,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-07-06T10:55:48Z",
+      "pushedAt": "2026-07-06T11:38:02Z",
       "isArchived": false
     },
     "navikt/DSF": {
@@ -90,58 +90,58 @@
     }
   },
   "stats": {
-    "publicRepos": 3104,
-    "commitsLast7Days": 4986,
-    "prsLast30Days": 15958,
+    "publicRepos": 3105,
+    "commitsLast7Days": 4967,
+    "prsLast30Days": 15987,
     "npmDownloadsLastMonth": 398571,
     "fnrDownloadsLastMonth": 51571
   },
   "recentlyUpdated": [
     {
-      "name": "eessi-pensjon-prefill",
-      "url": "https://github.com/navikt/eessi-pensjon-prefill",
-      "pushedAt": "2026-07-06T11:08:14Z",
+      "name": "oebs-order-exchange",
+      "url": "https://github.com/navikt/oebs-order-exchange",
+      "pushedAt": "2026-07-06T11:42:55Z",
+      "language": null,
+      "languageColor": null
+    },
+    {
+      "name": "syfo-dokumentporten",
+      "url": "https://github.com/navikt/syfo-dokumentporten",
+      "pushedAt": "2026-07-06T11:42:41Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "hm-finnhjelpemiddel",
-      "url": "https://github.com/navikt/hm-finnhjelpemiddel",
-      "pushedAt": "2026-07-06T11:05:21Z",
+      "name": "k9-punsj-frontend",
+      "url": "https://github.com/navikt/k9-punsj-frontend",
+      "pushedAt": "2026-07-06T11:42:35Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     },
     {
-      "name": "security-champion-stats",
-      "url": "https://github.com/navikt/security-champion-stats",
-      "pushedAt": "2026-07-06T11:04:49Z",
+      "name": "mulighetsrommet",
+      "url": "https://github.com/navikt/mulighetsrommet",
+      "pushedAt": "2026-07-06T11:41:14Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "hotsak-frontend",
-      "url": "https://github.com/navikt/hotsak-frontend",
-      "pushedAt": "2026-07-06T11:04:48Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "testnorge",
+      "url": "https://github.com/navikt/testnorge",
+      "pushedAt": "2026-07-06T11:40:43Z",
+      "language": "Java",
+      "languageColor": "#b07219"
     },
     {
-      "name": "tms-mikrofrontend-selector",
-      "url": "https://github.com/navikt/tms-mikrofrontend-selector",
-      "pushedAt": "2026-07-06T11:03:50Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "hm-newsadmin",
-      "url": "https://github.com/navikt/hm-newsadmin",
-      "pushedAt": "2026-07-06T11:02:25Z",
+      "name": "veilarbportefoljeflatefs",
+      "url": "https://github.com/navikt/veilarbportefoljeflatefs",
+      "pushedAt": "2026-07-06T11:38:00Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     }
   ],
   "languages": {
-    "totalRepos": 1769,
+    "totalRepos": 1770,
     "entries": [
       {
         "name": "Kotlin",
@@ -180,7 +180,7 @@
       },
       {
         "name": "Annet",
-        "count": 355,
+        "count": 356,
         "color": null
       }
     ]
