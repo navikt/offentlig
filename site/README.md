@@ -36,7 +36,12 @@ src/pages/index.astro       bygger hele siden fra de to datafilene
                             (bygget går aldri på nett)
 ```
 
-- **Astro** uten klient-JavaScript — eneste script på siden er tematoggelen.
+- **Astro** med minimal klient-JavaScript: tematoggelen, pluss én progressiv
+  forbedring — «Nylig oppdatert» friskes opp i nettleseren direkte fra GitHubs
+  åpne REST-API (uautentisert, CORS `*`, 60 kall/time per besøkende IP).
+  Siden er komplett uten JavaScript; feiler kallet, beholdes øyeblikksbildet
+  fra nattlig synk i stillhet. NB: kallet går fra besøkendes nettleser til
+  api.github.com — flagget for personvernvurdering før lansering.
   Aktivitetskartet genereres statisk fra ekte commit-data ved bygg.
 - **Aktivitetskartet er org-vidt:** commits per dag i alle åpne navikt-repoer
   via commit-search (`total_count` per dato — kun standardgrenene indekseres).

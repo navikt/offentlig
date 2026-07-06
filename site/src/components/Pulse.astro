@@ -8,6 +8,13 @@ interface Props {
 const { generated } = Astro.props;
 const { heatmap, languages, recentlyUpdated, syncedAt } = generated;
 
+/* Språkfarger til den klientside-oppfriskede feeden: alt synken kjenner
+   (org-språkene + feedens egne), så nye repoer som dukker opp i løpet av
+   dagen som regel treffer en kjent farge — ellers nøytral prikk. */
+const langColorMap: Record<string, string> = {};
+for (const e of languages?.entries ?? []) if (e.color) langColorMap[e.name] = e.color;
+for (const r of recentlyUpdated ?? []) if (r.language && r.languageColor) langColorMap[r.language] = r.languageColor;
+
 /* ---- Aktivitetskart: statisk genererte celler fra ekte commit-data ----
    Synken leverer org-vide commits per dag (heatmap.days, kun standard-
    grenene — commit-search indekserer ikke andre grener). Rutenettet har
@@ -103,7 +110,7 @@ const langLabel =
   </div>
   <div>
     <h3>Nylig oppdatert</h3>
-    <ul class="feed nums">
+    <ul class="feed nums" data-live-feed>
       {recentlyUpdated.map((r: any) => (
         <li>
           <span><span class="lang-dot" style={`background:${r.languageColor ?? "var(--border-strong)"}`}></span><a href={r.url}>{r.name}</a></span>
@@ -111,6 +118,75 @@ const langLabel =
         </li>
       ))}
     </ul>
-    <p class="caption detail">Levende produktutvikling, åpent.</p>
+    <p class="caption detail" data-live-caption>Levende produktutvikling, åpent.</p>
   </div>
 </div>
+
+{/* Progressiv forbedring: listen over er bygget fra nattlig synk og står
+    seg uten JavaScript. I nettleseren friskes den opp direkte fra GitHubs
+    åpne REST-API (uautentisert, CORS: *, 60 kall/time per IP) — feiler
+    kallet (kvote, nettverk), beholdes øyeblikksbildet i stillhet.
+    NB: kallet går fra besøkendes nettleser til api.github.com — flagget
+    for personvernvurdering før lansering (PRD §5.7). */}
+<script type="application/json" id="lang-colors" set:html={JSON.stringify(langColorMap)} />
+<script>
+  const feed = document.querySelector("[data-live-feed]");
+  const caption = document.querySelector("[data-live-caption]");
+  const colors = JSON.parse(document.getElementById("lang-colors")?.textContent ?? "{}");
+
+  /* Samme norske relativtid som lib/format.mjs — entall «ett»/«én». */
+  function relTime(iso: string): string {
+    const minutes = Math.floor((Date.now() - Date.parse(iso)) / 60_000);
+    if (minutes < 1) return "for under ett minutt siden";
+    if (minutes === 1) return "for ett minutt siden";
+    if (minutes < 60) return `for ${minutes} minutter siden`;
+    const hours = Math.floor(minutes / 60);
+    if (hours === 1) return "for én time siden";
+    if (hours < 24) return `for ${hours} timer siden`;
+    const days = Math.floor(hours / 24);
+    if (days === 1) return "for én dag siden";
+    return `for ${days} dager siden`;
+  }
+
+  async function refresh() {
+    if (!feed) return;
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 5000);
+    try {
+      const res = await fetch(
+        "https://api.github.com/orgs/navikt/repos?sort=pushed&direction=desc&per_page=12",
+        { headers: { Accept: "application/vnd.github+json" }, signal: ctrl.signal },
+      );
+      if (!res.ok) return; // kvote/feil → behold øyeblikksbildet
+      const repos = (await res.json())
+        .filter((r: any) => !r.archived && !r.fork)
+        .slice(0, 6);
+      if (repos.length < 6) return;
+
+      feed.replaceChildren(
+        ...repos.map((r: any) => {
+          const li = document.createElement("li");
+          const left = document.createElement("span");
+          const dot = document.createElement("span");
+          dot.className = "lang-dot";
+          dot.style.background = colors[r.language] ?? "var(--border-strong)";
+          const a = document.createElement("a");
+          a.href = r.html_url;
+          a.textContent = r.name;
+          left.append(dot, a);
+          const when = document.createElement("span");
+          when.className = "when detail";
+          when.textContent = relTime(r.pushed_at);
+          li.append(left, when);
+          return li;
+        }),
+      );
+      if (caption) caption.textContent = "Levende produktutvikling, åpent — hentet fra GitHub nå nettopp.";
+    } catch {
+      /* nettverk/timeout → behold øyeblikksbildet */
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+  refresh();
+</script>

@@ -167,7 +167,7 @@ Regler: aldri mer enn to vekter (400/600); aldri sentrert brødtekst (kun hero-t
 4. **Eksterne lenker:** ExternalLink-ikon fra Aksel; alle GitHub-lenker åpner i samme fane (ingen `target="_blank"`-refleks).
 5. **«Sist oppdatert»-stempelet:** Detail-stil i footer + øverst i prosjektseksjonen; dato på norsk («5. juli 2026»).
 6. **Tomme tilstander:** hvis nightly-synk feiler, vises siste gode data med stempel — aldri 0-ere eller spinnere (openCoDE-fellen).
-7. **Skeleton/lasting finnes ikke:** alt er statisk bygget; siden skal være komplett i første byte.
+7. **Skeleton/lasting finnes ikke:** alt er statisk bygget; siden skal være komplett i første byte. Ett dokumentert unntak: «Nylig oppdatert» friskes opp i nettleseren fra GitHubs åpne REST-API som progressiv forbedring — øyeblikksbildet fra synken står seg uten JavaScript og beholdes i stillhet hvis kallet feiler (kvote/nettverk). Kallet går fra besøkendes nettleser til api.github.com og skal personvernvurderes før lansering.
 8. **Favicon/og-bilde:** Nav-logo på hvit; og:image med tittel satt i Source Sans 3 på brand-beige — samme regler som resten.
 
 ### 5.8 Anti-mønstre (avvis i review)
