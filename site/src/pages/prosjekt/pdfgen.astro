@@ -221,6 +221,7 @@ mkdir &#123;templates,data&#125;/ditt_lagnavn</code></pre>
   .p-meta .sep { color: var(--border-strong); }
   .lang-dot { display: inline-block; width: 0.625rem; height: 0.625rem; border-radius: 50%; margin-right: 0.375rem; box-shadow: 0 0 0 1px var(--border-strong); }
   @media (min-width: 768px) { .p-hero { padding: 6rem 0; } .p-hero h1 { font-size: 3.5rem; } }
+  @media (max-width: 639px) { .p-hero h1 { font-size: 2.5rem; } }
 
   /* Forvandlingen: mal → dokument */
   .transform { display: grid; gap: 1rem; align-items: stretch; }
@@ -297,6 +298,7 @@ mkdir &#123;templates,data&#125;/ditt_lagnavn</code></pre>
   .snip-bar .fname { font-family: var(--mono); font-size: 0.8125rem; color: var(--text-subtle); }
   .copy-btn { font: inherit; font-size: 0.75rem; font-weight: 600; cursor: pointer; color: var(--accent); background: transparent; border: 1px solid var(--border-strong); border-radius: var(--radius-s); padding: 0.25rem 0.625rem; transition: background-color 150ms ease, border-color 150ms ease; }
   .copy-btn:hover { background: var(--accent-soft); border-color: var(--accent); }
+  @media (max-width: 767px) { .copy-btn { min-height: 44px; } }
   .copy-btn.done { color: var(--info-strong); border-color: var(--info-strong); }
   .snip pre { padding: 1.25rem 1rem; overflow-x: auto; font-family: var(--mono); font-size: 0.8125rem; line-height: 1.7; color: var(--text); }
   .snip .dk { color: var(--accent); font-weight: 600; }

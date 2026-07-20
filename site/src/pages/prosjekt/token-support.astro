@@ -197,6 +197,7 @@ const klient = [
   .p-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; margin-top: 0.75rem; }
   .p-meta .sep { color: var(--border-strong); }
   @media (min-width: 768px) { .p-hero { padding: 6rem 0; } .p-hero h1 { font-size: 3.5rem; } }
+  @media (max-width: 639px) { .p-hero h1 { font-size: 2.5rem; } }
   @media (min-width: 1024px) { .p-hero .container { grid-template-columns: 1fr 1fr; gap: 4rem; } }
 
   /* ---- Dørvakt-kortet (hero-visual) ---- */
@@ -255,6 +256,7 @@ const klient = [
   .snip-bar .fname { font-family: var(--mono); font-size: 0.8125rem; color: var(--text-subtle); }
   .copy-btn { font: inherit; font-size: 0.8125rem; font-weight: 600; color: var(--accent); background: transparent; border: 1px solid var(--border-strong); border-radius: var(--radius-s); padding: 0.25rem 0.625rem; cursor: pointer; transition: background-color 150ms ease, border-color 150ms ease; }
   .copy-btn:hover { background: var(--accent-soft); border-color: var(--accent); }
+  @media (max-width: 767px) { .copy-btn { min-height: 44px; } }
   .copy-btn.done { color: var(--info-strong); border-color: var(--info-strong); }
   .snip pre { padding: 1.125rem 1rem; overflow-x: auto; font-family: var(--mono); font-size: 0.8125rem; line-height: 1.7; color: var(--text); }
   .get-fine { margin-top: 1.5rem; max-width: var(--prose); }

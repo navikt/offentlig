@@ -171,6 +171,7 @@ const nedlastinger = generated.stats.fnrDownloadsLastMonth;
   .p-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; margin-top: 0.75rem; }
   .p-meta .sep { color: var(--border-strong); }
   @media (min-width: 768px) { .p-hero { padding: 6rem 0; } .p-hero h1 { font-size: 3.5rem; } }
+  @media (max-width: 639px) { .p-hero h1 { font-size: 2.5rem; } }
   @media (min-width: 1024px) { .p-hero .container { grid-template-columns: 1fr 1fr; gap: 4rem; } }
 
   /* ---- Live-validatoren (heltebildet) ---- */
@@ -227,6 +228,7 @@ const nedlastinger = generated.stats.fnrDownloadsLastMonth;
     transition: border-color 150ms ease, background-color 150ms ease, color 150ms ease;
   }
   .chip:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+  @media (max-width: 767px) { .chip { min-height: 44px; } }
   .v-try-note { color: var(--text-subtle); }
 
   /* ---- Den stille rekkevidden ---- */

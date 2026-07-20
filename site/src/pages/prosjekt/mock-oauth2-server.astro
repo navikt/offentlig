@@ -199,6 +199,7 @@ server.shutdown()</code></pre>
   .p-meta .sep { color: var(--border-strong); }
   .p-meta .star-icon { color: var(--beige-strong); margin-right: 0.25rem; }
   @media (min-width: 768px) { .p-hero { padding: 6rem 0; } .p-hero h1 { font-size: 3.25rem; } }
+  @media (max-width: 639px) { .p-hero h1 { font-size: 2.5rem; } }
   @media (min-width: 1024px) { .p-hero .container { grid-template-columns: 1fr 1fr; gap: 4rem; } }
 
   /* Token-utvekslingen — heltebildet */
@@ -241,13 +242,14 @@ server.shutdown()</code></pre>
   .p-start { background: var(--bg-subtle); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .start-cols { display: grid; gap: 2rem; }
   @media (min-width: 900px) { .start-cols { grid-template-columns: 1fr 1fr; } }
-  .start-col { display: flex; flex-direction: column; gap: 1rem; }
+  .start-col { display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
   .start-col h3 { font-size: 1.25rem; }
   .code { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; }
   .code-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.5rem 0.5rem 0.5rem 1rem; border-bottom: 1px solid var(--border); background: var(--bg-subtle); }
   .code-name { font-family: var(--mono); font-size: 0.8125rem; color: var(--text-subtle); }
   .copy { font: inherit; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.625rem; border-radius: var(--radius-s); border: 1px solid var(--border); background: var(--surface); color: var(--text-subtle); cursor: pointer; transition: color 150ms ease, border-color 150ms ease; }
   .copy:hover { color: var(--text); border-color: var(--border-strong); }
+  @media (max-width: 767px) { .copy { min-height: 44px; } }
   .copy.done { color: var(--accent); border-color: var(--accent); }
   .code pre { padding: 1rem; overflow-x: auto; font-family: var(--mono); font-size: 0.8125rem; line-height: 1.7; color: var(--text); margin: 0; }
   .ep-list { border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; background: var(--surface); }

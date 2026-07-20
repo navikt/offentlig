@@ -216,6 +216,7 @@ WONDERWALL_ENCRYPTION_KEY=<openssl rand -base64 32>`}>Kopier</button>
   .p-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; margin-top: 0.75rem; }
   .p-meta .sep { color: var(--border-strong); }
   @media (min-width: 768px) { .p-hero { padding: 6rem 0; } .p-hero h1 { font-size: 3.5rem; } }
+  @media (max-width: 639px) { .p-hero h1 { font-size: 2.5rem; } }
   @media (min-width: 1024px) { .p-hero .container { grid-template-columns: 1fr 1fr; gap: 4rem; } }
 
   /* Heltebildet: reisen som en horisontal sti med tre stasjoner og en pakke som vandrer */
@@ -276,6 +277,7 @@ WONDERWALL_ENCRYPTION_KEY=<openssl rand -base64 32>`}>Kopier</button>
   .cb-bar .fname { font-family: var(--mono); font-size: 0.8125rem; color: var(--text-subtle); }
   .copy { font: inherit; font-size: 0.75rem; font-weight: 600; font-family: var(--mono); cursor: pointer; padding: 0.1875rem 0.625rem; border-radius: var(--radius-s); border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-subtle); transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease; }
   .copy:hover { background: var(--bg-subtle); color: var(--text); border-color: var(--text-subtle); }
+  @media (max-width: 767px) { .copy { min-height: 44px; } }
   .copy.done { color: var(--accent); border-color: var(--accent); }
   .codeblock pre { padding: 1rem; overflow-x: auto; font-family: var(--mono); font-size: 0.8125rem; line-height: 1.75; color: var(--text); }
   .ek { color: var(--accent); }

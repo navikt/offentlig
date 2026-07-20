@@ -233,6 +233,7 @@ a:hover { color: var(--accent-hover); }
   transition: background-color 150ms ease, border-color 150ms ease;
 }
 .theme-toggle:hover { background: var(--bg-subtle); border-color: var(--border-strong); }
+@media (max-width: 767px) { .theme-toggle { width: 2.75rem; height: 2.75rem; } }
 .theme-toggle .icon-sun { display: none; }
 :root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
