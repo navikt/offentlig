@@ -24,7 +24,7 @@ const data = (generated.repos as any)["nais/wonderwall"];
         <div class="hero-copy">
           <p class="eyebrow">Fra Nais-plattformen · Bygd for gjenbruk</p>
           <h1>wonderwall</h1>
-          <p class="thesis">Applikasjonen din trenger aldri lære OAuth2.</p>
+          <p class="thesis">Applikasjonen din trenger aldri å lære OAuth2.</p>
           <p class="ingress">wonderwall er en reverse proxy som spiller rollen som OpenID&#8209;Connect&#8209;klient, vanligvis som en sidevogn ved siden av applikasjonen din. Den tar hele innloggingen mot identitetsleverandøren og sender forespørselen videre til appen med brukerens token påkoblet.</p>
           <div class="cta-row">
             <a class="btn" href="https://github.com/nais/wonderwall">Kom i gang på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
@@ -172,7 +172,7 @@ WONDERWALL_ENCRYPTION_KEY=<openssl rand -base64 32>`}>Kopier</button>
 <span class="ek">WONDERWALL_ENCRYPTION_KEY</span>=<span class="ev">&lt;openssl rand -base64 32&gt;</span></code></pre>
           </figure>
         </div>
-        <p class="start-note detail">Bruk <code>WONDERWALL_OPENID_CLIENT_SECRET</code> i stedet for <code>_CLIENT_JWK</code> om leverandøren din bruker klienthemmelighet. For flere replikaer legger du til <code>WONDERWALL_REDIS_URI</code> som delt sesjonslager.</p>
+        <p class="start-note detail">Bruk <code>WONDERWALL_OPENID_CLIENT_SECRET</code> i stedet for <code>_CLIENT_JWK</code> om leverandøren din bruker client secret. For flere replikaer legger du til <code>WONDERWALL_REDIS_URI</code> som delt sesjonslager.</p>
       </div>
     </section>
 
@@ -187,7 +187,7 @@ WONDERWALL_ENCRYPTION_KEY=<openssl rand -base64 32>`}>Kopier</button>
             <h3>Det du trenger</h3>
             <ul>
               <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>En identitetsleverandør som følger OpenID Connect</li>
-              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Et sted å kjøre en container — gjerne som sidevogn ved siden av appen</li>
+              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Et sted å kjøre en container, gjerne som sidevogn ved siden av appen</li>
               <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>En håndfull miljøvariabler — det er hele grensesnittet</li>
             </ul>
           </div>
