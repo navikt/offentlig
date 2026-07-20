@@ -1,0 +1,62 @@
+---
+interface Gjenbruk {
+  bruktAv?: string[];
+  merknad?: string;
+}
+interface Project {
+  repo: string;
+  beskrivelse: string;
+  gjenbruk?: Gjenbruk;
+}
+interface Props {
+  projects: Project[];
+  generated: any;
+}
+
+const { projects, generated } = Astro.props;
+
+/* «Brukt av»-linjen: kun håndverifiserte adoptere (bruktAv) navngis; ellers
+   fritekst (merknad); ellers ingen linje. Aldri gjett en adopter (PRD §7). */
+const adopterLinje = (g?: Gjenbruk): string | null => {
+  const navn = g?.bruktAv ?? [];
+  if (navn.length === 1) return `Brukt av ${navn[0]}`;
+  if (navn.length === 2) return `Brukt av ${navn[0]} og ${navn[1]}`;
+  if (navn.length > 2)
+    return `Brukt av ${navn.slice(0, -1).join(", ")} og ${navn[navn.length - 1]}`;
+  return g?.merknad ?? null;
+};
+---
+
+<section class="section reuse" id="gjenbruk">
+  <div class="container">
+    <div class="section-head">
+      <h2>Bygd for gjenbruk</h2>
+      <p class="ingress">Disse er laget for å brukes utenfor Nav&nbsp;— MIT-lisensiert og klare i dag. Si gjerne fra hvis du tar noe i bruk.</p>
+    </div>
+    <ul class="reuse-grid" style="list-style:none">
+      {projects.map((p) => {
+        const data = (generated.repos as any)[p.repo];
+        const linje = adopterLinje(p.gjenbruk);
+        const navn = p.repo.split("/")[1];
+        return (
+          <li class="reuse-item">
+            <h3><a href={`https://github.com/${p.repo}`}>{navn}</a></h3>
+            <p class="desc">{p.beskrivelse}</p>
+            <div class="reuse-foot">
+              {data?.language && (
+                <p class="meta detail">
+                  <span class="lang-dot" style={`background:${data.languageColor ?? "var(--border-strong)"}`}></span>{data.language}
+                </p>
+              )}
+              {linje && (
+                <p class="reuse-adopter detail">
+                  <svg class="check-icon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>{linje}
+                </p>
+              )}
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</section>

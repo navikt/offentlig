@@ -13,6 +13,14 @@
 # Feltet står tomt til det er forankret med eierteamene (PRD §9 pkt. 4) —
 # aldri gjett et teamnavn.
 #
+# gjenbruk: (valgfritt) løfter prosjektet inn i «Bygd for gjenbruk»-seksjonen
+# (PRD §4.5). Selv et tomt objekt ({}) er nok til å bli med. Valgfrie felt:
+#   bruktAv: liste med navngitte virksomheter utenfor Nav som bruker prosjektet.
+#           KUN håndverifiserte påstander — aldri gjett en adopter (PRD §7).
+#           Endres via pull request. Rendres som «Brukt av X (og Y)».
+#   merknad: fritekst når vi ikke kan navngi noen konkret adopter,
+#           f.eks. «Brukt langt utenfor Nav». Vises kun når bruktAv mangler.
+#
 # Plassholderen {{fnrNedlastinger}} byttes ved bygg ut med ferske npm-tall
 # fra generated.json (stats.fnrDownloadsLastMonth) — aldri et håndskrevet tall.
 
@@ -23,6 +31,8 @@ projects:
       Mock av OAuth2 og OpenID Connect
       til testing — brukt langt utenfor Nav.
     perle: false
+    gjenbruk:
+      merknad: Brukt langt utenfor Nav
 
   - repo: navikt/aksel
     kategori: designsystem
@@ -43,16 +53,19 @@ projects:
     kategori: data-ki
     beskrivelse: Sandkasse på kjernenivå som holder KI-kodeagenter i tømmene.
     perle: false
+    gjenbruk: {}
 
   - repo: navikt/pdfgen
     kategori: biblioteker
     beskrivelse: HTML-mal inn, PDF ut. Har generert Navs dokumenter siden 2018.
     perle: false
+    gjenbruk: {}
 
   - repo: nais/wonderwall
     kategori: plattform
     beskrivelse: Sidevogn som tar seg av all pålogging, så applikasjonene slipper.
     perle: false
+    gjenbruk: {}
 
   - repo: navikt/rapids-and-rivers
     kategori: biblioteker
@@ -63,6 +76,7 @@ projects:
     kategori: biblioteker
     beskrivelse: OAuth2- og OIDC-validering for JVM-apper, rett fra Maven Central.
     perle: false
+    gjenbruk: {}
 
   - repo: navikt/fnrvalidator
     kategori: biblioteker
@@ -73,6 +87,8 @@ projects:
       stille standarden for å validere fødselsnummer i norsk JavaScript,
       også utenfor forvaltningen.
     meta: TypeScript · npm
+    gjenbruk:
+      merknad: Også utenfor forvaltningen
 
   - repo: nais/digdirator
     kategori: plattform
@@ -82,6 +98,8 @@ projects:
       Kubernetes-operatør som registrerer klienter mot ID-porten og
       Maskinporten automatisk. Enhver norsk etat kan ta den i bruk i dag.
     meta: Go · Kubernetes
+    gjenbruk:
+      merknad: Klar for enhver norsk etat
 
   - repo: navikt/DSF
     kategori: aapenhet
@@ -92,3 +110,35 @@ projects:
       IT-dinosauren gikk av med pensjon, la vi den ut — i PL/I, som den ble
       skrevet.
     meta: PL/I · 1967–2018
+
+  - repo: navikt/ghep
+    kategori: biblioteker
+    beskrivelse: >-
+      Hendelser fra GitHub rett inn i Slack — issues, pull requests
+      og deploys der teamet er.
+    perle: false
+    gjenbruk:
+      bruktAv:
+        - Miljødirektoratet
+
+  - repo: nais/unleasherator
+    kategori: plattform
+    beskrivelse: >-
+      Kubernetes-operatør som ruller ut og drifter Unleash-instanser
+      for feature-toggling.
+    perle: false
+    gjenbruk: {}
+
+  - repo: nais/kafkarator
+    kategori: plattform
+    beskrivelse: >-
+      Kubernetes-operatør for Kafka-topics på Aiven — selvbetjening
+      med én YAML-fil.
+    perle: false
+    gjenbruk: {}
+
+  - repo: nais/bqrator
+    kategori: plattform
+    beskrivelse: Kubernetes-operatør som oppretter BigQuery-datasett deklarativt.
+    perle: false
+    gjenbruk: {}

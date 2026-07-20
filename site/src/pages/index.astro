@@ -8,6 +8,7 @@ import Hero from "../components/Hero.astro";
 import Stats from "../components/Stats.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Gems from "../components/Gems.astro";
+import Reuse from "../components/Reuse.astro";
 import Process from "../components/Process.astro";
 import Community from "../components/Community.astro";
 import Footer from "../components/Footer.astro";
@@ -21,6 +22,7 @@ import { formatNumber } from "../lib/format.mjs";
 const curated = parseYaml(projectsRaw);
 const cards = curated.projects.filter((p: any) => !p.perle);
 const gems = curated.projects.filter((p: any) => p.perle);
+const reuse = curated.projects.filter((p: any) => p.gjenbruk !== undefined);
 ---
 
 <Layout
@@ -51,6 +53,7 @@ const gems = curated.projects.filter((p: any) => p.perle);
     </section>
 
     <Gems gems={gems} generated={generated} />
+    <Reuse projects={reuse} generated={generated} />
     <Process />
     <Community />
   </main>

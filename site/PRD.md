@@ -79,13 +79,22 @@ Kort-grid gruppert i kategorier som treffer begge fasetter (domene for etater, t
 ### 4.4 Skjulte perler
 Egen liten seksjon (3–5 stk. roterende/kuratert) med litt lengre fortelling: *fnrvalidator* (20 stjerner, 53 000 nedlastinger/mnd), *digdirator* (auto-registrering mot ID-porten/Maskinporten — gratis for enhver etat), *DSF* (IT-dinosauren som gikk av med pensjon etter 51 år). Dette er seksjonen som gjør siden *autentisk* snarere enn korporativ.
 
-### 4.5 Slik jobber vi åpent
+### 4.5 Bygd for gjenbruk
+Egen seksjon som svarer direkte på persona 2 (arkitekter i andre etater) og suksessmålet «Gjenbruk i offentlig sektor»: en samlet, kompakt liste over prosjekter som er laget for at også andre virksomheter skal kunne ta dem i bruk — MIT-lisensiert og klare i dag. Kom fra tilbakemelding fra en kollega på prototypen: *«Skulle vi fått inn en liste over repoer/prosjekter som er bygd med tanke på at andre også kan bruke de? Ghep vet jeg er tatt i bruk av Miljødirektoratet også.»*
+
+**Datamodell** (redaksjonell, aldri synket) — nytt valgfritt felt `gjenbruk:` per prosjekt i `projects.yaml`. Selv et tomt objekt (`{}`) løfter prosjektet inn i seksjonen. Valgfrie underfelt:
+- `bruktAv:` — liste med navngitte virksomheter utenfor Nav. Rendres som «Brukt av X (og Y)».
+- `merknad:` — fritekst når vi ikke kan navngi noen konkret adopter (f.eks. «Brukt langt utenfor Nav»); vises kun når `bruktAv` mangler.
+
+**Ærlighetsregel** (jf. §7): aldri gjett en adopter. `bruktAv` skal kun inneholde håndverifiserte påstander og endres via pull request. Ved lansering er `ghep` (brukt av Miljødirektoratet) det eneste prosjektet med en navngitt adopter; de øvrige bruker `merknad` eller ingen linje. Kompakt liste (ikke fulle kort — unngår duplikat av prosjektgridet): navn med GitHub-lenke, håndskrevet én-linjer, primærspråk (synket), og ev. «✓»-linje.
+
+### 4.6 Slik jobber vi åpent
 Kondensert versjon av retningslinjene med lenke til `navikt/offentlig`: motivasjon (transparens først), prosessen (risikovurdering → sikkerhetsvask → krav → publiser), MIT-lisens, og de tre ærlige unntakene (hemmeligheter, svindelalgoritmer, ikke-vedtatte lovendringer). Å publisere policyen er i seg selv showcase-innhold (jf. GOV.UK «Coding in the Open», Microsofts program-side).
 
-### 4.6 Fellesskapet
+### 4.7 Fellesskapet
 Offentlig PaaS (grunnlagt 2017 av Nav og Skatteetaten, 2 000+ medlemmer fra 80+ virksomheter), SSBs adopsjon av Nais, samarbeid på tvers av etater. + «Vil du bruke noe av dette?» med forventningsavklaring (ingen support-SLA, men issues er velkomne).
 
-### 4.7 Footer
+### 4.8 Footer
 Lenker: github.com/navikt · github.com/nais · aksel.nav.no · nais.io · ki-utvikling.nav.no · detsombetyrnoe.no · retningslinjene · tilgjengelighetserklæring · «Sist oppdatert {dato} — siden bygges automatisk, kildekoden er selvsagt åpen».
 
 ## 5. Design

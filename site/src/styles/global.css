@@ -451,6 +451,35 @@ a:hover { color: var(--accent-hover); }
 .gem .kicker { font-size: 0.875rem; font-weight: 600; color: var(--beige-strong); letter-spacing: 0.04em; text-transform: uppercase; }
 .gem .meta { margin-top: auto; padding-top: 0.5rem; }
 
+/* ============ Bygd for gjenbruk ============ */
+.reuse-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+}
+@media (max-width: 767px) { .reuse-grid { grid-template-columns: 1fr; } }
+.reuse-item {
+  position: relative;
+  display: flex; flex-direction: column; gap: 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-l);
+  padding: 1.5rem;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+.reuse-item:hover { border-color: var(--accent); background: var(--accent-soft); }
+.reuse-item h3 a { text-decoration: none; }
+.reuse-item h3 a::after { content: ""; position: absolute; inset: 0; }
+.reuse-item h3 a:hover { text-decoration: underline; }
+.reuse-item .desc { color: var(--text); }
+.reuse-foot {
+  margin-top: auto;
+  display: flex; align-items: center; gap: 0.5rem 1rem; flex-wrap: wrap;
+}
+.reuse-foot .meta { display: flex; align-items: center; }
+.reuse-adopter {
+  display: inline-flex; align-items: center; gap: 0.375rem;
+}
+.reuse-adopter .check-icon { color: var(--accent); flex-shrink: 0; }
+
 /* ============ Slik jobber vi åpent ============ */
 .steps {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;

@@ -1,70 +1,70 @@
 {
-  "syncedAt": "2026-07-06T12:23:35.171Z",
+  "syncedAt": "2026-07-20T20:34:05.521Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
   "repos": {
     "navikt/mock-oauth2-server": {
-      "stars": 394,
+      "stars": 401,
       "language": "Kotlin",
-      "languageColor": "#A97BFF",
-      "pushedAt": "2026-07-06T09:18:19Z",
+      "languageColor": "#a97bff",
+      "pushedAt": "2026-07-20T12:58:49Z",
       "isArchived": false
     },
     "navikt/aksel": {
       "stars": 184,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-07-06T12:17:39Z",
+      "pushedAt": "2026-07-20T18:55:04Z",
       "isArchived": false
     },
     "nais/naiserator": {
       "stars": 48,
       "language": "Go",
-      "languageColor": "#00ADD8",
-      "pushedAt": "2026-06-29T03:42:35Z",
+      "languageColor": "#00add8",
+      "pushedAt": "2026-07-12T20:49:34Z",
       "isArchived": false
     },
     "navikt/helse-spleis": {
       "stars": 6,
       "language": "Kotlin",
-      "languageColor": "#A97BFF",
-      "pushedAt": "2026-07-06T11:52:19Z",
+      "languageColor": "#a97bff",
+      "pushedAt": "2026-07-17T12:04:11Z",
       "isArchived": false
     },
     "navikt/cplt": {
       "stars": 98,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-07-06T11:26:29Z",
+      "pushedAt": "2026-07-20T06:10:52Z",
       "isArchived": false
     },
     "navikt/pdfgen": {
       "stars": 24,
       "language": "Kotlin",
-      "languageColor": "#A97BFF",
-      "pushedAt": "2026-07-06T08:04:54Z",
+      "languageColor": "#a97bff",
+      "pushedAt": "2026-07-20T08:04:57Z",
       "isArchived": false
     },
     "nais/wonderwall": {
       "stars": 27,
       "language": "Go",
-      "languageColor": "#00ADD8",
-      "pushedAt": "2026-07-06T07:03:26Z",
+      "languageColor": "#00add8",
+      "pushedAt": "2026-07-20T07:02:49Z",
       "isArchived": false
     },
     "navikt/rapids-and-rivers": {
       "stars": 25,
       "language": "Kotlin",
-      "languageColor": "#A97BFF",
-      "pushedAt": "2026-05-18T10:44:43Z",
+      "languageColor": "#a97bff",
+      "pushedAt": "2026-07-15T11:12:07Z",
       "isArchived": false
     },
     "navikt/token-support": {
       "stars": 19,
       "language": "Kotlin",
-      "languageColor": "#A97BFF",
-      "pushedAt": "2026-07-02T14:44:21Z",
+      "languageColor": "#a97bff",
+      "pushedAt": "2026-07-20T14:44:36Z",
       "isArchived": false
     },
     "navikt/fnrvalidator": {
@@ -77,75 +77,103 @@
     "nais/digdirator": {
       "stars": 11,
       "language": "Go",
-      "languageColor": "#00ADD8",
-      "pushedAt": "2026-07-06T11:38:02Z",
+      "languageColor": "#00add8",
+      "pushedAt": "2026-07-13T07:03:14Z",
       "isArchived": false
     },
     "navikt/DSF": {
-      "stars": 55,
+      "stars": 56,
       "language": "COBOL",
       "languageColor": null,
       "pushedAt": "2020-10-05T21:29:41Z",
       "isArchived": false
+    },
+    "navikt/ghep": {
+      "stars": 3,
+      "language": "Go",
+      "languageColor": "#00add8",
+      "pushedAt": "2026-07-20T12:44:22Z",
+      "isArchived": false
+    },
+    "nais/unleasherator": {
+      "stars": 12,
+      "language": "Go",
+      "languageColor": "#00add8",
+      "pushedAt": "2026-07-20T07:35:14Z",
+      "isArchived": false
+    },
+    "nais/kafkarator": {
+      "stars": 5,
+      "language": "Go",
+      "languageColor": "#00add8",
+      "pushedAt": "2026-07-20T20:03:00Z",
+      "isArchived": false
+    },
+    "nais/bqrator": {
+      "stars": 1,
+      "language": "Go",
+      "languageColor": "#00add8",
+      "pushedAt": "2026-07-20T17:42:55Z",
+      "isArchived": false
     }
   },
   "stats": {
-    "publicRepos": 3105,
-    "commitsLast7Days": 4895,
-    "prsLast30Days": 16010,
-    "npmDownloadsLastMonth": 398571,
-    "fnrDownloadsLastMonth": 51571
+    "publicRepos": 3112,
+    "commitsLast7Days": 2857,
+    "prsLast30Days": 13330,
+    "npmDownloadsLastMonth": 304753,
+    "fnrDownloadsLastMonth": 41443
   },
   "recentlyUpdated": [
     {
-      "name": "pensjon-dokdist",
-      "url": "https://github.com/navikt/pensjon-dokdist",
-      "pushedAt": "2026-07-06T12:22:59Z",
+      "name": "g",
+      "url": "https://github.com/navikt/g",
+      "pushedAt": "2026-07-20T20:33:26Z",
+      "language": "Ruby",
+      "languageColor": "#701516"
+    },
+    {
+      "name": "knep",
+      "url": "https://github.com/navikt/knep",
+      "pushedAt": "2026-07-20T20:24:23Z",
+      "language": "Go",
+      "languageColor": "#00add8"
+    },
+    {
+      "name": "tiltakspenger-journalposthendelser",
+      "url": "https://github.com/navikt/tiltakspenger-journalposthendelser",
+      "pushedAt": "2026-07-20T20:17:49Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "veilarbaktivitet",
-      "url": "https://github.com/navikt/veilarbaktivitet",
-      "pushedAt": "2026-07-06T12:21:53Z",
+      "name": "tiltakspenger-libs",
+      "url": "https://github.com/navikt/tiltakspenger-libs",
+      "pushedAt": "2026-07-20T19:37:42Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "sosialhjelp-modia-api",
-      "url": "https://github.com/navikt/sosialhjelp-modia-api",
-      "pushedAt": "2026-07-06T12:21:52Z",
+      "name": "aap-behandlingsflyt",
+      "url": "https://github.com/navikt/aap-behandlingsflyt",
+      "pushedAt": "2026-07-20T18:36:29Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "amt-deltakelser",
-      "url": "https://github.com/navikt/amt-deltakelser",
-      "pushedAt": "2026-07-06T12:19:12Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "aksel",
-      "url": "https://github.com/navikt/aksel",
-      "pushedAt": "2026-07-06T12:17:39Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "familie-oppdrag",
-      "url": "https://github.com/navikt/familie-oppdrag",
-      "pushedAt": "2026-07-06T12:16:09Z",
+      "name": "helse-spre",
+      "url": "https://github.com/navikt/helse-spre",
+      "pushedAt": "2026-07-20T18:18:34Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     }
   ],
   "languages": {
-    "totalRepos": 1770,
+    "totalRepos": 1765,
     "entries": [
       {
         "name": "Kotlin",
-        "count": 709,
+        "count": 706,
         "color": "#a97bff"
       },
       {
@@ -160,17 +188,17 @@
       },
       {
         "name": "Python",
-        "count": 79,
+        "count": 80,
         "color": "#3572a5"
       },
       {
         "name": "JavaScript",
-        "count": 58,
+        "count": 57,
         "color": "#f1e05a"
       },
       {
         "name": "Shell",
-        "count": 51,
+        "count": 50,
         "color": "#89e051"
       },
       {
@@ -180,7 +208,7 @@
       },
       {
         "name": "Annet",
-        "count": 355,
+        "count": 354,
         "color": null
       }
     ]
@@ -188,62 +216,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-07-07",
-        "count": 817
-      },
-      {
-        "date": "2025-07-08",
-        "count": 624
-      },
-      {
-        "date": "2025-07-09",
-        "count": 623
-      },
-      {
-        "date": "2025-07-10",
-        "count": 596
-      },
-      {
-        "date": "2025-07-11",
-        "count": 469
-      },
-      {
-        "date": "2025-07-12",
-        "count": 27
-      },
-      {
-        "date": "2025-07-13",
-        "count": 8
-      },
-      {
-        "date": "2025-07-14",
-        "count": 635
-      },
-      {
-        "date": "2025-07-15",
-        "count": 508
-      },
-      {
-        "date": "2025-07-16",
-        "count": 443
-      },
-      {
-        "date": "2025-07-17",
-        "count": 368
-      },
-      {
-        "date": "2025-07-18",
-        "count": 320
-      },
-      {
-        "date": "2025-07-19",
-        "count": 24
-      },
-      {
-        "date": "2025-07-20",
-        "count": 39
-      },
       {
         "date": "2025-07-21",
         "count": 493
@@ -1643,6 +1615,62 @@
       {
         "date": "2026-07-05",
         "count": 63
+      },
+      {
+        "date": "2026-07-06",
+        "count": 859
+      },
+      {
+        "date": "2026-07-07",
+        "count": 799
+      },
+      {
+        "date": "2026-07-08",
+        "count": 805
+      },
+      {
+        "date": "2026-07-09",
+        "count": 590
+      },
+      {
+        "date": "2026-07-10",
+        "count": 578
+      },
+      {
+        "date": "2026-07-11",
+        "count": 75
+      },
+      {
+        "date": "2026-07-12",
+        "count": 43
+      },
+      {
+        "date": "2026-07-13",
+        "count": 664
+      },
+      {
+        "date": "2026-07-14",
+        "count": 611
+      },
+      {
+        "date": "2026-07-15",
+        "count": 457
+      },
+      {
+        "date": "2026-07-16",
+        "count": 664
+      },
+      {
+        "date": "2026-07-17",
+        "count": 456
+      },
+      {
+        "date": "2026-07-18",
+        "count": 82
+      },
+      {
+        "date": "2026-07-19",
+        "count": 7
       }
     ]
   }
