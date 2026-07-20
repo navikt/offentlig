@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-20T21:56:47.749Z",
+  "syncedAt": "2026-07-20T22:11:30.982Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -8,7 +8,7 @@
       "stars": 401,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-07-20T12:58:49Z",
+      "pushedAt": "2026-07-20T22:11:25Z",
       "isArchived": false
     },
     "navikt/aksel": {
@@ -126,6 +126,13 @@
   },
   "recentlyUpdated": [
     {
+      "name": "mock-oauth2-server",
+      "url": "https://github.com/navikt/mock-oauth2-server",
+      "pushedAt": "2026-07-20T22:11:25Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
       "name": "nada-datastream",
       "url": "https://github.com/navikt/nada-datastream",
       "pushedAt": "2026-07-20T21:33:42Z",
@@ -157,13 +164,6 @@
       "name": "tiltakspenger-journalposthendelser",
       "url": "https://github.com/navikt/tiltakspenger-journalposthendelser",
       "pushedAt": "2026-07-20T20:17:49Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "tiltakspenger-libs",
-      "url": "https://github.com/navikt/tiltakspenger-libs",
-      "pushedAt": "2026-07-20T19:37:42Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     }
