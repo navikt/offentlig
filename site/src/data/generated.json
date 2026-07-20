@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-20T21:16:51.587Z",
+  "syncedAt": "2026-07-20T21:56:47.749Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -119,12 +119,19 @@
   },
   "stats": {
     "publicRepos": 3112,
-    "commitsLast7Days": 2868,
-    "prsLast30Days": 13341,
+    "commitsLast7Days": 2867,
+    "prsLast30Days": 13346,
     "npmDownloadsLastMonth": 304753,
     "fnrDownloadsLastMonth": 41443
   },
   "recentlyUpdated": [
+    {
+      "name": "nada-datastream",
+      "url": "https://github.com/navikt/nada-datastream",
+      "pushedAt": "2026-07-20T21:33:42Z",
+      "language": "Go",
+      "languageColor": "#00add8"
+    },
     {
       "name": "story-api",
       "url": "https://github.com/navikt/story-api",
@@ -157,13 +164,6 @@
       "name": "tiltakspenger-libs",
       "url": "https://github.com/navikt/tiltakspenger-libs",
       "pushedAt": "2026-07-20T19:37:42Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "aap-behandlingsflyt",
-      "url": "https://github.com/navikt/aap-behandlingsflyt",
-      "pushedAt": "2026-07-20T18:36:29Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     }
