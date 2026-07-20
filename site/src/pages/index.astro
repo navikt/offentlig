@@ -52,8 +52,8 @@ const reuse = curated.projects.filter((p: any) => p.gjenbruk !== undefined);
       </div>
     </section>
 
-    <Gems gems={gems} generated={generated} />
     <Reuse projects={reuse} generated={generated} />
+    <Gems gems={gems} generated={generated} />
     <Process />
     <Community />
   </main>

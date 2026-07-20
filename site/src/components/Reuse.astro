@@ -6,6 +6,7 @@ interface Gjenbruk {
 interface Project {
   repo: string;
   beskrivelse: string;
+  side?: string;
   gjenbruk?: Gjenbruk;
 }
 interface Props {
@@ -14,6 +15,17 @@ interface Props {
 }
 
 const { projects, generated } = Astro.props;
+
+/* Landingsside når prosjektet har en (side-feltet i projects.yaml),
+   ellers GitHub. Relative stier prefikses med base for prosjektside-URL-er. */
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const lenke = (p: Project) => {
+  if (!p.side) return { href: `https://github.com/${p.repo}`, ekstern: true };
+  if (p.side.startsWith("http")) return { href: p.side, ekstern: true };
+  return { href: `${base}${p.side}/`, ekstern: false };
+};
 
 /* «Brukt av»-linjen: kun håndverifiserte adoptere (bruktAv) navngis; ellers
    fritekst (merknad); ellers ingen linje. Aldri gjett en adopter (PRD §7). */
@@ -38,9 +50,10 @@ const adopterLinje = (g?: Gjenbruk): string | null => {
         const data = (generated.repos as any)[p.repo];
         const linje = adopterLinje(p.gjenbruk);
         const navn = p.repo.split("/")[1];
+        const { href } = lenke(p);
         return (
           <li class="reuse-item">
-            <h3><a href={`https://github.com/${p.repo}`}>{navn}</a></h3>
+            <h3><a href={href}>{navn}</a></h3>
             <p class="desc">{p.beskrivelse}</p>
             <div class="reuse-foot">
               {data?.language && (

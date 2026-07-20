@@ -1,0 +1,338 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Icons from "../../components/Icons.astro";
+import ProsjektHeader from "../../components/ProsjektHeader.astro";
+import ProsjektFooter from "../../components/ProsjektFooter.astro";
+
+import generated from "../../data/generated.json";
+
+/* Bespoke landingsside (PRD: håndlaget, aldri generert fra mal).
+   Motiv: «papirmøllen» — den stille maskinen som gjør HTML-maler om til
+   ferdige, arkivgyldige dokumenter. Heltebildet er selve forvandlingen:
+   mal til venstre, ferdig dokument til høyre — samme data, to former. */
+const data = (generated.repos as any)["navikt/pdfgen"];
+---
+
+<Layout
+  title="pdfgen — HTML-maler inn, ferdige dokumenter ut"
+  description="pdfgen gjør Handlebars-maler og JSON-data om til arkivgyldige PDF-er over HTTP. Åpen kildekode fra Nav, i produksjon siden 2018 — klar for enhver norsk etat."
+>
+  <ProsjektHeader navn="pdfgen" />
+  <main id="hoved">
+    <Icons />
+
+    <section class="p-hero">
+      <div class="container">
+        <div class="hero-copy">
+          <p class="eyebrow">Fra Nav · Bygd for gjenbruk</p>
+          <h1>pdfgen</h1>
+          <p class="thesis">HTML-mal inn. Ferdig dokument ut.</p>
+          <p class="ingress">Papirmøllen i det stille: pdfgen tar en Handlebars-mal og litt JSON-data, og gir deg en arkivgyldig PDF tilbake over HTTP. Samme oppskrift bak brev, vedtak og kvitteringer — i produksjon i Nav siden 2018.</p>
+          <div class="cta-row">
+            <a class="btn" href="https://github.com/navikt/pdfgen">Kom i gang på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
+            <a class="btn btn-quiet" href="#slik-virker-det">Slik virker det</a>
+          </div>
+          <p class="p-meta detail nums">
+            {data?.language && (
+              <>
+                <span><span class="lang-dot" style={`background:${data.languageColor ?? "var(--border-strong)"}`}></span>{data.language}</span>
+                <span class="sep">·</span>
+              </>
+            )}
+            <span>MIT-lisens</span>
+            <span class="sep">·</span>
+            <span>PDF/A-2a · PDF/UA</span>
+          </p>
+        </div>
+
+        <figure class="transform" aria-label="Samme innhold vist som Handlebars-mal og som ferdig dokument">
+          <div class="artifact code" aria-hidden="false">
+            <div class="artifact-bar">
+              <span class="fname">vedtak.hbs</span>
+              <span class="kind-chip">mal</span>
+            </div>
+            <pre><code>&lt;<span class="ht">h1</span>&gt;Vedtak om <span class="tok">&#123;&#123;ytelse&#125;&#125;</span>&lt;/<span class="ht">h1</span>&gt;
+
+&lt;<span class="ht">p</span>&gt;Til <span class="tok">&#123;&#123;navn&#125;&#125;</span>&lt;/<span class="ht">p</span>&gt;
+&lt;<span class="ht">p</span>&gt;Sak <span class="tok">&#123;&#123;saksnr&#125;&#125;</span>&lt;/<span class="ht">p</span>&gt;
+
+&lt;<span class="ht">p</span>&gt;Vi har innvilget
+  søknaden din om
+  <span class="tok">&#123;&#123;ytelse&#125;&#125;</span>, datert
+  <span class="tok">&#123;&#123;dato&#125;&#125;</span>.&lt;/<span class="ht">p</span>&gt;</code></pre>
+          </div>
+
+          <div class="pipe" aria-hidden="true">
+            <span class="pipe-line"></span>
+            <span class="pipe-badge">pdfgen</span>
+            <span class="pipe-line"></span>
+          </div>
+
+          <div class="artifact sheet" role="img" aria-label="Ferdig dokument: Vedtak om foreldrepenger til Kari Nordmann, et fiktivt eksempel">
+            <div class="sheet-flag">Eksempel</div>
+            <div class="sheet-page">
+              <p class="sheet-eyebrow">Vedtak</p>
+              <h3 class="sheet-title">Vedtak om <span class="fill">foreldrepenger</span></h3>
+              <div class="sheet-rule"></div>
+              <p class="sheet-line">Til <span class="fill">Kari Nordmann</span></p>
+              <p class="sheet-line">Sak <span class="fill">4711/2026</span></p>
+              <p class="sheet-body">Vi har innvilget søknaden din om <span class="fill">foreldrepenger</span>, datert <span class="fill">14. juli 2026</span>.</p>
+              <p class="sheet-sign">Med vennlig hilsen<br /><span class="sheet-org">Saksbehandlende enhet</span></p>
+            </div>
+          </div>
+        </figure>
+        <figcaption class="transform-cap detail">Samme data, to former. Malen til venstre, det ferdige dokumentet til høyre. Verdiene i blått er de samme feltene, fylt inn. Fiktivt eksempel.</figcaption>
+      </div>
+    </section>
+
+    <section class="section p-how" id="slik-virker-det">
+      <div class="container">
+        <div class="section-head">
+          <h2>Slik virker det</h2>
+          <p class="ingress">pdfgen er én liten Kotlin-tjeneste (Ktor) som lastes med malene dine og svarer på HTTP. Du eier malene og dataene — pdfgen står for forvandlingen.</p>
+        </div>
+        <ol class="steps" style="list-style:none">
+          <li class="step">
+            <p class="num">Steg 1</p>
+            <h3>Skriv malen</h3>
+            <p>En <code>.hbs</code>-fil med Handlebars og HTML under <code>templates/ditt_lagnavn/</code>. Feltene <code>&#123;&#123;navn&#125;&#125;</code> og <code>&#123;&#123;dato&#125;&#125;</code> er hull som fylles av dataene.</p>
+          </li>
+          <li class="step">
+            <p class="num">Steg 2</p>
+            <h3>Send JSON-data</h3>
+            <p>Dataene kobles til malen over HTTP. Under utvikling leser pdfgen testdata fra <code>data/&lt;app&gt;/&lt;mal&gt;.json</code>, så du ser resultatet i nettleseren mens du jobber.</p>
+          </li>
+          <li class="step">
+            <p class="num">Steg 3</p>
+            <h3>Få PDF-en tilbake</h3>
+            <p><code>GET /api/v1/genpdf/&lt;app&gt;/&lt;mal&gt;</code> gir en ferdig PDF. Trenger du HTML i stedet, slår du på <code>/api/v1/genhtml</code> med <code>ENABLE_HTML_ENDPOINT=true</code>.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section p-heritage">
+      <div class="container">
+        <div class="section-head">
+          <h2>Bygd for arkivet — og for lesbarhet</h2>
+          <p class="ingress">Et offentlig dokument skal kunne arkiveres i årevis og leses av alle. pdfgen sikter mot standardene som gjør nettopp det, og har gjort det i produksjon lenge.</p>
+        </div>
+        <dl class="facts">
+          <div class="fact">
+            <dt>Siden 2018</dt>
+            <dd>pdfgen har generert dokumenter i Nav siden 2018 — brev, vedtak og kvitteringer bygget på det samme mønsteret.</dd>
+          </div>
+          <div class="fact">
+            <dt>PDF/A-2a</dt>
+            <dd>Målet er PDF-er som er gyldige for langtidsarkivering, ikke bare for øyeblikket de lages i.</dd>
+          </div>
+          <div class="fact">
+            <dt>PDF/UA</dt>
+            <dd>Universell utforming er et uttalt mål: dokumenter som også er tilgjengelige, ikke bare arkivgyldige.</dd>
+          </div>
+          <div class="fact">
+            <dt>VeraPDF-validering</dt>
+            <dd>Standardene sjekkes med VeraPDF, og fonter bakes inn i dokumentet så det ser likt ut overalt.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section p-start" id="kom-i-gang">
+      <div class="container">
+        <div class="section-head">
+          <h2>Kom i gang</h2>
+          <p class="ingress">pdfgen brukes oftest som et basisbilde: du legger malene, fontene og ressursene dine oppå. Alt du trenger er Docker.</p>
+        </div>
+        <div class="start-grid">
+          <div class="start-block">
+            <p class="step-label">1 · Dockerfile</p>
+            <div class="snip">
+              <div class="snip-bar">
+                <span class="fname">Dockerfile</span>
+                <button class="copy-btn" type="button" data-copy="snip-docker">Kopier</button>
+              </div>
+              <pre id="snip-docker"><code><span class="dk">FROM</span> ghcr.io/navikt/pdfgen:&lt;release&gt;
+
+<span class="dk">COPY</span> templates /app/templates
+<span class="dk">COPY</span> fonts     /app/fonts
+<span class="dk">COPY</span> resources /app/resources</code></pre>
+            </div>
+          </div>
+          <div class="start-block">
+            <p class="step-label">2 · Mappestruktur</p>
+            <div class="snip">
+              <div class="snip-bar">
+                <span class="fname">terminal</span>
+                <button class="copy-btn" type="button" data-copy="snip-mkdir">Kopier</button>
+              </div>
+              <pre id="snip-mkdir"><code><span class="cm"># grunnstruktur</span>
+mkdir &#123;templates,fonts,resources,data&#125;
+
+<span class="cm"># én mappe per lag/app</span>
+mkdir &#123;templates,data&#125;/ditt_lagnavn</code></pre>
+            </div>
+            <p class="start-note detail">Legg <code>.hbs</code>-malene i <code>templates/ditt_lagnavn/</code> og tilhørende testdata i <code>data/ditt_lagnavn/</code>. Navnet blir en del av API-stien.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section p-reuse" id="ta-i-bruk">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ta den i bruk i din virksomhet</h2>
+          <p class="ingress">pdfgen er ikke bundet til Nav. Mønsteret — mal pluss data pluss en liten tjeneste — passer enhver virksomhet som må lage mange like dokumenter.</p>
+        </div>
+        <div class="cols">
+          <div class="panel">
+            <h3>Det du trenger</h3>
+            <ul>
+              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Docker til å kjøre basisbildet fra <code>ghcr.io/navikt/pdfgen</code></li>
+              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Handlebars-maler og JSON-data for dokumentene dine</li>
+              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Fontene du vil bake inn, om standardoppsettet ikke holder</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Det du bør vite</h3>
+            <p class="fine">MIT-lisensiert og fritt å bruke. Vi lover ingen support-SLA, men issues og pull requests er velkomne.</p>
+            <p class="fine">Vær oppmerksom: pdfgen har fått en etterfølger skrevet i Rust — <a href="https://github.com/navikt/pdfgenrs">pdfgenrs</a> — som Nav peker nye prosjekter mot. Mønsteret er det samme; velg det som passer teamet ditt.</p>
+            <p class="adopter-note"><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Klar for enhver norsk etat</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <ProsjektFooter repo="navikt/pdfgen" lenker={[{ href: "https://github.com/navikt/pdfgenrs", tekst: "pdfgenrs (Rust)" }, { href: "https://github.com/navikt/pdfgen-core", tekst: "pdfgen-core" }]} />
+</Layout>
+
+<style>
+  .p-hero { padding: 4rem 0; }
+  .p-hero .container { display: grid; gap: 2rem; }
+  .hero-copy { display: flex; flex-direction: column; gap: 1rem; max-width: var(--prose); }
+  .p-hero h1 { font-size: 3rem; letter-spacing: -0.01em; }
+  .thesis { font-size: 1.5rem; font-weight: 600; line-height: 1.3; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+  .btn-quiet { background: transparent; color: var(--text); border: 1px solid var(--border-strong); }
+  .btn-quiet:hover { background: var(--bg-subtle); color: var(--text); border-color: var(--text-subtle); }
+  .p-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; margin-top: 0.75rem; }
+  .p-meta .sep { color: var(--border-strong); }
+  .lang-dot { display: inline-block; width: 0.625rem; height: 0.625rem; border-radius: 50%; margin-right: 0.375rem; box-shadow: 0 0 0 1px var(--border-strong); }
+  @media (min-width: 768px) { .p-hero { padding: 6rem 0; } .p-hero h1 { font-size: 3.5rem; } }
+
+  /* Forvandlingen: mal → dokument */
+  .transform { display: grid; gap: 1rem; align-items: stretch; }
+  @media (min-width: 900px) { .transform { grid-template-columns: 1fr auto 1fr; align-items: center; } }
+  .transform-cap { margin-top: 1rem; max-width: 46rem; }
+
+  .artifact { border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; background: var(--surface); }
+  .artifact-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.625rem 1rem; border-bottom: 1px solid var(--border); background: var(--bg-subtle); }
+  .artifact-bar .fname { font-family: var(--mono); font-size: 0.8125rem; color: var(--text-subtle); }
+  .kind-chip { font-family: var(--mono); font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: var(--radius-s); background: var(--tag-info-bg); color: var(--tag-info-text); white-space: nowrap; }
+
+  .code pre { padding: 1.25rem 1rem; overflow-x: auto; font-family: var(--mono); font-size: 0.8125rem; line-height: 1.7; color: var(--text-subtle); }
+  .code .ht { color: var(--info-strong); }
+  .code .tok { color: var(--accent); font-weight: 600; }
+
+  /* Røret mellom de to formene */
+  .pipe { display: flex; align-items: center; justify-content: center; gap: 0.625rem; padding: 0.25rem 0; }
+  @media (min-width: 900px) { .pipe { flex-direction: column; padding: 0 0.25rem; align-self: stretch; } }
+  .pipe-line { background: var(--border-strong); }
+  .pipe { --pipe-thick: 2px; }
+  .pipe-line { flex: 1 1 auto; height: var(--pipe-thick); min-width: 1.5rem; }
+  @media (min-width: 900px) { .pipe-line { width: var(--pipe-thick); height: auto; min-width: 0; min-height: 1.5rem; } }
+  .pipe-badge { font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); border: 1px solid var(--border); border-radius: var(--radius-s); padding: 0.1875rem 0.5rem; white-space: nowrap; }
+
+  /* Det ferdige dokumentet — et lite offisielt ark */
+  .sheet { position: relative; background: var(--bg-subtle); padding: 1.25rem; }
+  .sheet-flag { position: absolute; top: 0.75rem; right: 0.75rem; z-index: 2; font-size: 0.6875rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--beige-strong); background: var(--tint-beige); border: 1px solid var(--border); border-radius: var(--radius-s); padding: 0.125rem 0.4375rem; }
+  .sheet-page {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-s);
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 1px 0 var(--border), 0 6px 16px -12px rgba(0,0,0,0.35);
+    display: flex; flex-direction: column; gap: 0.5rem;
+    opacity: 0; transform: translateY(6px);
+    animation: sheet-in 640ms ease 220ms forwards;
+  }
+  @keyframes sheet-in { to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .sheet-page { opacity: 1; transform: none; animation: none; } }
+  .sheet-eyebrow { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-subtle); }
+  .sheet-title { font-size: 1.0625rem; line-height: 1.3; color: var(--text); }
+  .sheet-rule { height: 1px; background: var(--border); margin: 0.25rem 0 0.5rem; }
+  .sheet-line { font-size: 0.9375rem; color: var(--text); }
+  .sheet-body { font-size: 0.9375rem; line-height: 1.5; color: var(--text); margin-top: 0.25rem; }
+  .sheet-sign { font-size: 0.875rem; color: var(--text-subtle); margin-top: 0.75rem; line-height: 1.5; }
+  .sheet-org { color: var(--text); font-weight: 600; }
+  .sheet .fill { color: var(--accent); font-weight: 600; }
+
+  /* Slik virker det */
+  .p-how { background: var(--bg-subtle); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .steps { display: grid; gap: 1.5rem; }
+  @media (min-width: 768px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+  .step { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-l); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.625rem; }
+  .step .num { font-size: 0.875rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--info-strong); }
+  .step h3 { font-size: 1.1875rem; }
+  .step p { color: var(--text-subtle); font-size: 1.0625rem; }
+  .step code { font-family: var(--mono); font-size: 0.8125em; background: var(--tint-info); color: var(--info-strong); padding: 0.0625rem 0.3125rem; border-radius: var(--radius-s); word-break: break-word; }
+
+  /* Arv / arkiv */
+  .facts { display: grid; gap: 1.5rem; }
+  @media (min-width: 640px) { .facts { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .facts { grid-template-columns: repeat(4, 1fr); } }
+  .fact { border-top: 3px solid var(--beige-strong); padding-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .fact dt { font-size: 1.125rem; font-weight: 600; color: var(--text); }
+  .fact dd { font-size: 1rem; line-height: 1.5; color: var(--text-subtle); }
+
+  /* Kom i gang */
+  .start-grid { display: grid; gap: 1.5rem; align-items: start; }
+  @media (min-width: 900px) { .start-grid { grid-template-columns: 1fr 1fr; } }
+  .start-block { display: flex; flex-direction: column; gap: 0.75rem; }
+  .step-label { font-size: 0.875rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--info-strong); }
+  .snip { border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; background: var(--surface); }
+  .snip-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.5rem 0.5rem 0.5rem 1rem; border-bottom: 1px solid var(--border); background: var(--bg-subtle); }
+  .snip-bar .fname { font-family: var(--mono); font-size: 0.8125rem; color: var(--text-subtle); }
+  .copy-btn { font: inherit; font-size: 0.75rem; font-weight: 600; cursor: pointer; color: var(--accent); background: transparent; border: 1px solid var(--border-strong); border-radius: var(--radius-s); padding: 0.25rem 0.625rem; transition: background-color 150ms ease, border-color 150ms ease; }
+  .copy-btn:hover { background: var(--accent-soft); border-color: var(--accent); }
+  .copy-btn.done { color: var(--info-strong); border-color: var(--info-strong); }
+  .snip pre { padding: 1.25rem 1rem; overflow-x: auto; font-family: var(--mono); font-size: 0.8125rem; line-height: 1.7; color: var(--text); }
+  .snip .dk { color: var(--accent); font-weight: 600; }
+  .snip .cm { color: var(--text-subtle); }
+  .start-note { max-width: var(--prose); }
+  .start-note code { font-family: var(--mono); font-size: 0.8125em; background: var(--bg-subtle); color: var(--text); padding: 0.0625rem 0.3125rem; border-radius: var(--radius-s); }
+
+  /* Reuse */
+  .p-reuse { background: var(--tint-info); border-top: 1px solid var(--border); }
+  .cols { display: grid; gap: 1.5rem; }
+  @media (min-width: 900px) { .cols { grid-template-columns: 1fr 1fr; } }
+  .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-l); padding: 2rem; display: flex; flex-direction: column; gap: 0.875rem; }
+  .panel h3 { font-size: 1.25rem; }
+  .panel ul { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; }
+  .panel li { display: flex; gap: 0.625rem; align-items: baseline; color: var(--text-subtle); font-size: 1.0625rem; }
+  .panel li code { font-family: var(--mono); font-size: 0.8125em; background: var(--bg-subtle); color: var(--text); padding: 0.0625rem 0.3125rem; border-radius: var(--radius-s); word-break: break-all; }
+  .panel .check-icon, .adopter-note .check-icon { color: var(--accent); flex-shrink: 0; transform: translateY(2px); }
+  .panel .fine { font-size: 0.9375rem; color: var(--text-subtle); }
+  .adopter-note { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9375rem; color: var(--info-strong); font-weight: 600; }
+</style>
+
+<script is:inline>
+  // Kopier-knappene i «Kom i gang» — ren klippbord, ingen animasjon å dempe
+  (function () {
+    var btns = document.querySelectorAll(".copy-btn[data-copy]");
+    btns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var target = document.getElementById(btn.getAttribute("data-copy"));
+        if (!target || !navigator.clipboard) return;
+        navigator.clipboard.writeText(target.innerText.trim()).then(function () {
+          var prev = btn.textContent;
+          btn.textContent = "Kopiert";
+          btn.classList.add("done");
+          setTimeout(function () { btn.textContent = prev; btn.classList.remove("done"); }, 1600);
+        });
+      });
+    });
+  })();
+</script>
+</content>
+</invoke>

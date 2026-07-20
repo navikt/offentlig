@@ -1,0 +1,420 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Icons from "../../components/Icons.astro";
+import ProsjektHeader from "../../components/ProsjektHeader.astro";
+import ProsjektFooter from "../../components/ProsjektFooter.astro";
+
+import generated from "../../data/generated.json";
+import { formatNumber } from "../../lib/format.mjs";
+
+/* Bespoke landingsside (PRD: håndlaget, aldri generert fra mal).
+   Motiv: «den stille standarden» — heltebildet ER produktet. Besøkende
+   taster et 11-sifret nummer og får svar i samme øyeblikk. All validering
+   skjer i nettleseren; siden gjør ingen nettverkskall. Algoritmen er portet
+   ordrett fra src/validator.ts i navikt/fnrvalidator. */
+const data = (generated.repos as any)["navikt/fnrvalidator"];
+const stjerner = data?.stargazers ?? data?.stars ?? 20;
+const nedlastinger = generated.stats.fnrDownloadsLastMonth;
+---
+
+<Layout
+  title="fnrvalidator — sjekk fødselsnummer, d-nummer, h-nummer og testnummer i nettleseren"
+  description="Et lite JavaScript-bibliotek fra Nav som validerer norske identitetsnumre lokalt. Åpen kildekode, MIT-lisens, i bruk langt utenfor forvaltningen."
+>
+  <ProsjektHeader navn="fnrvalidator" />
+  <main id="hoved">
+    <Icons />
+
+    <section class="p-hero">
+      <div class="container">
+        <div class="hero-copy">
+          <p class="eyebrow">Fra Nav · Den stille standarden</p>
+          <h1>fnrvalidator</h1>
+          <p class="thesis">Ett lite bibliotek. Elleve siffer. Ett svar — gyldig eller ikke, med begrunnelse.</p>
+          <p class="ingress">Er de elleve sifrene et ekte fødselsnummer, d-nummer, h-nummer eller et testnummer? fnrvalidator regner ut kontrollsifrene og sjekker datodelen for deg. Under 100 kodelinjer, ingen avhengigheter — og likevel i tusenvis av tjenester hver måned.</p>
+          <div class="cta-row">
+            <a class="btn" href="https://github.com/navikt/fnrvalidator">Se koden på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
+            <a class="btn btn-quiet" href="#hva">Hva den sjekker</a>
+          </div>
+          <p class="p-meta detail nums">
+            {data?.language && (
+              <>
+                <span><span class="lang-dot" style={`background:${data.languageColor ?? "var(--border-strong)"}`}></span>{data.language}</span>
+                <span class="sep">·</span>
+              </>
+            )}
+            <span>MIT-lisens</span>
+            <span class="sep">·</span>
+            <span>@navikt/fnrvalidator</span>
+          </p>
+        </div>
+
+        <figure class="validator" aria-label="Prøv valideringen live">
+          <div class="v-bar">
+            <span class="v-title">Prøv den her</span>
+            <span class="kind-chip" id="v-type" hidden></span>
+          </div>
+          <div class="v-body">
+            <label class="v-label" for="v-input">Skriv inn 11 siffer</label>
+            <div class="v-field">
+              <input
+                id="v-input"
+                class="v-input nums"
+                type="text"
+                inputmode="numeric"
+                autocomplete="off"
+                autocorrect="off"
+                spellcheck="false"
+                maxlength="15"
+                placeholder="– – – – – – – – – – –"
+                aria-describedby="v-result v-privacy"
+              />
+              <span class="v-count nums" id="v-count" aria-hidden="true">0/11</span>
+            </div>
+
+            <p class="v-result" id="v-result" role="status" aria-live="polite" data-state="idle">
+              Taster du inn et nummer, får du svaret med det samme.
+            </p>
+
+            <p class="v-privacy detail" id="v-privacy">
+              <svg class="v-lock" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg>
+              Alt regnes ut i nettleseren din. Ingenting sendes noe sted — siden er statisk og gjør ingen nettverkskall.
+            </p>
+
+            <div class="v-try">
+              <span class="v-try-lead detail">Bruk syntetiske testnumre — aldri en ekte persons nummer:</span>
+              <div class="v-chips" role="group" aria-label="Eksempler på syntetiske testnumre">
+                <button type="button" class="chip nums" data-nr="13527248013">13527248013</button>
+                <button type="button" class="chip nums" data-nr="10915596784">10915596784</button>
+                <button type="button" class="chip nums" data-nr="68467038838">68467038838</button>
+              </div>
+              <p class="v-try-note detail">Eksemplene er autogenererte. Trenger du flere, hent dem fra <a href="https://www.skatteetaten.no/skjema/testdata/">Tenor testdata</a> hos Skatteetaten.</p>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="p-reach">
+      <div class="container">
+        <p class="reach-lead eyebrow">Den stille rekkevidden</p>
+        <p class="reach-line nums">
+          <b>{formatNumber(stjerner)}</b> stjerner — og <b>{formatNumber(nedlastinger)}</b> nedlastinger i måneden.
+        </p>
+        <p class="reach-sub">Et bibliotek de fleste aldri legger merke til, men som stille sjekker identitetsnumre i søknadsskjemaer, saksbehandlingssystemer og integrasjoner over hele landet.</p>
+      </div>
+    </section>
+
+    <section class="section p-what" id="hva">
+      <div class="container">
+        <div class="section-head">
+          <h2>Hva den sjekker</h2>
+          <p class="ingress">Norske identitetsnumre er elleve siffer med innebygde kontrollsifre og en dato skjult i de seks første. fnrvalidator kjenner igjen fire varianter — og kombinasjonene mellom dem.</p>
+        </div>
+        <dl class="types">
+          <div class="type-row"><dt>Fødselsnummer<span class="t-tag">fnr</span></dt><dd>Det vanlige nummeret. De seks første sifrene er fødselsdato (DDMMÅÅ), de to siste er kontrollsifre.</dd></div>
+          <div class="type-row"><dt>D-nummer<span class="t-tag">dnr</span></dt><dd>For personer med midlertidig tilknytning til Norge. Første siffer er lagt til 4 — validatoren trekker det fra før datoen sjekkes.</dd></div>
+          <div class="type-row"><dt>H-nummer<span class="t-tag">hnr</span></dt><dd>Hjelpenummer brukt internt i helsevesenet. Tredje siffer er lagt til 4.</dd></div>
+          <div class="type-row"><dt>Testnummer<span class="t-tag">tnr</span></dt><dd>Syntetiske numre fra Test Norge (Tenor). Tredje siffer er lagt til 8 — slik at et testnummer aldri kolliderer med en ekte person.</dd></div>
+        </dl>
+        <p class="types-note detail">I tillegg gjenkjennes kombinasjonene <code>dnr-and-hnr</code> og <code>dnr-and-tnr</code> når sifrene tilsier begge deler. For hvert nummer sjekkes to ting: at <b>kontrollsifrene</b> (mod 11) stemmer, og at de seks første sifrene gir en <b>gyldig dato</b>.</p>
+      </div>
+    </section>
+
+    <section class="section p-install">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ta den i bruk</h2>
+          <p class="ingress">Pakken finnes på npm. Ett kall, ett svar-objekt — ingen oppsett, ingen konfigurasjon.</p>
+        </div>
+        <div class="install-grid">
+          <div class="code-card">
+            <div class="cc-bar"><span class="fname">Installer</span></div>
+            <pre><code><span class="cc-prompt">$</span> npm install @navikt/fnrvalidator</code></pre>
+          </div>
+          <div class="code-card">
+            <div class="cc-bar"><span class="fname">Bruk</span></div>
+<pre><code><span class="cc-kw">import</span> {'{'} idnr {'}'} <span class="cc-kw">from</span> <span class="cc-str">'@navikt/fnrvalidator'</span>
+
+<span class="cc-kw">const</span> res = <span class="cc-fn">idnr</span>(<span class="cc-str">'10915596784'</span>)
+<span class="cc-cm">// {'{'} status: 'valid', type: 'tnr' {'}'}</span>
+<span class="cc-cm">// ellers: {'{'} status: 'invalid', reasons: [...] {'}'}</span></code></pre>
+          </div>
+        </div>
+        <p class="install-note detail">Egne funksjoner finnes også per type — <code>fnr()</code>, <code>dnr()</code>, <code>hnr()</code>, <code>tnr()</code> og <code>dnrAndHnr()</code> — men <code>idnr()</code> kjenner igjen typen selv.</p>
+      </div>
+    </section>
+
+    <section class="section p-reuse">
+      <div class="container">
+        <div class="reuse-card">
+          <p class="eyebrow">Fritt å gjenbruke</p>
+          <h2>Brukt langt utenfor forvaltningen</h2>
+          <p>fnrvalidator er MIT-lisensiert og har ingen bindinger til Nav-spesifikk infrastruktur. Reglene for norske identitetsnumre er de samme uansett hvem som sjekker dem — derfor er biblioteket like nyttig for en kommune, en bank eller et lite konsulentteam som for oss.</p>
+          <p class="reuse-fine detail">Vi lover ingen support-SLA, men issues og pull requests er velkomne. Bruker du det i din tjeneste? Si gjerne fra — det er slik vi ser at det åpne arbeidet virker.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <ProsjektFooter repo="navikt/fnrvalidator" lenker={[{ href: "https://www.npmjs.com/package/@navikt/fnrvalidator", tekst: "npmjs.com" }, { href: "https://www.skatteetaten.no/skjema/testdata/", tekst: "Tenor testdata" }]} />
+</Layout>
+
+<style>
+  .p-hero { padding: 4rem 0; }
+  .p-hero .container { display: grid; gap: 3rem; align-items: center; }
+  .hero-copy { display: flex; flex-direction: column; gap: 1rem; max-width: var(--prose); }
+  .p-hero h1 { font-size: 3rem; letter-spacing: -0.01em; }
+  .thesis { font-size: 1.375rem; font-weight: 600; line-height: 1.35; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+  .btn-quiet { background: transparent; color: var(--text); border: 1px solid var(--border-strong); }
+  .btn-quiet:hover { background: var(--bg-subtle); color: var(--text); border-color: var(--text-subtle); }
+  .p-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; margin-top: 0.75rem; }
+  .p-meta .sep { color: var(--border-strong); }
+  @media (min-width: 768px) { .p-hero { padding: 6rem 0; } .p-hero h1 { font-size: 3.5rem; } }
+  @media (min-width: 1024px) { .p-hero .container { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+
+  /* ---- Live-validatoren (heltebildet) ---- */
+  .validator { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; }
+  .v-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.625rem 1rem; border-bottom: 1px solid var(--border); background: var(--bg-subtle); }
+  .v-title { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-subtle); }
+  .kind-chip { font-family: var(--mono); font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: var(--radius-s); background: var(--tag-info-bg); color: var(--tag-info-text); white-space: nowrap; }
+  .v-body { padding: 1.5rem 1.25rem 1.375rem; display: flex; flex-direction: column; gap: 1rem; }
+  .v-label { font-size: 0.9375rem; font-weight: 600; color: var(--text); }
+
+  .v-field { position: relative; display: flex; align-items: center; }
+  .v-input {
+    flex: 1; width: 100%;
+    font-family: var(--mono);
+    font-size: 1.5rem; letter-spacing: 0.18em;
+    padding: 0.75rem 4.25rem 0.75rem 0.875rem;
+    color: var(--text); background: var(--bg);
+    border: 1px solid var(--border-strong); border-radius: var(--radius-m);
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+  .v-input::placeholder { color: var(--border-strong); letter-spacing: 0.08em; }
+  .v-input:focus-visible { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .v-count { position: absolute; right: 0.875rem; font-family: var(--mono); font-size: 0.8125rem; color: var(--text-subtle); pointer-events: none; }
+  @media (max-width: 380px) { .v-input { font-size: 1.25rem; letter-spacing: 0.12em; } }
+
+  .v-result {
+    font-size: 1rem; line-height: 1.45;
+    padding: 0.75rem 0.875rem;
+    border-radius: var(--radius-m);
+    border: 1px solid var(--border);
+    background: var(--bg-subtle);
+    color: var(--text-subtle);
+    display: flex; gap: 0.5rem; align-items: baseline;
+    transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+  }
+  .v-result::before { content: ""; }
+  .v-result[data-state="ok"] { background: var(--tint-info); border-color: var(--info-strong); color: var(--info-strong); font-weight: 600; }
+  .v-result[data-state="bad"] { background: var(--surface); border-color: var(--border-strong); color: var(--text); }
+  .v-result .v-mark { flex-shrink: 0; align-self: center; }
+  .v-result[data-state="ok"] .v-mark { color: var(--info-strong); }
+
+  .v-privacy { display: flex; gap: 0.5rem; align-items: flex-start; color: var(--text-subtle); }
+  .v-lock { flex-shrink: 0; margin-top: 0.15em; color: var(--info-strong); }
+
+  .v-try { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
+  .v-try-lead { color: var(--text-subtle); }
+  .v-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .chip {
+    font-family: var(--mono); font-size: 0.8125rem;
+    padding: 0.3125rem 0.625rem;
+    color: var(--text); background: var(--bg);
+    border: 1px solid var(--border); border-radius: var(--radius-s);
+    cursor: pointer; letter-spacing: 0.04em;
+    transition: border-color 150ms ease, background-color 150ms ease, color 150ms ease;
+  }
+  .chip:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+  .v-try-note { color: var(--text-subtle); }
+
+  /* ---- Den stille rekkevidden ---- */
+  .p-reach { background: var(--bg-subtle); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .p-reach .container { padding-block: 3.5rem; }
+  .reach-lead { color: var(--info-strong); }
+  .reach-line { font-size: 1.875rem; line-height: 1.3; font-weight: 600; margin-top: 0.75rem; max-width: 32rem; text-wrap: balance; }
+  .reach-line b { color: var(--info-strong); font-variant-numeric: tabular-nums; }
+  .reach-sub { margin-top: 1rem; color: var(--text-subtle); max-width: var(--prose); }
+  @media (min-width: 768px) { .reach-line { font-size: 2.25rem; } }
+
+  /* ---- Hva den sjekker ---- */
+  .types { border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; }
+  .type-row { display: grid; grid-template-columns: minmax(12rem, 15rem) 1fr; }
+  .type-row + .type-row { border-top: 1px solid var(--border); }
+  .type-row dt { display: flex; align-items: center; gap: 0.625rem; flex-wrap: wrap; font-weight: 600; padding: 1rem; background: var(--bg-subtle); border-right: 1px solid var(--border); }
+  .type-row dd { padding: 1rem; color: var(--text-subtle); font-size: 1.0625rem; }
+  .t-tag { font-family: var(--mono); font-size: 0.6875rem; padding: 0.0625rem 0.4375rem; border-radius: var(--radius-s); background: var(--tag-info-bg); color: var(--tag-info-text); letter-spacing: 0.02em; }
+  @media (max-width: 639px) {
+    .type-row { grid-template-columns: 1fr; }
+    .type-row dt { border-right: none; border-bottom: 1px solid var(--border); }
+  }
+  .types-note { margin-top: 1.25rem; max-width: var(--prose); line-height: 1.5; }
+  .types-note code, .install-note code { font-family: var(--mono); font-size: 0.875em; background: var(--tint-info); color: var(--info-strong); padding: 0.0625rem 0.3125rem; border-radius: var(--radius-s); }
+
+  /* ---- Ta den i bruk ---- */
+  .p-install { background: var(--bg-subtle); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .install-grid { display: grid; gap: 1.25rem; align-items: start; }
+  @media (min-width: 768px) { .install-grid { grid-template-columns: 1fr 1.35fr; } }
+  .code-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; }
+  .cc-bar { padding: 0.5rem 1rem; border-bottom: 1px solid var(--border); background: var(--bg-subtle); }
+  .cc-bar .fname { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-subtle); }
+  .code-card pre { padding: 1.125rem 1rem; overflow-x: auto; font-family: var(--mono); font-size: 0.875rem; line-height: 1.7; color: var(--text); }
+  .cc-prompt { color: var(--text-subtle); user-select: none; }
+  .cc-kw { color: var(--accent); }
+  .cc-str { color: var(--info-strong); }
+  .cc-fn { color: var(--text); font-weight: 600; }
+  .cc-cm { color: var(--text-subtle); }
+  .install-note { margin-top: 1.25rem; max-width: var(--prose); }
+
+  /* ---- Gjenbruk ---- */
+  .p-reuse { background: var(--tint-info); }
+  .reuse-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-l); padding: 2.5rem 2rem; max-width: 44rem; }
+  .reuse-card .eyebrow { color: var(--info-strong); }
+  .reuse-card h2 { margin-top: 0.5rem; }
+  .reuse-card p { margin-top: 1rem; color: var(--text-subtle); max-width: var(--prose); }
+  .reuse-card p:first-of-type { color: var(--text); }
+  .reuse-fine { line-height: 1.5; }
+</style>
+
+<script is:inline>
+  // Validering portet ordrett fra src/validator.ts i navikt/fnrvalidator (MIT).
+  // Kjøres i sin helhet i nettleseren — ingen nettverkskall.
+  (function () {
+    var input = document.getElementById("v-input");
+    var result = document.getElementById("v-result");
+    var count = document.getElementById("v-count");
+    var typeChip = document.getElementById("v-type");
+    var chips = document.querySelectorAll(".v-chips .chip");
+    if (!input || !result) return;
+
+    var eleven = /^\d{11}$/;
+
+    function getType(digits) {
+      var n = digits.split("").map(Number);
+      if (n[0] >= 4 && n[2] >= 8) return "dnr-and-tnr";
+      if (n[0] >= 4 && n[2] >= 4) return "dnr-and-hnr";
+      if (n[0] >= 4) return "dnr";
+      if (n[2] >= 8) return "tnr";
+      if (n[2] >= 4) return "hnr";
+      return "fnr";
+    }
+
+    function checksums(digits) {
+      var n = digits.split("").map(Number);
+      var k1Sum = 3 * n[0] + 7 * n[1] + 6 * n[2] + 1 * n[3] + 8 * n[4] +
+        9 * n[5] + 4 * n[6] + 5 * n[7] + 2 * n[8];
+      // Nytt fødselsnummer fra 2032: k1 kan gi rest 0–3 (fire mulige verdier).
+      var validK1 = [];
+      for (var rest = 0; rest <= 3; rest++) {
+        var k1 = (11 + rest) - (k1Sum % 11);
+        if (k1 > 10) k1 = k1 - 11;
+        if (k1 !== 10) validK1.push(k1);
+      }
+      var k1Actual = n[9];
+      if (validK1.indexOf(k1Actual) === -1) return ["checksum"];
+      var k2 = 11 - ((5 * n[0] + 4 * n[1] + 3 * n[2] + 2 * n[3] + 7 * n[4] +
+        6 * n[5] + 5 * n[6] + 4 * n[7] + 3 * n[8] + 2 * k1Actual) % 11);
+      if (k2 === 11) k2 = 0;
+      return (k2 < 10 && k2 === n[10]) ? [] : ["checksum"];
+    }
+
+    function birthdate(digits, type) {
+      if (type === "dnr") {
+        digits = (Number(digits.substring(0, 1)) - 4) + digits.substring(1);
+      } else if (type === "hnr") {
+        digits = digits.substring(0, 2) + (Number(digits.substring(2, 3)) - 4) + digits.substring(3);
+      } else if (type === "tnr") {
+        digits = digits.substring(0, 2) + (Number(digits.substring(2, 3)) - 8) + digits.substring(3);
+      } else if (type === "dnr-and-hnr") {
+        digits = (Number(digits.substring(0, 1)) - 4) + digits.substring(1, 2) + (Number(digits.substring(2, 3)) - 4) + digits.substring(3);
+      } else if (type === "dnr-and-tnr") {
+        digits = (Number(digits.substring(0, 1)) - 4) + digits.substring(1, 2) + (Number(digits.substring(2, 3)) - 8) + digits.substring(3);
+      }
+      var day = Number(digits.substring(0, 2));
+      var month = Number(digits.substring(2, 4));
+      var yearString = digits.substring(4, 6);
+      var year = yearString === "00" ? 2000 : Number(yearString);
+      var date = new Date(Date.UTC(year, month - 1, day));
+      return (date && (date.getUTCMonth() + 1) === month && date.getUTCDate() === day) ?
+        [] : ["date"];
+    }
+
+    function idnr(digits) {
+      if (!eleven.test(digits)) return { status: "invalid", reasons: ["length"] };
+      var type = getType(digits);
+      var errs = checksums(digits).concat(birthdate(digits, type));
+      return errs.length === 0 ? { status: "valid", type: type } :
+        { status: "invalid", reasons: errs };
+    }
+
+    // Norske etiketter for de gjenkjente typene.
+    var TYPE_LABEL = {
+      "fnr": "gyldig fødselsnummer",
+      "dnr": "gyldig d-nummer",
+      "hnr": "gyldig h-nummer",
+      "tnr": "gyldig testnummer (Test Norge)",
+      "dnr-and-hnr": "gyldig d-nummer / h-nummer",
+      "dnr-and-tnr": "gyldig d-nummer / testnummer"
+    };
+    var TYPE_CHIP = {
+      "fnr": "type: fnr", "dnr": "type: dnr", "hnr": "type: hnr", "tnr": "type: tnr",
+      "dnr-and-hnr": "type: dnr+hnr", "dnr-and-tnr": "type: dnr+tnr"
+    };
+
+    var CHECK_SVG = '<svg class="v-mark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>';
+
+    function setResult(state, html) {
+      result.setAttribute("data-state", state);
+      result.innerHTML = html;
+    }
+
+    function reasonText(reasons, digits) {
+      var parts = [];
+      if (reasons.indexOf("checksum") !== -1) {
+        parts.push("kontrollsifrene stemmer ikke — de to siste sifrene skal regnes ut (mod 11) fra de ni første");
+      }
+      if (reasons.indexOf("date") !== -1) {
+        parts.push("de seks første sifrene gir ingen gyldig dato (DDMMÅÅ)");
+      }
+      return parts.join("; ");
+    }
+
+    function evaluate() {
+      var digits = (input.value || "").replace(/\D/g, "");
+      count.textContent = digits.length + "/11";
+      typeChip.hidden = true;
+
+      if (digits.length === 0) {
+        setResult("idle", "Taster du inn et nummer, får du svaret med det samme.");
+        return;
+      }
+      if (digits.length < 11) {
+        setResult("idle", "Fortsett — et norsk identitetsnummer er nøyaktig 11 siffer. Du har " + digits.length + ".");
+        return;
+      }
+      if (digits.length > 11) {
+        setResult("bad", "For mange siffer — et norsk identitetsnummer er nøyaktig 11. Du har " + digits.length + ".");
+        return;
+      }
+
+      var res = idnr(digits);
+      if (res.status === "valid") {
+        typeChip.textContent = TYPE_CHIP[res.type];
+        typeChip.hidden = false;
+        setResult("ok", CHECK_SVG + "<span>Dette er et " + TYPE_LABEL[res.type] + ".</span>");
+      } else {
+        setResult("bad", "<span>Ikke gyldig: " + reasonText(res.reasons, digits) + ".</span>");
+      }
+    }
+
+    input.addEventListener("input", evaluate);
+    chips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        input.value = chip.getAttribute("data-nr");
+        evaluate();
+        input.focus();
+      });
+    });
+  })();
+</script>

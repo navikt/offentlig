@@ -42,6 +42,7 @@
   --radius-l: 12px;
   --maxw: 72rem;                /* 1152px */
   --prose: 36rem;               /* 576px ≈ 65 tegn */
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 :root[data-theme="dark"] { color-scheme: dark; }
@@ -439,8 +440,8 @@ a:hover { color: var(--accent-hover); }
 
 /* ============ Skjulte perler ============ */
 .gems { background: var(--tint-beige); }
-.gem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-@media (max-width: 900px) { .gem-grid { grid-template-columns: 1fr; } }
+/* auto-fit: én perle fyller bredden, tre deler den — ingen halvtomme rader */
+.gem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 1.5rem; }
 .gem {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -448,8 +449,15 @@ a:hover { color: var(--accent-hover); }
   padding: 2rem;
   display: flex; flex-direction: column; gap: 0.75rem;
 }
+.gem p { max-width: var(--prose); } /* full bredde ved én perle — hold linjelengden lesbar */
 .gem .kicker { font-size: 0.875rem; font-weight: 600; color: var(--beige-strong); letter-spacing: 0.04em; text-transform: uppercase; }
 .gem .meta { margin-top: auto; padding-top: 0.5rem; }
+
+/* ============ Landingssider (prosjekt/…) ============ */
+.crumb { color: var(--text-subtle); font-size: 1rem; }
+.crumb strong { color: var(--text); font-weight: 600; }
+.prosjekt-footer .container { padding-block: 2.5rem; display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; justify-content: space-between; }
+.prosjekt-foot-links { display: flex; flex-wrap: wrap; gap: 1.5rem; font-size: 1rem; }
 
 /* ============ Bygd for gjenbruk ============ */
 .reuse-grid {

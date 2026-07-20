@@ -13,8 +13,13 @@
 # Feltet står tomt til det er forankret med eierteamene (PRD §9 pkt. 4) —
 # aldri gjett et teamnavn.
 #
+# side: (valgfritt) prosjektets landingsside. Relativ sti («prosjekt/navn»)
+# peker på en håndlaget side under src/pages/ (alltid bespoke — aldri
+# generert fra en mal); full URL peker på en eksisterende side utenfor
+# showcasen. Gjenbrukslisten lenker hit i stedet for til GitHub.
+#
 # gjenbruk: (valgfritt) løfter prosjektet inn i «Bygd for gjenbruk»-seksjonen
-# (PRD §4.5). Selv et tomt objekt ({}) er nok til å bli med. Valgfrie felt:
+# (PRD §4.4). Selv et tomt objekt ({}) er nok til å bli med. Valgfrie felt:
 #   bruktAv: liste med navngitte virksomheter utenfor Nav som bruker prosjektet.
 #           KUN håndverifiserte påstander — aldri gjett en adopter (PRD §7).
 #           Endres via pull request. Rendres som «Brukt av X (og Y)».
@@ -23,6 +28,7 @@
 #
 # Plassholderen {{fnrNedlastinger}} byttes ved bygg ut med ferske npm-tall
 # fra generated.json (stats.fnrDownloadsLastMonth) — aldri et håndskrevet tall.
+# Gjelder kun perle-tekster (Gems.astro); landingssider leser generated.json direkte.
 
 projects:
   - repo: navikt/mock-oauth2-server
@@ -31,6 +37,7 @@ projects:
       Mock av OAuth2 og OpenID Connect
       til testing — brukt langt utenfor Nav.
     perle: false
+    side: prosjekt/mock-oauth2-server
     gjenbruk:
       merknad: Brukt langt utenfor Nav
 
@@ -53,18 +60,21 @@ projects:
     kategori: data-ki
     beskrivelse: Sandkasse på kjernenivå som holder KI-kodeagenter i tømmene.
     perle: false
+    side: https://ki-utvikling.nav.no/cplt
     gjenbruk: {}
 
   - repo: navikt/pdfgen
     kategori: biblioteker
     beskrivelse: HTML-mal inn, PDF ut. Har generert Navs dokumenter siden 2018.
     perle: false
+    side: prosjekt/pdfgen
     gjenbruk: {}
 
   - repo: nais/wonderwall
     kategori: plattform
     beskrivelse: Sidevogn som tar seg av all pålogging, så applikasjonene slipper.
     perle: false
+    side: prosjekt/wonderwall
     gjenbruk: {}
 
   - repo: navikt/rapids-and-rivers
@@ -76,28 +86,26 @@ projects:
     kategori: biblioteker
     beskrivelse: OAuth2- og OIDC-validering for JVM-apper, rett fra Maven Central.
     perle: false
+    side: prosjekt/token-support
     gjenbruk: {}
 
   - repo: navikt/fnrvalidator
     kategori: biblioteker
-    perle: true
-    kicker: Mest brukt, minst sett
+    perle: false
     beskrivelse: >-
-      20 stjerner — og {{fnrNedlastinger}} nedlastinger i måneden. Den
-      stille standarden for å validere fødselsnummer i norsk JavaScript,
-      også utenfor forvaltningen.
-    meta: TypeScript · npm
+      Validerer fødselsnummer og d-nummer — den stille standarden
+      i norsk JavaScript.
+    side: prosjekt/fnrvalidator
     gjenbruk:
       merknad: Også utenfor forvaltningen
 
   - repo: nais/digdirator
     kategori: plattform
-    perle: true
-    kicker: Klar til gjenbruk
+    perle: false
     beskrivelse: >-
       Kubernetes-operatør som registrerer klienter mot ID-porten og
-      Maskinporten automatisk. Enhver norsk etat kan ta den i bruk i dag.
-    meta: Go · Kubernetes
+      Maskinporten automatisk.
+    side: prosjekt/digdirator
     gjenbruk:
       merknad: Klar for enhver norsk etat
 
@@ -117,6 +125,7 @@ projects:
       Hendelser fra GitHub rett inn i Slack — issues, pull requests
       og deploys der teamet er.
     perle: false
+    side: https://navikt.github.io/ghep/
     gjenbruk:
       bruktAv:
         - Miljødirektoratet
@@ -127,6 +136,7 @@ projects:
       Kubernetes-operatør som ruller ut og drifter Unleash-instanser
       for feature-toggling.
     perle: false
+    side: prosjekt/unleasherator
     gjenbruk: {}
 
   - repo: nais/kafkarator
@@ -135,10 +145,12 @@ projects:
       Kubernetes-operatør for Kafka-topics på Aiven — selvbetjening
       med én YAML-fil.
     perle: false
+    side: prosjekt/kafkarator
     gjenbruk: {}
 
   - repo: nais/bqrator
     kategori: plattform
     beskrivelse: Kubernetes-operatør som oppretter BigQuery-datasett deklarativt.
     perle: false
+    side: prosjekt/bqrator
     gjenbruk: {}

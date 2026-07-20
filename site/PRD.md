@@ -76,17 +76,19 @@ Kort-grid gruppert i kategorier som treffer begge fasetter (domene for etater, t
 
 **Kortformel** (Spotify-mønsteret): navn · håndskrevet norsk én-linjer (ikke GitHub-beskrivelsen) · primærspråk · ⭐ stjerner · sist aktiv · vedlikeholdt-av «Team X i Nav» · ev. status-badge (`aktiv`/`arkivert`) · lenke til GitHub. Tall auto-synkes; tekst er redaksjonell.
 
-### 4.4 Skjulte perler
-Egen liten seksjon (3–5 stk. roterende/kuratert) med litt lengre fortelling: *fnrvalidator* (20 stjerner, 53 000 nedlastinger/mnd), *digdirator* (auto-registrering mot ID-porten/Maskinporten — gratis for enhver etat), *DSF* (IT-dinosauren som gikk av med pensjon etter 51 år). Dette er seksjonen som gjør siden *autentisk* snarere enn korporativ.
-
-### 4.5 Bygd for gjenbruk
-Egen seksjon som svarer direkte på persona 2 (arkitekter i andre etater) og suksessmålet «Gjenbruk i offentlig sektor»: en samlet, kompakt liste over prosjekter som er laget for at også andre virksomheter skal kunne ta dem i bruk — MIT-lisensiert og klare i dag. Kom fra tilbakemelding fra en kollega på prototypen: *«Skulle vi fått inn en liste over repoer/prosjekter som er bygd med tanke på at andre også kan bruke de? Ghep vet jeg er tatt i bruk av Miljødirektoratet også.»*
+### 4.4 Bygd for gjenbruk
+Egen seksjon rett etter prosjektgridet, som svarer direkte på persona 2 (arkitekter i andre etater) og suksessmålet «Gjenbruk i offentlig sektor»: en samlet, kompakt liste over prosjekter som er laget for at også andre virksomheter skal kunne ta dem i bruk — MIT-lisensiert og klare i dag. Kom fra tilbakemelding fra en kollega på prototypen: *«Skulle vi fått inn en liste over repoer/prosjekter som er bygd med tanke på at andre også kan bruke de? Ghep vet jeg er tatt i bruk av Miljødirektoratet også.»*
 
 **Datamodell** (redaksjonell, aldri synket) — nytt valgfritt felt `gjenbruk:` per prosjekt i `projects.yaml`. Selv et tomt objekt (`{}`) løfter prosjektet inn i seksjonen. Valgfrie underfelt:
 - `bruktAv:` — liste med navngitte virksomheter utenfor Nav. Rendres som «Brukt av X (og Y)».
 - `merknad:` — fritekst når vi ikke kan navngi noen konkret adopter (f.eks. «Brukt langt utenfor Nav»); vises kun når `bruktAv` mangler.
 
-**Ærlighetsregel** (jf. §7): aldri gjett en adopter. `bruktAv` skal kun inneholde håndverifiserte påstander og endres via pull request. Ved lansering er `ghep` (brukt av Miljødirektoratet) det eneste prosjektet med en navngitt adopter; de øvrige bruker `merknad` eller ingen linje. Kompakt liste (ikke fulle kort — unngår duplikat av prosjektgridet): navn med GitHub-lenke, håndskrevet én-linjer, primærspråk (synket), og ev. «✓»-linje.
+**Ærlighetsregel** (jf. §7): aldri gjett en adopter. `bruktAv` skal kun inneholde håndverifiserte påstander og endres via pull request. Ved lansering er `ghep` (brukt av Miljødirektoratet) det eneste prosjektet med en navngitt adopter; de øvrige bruker `merknad` eller ingen linje. Kompakt liste (ikke fulle kort — unngår duplikat av prosjektgridet): navn, håndskrevet én-linjer, primærspråk (synket), og ev. «✓»-linje.
+
+**Landingssider** — hvert gjenbruksprosjekt får en egen landingsside, med mindre det allerede har en utenfor repoet (`ghep` → navikt.github.io/ghep, `cplt` → ki-utvikling.nav.no/cplt). Sidene ligger under `/prosjekt/<navn>/` og pekes ut med `side:`-feltet i `projects.yaml`; gjenbrukslisten lenker dit i stedet for til GitHub. Sidene er **bespoke, aldri generert fra en mal**: felles er kun tokens, topplinje (`ProsjektHeader`) og bunnlinje (`ProsjektFooter`) — heltemotivet skal komme fra prosjektets egen verden (digdirator: manifestet + reconcile-loggen; fnrvalidator: en levende validator; osv.). Alle påstander på sidene følger samme ærlighetsregel, og tall hentes fra `generated.json`.
+
+### 4.5 Skjulte perler
+Liten seksjon for prosjekter vi er stolte av uten at de er noe å gjenbruke — ren historiefortelling: *DSF* (IT-dinosauren som gikk av med pensjon etter 51 år). Gjenbruksprosjekter dupliseres bevisst ikke hit (fnrvalidator og digdirator lå her opprinnelig, men bor nå i gjenbruksseksjonen med hver sin landingsside). Seksjonen tåler én enkelt perle (gridet auto-tilpasser) og er fortsatt det som gjør siden *autentisk* snarere enn korporativ.
 
 ### 4.6 Slik jobber vi åpent
 Kondensert versjon av retningslinjene med lenke til `navikt/offentlig`: motivasjon (transparens først), prosessen (risikovurdering → sikkerhetsvask → krav → publiser), MIT-lisens, og de tre ærlige unntakene (hemmeligheter, svindelalgoritmer, ikke-vedtatte lovendringer). Å publisere policyen er i seg selv showcase-innhold (jf. GOV.UK «Coding in the Open», Microsofts program-side).
