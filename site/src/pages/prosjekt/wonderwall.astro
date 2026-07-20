@@ -12,8 +12,8 @@ const data = (generated.repos as any)["nais/wonderwall"];
 ---
 
 <Layout
-  title="wonderwall — sidevognen som går innloggingen for deg"
-  description="En OpenID Connect-sidevogn som håndterer hele innloggingsdansen, slik at applikasjonen din slipper å lære OAuth2. Åpen kildekode fra Nav."
+  title="wonderwall — sidevognen som tar innloggingen for deg"
+  description="En OpenID Connect-sidevogn som tar hele innloggingen mot leverandøren, slik at applikasjonen din slipper å lære OAuth2. Åpen kildekode fra Nav."
 >
   <ProsjektHeader navn="wonderwall" />
   <main id="hoved">
@@ -25,7 +25,7 @@ const data = (generated.repos as any)["nais/wonderwall"];
           <p class="eyebrow">Fra Nais-plattformen · Bygd for gjenbruk</p>
           <h1>wonderwall</h1>
           <p class="thesis">Applikasjonen din trenger aldri lære OAuth2.</p>
-          <p class="ingress">wonderwall er en revers proxy som spiller rollen som OpenID&#8209;Connect&#8209;klient — vanligvis som en sidevogn ved siden av applikasjonen din. Den går hele innloggingsdansen med identitetsleverandøren, og sender forespørselen videre til appen med brukerens token allerede påkoblet.</p>
+          <p class="ingress">wonderwall er en reverse proxy som spiller rollen som OpenID&#8209;Connect&#8209;klient, vanligvis som en sidevogn ved siden av applikasjonen din. Den tar hele innloggingen mot identitetsleverandøren og sender forespørselen videre til appen med brukerens token påkoblet.</p>
           <div class="cta-row">
             <a class="btn" href="https://github.com/nais/wonderwall">Kom i gang på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
             <a class="btn btn-quiet" href="#slik-virker-det">Slik virker det</a>
@@ -43,7 +43,7 @@ const data = (generated.repos as any)["nais/wonderwall"];
           </p>
         </div>
 
-        <figure class="journey" aria-label="Forespørselens reise: Nettleseren treffer /oauth2/login, wonderwall håndterer OpenID Connect mot leverandøren, og applikasjonen din mottar forespørselen med brukerens token påkoblet.">
+        <figure class="journey" aria-label="Forespørselens reise: Nettleseren treffer /oauth2/login, wonderwall håndterer OpenID Connect mot leverandøren, og applikasjonen din får forespørselen med brukerens token påkoblet.">
           <div class="journey-inner">
             <div class="rail" aria-hidden="true"><span class="packet" id="packet"></span></div>
             <ol class="stations" id="stations">
@@ -60,11 +60,11 @@ const data = (generated.repos as any)["nais/wonderwall"];
               <li class="station">
                 <span class="node"></span>
                 <p class="st-name">Applikasjonen din</p>
-                <p class="st-line">Mottar forespørselen med <code>Authorization: Bearer</code></p>
+                <p class="st-line">Får forespørselen med <code>Authorization: Bearer</code></p>
               </li>
             </ol>
           </div>
-          <figcaption class="j-cap detail">Én oppkobling — så hviler stien. Appen ser bare en ferdig innlogget bruker.</figcaption>
+          <figcaption class="j-cap detail">Oppkoblingen skjer én gang. Appen ser bare en ferdig innlogget bruker.</figcaption>
         </figure>
       </div>
     </section>
@@ -95,13 +95,13 @@ const data = (generated.repos as any)["nais/wonderwall"];
       <div class="container">
         <div class="section-head">
           <h2>Hvorfor en sidevogn?</h2>
-          <p class="ingress">Fordi innlogging er den samme jobben uansett hvilket språk appen er skrevet i. Legger du den i en sidevogn, gjøres den én gang — riktig — og appen slipper å eie en eneste linje autentiseringskode.</p>
+          <p class="ingress">Fordi innlogging er den samme jobben uansett hvilket språk appen er skrevet i. Legger du den i en sidevogn, blir den gjort riktig én gang, og appen slipper å eie en eneste linje autentiseringskode.</p>
         </div>
         <div class="reason-grid">
           <div class="reason">
             <p class="r-num">01</p>
             <h3>Null autentiseringskode i appen</h3>
-            <p>Ingen OAuth2-bibliotek, ingen callback-håndtering, ingen tokenvalidering å vedlikeholde. Appen leser brukeren fra en helt vanlig HTTP-forespørsel.</p>
+            <p>Ingen OAuth2-bibliotek, ingen callback-håndtering, ingen tokenvalidering å vedlikeholde. Appen leser brukeren fra en vanlig HTTP-forespørsel.</p>
           </div>
           <div class="reason">
             <p class="r-num">02</p>
@@ -180,7 +180,7 @@ WONDERWALL_ENCRYPTION_KEY=<openssl rand -base64 32>`}>Kopier</button>
       <div class="container">
         <div class="section-head">
           <h2>Ta den i bruk i din virksomhet</h2>
-          <p class="ingress">wonderwall er en frittstående revers proxy. Den er bygd på Nais-plattformen, men vet ingenting om Nav — alt den trenger er en OpenID-leverandør og et sted å kjøre en container.</p>
+          <p class="ingress">wonderwall er en frittstående reverse proxy. Den er bygd på Nais-plattformen, men vet ingenting om Nav — alt den trenger er en OpenID-leverandør og et sted å kjøre en container.</p>
         </div>
         <div class="cols">
           <div class="panel">

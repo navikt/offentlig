@@ -134,7 +134,7 @@ projects:
     kategori: plattform
     beskrivelse: >-
       Kubernetes-operatør som ruller ut og drifter Unleash-instanser
-      for feature-toggling.
+      for funksjonsbrytere.
     perle: false
     side: prosjekt/unleasherator
     gjenbruk: {}

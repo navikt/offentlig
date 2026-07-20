@@ -25,7 +25,7 @@ const data = (generated.repos as any)["nais/digdirator"];
           <p class="eyebrow">Fra Nais-plattformen · Bygd for gjenbruk</p>
           <h1>digdirator</h1>
           <p class="thesis">Du beskriver klienten. Operatøren registrerer den hos ID&#8209;porten og Maskinporten — og holder den ved like.</p>
-          <p class="ingress">En Kubernetes-operatør som snakker med Digdirs selvbetjenings-API for deg: oppretter klienter, legger hemmelighetene der applikasjonen venter dem, og roterer nøkler uten at noen må huske det. I drift i Nav siden 2020 — klar for enhver norsk etat.</p>
+          <p class="ingress">En Kubernetes-operatør som snakker med Digdirs selvbetjenings-API for deg: oppretter klienter, legger legitimasjonen i en secret der applikasjonen finner den, og roterer nøkler uten at noen må huske det. I drift i Nav siden 2020 — klar for enhver norsk etat.</p>
           <div class="cta-row">
             <a class="btn" href="https://github.com/nais/digdirator">Kom i gang på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
             <a class="btn btn-quiet" href="#slik-virker-det">Slik virker det</a>
@@ -72,13 +72,13 @@ const data = (generated.repos as any)["nais/digdirator"];
       <div class="container">
         <div class="section-head">
           <h2>Slik virker det</h2>
-          <p class="ingress">Registrering hos ID-porten og Maskinporten er skjemaer, nøkler og ting som utløper. digdirator gjør det om til én fil i klusteret ditt.</p>
+          <p class="ingress">Registrering hos ID-porten og Maskinporten er skjemaer, nøkler og ting som utløper. digdirator gjør det om til én fil i clusteret ditt.</p>
         </div>
         <ol class="steps" style="list-style:none">
           <li class="step">
             <p class="num">Steg 1</p>
             <h3>Beskriv klienten</h3>
-            <p>Legg en <code>IDPortenClient</code>- eller <code>MaskinportenClient</code>-ressurs i klusteret, som en hvilken som helst annen Kubernetes-ressurs. Filen er hele sannheten.</p>
+            <p>Legg en <code>IDPortenClient</code>- eller <code>MaskinportenClient</code>-ressurs i clusteret, som en hvilken som helst annen Kubernetes-ressurs. Filen er hele sannheten.</p>
           </li>
           <li class="step">
             <p class="num">Steg 2</p>

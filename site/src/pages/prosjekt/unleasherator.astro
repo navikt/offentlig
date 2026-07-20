@@ -24,7 +24,7 @@ const data = (generated.repos as any)["nais/unleasherator"];
         <div class="hero-copy">
           <p class="eyebrow">Fra Nais-plattformen · Bygd for gjenbruk</p>
           <h1>unleasherator</h1>
-          <p class="thesis">Feature-toggles er enkle. Å drifte Unleash er jobben — den tar unleasherator.</p>
+          <p class="thesis">Funksjonsbrytere er enkle. Å drifte Unleash er jobben — unleasherator tar den.</p>
           <p class="ingress">Unleash er et åpent system for funksjonsbrytere, opprinnelig laget i Norge. Å skru en bryter av og på tar sekunder — men noen må kjøre serveren bak. unleasherator er en Kubernetes-operatør som setter opp Unleash-instanser, deler ut API-tokens og kobler clustre sammen, slik at team kan bytte funksjoner i stedet for å drifte servere.</p>
           <div class="cta-row">
             <a class="btn" href="https://github.com/nais/unleasherator">Kom i gang på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
@@ -90,7 +90,7 @@ const data = (generated.repos as any)["nais/unleasherator"];
           </div>
         </div>
         <dl class="kv">
-          <div class="kv-row"><dt>Unleash</dt><dd>En komplett Unleash-instans i klusteret — deployment, ingress og tilkobling til databasen. Operatøren driver hele livsløpet.</dd></div>
+          <div class="kv-row"><dt>Unleash</dt><dd>En komplett Unleash-instans i clusteret — deployment, ingress og tilkobling til databasen. Operatøren driver hele livsløpet.</dd></div>
           <div class="kv-row"><dt>ApiToken</dt><dd>En API-token mot en Unleash-instans, klargjort og lagt i en Kubernetes-secret der applikasjonen leser den.</dd></div>
           <div class="kv-row"><dt>RemoteUnleash</dt><dd>En kobling til en Unleash-instans som kjører et annet sted, autentisert med en admin-token fra en secret. Slik når flere clustre samme brytere.</dd></div>
           <div class="kv-row"><dt>ReleaseChannel</dt><dd>En felles oppdateringskanal som ruller ut nye Unleash-versjoner på tvers av instansene dine, med strategi for helsesjekk og tilbakerulling.</dd></div>
@@ -109,7 +109,7 @@ const data = (generated.repos as any)["nais/unleasherator"];
           <li class="step">
             <p class="num">Steg 1</p>
             <h3>Be om en instans</h3>
-            <p>Legg en <code>Unleash</code>-ressurs i klusteret og pek den mot databasen. Operatøren setter opp Unleash-serveren og holder den kjørende.</p>
+            <p>Legg en <code>Unleash</code>-ressurs i clusteret og pek den mot databasen. Operatøren setter opp Unleash-serveren og holder den kjørende.</p>
           </li>
           <li class="step">
             <p class="num">Steg 2</p>
@@ -164,7 +164,7 @@ const data = (generated.repos as any)["nais/unleasherator"];
           <p class="ingress">Koden er åpen, men vær ærlig om hva du overtar før du tar den i drift.</p>
         </div>
         <div class="panel">
-          <p class="fine">MIT-lisensiert og fri å bruke. Vi lover ingen support-SLA — issues og pull requests er velkomne, men driften er ditt ansvar.</p>
+          <p class="fine">MIT-lisensiert og fritt å bruke. Vi lover ingen support-SLA, men issues og pull requests er velkomne. Driften er ditt ansvar.</p>
           <p class="fine">unleasherator er bygd for og driftet på Nais-plattformen. Den kan trolig kjøre andre steder, men les README og sjekk oppsettet før du hevder at den kjører i et vilkårlig cluster.</p>
           <p class="adopter-note"><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Åpen kildekode fra Nav</p>
         </div>
