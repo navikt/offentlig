@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-21T06:36:29.900Z",
+  "syncedAt": "2026-07-21T06:51:47.059Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -119,53 +119,53 @@
   },
   "stats": {
     "publicRepos": 3112,
-    "commitsLast7Days": 2961,
-    "prsLast30Days": 13451,
+    "commitsLast7Days": 2951,
+    "prsLast30Days": 13456,
     "npmDownloadsLastMonth": 304753,
     "fnrDownloadsLastMonth": 41443
   },
   "recentlyUpdated": [
     {
-      "name": "kabal-innstillinger",
-      "url": "https://github.com/navikt/kabal-innstillinger",
-      "pushedAt": "2026-07-21T06:36:22Z",
+      "name": "klage-file-api",
+      "url": "https://github.com/navikt/klage-file-api",
+      "pushedAt": "2026-07-21T06:51:27Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "klage-arkiver-journalpost",
+      "url": "https://github.com/navikt/klage-arkiver-journalpost",
+      "pushedAt": "2026-07-21T06:50:48Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "spinntektsmelding-frontend",
+      "url": "https://github.com/navikt/spinntektsmelding-frontend",
+      "pushedAt": "2026-07-21T06:50:18Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
+    },
+    {
+      "name": "kaptein-api",
+      "url": "https://github.com/navikt/kaptein-api",
+      "pushedAt": "2026-07-21T06:49:59Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
       "name": "kaka-api",
       "url": "https://github.com/navikt/kaka-api",
-      "pushedAt": "2026-07-21T06:35:49Z",
+      "pushedAt": "2026-07-21T06:47:41Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "kabin-api",
-      "url": "https://github.com/navikt/kabin-api",
-      "pushedAt": "2026-07-21T06:34:59Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "pleesah-game",
-      "url": "https://github.com/navikt/pleesah-game",
-      "pushedAt": "2026-07-21T06:33:16Z",
+      "name": "fritak-agp-frontend",
+      "url": "https://github.com/navikt/fritak-agp-frontend",
+      "pushedAt": "2026-07-21T06:47:03Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
-    },
-    {
-      "name": "eessi-pensjon-begrens-innsyn",
-      "url": "https://github.com/navikt/eessi-pensjon-begrens-innsyn",
-      "pushedAt": "2026-07-21T06:31:27Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "eessi-pensjon-krav-initialisering",
-      "url": "https://github.com/navikt/eessi-pensjon-krav-initialisering",
-      "pushedAt": "2026-07-21T06:31:25Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
     }
   ],
   "languages": {
