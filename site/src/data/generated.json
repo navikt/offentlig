@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-21T08:00:29.783Z",
+  "syncedAt": "2026-07-21T08:03:35.178Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -7,7 +7,7 @@
     "navikt/mock-oauth2-server": {
       "stars": 401,
       "language": "Kotlin",
-      "languageColor": "#a97bff",
+      "languageColor": "#A97BFF",
       "pushedAt": "2026-07-20T22:14:11Z",
       "isArchived": false
     },
@@ -21,14 +21,14 @@
     "nais/naiserator": {
       "stars": 48,
       "language": "Go",
-      "languageColor": "#00add8",
+      "languageColor": "#00ADD8",
       "pushedAt": "2026-07-12T20:49:34Z",
       "isArchived": false
     },
     "navikt/helse-spleis": {
       "stars": 6,
       "language": "Kotlin",
-      "languageColor": "#a97bff",
+      "languageColor": "#A97BFF",
       "pushedAt": "2026-07-17T12:04:11Z",
       "isArchived": false
     },
@@ -42,21 +42,21 @@
     "navikt/pdfgen": {
       "stars": 24,
       "language": "Kotlin",
-      "languageColor": "#a97bff",
+      "languageColor": "#A97BFF",
       "pushedAt": "2026-07-20T08:04:57Z",
       "isArchived": false
     },
     "nais/wonderwall": {
       "stars": 27,
       "language": "Go",
-      "languageColor": "#00add8",
+      "languageColor": "#00ADD8",
       "pushedAt": "2026-07-20T07:02:49Z",
       "isArchived": false
     },
     "navikt/rapids-and-rivers": {
       "stars": 25,
       "language": "Kotlin",
-      "languageColor": "#a97bff",
+      "languageColor": "#A97BFF",
       "pushedAt": "2026-07-15T11:12:07Z",
       "isArchived": false
     },
@@ -77,7 +77,7 @@
     "nais/device": {
       "stars": 18,
       "language": "Go",
-      "languageColor": "#00add8",
+      "languageColor": "#00ADD8",
       "pushedAt": "2026-07-10T06:36:12Z",
       "isArchived": false
     },
@@ -91,14 +91,14 @@
     "navikt/copilot": {
       "stars": 52,
       "language": "Go",
-      "languageColor": "#00add8",
+      "languageColor": "#00ADD8",
       "pushedAt": "2026-07-20T04:15:59Z",
       "isArchived": false
     },
     "navikt/token-support": {
       "stars": 19,
       "language": "Kotlin",
-      "languageColor": "#a97bff",
+      "languageColor": "#A97BFF",
       "pushedAt": "2026-07-20T14:44:36Z",
       "isArchived": false
     },
@@ -112,7 +112,7 @@
     "nais/digdirator": {
       "stars": 11,
       "language": "Go",
-      "languageColor": "#00add8",
+      "languageColor": "#00ADD8",
       "pushedAt": "2026-07-13T07:03:14Z",
       "isArchived": false
     },
@@ -126,40 +126,68 @@
     "navikt/ghep": {
       "stars": 3,
       "language": "Go",
-      "languageColor": "#00add8",
+      "languageColor": "#00ADD8",
       "pushedAt": "2026-07-21T06:19:28Z",
       "isArchived": false
     },
     "nais/unleasherator": {
       "stars": 12,
       "language": "Go",
-      "languageColor": "#00add8",
+      "languageColor": "#00ADD8",
       "pushedAt": "2026-07-20T07:35:14Z",
       "isArchived": false
     },
     "nais/kafkarator": {
       "stars": 5,
       "language": "Go",
-      "languageColor": "#00add8",
+      "languageColor": "#00ADD8",
       "pushedAt": "2026-07-20T20:03:00Z",
       "isArchived": false
     },
     "nais/bqrator": {
       "stars": 1,
       "language": "Go",
-      "languageColor": "#00add8",
+      "languageColor": "#00ADD8",
       "pushedAt": "2026-07-20T17:42:55Z",
       "isArchived": false
     }
   },
   "stats": {
     "publicRepos": 3112,
-    "commitsLast7Days": 2973,
+    "commitsLast7Days": 2972,
     "prsLast30Days": 13555,
     "npmDownloadsLastMonth": 304753,
     "fnrDownloadsLastMonth": 41443
   },
   "recentlyUpdated": [
+    {
+      "name": "aap-behandlingsflyt",
+      "url": "https://github.com/navikt/aap-behandlingsflyt",
+      "pushedAt": "2026-07-21T08:03:44Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "aap-statistikk",
+      "url": "https://github.com/navikt/aap-statistikk",
+      "pushedAt": "2026-07-21T08:02:30Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "aap-saksbehandling",
+      "url": "https://github.com/navikt/aap-saksbehandling",
+      "pushedAt": "2026-07-21T08:01:06Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
+    },
+    {
+      "name": "mulighetsrommet",
+      "url": "https://github.com/navikt/mulighetsrommet",
+      "pushedAt": "2026-07-21T08:00:55Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
     {
       "name": "aap-backend-typescript-types",
       "url": "https://github.com/navikt/aap-backend-typescript-types",
@@ -171,34 +199,6 @@
       "name": "pleesah-game",
       "url": "https://github.com/navikt/pleesah-game",
       "pushedAt": "2026-07-21T07:55:29Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "k9-abakus",
-      "url": "https://github.com/navikt/k9-abakus",
-      "pushedAt": "2026-07-21T07:55:27Z",
-      "language": "Java",
-      "languageColor": "#b07219"
-    },
-    {
-      "name": "aap-behandlingsflyt",
-      "url": "https://github.com/navikt/aap-behandlingsflyt",
-      "pushedAt": "2026-07-21T07:54:51Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "sokos-ske-krav",
-      "url": "https://github.com/navikt/sokos-ske-krav",
-      "pushedAt": "2026-07-21T07:54:41Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "vaktor-frontend",
-      "url": "https://github.com/navikt/vaktor-frontend",
-      "pushedAt": "2026-07-21T07:54:35Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     }
