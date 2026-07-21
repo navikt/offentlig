@@ -15,7 +15,7 @@ const data = (generated.repos as any)["nais/bqrator"];
 
 <Layout
   title="bqrator — BigQuery-datasett som Kubernetes-ressurser"
-  description="En liten Kubernetes-operatør fra Nav som oppretter BigQuery-datasett og holder tilgangene i tråd med det du har skrevet. Åpen kildekode, MIT."
+  description="En liten Kubernetes-operator fra Nav som oppretter BigQuery-datasett og holder tilgangene i tråd med det du har skrevet. Åpen kildekode, MIT."
 >
   <ProsjektHeader navn="bqrator" />
   <main id="hoved">
@@ -51,7 +51,7 @@ const data = (generated.repos as any)["nais/bqrator"];
 
         <p class="what">Legg ressursen i clusteret. bqrator oppretter datasettet i BigQuery om det ikke finnes, og legger til og oppdaterer tilgangene etter reglene du har skrevet — rollene <code>READER</code>, <code>WRITER</code> og <code>OWNER</code> per e-postadresse. Endrer du filen, følger tilgangene etter. Det er hele grensesnittet.</p>
 
-        <p class="prereq detail">Forutsetter et Kubernetes-cluster med operatøren og et GCP-prosjekt der datasettet skal ligge. Region er foreløpig <code>europe-north1</code>.</p>
+        <p class="prereq detail">Forutsetter et Kubernetes-cluster med operatoren og et GCP-prosjekt der datasettet skal ligge. Region er foreløpig <code>europe-north1</code>.</p>
 
         <div class="cta-row">
           <a class="btn" href="https://github.com/nais/bqrator">Se koden på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
@@ -66,7 +66,7 @@ const data = (generated.repos as any)["nais/bqrator"];
           )}
           <span>MIT-lisens</span>
           <span class="sep">·</span>
-          <span>Kubernetes-operatør</span>
+          <span>Kubernetes-operator</span>
           {typeof data?.stars === "number" && (
             <>
               <span class="sep">·</span>
@@ -76,7 +76,7 @@ const data = (generated.repos as any)["nais/bqrator"];
         </p>
 
         <p class="sibling detail">
-          Liten med vilje. bqrator gjør for BigQuery det <a href="../digdirator/">digdirator</a> gjør for ID&#8209;porten: én operatør, én jobb.
+          Liten med vilje. bqrator gjør for BigQuery det <a href="../digdirator/">digdirator</a> gjør for ID&#8209;porten: én operator, én jobb.
         </p>
       </div>
     </section>

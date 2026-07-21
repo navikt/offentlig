@@ -14,7 +14,7 @@ const data = (generated.repos as any)["nais/kafkarator"];
 
 <Layout
   title="kafkarator — selvbetjening for Kafka-topics på Aiven"
-  description="Kubernetes-operatør som gjør en Kafka-topic til en fil i repoet ditt: du beskriver topicen og tilgangene, operatøren oppretter dem på Aiven. Åpen kildekode fra Nav."
+  description="Kubernetes-operator som gjør en Kafka-topic til en fil i repoet ditt: du beskriver topicen og tilgangene, operatoren oppretter dem på Aiven. Åpen kildekode fra Nav."
 >
   <ProsjektHeader navn="kafkarator" />
   <main id="hoved">
@@ -26,7 +26,7 @@ const data = (generated.repos as any)["nais/kafkarator"];
           <p class="eyebrow">Fra Nais-plattformen · Bygd for gjenbruk</p>
           <h1>kafkarator</h1>
           <p class="thesis">En Kafka&#8209;topic er en fil i repoet ditt.</p>
-          <p class="ingress">Kafkarator gjør Kafka-byråkratiet om til én ressurs teamet ditt eier — slutt på saker til plattformteamet, admin-paneler og ACL-forespørsler. Du beskriver topicen i YAML, og operatøren oppretter den på Aiven og setter opp tilgangene. Tilgangslisten bor i samme fil som topicen: en pull request er hele prosessen.</p>
+          <p class="ingress">Kafkarator gjør Kafka-byråkratiet om til én ressurs teamet ditt eier — slutt på saker til plattformteamet, admin-paneler og ACL-forespørsler. Du beskriver topicen i YAML, og operatoren oppretter den på Aiven og setter opp tilgangene. Tilgangslisten bor i samme fil som topicen: en pull request er hele prosessen.</p>
           <div class="cta-row">
             <a class="btn" href="https://github.com/nais/kafkarator">Kom i gang på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
             <a class="btn btn-quiet" href="#slik-virker-det">Slik virker det</a>
@@ -40,7 +40,7 @@ const data = (generated.repos as any)["nais/kafkarator"];
             )}
             <span>MIT-lisens</span>
             <span class="sep">·</span>
-            <span>Kubernetes-operatør</span>
+            <span>Kubernetes-operator</span>
             <span class="sep">·</span>
             <span>Aiven Kafka</span>
           </p>
@@ -98,7 +98,7 @@ const data = (generated.repos as any)["nais/kafkarator"];
       <div class="container">
         <div class="section-head">
           <h2>Slik virker det</h2>
-          <p class="ingress">Kafkarator definerer én egen ressurstype, <code>kafka.nais.io/Topic</code>. Når du oppretter eller endrer den, oversetter operatøren den til topics og ACL-oppføringer på Aiven-hostet Kafka.</p>
+          <p class="ingress">Kafkarator definerer én egen ressurstype, <code>kafka.nais.io/Topic</code>. Når du oppretter eller endrer den, oversetter operatoren den til topics og ACL-oppføringer på Aiven-hostet Kafka.</p>
         </div>
         <ol class="steps" style="list-style:none">
           <li class="step">
@@ -108,7 +108,7 @@ const data = (generated.repos as any)["nais/kafkarator"];
           </li>
           <li class="step">
             <p class="num">Steg 2</p>
-            <h3>Operatøren synkroniserer</h3>
+            <h3>Operatoren synkroniserer</h3>
             <p>Kafkarator oppdager ressursen og oppretter topicen og ACL-oppføringene i Aiven-poolen du oppga. Endrer du filen, følger Aiven etter — synkroniseringen er automatisk.</p>
           </li>
           <li class="step">
@@ -148,10 +148,10 @@ const data = (generated.repos as any)["nais/kafkarator"];
       <div class="container">
         <div class="section-head">
           <h2>Kom i gang</h2>
-          <p class="ingress">Deploy operatøren med Helm-charten i repoet, og opprett din første topic. Alt annet er en pull request.</p>
+          <p class="ingress">Deploy operatoren med Helm-charten i repoet, og opprett din første topic. Alt annet er en pull request.</p>
         </div>
         <div class="cmd">
-          <pre><code><span class="cm"># 1 · installer operatøren i clusteret</span>
+          <pre><code><span class="cm"># 1 · installer operatoren i clusteret</span>
 helm install kafkarator charts/kafkarator
 
 <span class="cm"># 2 · opprett topicen (og tilgangene) fra filen</span>
@@ -170,7 +170,7 @@ kubectl apply -f topic.yaml</code></pre>
           <div class="panel">
             <h3>Det du trenger</h3>
             <ul>
-              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Et Kubernetes-cluster der operatøren og applikasjonene dine kjører</li>
+              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Et Kubernetes-cluster der operatoren og applikasjonene dine kjører</li>
               <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>En Aiven-konto med minst én Kafka-tjeneste (<code>pool</code> i ressursen peker på denne)</li>
               <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>En YAML-fil per topic — det er hele grensesnittet</li>
             </ul>

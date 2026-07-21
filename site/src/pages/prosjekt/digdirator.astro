@@ -7,13 +7,13 @@ import ProsjektFooter from "../../components/ProsjektFooter.astro";
 import generated from "../../data/generated.json";
 
 /* Bespoke landingsside (PRD: håndlaget, aldri generert fra mal).
-   Motiv: operatørens reconcile-løkke — manifestet er selve heltebildet. */
+   Motiv: operatorens reconcile-løkke — manifestet er selve heltebildet. */
 const data = (generated.repos as any)["nais/digdirator"];
 ---
 
 <Layout
   title="digdirator — deklarativ klientregistrering hos ID-porten og Maskinporten"
-  description="Kubernetes-operatør som registrerer og vedlikeholder klienter hos Digdir. Åpen kildekode fra Nav, klar for enhver norsk etat."
+  description="Kubernetes-operator som registrerer og vedlikeholder klienter hos Digdir. Åpen kildekode fra Nav, klar for enhver norsk etat."
 >
   <ProsjektHeader navn="digdirator" />
   <main id="hoved">
@@ -24,8 +24,8 @@ const data = (generated.repos as any)["nais/digdirator"];
         <div class="hero-copy">
           <p class="eyebrow">Fra Nais-plattformen · Bygd for gjenbruk</p>
           <h1>digdirator</h1>
-          <p class="thesis">Du beskriver klienten. Operatøren registrerer den hos ID&#8209;porten og Maskinporten — og holder den ved like.</p>
-          <p class="ingress">En Kubernetes-operatør som snakker med Digdirs selvbetjenings-API for deg: oppretter klienter, legger legitimasjonen i en secret der applikasjonen finner den, og roterer nøkler uten at noen må huske det. I drift i Nav siden 2020 — klar for enhver norsk etat.</p>
+          <p class="thesis">Du beskriver klienten. Operatoren registrerer den hos ID&#8209;porten og Maskinporten — og holder den ved like.</p>
+          <p class="ingress">En Kubernetes-operator som snakker med Digdirs selvbetjenings-API for deg: oppretter klienter, legger legitimasjonen i en secret der applikasjonen finner den, og roterer nøkler uten at noen må huske det. I drift i Nav siden 2020 — klar for enhver norsk etat.</p>
           <div class="cta-row">
             <a class="btn" href="https://github.com/nais/digdirator">Kom i gang på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
             <a class="btn btn-quiet" href="#slik-virker-det">Slik virker det</a>
@@ -39,11 +39,11 @@ const data = (generated.repos as any)["nais/digdirator"];
             )}
             <span>MIT-lisens</span>
             <span class="sep">·</span>
-            <span>Kubernetes-operatør</span>
+            <span>Kubernetes-operator</span>
           </p>
         </div>
 
-        <figure class="manifest" aria-label="Eksempel på IDPortenClient-ressurs og operatørens hendelseslogg">
+        <figure class="manifest" aria-label="Eksempel på IDPortenClient-ressurs og operatorens hendelseslogg">
           <div class="manifest-bar">
             <span class="fname">idportenclient.yaml</span>
             <span class="kind-chip">kind: IDPortenClient</span>
@@ -82,7 +82,7 @@ const data = (generated.repos as any)["nais/digdirator"];
           </li>
           <li class="step">
             <p class="num">Steg 2</p>
-            <h3>Operatøren registrerer</h3>
+            <h3>Operatoren registrerer</h3>
             <p>digdirator oppdager ressursen og oppretter eller oppdaterer klienten gjennom Digdirs selvbetjenings-API. Endrer du filen, følger registreringen etter.</p>
           </li>
           <li class="step">
@@ -125,7 +125,7 @@ const data = (generated.repos as any)["nais/digdirator"];
           <div class="panel">
             <h3>Det du trenger</h3>
             <ul>
-              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Et Kubernetes-cluster der operatøren og applikasjonene dine kjører</li>
+              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Et Kubernetes-cluster der operatoren og applikasjonene dine kjører</li>
               <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Tilgang til Digdirs selvbetjenings-API for virksomheten din</li>
               <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>En YAML-fil per klient — det er hele grensesnittet</li>
             </ul>

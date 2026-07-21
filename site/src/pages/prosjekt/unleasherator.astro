@@ -12,8 +12,8 @@ const data = (generated.repos as any)["nais/unleasherator"];
 ---
 
 <Layout
-  title="unleasherator — funksjonsbrytere på bestilling"
-  description="Kubernetes-operatør som drifter Unleash-instanser, deler ut API-tokens og kobler clustre sammen. Åpen kildekode fra Nav, bygd for gjenbruk."
+  title="unleasherator — feature toggles på bestilling"
+  description="Kubernetes-operator som drifter Unleash-instanser, deler ut API-tokens og kobler clustre sammen. Åpen kildekode fra Nav, bygd for gjenbruk."
 >
   <ProsjektHeader navn="unleasherator" />
   <main id="hoved">
@@ -24,8 +24,8 @@ const data = (generated.repos as any)["nais/unleasherator"];
         <div class="hero-copy">
           <p class="eyebrow">Fra Nais-plattformen · Bygd for gjenbruk</p>
           <h1>unleasherator</h1>
-          <p class="thesis">Funksjonsbrytere er enkle. Å drifte Unleash er jobben — unleasherator tar den.</p>
-          <p class="ingress">Unleash er et åpent system for funksjonsbrytere, opprinnelig laget i Norge. Å skru en bryter av og på tar sekunder — men noen må kjøre serveren bak. unleasherator er en Kubernetes-operatør som setter opp Unleash-instanser, deler ut API-tokens og kobler clustre sammen, slik at team kan bytte funksjoner i stedet for å drifte servere.</p>
+          <p class="thesis">Feature toggles er enkle. Å drifte Unleash er jobben — unleasherator tar den.</p>
+          <p class="ingress">Unleash er et åpent system for feature toggles, opprinnelig laget i Norge. Å skru en bryter av og på tar sekunder — men noen må kjøre serveren bak. unleasherator er en Kubernetes-operator som setter opp Unleash-instanser, deler ut API-tokens og kobler clustre sammen, slik at team kan bytte funksjoner i stedet for å drifte servere.</p>
           <div class="cta-row">
             <a class="btn" href="https://github.com/nais/unleasherator">Kom i gang på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
             <a class="btn btn-quiet" href="#slik-virker-det">Slik virker det</a>
@@ -39,14 +39,14 @@ const data = (generated.repos as any)["nais/unleasherator"];
             )}
             <span>MIT-lisens</span>
             <span class="sep">·</span>
-            <span>Kubernetes-operatør</span>
+            <span>Kubernetes-operator</span>
           </p>
         </div>
 
         <div class="hero-visual">
-          <figure class="board" role="img" aria-label="En brytertavle med fire funksjonsbrytere: ny-soknadsdialog på, digital-postkasse på, forenklet-innlogging av, mobil-forsteside på.">
+          <figure class="board" role="img" aria-label="En brytertavle med fire brytere: ny-soknadsdialog på, digital-postkasse på, forenklet-innlogging av, mobil-forsteside på.">
             <div class="board-bar">
-              <span class="fname">funksjonsbrytere</span>
+              <span class="fname">brytere</span>
               <span class="kind-chip">team: mitt-team</span>
             </div>
             <ul class="switches">
@@ -72,7 +72,7 @@ const data = (generated.repos as any)["nais/unleasherator"];
               </li>
             </ul>
           </figure>
-          <p class="board-note">Så enkelt er det for teamet. Bak hver bryter står en Unleash-server som må driftes og oppdateres — det er den delen operatøren tar.</p>
+          <p class="board-note">Så enkelt er det for teamet. Bak hver bryter står en Unleash-server som må driftes og oppdateres — det er den delen operatoren tar.</p>
         </div>
       </div>
     </section>
@@ -81,7 +81,7 @@ const data = (generated.repos as any)["nais/unleasherator"];
       <div class="container">
         <div class="section-head">
           <h2>Hva den styrer</h2>
-          <p class="ingress">unleasherator utvider Kubernetes med fire egne ressurstyper. Du beskriver hva du vil ha; operatøren avstemmer virkeligheten mot beskrivelsen.</p>
+          <p class="ingress">unleasherator utvider Kubernetes med fire egne ressurstyper. Du beskriver hva du vil ha; operatoren avstemmer virkeligheten mot beskrivelsen.</p>
           <div class="crd-chips">
             <span class="kind-chip">Unleash</span>
             <span class="kind-chip">ApiToken</span>
@@ -90,12 +90,12 @@ const data = (generated.repos as any)["nais/unleasherator"];
           </div>
         </div>
         <dl class="kv">
-          <div class="kv-row"><dt>Unleash</dt><dd>En komplett Unleash-instans i clusteret — deployment, ingress og tilkobling til databasen. Operatøren driver hele livsløpet.</dd></div>
+          <div class="kv-row"><dt>Unleash</dt><dd>En komplett Unleash-instans i clusteret — deployment, ingress og tilkobling til databasen. Operatoren driver hele livsløpet.</dd></div>
           <div class="kv-row"><dt>ApiToken</dt><dd>En API-token mot en Unleash-instans, klargjort og lagt i en Kubernetes-secret der applikasjonen leser den.</dd></div>
-          <div class="kv-row"><dt>RemoteUnleash</dt><dd>En kobling til en Unleash-instans som kjører et annet sted, autentisert med en admin-token fra en secret. Slik når flere clustre samme brytere.</dd></div>
-          <div class="kv-row"><dt>ReleaseChannel</dt><dd>En felles oppdateringskanal som ruller ut nye Unleash-versjoner på tvers av instansene dine, med strategi for helsesjekk og tilbakerulling.</dd></div>
+          <div class="kv-row"><dt>RemoteUnleash</dt><dd>En kobling til en Unleash-instans som kjører et annet sted, autentisert med en admin-token fra en secret. Slik når flere clustre samme feature toggles.</dd></div>
+          <div class="kv-row"><dt>ReleaseChannel</dt><dd>En felles oppdateringskanal som ruller ut nye Unleash-versjoner på tvers av instansene dine, med strategi for helsesjekk og rollback.</dd></div>
         </dl>
-        <p class="fine kv-foot">Federasjon — å dele brytere mellom instanser — settes opp som et felt på <code>Unleash</code>-ressursen, ikke som en egen ressurstype.</p>
+        <p class="fine kv-foot">Federasjon — å dele feature toggles mellom instanser — settes opp som et felt på <code>Unleash</code>-ressursen, ikke som en egen ressurstype.</p>
       </div>
     </section>
 
@@ -103,23 +103,23 @@ const data = (generated.repos as any)["nais/unleasherator"];
       <div class="container">
         <div class="section-head">
           <h2>Slik får teamet en Unleash-instans</h2>
-          <p class="ingress">Ingen manuelle servere, ingen tokens sendt på e-post. Teamet ber om det de trenger med noen få ressurser, og operatøren gjør resten.</p>
+          <p class="ingress">Ingen manuelle servere, ingen tokens sendt på e-post. Teamet ber om det de trenger med noen få ressurser, og operatoren gjør resten.</p>
         </div>
         <ol class="steps" style="list-style:none">
           <li class="step">
             <p class="num">Steg 1</p>
             <h3>Be om en instans</h3>
-            <p>Legg en <code>Unleash</code>-ressurs i clusteret og pek den mot databasen. Operatøren setter opp Unleash-serveren og holder den kjørende.</p>
+            <p>Legg en <code>Unleash</code>-ressurs i clusteret og pek den mot databasen. Operatoren setter opp Unleash-serveren og holder den kjørende.</p>
           </li>
           <li class="step">
             <p class="num">Steg 2</p>
             <h3>Få en token</h3>
-            <p>Legg til en <code>ApiToken</code>. Operatøren oppretter tokenen mot instansen og legger den i en secret applikasjonen kan lese.</p>
+            <p>Legg til en <code>ApiToken</code>. Operatoren oppretter tokenen mot instansen og legger den i en secret applikasjonen kan lese.</p>
           </li>
           <li class="step">
             <p class="num">Steg 3</p>
             <h3>Del på tvers</h3>
-            <p>Skal andre clustre bruke samme brytere, peker du en <code>RemoteUnleash</code> mot instansen. <code>ReleaseChannel</code> holder versjonene i takt.</p>
+            <p>Skal andre clustre bruke samme feature toggles, peker du en <code>RemoteUnleash</code> mot instansen. <code>ReleaseChannel</code> holder versjonene i takt.</p>
           </li>
         </ol>
       </div>
@@ -129,7 +129,7 @@ const data = (generated.repos as any)["nais/unleasherator"];
       <div class="container">
         <div class="section-head">
           <h2>Kom i gang</h2>
-          <p class="ingress">Prosjektet er bygd med Kubebuilder og følger vanlig operatør-oppsett. Installer ressurstypene, rull ut kontrolleren, og legg inn eksemplene.</p>
+          <p class="ingress">Prosjektet er bygd med Kubebuilder og følger vanlig operator-oppsett. Installer ressurstypene, rull ut controlleren, og legg inn eksemplene.</p>
         </div>
         <div class="cmds">
           <figure class="cmd">
@@ -137,7 +137,7 @@ const data = (generated.repos as any)["nais/unleasherator"];
             <pre><code><span class="cprompt">$</span> make install</code></pre>
           </figure>
           <figure class="cmd">
-            <figcaption>Bygg, publiser og rull ut kontrolleren</figcaption>
+            <figcaption>Bygg, publiser og rull ut controlleren</figcaption>
             <pre><code><span class="cprompt">$</span> make docker-build docker-push IMG=&lt;registry&gt;/unleasherator:tag
 <span class="cprompt">$</span> make deploy IMG=&lt;registry&gt;/unleasherator:tag</code></pre>
           </figure>
@@ -151,7 +151,7 @@ const data = (generated.repos as any)["nais/unleasherator"];
           <ul>
             <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Et Kubernetes-cluster med <code>kubectl</code> satt opp</li>
             <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>En PostgreSQL-database som Unleash-instansene lagrer dataene sine i</li>
-            <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Docker hvis du vil bygge ditt eget operatør-image</li>
+            <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Docker hvis du vil bygge ditt eget operator-image</li>
           </ul>
         </div>
       </div>

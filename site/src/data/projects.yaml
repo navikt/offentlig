@@ -103,7 +103,7 @@ projects:
     kategori: plattform
     perle: false
     beskrivelse: >-
-      Kubernetes-operatør som registrerer klienter mot ID-porten og
+      Kubernetes-operator som registrerer klienter mot ID-porten og
       Maskinporten automatisk.
     side: prosjekt/digdirator
     gjenbruk:
@@ -133,8 +133,8 @@ projects:
   - repo: nais/unleasherator
     kategori: plattform
     beskrivelse: >-
-      Kubernetes-operatør som ruller ut og drifter Unleash-instanser
-      for funksjonsbrytere.
+      Kubernetes-operator som ruller ut og drifter Unleash-instanser
+      for feature toggles.
     perle: false
     side: prosjekt/unleasherator
     gjenbruk: {}
@@ -142,7 +142,7 @@ projects:
   - repo: nais/kafkarator
     kategori: plattform
     beskrivelse: >-
-      Kubernetes-operatør for Kafka-topics på Aiven — selvbetjening
+      Kubernetes-operator for Kafka-topics på Aiven — selvbetjening
       med én YAML-fil.
     perle: false
     side: prosjekt/kafkarator
@@ -150,7 +150,7 @@ projects:
 
   - repo: nais/bqrator
     kategori: plattform
-    beskrivelse: Kubernetes-operatør som oppretter BigQuery-datasett deklarativt.
+    beskrivelse: Kubernetes-operator som oppretter BigQuery-datasett deklarativt.
     perle: false
     side: prosjekt/bqrator
     gjenbruk: {}
