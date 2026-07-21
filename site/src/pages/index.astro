@@ -20,7 +20,7 @@ import { formatNumber } from "../lib/format.mjs";
 /* Kuratert innhold (redaksjonelt) + generert data (nattlig synk).
    Bygget går aldri på nett — alt leses fra disse to filene. */
 const curated = parseYaml(projectsRaw);
-const cards = curated.projects.filter((p: any) => !p.perle);
+const cards = curated.projects.filter((p: any) => !p.perle && p.gjenbruk === undefined);
 const gems = curated.projects.filter((p: any) => p.perle);
 const reuse = curated.projects.filter((p: any) => p.gjenbruk !== undefined);
 ---
@@ -39,7 +39,7 @@ const reuse = curated.projects.filter((p: any) => p.gjenbruk !== undefined);
       <div class="container">
         <div class="section-head">
           <h2>Utvalgte prosjekter</h2>
-          <p class="ingress">Et håndplukket utvalg fra over tre tusen åpne repoer&nbsp;— det andre bruker mest, og det vi er mest stolte av.</p>
+          <p class="ingress">Et håndplukket utvalg fra over tre tusen åpne repoer&nbsp;— det vi er mest stolte av.</p>
         </div>
 
         <ul class="card-grid" style="list-style:none">

@@ -2,7 +2,7 @@
 import { monthYearNo, formatNumber } from "../lib/format.mjs";
 
 interface Props {
-  project: { repo: string; kategori: string; beskrivelse: string; team?: string };
+  project: { repo: string; kategori: string; beskrivelse: string; team?: string; side?: string; navn?: string };
   data?: {
     stars: number;
     language: string | null;
@@ -22,8 +22,18 @@ const KATEGORIER: Record<string, { label: string; tag: string }> = {
 
 const { project, data } = Astro.props;
 const kategori = KATEGORIER[project.kategori] ?? KATEGORIER.biblioteker;
-const name = project.repo.split("/")[1];
-const url = `https://github.com/${project.repo}`;
+const name = project.navn ?? project.repo.split("/")[1];
+
+/* Landingsside når prosjektet har en (side-feltet i projects.yaml), ellers
+   GitHub. Relative stier prefikses med base — samme logikk som Reuse.astro. */
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const url = !project.side
+  ? `https://github.com/${project.repo}`
+  : project.side.startsWith("http")
+    ? project.side
+    : `${base}${project.side}/`;
 ---
 
 <li class="card">

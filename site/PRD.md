@@ -66,18 +66,20 @@ Narrative nøkkeltall (ikke live-tellere som kan vise 0), alle hentet av nightly
 - **Ærlighetsregel:** botter (Dependabot m.fl.) er med i commit/PR-tallene — siden sier det eksplisitt i stempelet i stedet for å filtrere og forklare.
 
 ### 4.3 Utvalgte prosjekter (kuratert, 15–30 stk.)
-Kort-grid gruppert i kategorier som treffer begge fasetter (domene for etater, teknologi synlig på kortet for utviklere):
+Kort-grid gruppert i kategorier som treffer begge fasetter (domene for etater, teknologi synlig på kortet for utviklere). Gridet og «Bygd for gjenbruk» (§4.4) er **disjunkte**: hvert prosjekt vises på nøyaktig ett sted — ett prosjekt, én plass — og gjenbruk vinner. Et gjenbruksprosjekt (alt med `gjenbruk:`-felt i `projects.yaml`) dukker derfor aldri opp i gridet. Gridet er prosjekter uten `gjenbruk:`-felt, gruppert slik (eksemplene under er dagens grid):
 
-- **Plattform** — Nais, naiserator, wonderwall, texas, digdirator, naisdevice
-- **Designsystem** — Aksel (ds-react, tokens, ikoner)
-- **Biblioteker og verktøy** — mock-oauth2-server, token-support, pdfgen, fnrvalidator, rapids-and-rivers, nav-faker
-- **Åpenhet i forvaltningen** — helse-spleis («en liten kalkulator for sykepenger»), DSF, spraksjekk
-- **Data og KI** — laundromat, cplt, copilot, mlx-workspace
+- **Plattform** — naiserator, texas, naisdevice
+- **Designsystem** — Aksel (komponenter, tokens, over 900 ikoner)
+- **Biblioteker og verktøy** — rapids-and-rivers, nav-faker
+- **Åpenhet i forvaltningen** — helse-spleis («en liten kalkulator for sykepenger»), spraksjekk
+- **Data og KI** — copilot
 
 **Kortformel** (Spotify-mønsteret): navn · håndskrevet norsk én-linjer (ikke GitHub-beskrivelsen) · primærspråk · ⭐ stjerner · sist aktiv · vedlikeholdt-av «Team X i Nav» · ev. status-badge (`aktiv`/`arkivert`) · lenke til GitHub. Tall auto-synkes; tekst er redaksjonell.
 
 ### 4.4 Bygd for gjenbruk
 Egen seksjon rett etter prosjektgridet, som svarer direkte på persona 2 (arkitekter i andre etater) og suksessmålet «Gjenbruk i offentlig sektor»: en samlet, kompakt liste over prosjekter som er laget for at også andre virksomheter skal kunne ta dem i bruk — MIT-lisensiert og klare i dag. Kom fra tilbakemelding fra en kollega på prototypen: *«Skulle vi fått inn en liste over repoer/prosjekter som er bygd med tanke på at andre også kan bruke de? Ghep vet jeg er tatt i bruk av Miljødirektoratet også.»*
+
+**Disjunkt fra gridet (§4.3)** — et prosjekt vises på nøyaktig ett sted: ett prosjekt, én plass, og gjenbruk vinner. Alt med `gjenbruk:`-felt bor kun her og filtreres bevisst ut av «Utvalgte prosjekter», så seksjonene aldri overlapper. Denne seksjonen viser fulle rader (ikke duplikat av gridkortene).
 
 **Datamodell** (redaksjonell, aldri synket) — nytt valgfritt felt `gjenbruk:` per prosjekt i `projects.yaml`. Selv et tomt objekt (`{}`) løfter prosjektet inn i seksjonen. Valgfrie underfelt:
 - `bruktAv:` — liste med navngitte virksomheter utenfor Nav. Rendres som «Brukt av X (og Y)».

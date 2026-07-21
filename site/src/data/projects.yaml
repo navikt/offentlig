@@ -5,9 +5,16 @@
 # Tall (stjerner, språk, sist aktiv, arkivstatus) hentes automatisk
 # av scripts/sync.mjs hver natt — aldri et håndvedlikeholdt tall.
 #
+# «Utvalgte prosjekter»-gridet viser prosjekter uten gjenbruk-felt.
+# Gjenbruksprosjekter vises kun i «Bygd for gjenbruk» — ett prosjekt, én plass;
+# gjenbruk vinner. Et prosjekt dukker aldri opp begge steder.
+#
 # Kategorier: plattform · designsystem · biblioteker · aapenhet · data-ki
 # perle: true løfter prosjektet inn i «Skjulte perler»-seksjonen
 # (og krever da kicker + meta i tillegg).
+#
+# navn: (valgfritt) overstyrer visningsnavnet på kortet når repo-navnet er
+# kryptisk (f.eks. nais/device → «naisdevice»). Uten feltet vises repo-navnet.
 #
 # team: (valgfritt) vises som «Vedlikeholdes av …» på kortet (PRD §5.5).
 # Feltet står tomt til det er forankret med eierteamene (PRD §9 pkt. 4) —
@@ -51,6 +58,7 @@ projects:
     kategori: designsystem
     beskrivelse: Designsystemet bak nav.no — komponenter, tokens og over 900 ikoner.
     perle: false
+    side: https://aksel.nav.no
 
   - repo: nais/naiserator
     kategori: plattform
@@ -86,6 +94,42 @@ projects:
   - repo: navikt/rapids-and-rivers
     kategori: biblioteker
     beskrivelse: Kafka-bibliotek for hendelsesdrevne tjenester etter rapids/rivers-mønsteret.
+    perle: false
+
+  - repo: navikt/nav-faker
+    kategori: biblioteker
+    beskrivelse: >-
+      TypeScript-bibliotek som genererer norske testdata —
+      fødselsnummer, navn, adresser, tall og datoer.
+    perle: false
+
+  - repo: nais/texas
+    kategori: plattform
+    beskrivelse: >-
+      Token Exchange as a Service — en sidecar som tar OAuth2-flytene
+      og tokenutvekslingen, så appene slipper.
+    perle: false
+
+  - repo: nais/device
+    kategori: plattform
+    navn: naisdevice
+    beskrivelse: >-
+      Zero-trust-tilkobling for utviklermaskiner — tilgang til interne
+      ressurser bare når enheten er frisk og godkjent.
+    perle: false
+
+  - repo: navikt/spraksjekk
+    kategori: aapenhet
+    beskrivelse: >-
+      Klarspråkshjelpen — et skriveverktøy som gir umiddelbar
+      tilbakemelding på teksten din.
+    perle: false
+
+  - repo: navikt/copilot
+    kategori: data-ki
+    beskrivelse: >-
+      Agenter, instruksjoner, skills og MCP-servere som gjør GitHub Copilot
+      smartere for Navs stack.
     perle: false
 
   - repo: navikt/token-support
