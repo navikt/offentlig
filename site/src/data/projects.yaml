@@ -20,9 +20,11 @@
 #
 # gjenbruk: (valgfritt) løfter prosjektet inn i «Bygd for gjenbruk»-seksjonen
 # (PRD §4.4). Selv et tomt objekt ({}) er nok til å bli med. Valgfrie felt:
-#   bruktAv: liste med navngitte virksomheter utenfor Nav som bruker prosjektet.
+#   bruktAv: liste med navngitte brukere utenfor Nav — virksomheter (f.eks.
+#           Kartverket) eller kjente åpne prosjekter (f.eks. Elasticsearch).
 #           KUN håndverifiserte påstander — aldri gjett en adopter (PRD §7).
-#           Endres via pull request. Rendres som «Brukt av X (og Y)».
+#           Legg alltid en kildelenke som kommentar rett over bruktAv, så PR-en
+#           kan etterprøves. Endres via pull request. Rendres som «Brukt av X (og Y)».
 #   merknad: fritekst når vi ikke kan navngi noen konkret adopter,
 #           f.eks. «Brukt langt utenfor Nav». Vises kun når bruktAv mangler.
 #
@@ -39,7 +41,11 @@ projects:
     perle: false
     side: prosjekt/mock-oauth2-server
     gjenbruk:
-      merknad: Brukt langt utenfor Nav
+      # https://github.com/elastic/elasticsearch/blob/main/x-pack/plugin/inference/qa/oauth2/build.gradle
+      # https://github.com/apache/kafka/blob/trunk/gradle/dependencies.gradle
+      bruktAv:
+        - Elasticsearch
+        - Apache Kafka
 
   - repo: navikt/aksel
     kategori: designsystem
@@ -97,7 +103,11 @@ projects:
       i norsk JavaScript.
     side: prosjekt/fnrvalidator
     gjenbruk:
-      merknad: Også utenfor forvaltningen
+      # https://github.com/domstolene/page-generator (package.json)
+      # https://github.com/dnbexperience/eufemia (NationalIdentityNumber-feltet importerer fnrvalidator)
+      bruktAv:
+        - Norges domstoler
+        - DNB
 
   - repo: nais/digdirator
     kategori: plattform
@@ -107,7 +117,10 @@ projects:
       Maskinporten automatisk.
     side: prosjekt/digdirator
     gjenbruk:
-      merknad: Klar for enhver norsk etat
+      # https://github.com/kartverket/skiperator (importerer digdirators Go-pakker)
+      # https://github.com/kartverket/skip.kartverket.no (Kartverkets plattformdocs siterer digdirator)
+      bruktAv:
+        - Kartverket
 
   - repo: navikt/DSF
     kategori: aapenhet
@@ -127,6 +140,8 @@ projects:
     perle: false
     side: https://navikt.github.io/ghep/
     gjenbruk:
+      # https://github.com/miljodir/ghep (Miljødirektoratets fork)
+      # https://github.com/navikt/ghep/pull/286 (merget self-hosting-støtte)
       bruktAv:
         - Miljødirektoratet
 
