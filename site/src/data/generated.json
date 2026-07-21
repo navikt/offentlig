@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-20T22:11:30.982Z",
+  "syncedAt": "2026-07-21T06:36:29.900Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -8,14 +8,14 @@
       "stars": 401,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-07-20T22:11:25Z",
+      "pushedAt": "2026-07-20T22:14:11Z",
       "isArchived": false
     },
     "navikt/aksel": {
       "stars": 184,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-07-20T18:55:04Z",
+      "pushedAt": "2026-07-21T01:54:17Z",
       "isArchived": false
     },
     "nais/naiserator": {
@@ -92,7 +92,7 @@
       "stars": 3,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-07-20T12:44:22Z",
+      "pushedAt": "2026-07-21T06:19:28Z",
       "isArchived": false
     },
     "nais/unleasherator": {
@@ -119,51 +119,51 @@
   },
   "stats": {
     "publicRepos": 3112,
-    "commitsLast7Days": 2867,
-    "prsLast30Days": 13346,
+    "commitsLast7Days": 2961,
+    "prsLast30Days": 13451,
     "npmDownloadsLastMonth": 304753,
     "fnrDownloadsLastMonth": 41443
   },
   "recentlyUpdated": [
     {
-      "name": "mock-oauth2-server",
-      "url": "https://github.com/navikt/mock-oauth2-server",
-      "pushedAt": "2026-07-20T22:11:25Z",
+      "name": "kabal-innstillinger",
+      "url": "https://github.com/navikt/kabal-innstillinger",
+      "pushedAt": "2026-07-21T06:36:22Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "nada-datastream",
-      "url": "https://github.com/navikt/nada-datastream",
-      "pushedAt": "2026-07-20T21:33:42Z",
-      "language": "Go",
-      "languageColor": "#00add8"
+      "name": "kaka-api",
+      "url": "https://github.com/navikt/kaka-api",
+      "pushedAt": "2026-07-21T06:35:49Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
-      "name": "story-api",
-      "url": "https://github.com/navikt/story-api",
-      "pushedAt": "2026-07-20T20:53:33Z",
-      "language": "Go",
-      "languageColor": "#00add8"
+      "name": "kabin-api",
+      "url": "https://github.com/navikt/kabin-api",
+      "pushedAt": "2026-07-21T06:34:59Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
-      "name": "g",
-      "url": "https://github.com/navikt/g",
-      "pushedAt": "2026-07-20T20:33:26Z",
-      "language": "Ruby",
-      "languageColor": "#701516"
+      "name": "pleesah-game",
+      "url": "https://github.com/navikt/pleesah-game",
+      "pushedAt": "2026-07-21T06:33:16Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
     },
     {
-      "name": "knep",
-      "url": "https://github.com/navikt/knep",
-      "pushedAt": "2026-07-20T20:24:23Z",
-      "language": "Go",
-      "languageColor": "#00add8"
+      "name": "eessi-pensjon-begrens-innsyn",
+      "url": "https://github.com/navikt/eessi-pensjon-begrens-innsyn",
+      "pushedAt": "2026-07-21T06:31:27Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
-      "name": "tiltakspenger-journalposthendelser",
-      "url": "https://github.com/navikt/tiltakspenger-journalposthendelser",
-      "pushedAt": "2026-07-20T20:17:49Z",
+      "name": "eessi-pensjon-krav-initialisering",
+      "url": "https://github.com/navikt/eessi-pensjon-krav-initialisering",
+      "pushedAt": "2026-07-21T06:31:25Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     }
@@ -216,10 +216,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-07-21",
-        "count": 493
-      },
       {
         "date": "2025-07-22",
         "count": 541
@@ -1671,6 +1667,10 @@
       {
         "date": "2026-07-19",
         "count": 7
+      },
+      {
+        "date": "2026-07-20",
+        "count": 604
       }
     ]
   }
