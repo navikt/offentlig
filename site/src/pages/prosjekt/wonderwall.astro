@@ -7,13 +7,13 @@ import ProsjektFooter from "../../components/ProsjektFooter.astro";
 import generated from "../../data/generated.json";
 
 /* Bespoke landingsside (PRD: håndlaget, aldri generert fra mal).
-   Motiv: forespørselens reise gjennom sidevognen — heltebildet er selve stien. */
+   Motiv: forespørselens reise gjennom sidecaren — heltebildet er selve stien. */
 const data = (generated.repos as any)["nais/wonderwall"];
 ---
 
 <Layout
-  title="wonderwall — sidevognen som tar innloggingen for deg"
-  description="En OpenID Connect-sidevogn som tar hele innloggingen mot leverandøren, slik at applikasjonen din slipper å lære OAuth2. Åpen kildekode fra Nav."
+  title="wonderwall — sidecaren som tar innloggingen for deg"
+  description="En OpenID Connect-sidecar som tar hele innloggingen mot leverandøren, slik at applikasjonen din slipper å lære OAuth2. Åpen kildekode fra Nav."
 >
   <ProsjektHeader navn="wonderwall" />
   <main id="hoved">
@@ -25,7 +25,7 @@ const data = (generated.repos as any)["nais/wonderwall"];
           <p class="eyebrow">Fra Nais-plattformen · Bygd for gjenbruk</p>
           <h1>wonderwall</h1>
           <p class="thesis">Applikasjonen din trenger aldri å lære OAuth2.</p>
-          <p class="ingress">wonderwall er en reverse proxy som spiller rollen som OpenID&#8209;Connect&#8209;klient, vanligvis som en sidevogn ved siden av applikasjonen din. Den tar hele innloggingen mot identitetsleverandøren og sender forespørselen videre til appen med brukerens token påkoblet.</p>
+          <p class="ingress">wonderwall er en reverse proxy som spiller rollen som OpenID&#8209;Connect&#8209;klient, vanligvis som en sidecar til applikasjonen din. Den tar hele innloggingen mot identitetsleverandøren og sender forespørselen videre til appen med brukerens token påkoblet.</p>
           <div class="cta-row">
             <a class="btn" href="https://github.com/nais/wonderwall">Kom i gang på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
             <a class="btn btn-quiet" href="#slik-virker-det">Slik virker det</a>
@@ -39,7 +39,7 @@ const data = (generated.repos as any)["nais/wonderwall"];
             )}
             <span>MIT-lisens</span>
             <span class="sep">·</span>
-            <span>Kubernetes-sidevogn</span>
+            <span>Kubernetes-sidecar</span>
           </p>
         </div>
 
@@ -78,8 +78,8 @@ const data = (generated.repos as any)["nais/wonderwall"];
         <div class="cols">
           <div class="panel">
             <p class="p-kicker">Standalone-modus <span class="mini-chip">standard</span></p>
-            <h3>Én sidevogn per app</h3>
-            <p>For zero&#8209;trust-oppsett der hver applikasjon har sin egen perimeter og sin egen klient. Sidevognen kjører rett ved siden av appen og beskytter akkurat den.</p>
+            <h3>Én sidecar per app</h3>
+            <p>For zero&#8209;trust-oppsett der hver applikasjon har sin egen perimeter og sin egen klient. Sidecaren kjører rett ved siden av appen og beskytter akkurat den.</p>
           </div>
           <div class="panel">
             <p class="p-kicker">SSO-modus</p>
@@ -94,8 +94,8 @@ const data = (generated.repos as any)["nais/wonderwall"];
     <section class="section p-why">
       <div class="container">
         <div class="section-head">
-          <h2>Hvorfor en sidevogn?</h2>
-          <p class="ingress">Fordi innlogging er den samme jobben uansett hvilket språk appen er skrevet i. Legger du den i en sidevogn, blir den gjort riktig én gang, og appen slipper å eie en eneste linje autentiseringskode.</p>
+          <h2>Hvorfor en sidecar?</h2>
+          <p class="ingress">Fordi innlogging er den samme jobben uansett hvilket språk appen er skrevet i. Legger du den i en sidecar, blir den gjort riktig én gang, og appen slipper å eie en eneste linje autentiseringskode.</p>
         </div>
         <div class="reason-grid">
           <div class="reason">
@@ -106,7 +106,7 @@ const data = (generated.repos as any)["nais/wonderwall"];
           <div class="reason">
             <p class="r-num">02</p>
             <h3>Ethvert språk, ethvert rammeverk</h3>
-            <p>Sidevognen bryr seg ikke om appen er Go, Java, Node eller noe annet. Kontrakten er HTTP — det alle web-rammeverk allerede forstår.</p>
+            <p>Sidecaren bryr seg ikke om appen er Go, Java, Node eller noe annet. Kontrakten er HTTP — det alle web-rammeverk allerede forstår.</p>
           </div>
           <div class="reason">
             <p class="r-num">03</p>
@@ -121,7 +121,7 @@ const data = (generated.repos as any)["nais/wonderwall"];
       <div class="container">
         <div class="section-head">
           <h2>Endepunktene den legger til</h2>
-          <p class="ingress">wonderwall eksponerer et sett stier under <code>/oauth2/</code>. Nettleseren og appen trenger stort sett bare de to øverste — resten håndterer sidevognen selv.</p>
+          <p class="ingress">wonderwall eksponerer et sett stier under <code>/oauth2/</code>. Nettleseren og appen trenger stort sett bare de to øverste — resten håndterer sidecaren selv.</p>
         </div>
         <dl class="kv">
           <div class="kv-row"><dt>GET /oauth2/login</dt><dd>Starter OpenID Connect Authorization Code-flyten</dd></div>
@@ -130,7 +130,7 @@ const data = (generated.repos as any)["nais/wonderwall"];
           <div class="kv-row"><dt>GET /oauth2/session</dt><dd>Returnerer metadata om brukerens sesjon</dd></div>
           <div class="kv-row"><dt>POST /oauth2/session/refresh</dt><dd>Fornyer tokenene i sesjonen</dd></div>
           <div class="kv-row"><dt>GET /oauth2/session/forwardauth</dt><dd>Sjekker sesjonen og fornyer den ved behov</dd></div>
-          <div class="kv-row"><dt>GET /oauth2/callback</dt><dd>Tar imot tilbakekallet fra identitetsleverandøren</dd></div>
+          <div class="kv-row"><dt>GET /oauth2/callback</dt><dd>Tar imot callbacket fra identitetsleverandøren</dd></div>
           <div class="kv-row"><dt>GET /oauth2/logout/callback</dt><dd>Tar imot utloggings-tilbakekallet fra leverandøren</dd></div>
           <div class="kv-row"><dt>GET /oauth2/logout/frontchannel</dt><dd>Håndterer global utlogging initiert av leverandøren</dd></div>
         </dl>
@@ -141,7 +141,7 @@ const data = (generated.repos as any)["nais/wonderwall"];
       <div class="container">
         <div class="section-head">
           <h2>Kom i gang</h2>
-          <p class="ingress">Hent containeren, pek den på OpenID-leverandøren din og på appen den skal beskytte. Da tar sidevognen resten.</p>
+          <p class="ingress">Hent containeren, pek den på OpenID-leverandøren din og på appen den skal beskytte. Da tar sidecaren resten.</p>
         </div>
         <div class="start-cols">
           <figure class="codeblock" aria-label="Containerimage for wonderwall">
@@ -187,7 +187,7 @@ WONDERWALL_ENCRYPTION_KEY=<openssl rand -base64 32>`}>Kopier</button>
             <h3>Det du trenger</h3>
             <ul>
               <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>En identitetsleverandør som følger OpenID Connect</li>
-              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Et sted å kjøre en container, gjerne som sidevogn ved siden av appen</li>
+              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Et sted å kjøre en container, gjerne som sidecar til appen</li>
               <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>En håndfull miljøvariabler — det er hele grensesnittet</li>
             </ul>
           </div>

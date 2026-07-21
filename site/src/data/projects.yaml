@@ -72,7 +72,7 @@ projects:
 
   - repo: nais/wonderwall
     kategori: plattform
-    beskrivelse: Sidevogn som tar seg av all pålogging, så applikasjonene slipper.
+    beskrivelse: Sidecar som tar seg av all pålogging, så applikasjonene slipper.
     perle: false
     side: prosjekt/wonderwall
     gjenbruk: {}
