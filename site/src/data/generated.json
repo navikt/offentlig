@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-21T06:51:47.059Z",
+  "syncedAt": "2026-07-21T07:20:17.822Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -119,53 +119,53 @@
   },
   "stats": {
     "publicRepos": 3112,
-    "commitsLast7Days": 2951,
-    "prsLast30Days": 13456,
+    "commitsLast7Days": 2945,
+    "prsLast30Days": 13529,
     "npmDownloadsLastMonth": 304753,
     "fnrDownloadsLastMonth": 41443
   },
   "recentlyUpdated": [
     {
-      "name": "klage-file-api",
-      "url": "https://github.com/navikt/klage-file-api",
-      "pushedAt": "2026-07-21T06:51:27Z",
+      "name": "mulighetsrommet",
+      "url": "https://github.com/navikt/mulighetsrommet",
+      "pushedAt": "2026-07-21T07:20:24Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "klage-arkiver-journalpost",
-      "url": "https://github.com/navikt/klage-arkiver-journalpost",
-      "pushedAt": "2026-07-21T06:50:48Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "spinntektsmelding-frontend",
-      "url": "https://github.com/navikt/spinntektsmelding-frontend",
-      "pushedAt": "2026-07-21T06:50:18Z",
+      "name": "aap-saksbehandling",
+      "url": "https://github.com/navikt/aap-saksbehandling",
+      "pushedAt": "2026-07-21T07:19:33Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     },
     {
-      "name": "kaptein-api",
-      "url": "https://github.com/navikt/kaptein-api",
-      "pushedAt": "2026-07-21T06:49:59Z",
+      "name": "k9-abakus",
+      "url": "https://github.com/navikt/k9-abakus",
+      "pushedAt": "2026-07-21T07:16:04Z",
+      "language": "Java",
+      "languageColor": "#b07219"
+    },
+    {
+      "name": "syfo-budstikka",
+      "url": "https://github.com/navikt/syfo-budstikka",
+      "pushedAt": "2026-07-21T07:14:45Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "kaka-api",
-      "url": "https://github.com/navikt/kaka-api",
-      "pushedAt": "2026-07-21T06:47:41Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "fritak-agp-frontend",
-      "url": "https://github.com/navikt/fritak-agp-frontend",
-      "pushedAt": "2026-07-21T06:47:03Z",
+      "name": "k9-los-web",
+      "url": "https://github.com/navikt/k9-los-web",
+      "pushedAt": "2026-07-21T07:10:31Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
+    },
+    {
+      "name": "klage-kafka-manager",
+      "url": "https://github.com/navikt/klage-kafka-manager",
+      "pushedAt": "2026-07-21T07:09:58Z",
+      "language": null,
+      "languageColor": null
     }
   ],
   "languages": {
@@ -1670,7 +1670,7 @@
       },
       {
         "date": "2026-07-20",
-        "count": 604
+        "count": 605
       }
     ]
   }
