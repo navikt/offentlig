@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-07-21T08:03:35.178Z",
+  "syncedAt": "2026-07-21T19:49:36.607Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -15,7 +15,7 @@
       "stars": 184,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-07-21T01:54:17Z",
+      "pushedAt": "2026-07-21T13:25:46Z",
       "isArchived": false
     },
     "nais/naiserator": {
@@ -40,17 +40,17 @@
       "isArchived": false
     },
     "navikt/pdfgen": {
-      "stars": 24,
+      "stars": 25,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-07-20T08:04:57Z",
+      "pushedAt": "2026-07-21T12:20:52Z",
       "isArchived": false
     },
     "nais/wonderwall": {
       "stars": 27,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-07-20T07:02:49Z",
+      "pushedAt": "2026-07-21T13:45:14Z",
       "isArchived": false
     },
     "navikt/rapids-and-rivers": {
@@ -92,14 +92,14 @@
       "stars": 52,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-07-20T04:15:59Z",
+      "pushedAt": "2026-07-21T10:32:09Z",
       "isArchived": false
     },
     "navikt/token-support": {
       "stars": 19,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-07-20T14:44:36Z",
+      "pushedAt": "2026-07-21T14:46:50Z",
       "isArchived": false
     },
     "navikt/fnrvalidator": {
@@ -153,67 +153,67 @@
     }
   },
   "stats": {
-    "publicRepos": 3112,
-    "commitsLast7Days": 2972,
-    "prsLast30Days": 13555,
-    "npmDownloadsLastMonth": 304753,
-    "fnrDownloadsLastMonth": 41443
+    "publicRepos": 3115,
+    "commitsLast7Days": 3110,
+    "prsLast30Days": 13831,
+    "npmDownloadsLastMonth": 292462,
+    "fnrDownloadsLastMonth": 42659
   },
   "recentlyUpdated": [
     {
-      "name": "aap-behandlingsflyt",
-      "url": "https://github.com/navikt/aap-behandlingsflyt",
-      "pushedAt": "2026-07-21T08:03:44Z",
+      "name": "bidrag-behandling",
+      "url": "https://github.com/navikt/bidrag-behandling",
+      "pushedAt": "2026-07-21T19:40:53Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "aap-statistikk",
-      "url": "https://github.com/navikt/aap-statistikk",
-      "pushedAt": "2026-07-21T08:02:30Z",
+      "name": "helse-sp-forsikring",
+      "url": "https://github.com/navikt/helse-sp-forsikring",
+      "pushedAt": "2026-07-21T19:32:39Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "aap-saksbehandling",
-      "url": "https://github.com/navikt/aap-saksbehandling",
-      "pushedAt": "2026-07-21T08:01:06Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "mulighetsrommet",
-      "url": "https://github.com/navikt/mulighetsrommet",
-      "pushedAt": "2026-07-21T08:00:55Z",
+      "name": "helse-spesialist",
+      "url": "https://github.com/navikt/helse-spesialist",
+      "pushedAt": "2026-07-21T19:27:57Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "aap-backend-typescript-types",
-      "url": "https://github.com/navikt/aap-backend-typescript-types",
-      "pushedAt": "2026-07-21T07:56:35Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "melosys-skjema-api",
+      "url": "https://github.com/navikt/melosys-skjema-api",
+      "pushedAt": "2026-07-21T19:15:47Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
-      "name": "pleesah-game",
-      "url": "https://github.com/navikt/pleesah-game",
-      "pushedAt": "2026-07-21T07:55:29Z",
+      "name": "helse-sas-gradle-plugins",
+      "url": "https://github.com/navikt/helse-sas-gradle-plugins",
+      "pushedAt": "2026-07-21T18:48:50Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "kabal",
+      "url": "https://github.com/navikt/kabal",
+      "pushedAt": "2026-07-21T18:45:55Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     }
   ],
   "languages": {
-    "totalRepos": 1765,
+    "totalRepos": 1767,
     "entries": [
       {
         "name": "Kotlin",
-        "count": 706,
+        "count": 707,
         "color": "#a97bff"
       },
       {
         "name": "TypeScript",
-        "count": 337,
+        "count": 338,
         "color": "#3178c6"
       },
       {
@@ -1705,7 +1705,7 @@
       },
       {
         "date": "2026-07-20",
-        "count": 607
+        "count": 623
       }
     ]
   }
