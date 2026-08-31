@@ -1,0 +1,43 @@
+---
+import { dateNo } from "../lib/format.mjs";
+
+interface Props {
+  syncedAt: string;
+}
+
+const { syncedAt } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-cols">
+      <div>
+        <h2>På GitHub</h2>
+        <ul>
+          <li><a href="https://github.com/navikt">github.com/navikt</a></li>
+          <li><a href="https://github.com/nais">github.com/nais</a></li>
+          <li><a href="https://github.com/navikt/offentlig">Retningslinjer for åpen kildekode</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Nettsteder</h2>
+        <ul>
+          <li><a href="https://aksel.nav.no">aksel.nav.no&nbsp;— designsystemet</a></li>
+          <li><a href="https://nais.io">nais.io&nbsp;— plattformen</a></li>
+          <li><a href="https://ki-utvikling.nav.no">ki-utvikling.nav.no</a></li>
+          <li><a href="https://detsombetyrnoe.no">detsombetyrnoe.no&nbsp;— jobb i Nav</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Om siden</h2>
+        <ul>
+          {/* Erklæringen skrives og lenkes opp før lansering — aldri en død lenke i mellomtiden */}
+          <li><span class="detail">Tilgjengelighetserklæring kommer før lansering</span></li>
+          <li><a href="https://github.com/navikt/offentlig/tree/showcase/site">Kildekoden til denne siden</a></li>
+          <li><a href="https://github.com/navikt/offentlig/issues">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-stamp detail">Sist oppdatert {dateNo(syncedAt)} · Siden bygges automatisk hver natt fra GitHub- og npm-data. Kildekoden er selvsagt åpen.</p>
+  </div>
+</footer>

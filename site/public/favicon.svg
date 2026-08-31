@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Nav-logo på hvit (PRD §5.7 pkt. 8); rødt brukes kun her -->
+  <rect width="32" height="32" rx="6" fill="#ffffff"/>
+  <text x="16" y="22" text-anchor="middle" font-family="'Source Sans 3','Source Sans Pro',Arial,sans-serif" font-size="13" font-weight="700" fill="#c30000">Nav</text>
+</svg>

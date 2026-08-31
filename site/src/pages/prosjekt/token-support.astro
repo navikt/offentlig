@@ -1,0 +1,294 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Icons from "../../components/Icons.astro";
+import ProsjektHeader from "../../components/ProsjektHeader.astro";
+import ProsjektFooter from "../../components/ProsjektFooter.astro";
+
+import generated from "../../data/generated.json";
+
+/* Bespoke landingsside (PRD: håndlaget, aldri generert fra mal).
+   Motiv: dørvakten for JVM-apper — biblioteket som står i døra og
+   sjekker OAuth2/OIDC-tokens så endepunktene dine slipper. Ingen yaml. */
+const data = (generated.repos as any)["navikt/token-support"];
+
+/* Modulene — verifisert mot README (no.nav.security). To jobber:
+   validere innkommende tokens, og hente tokens til utgående kall. */
+const validering = [
+  { navn: "token-validation-core", tekst: "Kjernen. Validerer JWT-tokens med Nimbus OAuth 2.0 SDK og OpenID Connect-utvidelsene. Rammeverksuavhengig." },
+  { navn: "token-validation-spring", tekst: "Spring Boot / Spring Web-innpakning. Gir deg @EnableJwtTokenValidation og annotasjonene @Protected, @ProtectedWithClaims og @Unprotected." },
+  { navn: "token-validation-ktor", tekst: "Ktor-innpakning for Kotlin. tokenValidationSupport() og RequiredClaims i din egen route-konfigurasjon." },
+  { navn: "token-validation-jaxrs", tekst: "JAX-RS / Jersey-innpakning rundt kjernen og token-validation-filter, med de samme annotasjonene." },
+  { navn: "token-validation-filter", tekst: "Enkelt servlet-filter som validerer tokens med kjernekomponentene — for det som ikke bruker et av rammeverkene over." },
+];
+const klient = [
+  { navn: "token-client-core", tekst: "OAuth 2.0-klient. Henter tokens med grantene jwt_bearer, client_credentials og token_exchange." },
+  { navn: "token-client-spring", tekst: "Spring Boot-innpakning rundt token-client-core. Slår på klienten med @EnableOAuth2Client." },
+];
+---
+
+<Layout
+  title="token-support — dørvakten for JVM-apper som validerer OAuth2- og OIDC-tokens"
+  description="Java- og Kotlin-bibliotek fra Nav som validerer tokens fra en hvilken som helst OIDC-tilbyder. Én annotasjon mellom internett og API-et ditt. Åpen kildekode, rett fra Maven Central."
+>
+  <ProsjektHeader navn="token-support" />
+  <main id="hoved">
+    <Icons />
+
+    <section class="p-hero">
+      <div class="container">
+        <div class="hero-copy">
+          <p class="eyebrow">Fra Nav · Bygd for gjenbruk</p>
+          <h1>token-support</h1>
+          <p class="thesis">Én annotasjon mellom internett og API-et ditt.</p>
+          <p class="ingress">Et Java- og Kotlin-bibliotek som står i døra til endepunktene dine og sjekker OAuth 2.0- og OpenID Connect-tokens. Du peker det på tilbyderen i konfigurasjonen, setter én annotasjon over metoden — så slipper koden din å bry seg om signaturer, utstedere og utløpstider. I drift i Nav, klar for enhver JVM-app.</p>
+          <div class="cta-row">
+            <a class="btn" href="https://github.com/navikt/token-support">Kom i gang på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
+            <a class="btn btn-quiet" href="#modulene">Se modulene</a>
+          </div>
+          <p class="p-meta detail nums">
+            {data?.language && (
+              <>
+                <span><span class="lang-dot" style={`background:${data.languageColor ?? "var(--border-strong)"}`}></span>{data.language}</span>
+                <span class="sep">·</span>
+              </>
+            )}
+            <span>MIT-lisens</span>
+            <span class="sep">·</span>
+            <span>JVM-bibliotek</span>
+            <span class="sep">·</span>
+            <span>no.nav.security</span>
+          </p>
+        </div>
+
+        <figure class="door" aria-label="Kotlin-controller der én @Protected-annotasjon beskytter et endepunkt">
+          <div class="door-bar">
+            <span class="fname">SakController.kt</span>
+            <span class="kind-chip">dørvakten</span>
+          </div>
+          <pre><code><span class="an">@RestController</span>
+<span class="kw">class</span> <span class="ty">SakController</span>(<span class="kw">val</span> sak: <span class="ty">SakService</span>) &#123;
+
+<span class="hl">  <span class="an">@Protected</span>(issuer = <span class="st">"borger"</span>)</span>
+  <span class="an">@GetMapping</span>(<span class="st">"/api/saker"</span>)
+  <span class="kw">fun</span> <span class="fn">mineSaker</span>() =
+    sak.<span class="fn">forInnloggetBruker</span>()
+&#125;</code></pre>
+          <div class="door-note">
+            <svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>
+            <span>Uten et gyldig token fra <code>borger</code> når forespørselen aldri metoden. Ingen if-setninger, ingen egen signatursjekk.</span>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section p-what" id="hva">
+      <div class="container">
+        <div class="section-head">
+          <h2>Hva den gjør</h2>
+          <p class="ingress">token-support validerer tokens fra hvilken som helst OIDC-tilbyder — du bestemmer hvem du stoler på i konfigurasjonen. Biblioteket henter tilbyderens metadata, verifiserer signatur og utløp, og sjekker at token er utstedt til nettopp din applikasjon.</p>
+        </div>
+        <div class="what-grid">
+          <div class="issuer-card">
+            <p class="mini-label">Du navngir tilbyderne du stoler på …</p>
+            <pre><code><span class="pk">no.nav.security.jwt.issuer.borger</span>
+  <span class="pk">.discoveryurl</span>: <span class="st">https://tilbyder/.well-known/openid-configuration</span>
+  <span class="pk">.accepted_audience</span>: <span class="st">min-app</span></code></pre>
+            <p class="fine">Ett navn per tilbyder — <code>borger</code>, <code>ansatt</code>, hva du vil. Navnet er det samme du oppgir i <code>@Protected(issuer = "borger")</code>.</p>
+          </div>
+          <ul class="what-list">
+            <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg><span><strong>Standard OIDC, ingen lås.</strong> Bygget på Nimbus OAuth 2.0 SDK. Peker du på en gyldig <code>.well-known</code>-adresse, fungerer det — ID-porten, Entra ID, Keycloak eller din egen.</span></li>
+            <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg><span><strong>Krav ned på claim-nivå.</strong> <code>@ProtectedWithClaims(issuer = "ansatt", claimMap = &#123;"acr=Level4"&#125;)</code> når det ikke holder å bare være innlogget.</span></li>
+            <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg><span><strong>Åpne dører merkes.</strong> <code>@Unprotected</code> gjør det tydelig — og bevisst — hvilke endepunkter som slipper alle inn.</span></li>
+            <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg><span><strong>Ut like enkelt som inn.</strong> <code>token-client</code>-modulene henter tokens til videre kall med <code>client_credentials</code>, <code>jwt_bearer</code> eller <code>token_exchange</code>.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section p-modules" id="modulene">
+      <div class="container">
+        <div class="section-head">
+          <h2>Modulene</h2>
+          <p class="ingress">Biblioteket er delt i små moduler så du bare drar inn det rammeverket ditt bruker. Alle deler samme kjerne og samme konfigurasjon under <code>no.nav.security.jwt</code>.</p>
+        </div>
+        <div class="mod-cols">
+          <div class="mod-group">
+            <h3 class="mod-head">Valider innkommende tokens</h3>
+            <p class="mod-sub">Dørvakten — sjekker tokenet før forespørselen når koden din.</p>
+            <dl class="mod-list">
+              {validering.map((m) => (
+                <div class="mod-row">
+                  <dt>{m.navn}</dt>
+                  <dd>{m.tekst}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+          <div class="mod-group">
+            <h3 class="mod-head">Hent tokens til utgående kall</h3>
+            <p class="mod-sub">Når appen din selv må vise legitimasjon videre til en annen tjeneste.</p>
+            <dl class="mod-list">
+              {klient.map((m) => (
+                <div class="mod-row">
+                  <dt>{m.navn}</dt>
+                  <dd>{m.tekst}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section p-get" id="ta-i-bruk">
+      <div class="container">
+        <div class="section-head">
+          <h2>Hent den inn</h2>
+          <p class="ingress">Alle modulene ligger på Maven Central under gruppen <code>no.nav.security</code>. Legg til den du trenger — her er <code>token-validation-spring</code> — og sett en versjon fra siste utgivelse.</p>
+        </div>
+        <div class="get-cols">
+          <div class="snip">
+            <div class="snip-bar">
+              <span class="fname">build.gradle.kts · Gradle</span>
+              <button class="copy-btn" type="button" data-copy="gradle">Kopier</button>
+            </div>
+            <pre><code id="gradle"><span class="fn">implementation</span>(<span class="st">"no.nav.security:token-validation-spring:$tokenSupportVersion"</span>)</code></pre>
+          </div>
+          <div class="snip">
+            <div class="snip-bar">
+              <span class="fname">pom.xml · Maven</span>
+              <button class="copy-btn" type="button" data-copy="maven">Kopier</button>
+            </div>
+            <pre><code id="maven"><span class="xt">&lt;dependency&gt;</span>
+  <span class="xt">&lt;groupId&gt;</span>no.nav.security<span class="xt">&lt;/groupId&gt;</span>
+  <span class="xt">&lt;artifactId&gt;</span>token-validation-spring<span class="xt">&lt;/artifactId&gt;</span>
+  <span class="xt">&lt;version&gt;</span>{"${token-support.version}"}<span class="xt">&lt;/version&gt;</span>
+<span class="xt">&lt;/dependency&gt;</span></code></pre>
+          </div>
+        </div>
+        <p class="fine get-fine">Bytt <code>token-validation-spring</code> mot modulen som passer rammeverket ditt — <code>-ktor</code>, <code>-jaxrs</code>, <code>-filter</code> eller <code>token-client-*</code>. Samme gruppe, samme versjon.</p>
+      </div>
+    </section>
+
+    <section class="section p-reuse">
+      <div class="container">
+        <div class="reuse-card">
+          <p class="mini-label">Fri gjenbruk</p>
+          <h2>Bruk den rett fra Maven Central</h2>
+          <p>token-support er MIT-lisensiert og publisert offentlig — hvem som helst kan legge den inn i sitt eget bygg, ingen avtale nødvendig. Vi lover ingen support-SLA, men biblioteket driftes i Nav hver dag, og issues og pull requests er velkomne.</p>
+          <p class="adopter-note"><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Klar for enhver JVM-app, i og utenfor offentlig sektor</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <ProsjektFooter repo="navikt/token-support" lenker={[{ href: "https://central.sonatype.com/namespace/no.nav.security", tekst: "Maven Central" }, { href: "https://github.com/navikt/token-support/blob/master/README.md", tekst: "README" }]} />
+</Layout>
+
+<style>
+  /* ---- Hero ---- */
+  .p-hero { padding: 4rem 0; }
+  .p-hero .container { display: grid; gap: 3rem; align-items: center; }
+  .hero-copy { display: flex; flex-direction: column; gap: 1rem; max-width: var(--prose); }
+  .p-hero h1 { font-size: 3rem; letter-spacing: -0.01em; }
+  .thesis { font-size: 1.375rem; font-weight: 600; line-height: 1.35; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+  .btn-quiet { background: transparent; color: var(--text); border: 1px solid var(--border-strong); }
+  .btn-quiet:hover { background: var(--bg-subtle); color: var(--text); border-color: var(--text-subtle); }
+  .p-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; margin-top: 0.75rem; }
+  .p-meta .sep { color: var(--border-strong); }
+  @media (min-width: 768px) { .p-hero { padding: 6rem 0; } .p-hero h1 { font-size: 3.5rem; } }
+  @media (max-width: 639px) { .p-hero h1 { font-size: 2.5rem; } }
+  @media (min-width: 1024px) { .p-hero .container { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+
+  /* ---- Dørvakt-kortet (hero-visual) ---- */
+  .door { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; }
+  .door-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.625rem 1rem; border-bottom: 1px solid var(--border); background: var(--bg-subtle); }
+  .door-bar .fname { font-family: var(--mono); font-size: 0.8125rem; color: var(--text-subtle); }
+  .kind-chip { font-family: var(--mono); font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: var(--radius-s); background: var(--tag-accent-bg); color: var(--tag-accent-text); white-space: nowrap; }
+  .door pre { padding: 1.25rem 1rem; overflow-x: auto; font-family: var(--mono); font-size: 0.875rem; line-height: 1.75; color: var(--text); }
+  .door code { display: block; }
+  .door-note { display: flex; gap: 0.625rem; align-items: baseline; padding: 0.875rem 1rem; border-top: 1px solid var(--border); background: var(--bg-subtle); font-size: 0.9375rem; color: var(--text-subtle); }
+  .door-note code { font-family: var(--mono); font-size: 0.875em; color: var(--info-strong); }
+  .door-note .check-icon { color: var(--accent); flex-shrink: 0; transform: translateY(2px); }
+
+  /* Kodefarger — kun eksisterende tokens */
+  .kw { color: var(--accent); }
+  .an { color: var(--accent); font-weight: 600; }
+  .st { color: var(--info-strong); }
+  .ty { color: var(--beige-strong); }
+  .fn { color: var(--text); }
+  .cm { color: var(--text-subtle); }
+  .pk { color: var(--accent); }
+  .xt { color: var(--text-subtle); }
+  .hl { display: inline-block; width: 100%; background: var(--accent-soft); box-shadow: inset 2px 0 0 var(--accent); }
+
+  /* ---- Hva den gjør ---- */
+  .p-what { background: var(--bg-subtle); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .what-grid { display: grid; gap: 1.5rem; align-items: start; }
+  @media (min-width: 900px) { .what-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+  .issuer-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; }
+  .issuer-card .mini-label { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--info-strong); padding: 1rem 1.25rem 0; }
+  .issuer-card pre { padding: 0.875rem 1.25rem; overflow-x: auto; font-family: var(--mono); font-size: 0.8125rem; line-height: 1.7; color: var(--text); }
+  .issuer-card .fine { padding: 0 1.25rem 1.25rem; }
+  .fine { font-size: 0.9375rem; color: var(--text-subtle); }
+  .fine code, .what-list code, .p-modules code, .p-get .ingress code, .issuer-card .fine code { font-family: var(--mono); font-size: 0.875em; background: var(--tint-info); color: var(--info-strong); padding: 0.0625rem 0.3125rem; border-radius: var(--radius-s); }
+  .what-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+  .what-list li { display: flex; gap: 0.625rem; align-items: baseline; color: var(--text-subtle); font-size: 1.0625rem; line-height: 1.5; }
+  .what-list .check-icon { color: var(--accent); flex-shrink: 0; transform: translateY(2px); }
+  .what-list strong { color: var(--text); font-weight: 600; }
+
+  /* ---- Modulene ---- */
+  .mod-cols { display: grid; gap: 2rem; align-items: start; }
+  @media (min-width: 900px) { .mod-cols { grid-template-columns: 1.4fr 1fr; gap: 2.5rem; } }
+  .mod-head { font-size: 1.25rem; }
+  .mod-sub { color: var(--text-subtle); font-size: 1rem; margin-top: 0.375rem; margin-bottom: 1.25rem; }
+  .mod-list { border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; background: var(--surface); }
+  .mod-row { padding: 1rem 1.25rem; }
+  .mod-row + .mod-row { border-top: 1px solid var(--border); }
+  .mod-row dt { font-family: var(--mono); font-size: 0.875rem; color: var(--accent); font-weight: 600; }
+  .mod-row dd { margin-top: 0.375rem; color: var(--text-subtle); font-size: 1rem; line-height: 1.5; }
+
+  /* ---- Hent den inn ---- */
+  .get-cols { display: grid; gap: 1.5rem; align-items: start; }
+  @media (min-width: 768px) { .get-cols { grid-template-columns: 1fr 1fr; } }
+  .snip { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; }
+  .snip-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.5rem 0.5rem 0.5rem 1rem; border-bottom: 1px solid var(--border); background: var(--bg-subtle); }
+  .snip-bar .fname { font-family: var(--mono); font-size: 0.8125rem; color: var(--text-subtle); }
+  .copy-btn { font: inherit; font-size: 0.8125rem; font-weight: 600; color: var(--accent); background: transparent; border: 1px solid var(--border-strong); border-radius: var(--radius-s); padding: 0.25rem 0.625rem; cursor: pointer; transition: background-color 150ms ease, border-color 150ms ease; }
+  .copy-btn:hover { background: var(--accent-soft); border-color: var(--accent); }
+  @media (max-width: 767px) { .copy-btn { min-height: 44px; } }
+  .copy-btn.done { color: var(--info-strong); border-color: var(--info-strong); }
+  .snip pre { padding: 1.125rem 1rem; overflow-x: auto; font-family: var(--mono); font-size: 0.8125rem; line-height: 1.7; color: var(--text); }
+  .get-fine { margin-top: 1.5rem; max-width: var(--prose); }
+
+  /* ---- Fri gjenbruk ---- */
+  .p-reuse { background: var(--tint-info); border-top: 1px solid var(--border); }
+  .reuse-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-l); padding: 2.5rem; display: flex; flex-direction: column; gap: 1rem; max-width: 48rem; }
+  .reuse-card .mini-label { font-size: 0.875rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--info-strong); }
+  .reuse-card h2 { font-size: 1.75rem; }
+  .reuse-card p { color: var(--text-subtle); max-width: var(--prose); }
+  .adopter-note { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9375rem; color: var(--info-strong); font-weight: 600; }
+  .adopter-note .check-icon { color: var(--accent); flex-shrink: 0; }
+</style>
+
+<script is:inline>
+  // Kopier-knapp for avhengighetssnuttene — progressiv, ingen animasjon
+  (function () {
+    var btns = document.querySelectorAll(".copy-btn");
+    btns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var target = document.getElementById(btn.getAttribute("data-copy"));
+        if (!target || !navigator.clipboard) return;
+        navigator.clipboard.writeText(target.innerText).then(function () {
+          var prev = btn.textContent;
+          btn.textContent = "Kopiert";
+          btn.classList.add("done");
+          setTimeout(function () {
+            btn.textContent = prev;
+            btn.classList.remove("done");
+          }, 1600);
+        });
+      });
+    });
+  })();
+</script>

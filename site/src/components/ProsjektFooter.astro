@@ -1,0 +1,25 @@
+---
+/* Delt bunnlinje for landingssidene: tilbake til gjenbruksseksjonen,
+   GitHub-repoet og ev. sidespesifikke lenker. */
+interface Props {
+  repo: string;
+  lenker?: { href: string; tekst: string }[];
+}
+
+const { repo, lenker = [] } = Astro.props;
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+---
+
+<footer class="site-footer prosjekt-footer">
+  <div class="container">
+    <p class="detail">Bygd i det åpne av Nav — del av <a href={`${base}#gjenbruk`}>åpen kildekode i Nav</a>.</p>
+    <nav class="prosjekt-foot-links" aria-label="Bunnlenker">
+      <a href={`https://github.com/${repo}`}>GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
+      {lenker.map((l) => (
+        <a href={l.href}>{l.tekst}<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
+      ))}
+    </nav>
+  </div>
+</footer>

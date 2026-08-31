@@ -1,0 +1,117 @@
+# Midlertidig forhåndsvisning av showcase-siden på GitHub Pages.
+#
+# Synker data, committer generated.json til showcase, bygger og deployer
+# til GitHub Pages som artefakt (build_type: workflow). Alt i samme
+# workflow — pushes gjort med GITHUB_TOKEN trigger ikke andre workflows,
+# så en delt sync-→-deploy-kjede ville aldri ha startet av seg selv.
+#
+# NB: `schedule` fyres kun fra standardgrenen (main) — en kopi av denne
+# filen går til main i egen PR for nattlig kjøring; denne kopien på
+# showcase betjener push- og manuelle kjøringer.
+
+name: Showcase-forhåndsvisning
+
+on:
+  push:
+    branches: [showcase]
+    paths:
+      - "site/**"
+      - ".github/workflows/showcase-preview.yml"
+  schedule:
+    - cron: "28 3 * * *" # 05.28 norsk sommertid — utenom rushtid på API-ene
+  workflow_dispatch:
+
+concurrency:
+  group: showcase-preview
+
+permissions:
+  contents: write
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: showcase
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: site/pnpm-lock.yaml
+
+      - name: Installer avhengigheter
+        id: deps
+        working-directory: site
+        run: pnpm install --frozen-lockfile
+
+      # Feiler synken, beholder generated.json forrige gode verdier —
+      # vi deployer likevel, men kjøringen går rød til slutt (PRD §7).
+      - name: Hent data fra GitHub og npm
+        id: sync
+        continue-on-error: true
+        working-directory: site
+        run: pnpm sync
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Commit oppdatert generated.json til showcase
+        if: always() && steps.deps.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/src/data/generated.json
+          if git diff --cached --quiet; then
+            echo "Ingen endringer i data."
+          else
+            git commit -m "chore: datasynk for showcase-forhåndsvisning"
+            git push origin HEAD:showcase
+          fi
+
+      - name: Bygg
+        if: always() && steps.deps.outcome == 'success'
+        working-directory: site
+        run: pnpm build
+        env:
+          SITE_URL: https://navikt.github.io
+          BASE_PATH: /offentlig
+
+      # Artefaktbasert Pages-deploy (build_type: workflow) — den gamle
+      # branch-baserte deployen (gh-pages + Jekyll-bygg) satt seg fast i
+      # GitHubs legacy-kø og serverte gammelt innhold.
+      - uses: actions/upload-pages-artifact@v3
+        if: always() && steps.deps.outcome == 'success'
+        with:
+          path: site/dist
+
+    outputs:
+      sync-utfall: ${{ steps.sync.outcome }}
+
+  deploy:
+    needs: preview
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  # PRD §7: feile høylytt. Deployen gikk gjennom (med forrige gode data
+  # der synken sviktet), men kjøringen skal likevel gå rød.
+  varsle:
+    needs: [preview, deploy]
+    if: always() && needs.preview.outputs.sync-utfall == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "::error::Datasynken feilet — siden er deployet med forrige gode data. Se sync-steget for detaljer."
+          exit 1

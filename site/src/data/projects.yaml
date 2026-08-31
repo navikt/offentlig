@@ -1,0 +1,215 @@
+# projects.yaml — det kuraterte utvalget
+#
+# Redaksjonelt innhold: repo-slug, kategori og en håndskrevet norsk
+# beskrivelse (aldri GitHub-beskrivelsen). Endres via pull request.
+# Tall (stjerner, språk, sist aktiv, arkivstatus) hentes automatisk
+# av scripts/sync.mjs hver natt — aldri et håndvedlikeholdt tall.
+#
+# «Utvalgte prosjekter»-gridet viser prosjekter uten gjenbruk-felt.
+# Gjenbruksprosjekter vises kun i «Bygd for gjenbruk» — ett prosjekt, én plass;
+# gjenbruk vinner. Et prosjekt dukker aldri opp begge steder.
+#
+# Kategorier: plattform · designsystem · biblioteker · aapenhet · data-ki
+# perle: true løfter prosjektet inn i «Skjulte perler»-seksjonen
+# (og krever da kicker + meta i tillegg).
+#
+# navn: (valgfritt) overstyrer visningsnavnet på kortet når repo-navnet er
+# kryptisk (f.eks. nais/device → «naisdevice»). Uten feltet vises repo-navnet.
+#
+# team: (valgfritt) vises som «Vedlikeholdes av …» på kortet (PRD §5.5).
+# Feltet står tomt til det er forankret med eierteamene (PRD §9 pkt. 4) —
+# aldri gjett et teamnavn.
+#
+# side: (valgfritt) prosjektets landingsside. Relativ sti («prosjekt/navn»)
+# peker på en håndlaget side under src/pages/ (alltid bespoke — aldri
+# generert fra en mal); full URL peker på en eksisterende side utenfor
+# showcasen. Gjenbrukslisten lenker hit i stedet for til GitHub.
+#
+# gjenbruk: (valgfritt) løfter prosjektet inn i «Bygd for gjenbruk»-seksjonen
+# (PRD §4.4). Selv et tomt objekt ({}) er nok til å bli med. Valgfrie felt:
+#   bruktAv: liste med navngitte brukere utenfor Nav — virksomheter (f.eks.
+#           Kartverket) eller kjente åpne prosjekter (f.eks. Elasticsearch).
+#           KUN håndverifiserte påstander — aldri gjett en adopter (PRD §7).
+#           Legg alltid en kildelenke som kommentar rett over bruktAv, så PR-en
+#           kan etterprøves. Endres via pull request. Rendres som «Brukt av X (og Y)».
+#   merknad: fritekst når vi ikke kan navngi noen konkret adopter,
+#           f.eks. «Brukt langt utenfor Nav». Vises kun når bruktAv mangler.
+#
+# Plassholderen {{fnrNedlastinger}} byttes ved bygg ut med ferske npm-tall
+# fra generated.json (stats.fnrDownloadsLastMonth) — aldri et håndskrevet tall.
+# Gjelder kun perle-tekster (Gems.astro); landingssider leser generated.json direkte.
+
+projects:
+  - repo: navikt/mock-oauth2-server
+    kategori: biblioteker
+    beskrivelse: >-
+      Mock av OAuth2 og OpenID Connect
+      til testing — brukt langt utenfor Nav.
+    perle: false
+    side: prosjekt/mock-oauth2-server
+    gjenbruk:
+      # https://github.com/elastic/elasticsearch/blob/main/x-pack/plugin/inference/qa/oauth2/build.gradle
+      # https://github.com/apache/kafka/blob/trunk/gradle/dependencies.gradle
+      bruktAv:
+        - Elasticsearch
+        - Apache Kafka
+
+  - repo: navikt/aksel
+    kategori: designsystem
+    beskrivelse: Designsystemet bak nav.no — komponenter, tokens og over 900 ikoner.
+    perle: false
+    side: https://aksel.nav.no
+
+  - repo: nais/naiserator
+    kategori: plattform
+    beskrivelse: Én applikasjonsspesifikasjon inn, komplett Kubernetes-oppsett ut.
+    perle: false
+
+  - repo: navikt/helse-spleis
+    kategori: aapenhet
+    beskrivelse: «En liten kalkulator for sykepenger» — selve beregningsmotoren, åpen for innsyn.
+    perle: false
+
+  - repo: navikt/cplt
+    kategori: data-ki
+    beskrivelse: Sandkasse på kjernenivå som holder KI-kodeagenter i tømmene.
+    perle: false
+    side: https://ki-utvikling.nav.no/cplt
+    gjenbruk: {}
+
+  - repo: navikt/pdfgen
+    kategori: biblioteker
+    beskrivelse: HTML-mal inn, PDF ut. Har generert Navs dokumenter siden 2018.
+    perle: false
+    side: prosjekt/pdfgen
+    gjenbruk: {}
+
+  - repo: nais/wonderwall
+    kategori: plattform
+    beskrivelse: Sidecar som tar seg av all pålogging, så applikasjonene slipper.
+    perle: false
+    side: prosjekt/wonderwall
+    gjenbruk: {}
+
+  - repo: navikt/rapids-and-rivers
+    kategori: biblioteker
+    beskrivelse: Kafka-bibliotek for hendelsesdrevne tjenester etter rapids/rivers-mønsteret.
+    perle: false
+
+  - repo: navikt/nav-faker
+    kategori: biblioteker
+    beskrivelse: >-
+      TypeScript-bibliotek som genererer norske testdata —
+      fødselsnummer, navn, adresser, tall og datoer.
+    perle: false
+
+  - repo: nais/texas
+    kategori: plattform
+    beskrivelse: >-
+      Token Exchange as a Service — en sidecar som tar OAuth2-flytene
+      og tokenutvekslingen, så appene slipper.
+    perle: false
+
+  - repo: nais/device
+    kategori: plattform
+    navn: naisdevice
+    beskrivelse: >-
+      Zero-trust-tilkobling for utviklermaskiner — tilgang til interne
+      ressurser bare når enheten er frisk og godkjent.
+    perle: false
+
+  - repo: navikt/spraksjekk
+    kategori: aapenhet
+    beskrivelse: >-
+      Klarspråkshjelpen — et skriveverktøy som gir umiddelbar
+      tilbakemelding på teksten din.
+    perle: false
+
+  - repo: navikt/copilot
+    kategori: data-ki
+    beskrivelse: >-
+      Agenter, instruksjoner, skills og MCP-servere som gjør GitHub Copilot
+      smartere for Navs stack.
+    perle: false
+
+  - repo: navikt/token-support
+    kategori: biblioteker
+    beskrivelse: OAuth2- og OIDC-validering for JVM-apper, rett fra Maven Central.
+    perle: false
+    side: prosjekt/token-support
+    gjenbruk: {}
+
+  - repo: navikt/fnrvalidator
+    kategori: biblioteker
+    perle: false
+    beskrivelse: >-
+      Validerer fødselsnummer og d-nummer — den stille standarden
+      i norsk JavaScript.
+    side: prosjekt/fnrvalidator
+    gjenbruk:
+      # https://github.com/domstolene/page-generator (package.json)
+      # https://github.com/dnbexperience/eufemia (NationalIdentityNumber-feltet importerer fnrvalidator)
+      bruktAv:
+        - Norges domstoler
+        - DNB
+
+  - repo: nais/digdirator
+    kategori: plattform
+    perle: false
+    beskrivelse: >-
+      Kubernetes-operator som registrerer klienter mot ID-porten og
+      Maskinporten automatisk.
+    side: prosjekt/digdirator
+    gjenbruk:
+      # https://github.com/kartverket/skiperator (importerer digdirators Go-pakker)
+      # https://github.com/kartverket/skip.kartverket.no (Kartverkets plattformdocs siterer digdirator)
+      bruktAv:
+        - Kartverket
+
+  - repo: navikt/DSF
+    kategori: aapenhet
+    perle: true
+    kicker: Historisk dokument
+    beskrivelse: >-
+      Det sentrale folketrygdsystemet kjørte fra 1967 til 2018. Da
+      IT-dinosauren gikk av med pensjon, la vi den ut — i PL/I, som den ble
+      skrevet.
+    meta: PL/I · 1967–2018
+
+  - repo: navikt/ghep
+    kategori: biblioteker
+    beskrivelse: >-
+      Hendelser fra GitHub rett inn i Slack — issues, pull requests
+      og deploys der teamet er.
+    perle: false
+    side: https://navikt.github.io/ghep/
+    gjenbruk:
+      # https://github.com/miljodir/ghep (Miljødirektoratets fork)
+      # https://github.com/navikt/ghep/pull/286 (merget self-hosting-støtte)
+      bruktAv:
+        - Miljødirektoratet
+
+  - repo: nais/unleasherator
+    kategori: plattform
+    beskrivelse: >-
+      Kubernetes-operator som ruller ut og drifter Unleash-instanser
+      for feature toggles.
+    perle: false
+    side: prosjekt/unleasherator
+    gjenbruk: {}
+
+  - repo: nais/kafkarator
+    kategori: plattform
+    beskrivelse: >-
+      Kubernetes-operator for Kafka-topics på Aiven — selvbetjening
+      med én YAML-fil.
+    perle: false
+    side: prosjekt/kafkarator
+    gjenbruk: {}
+
+  - repo: nais/bqrator
+    kategori: plattform
+    beskrivelse: Kubernetes-operator som oppretter BigQuery-datasett deklarativt.
+    perle: false
+    side: prosjekt/bqrator
+    gjenbruk: {}
