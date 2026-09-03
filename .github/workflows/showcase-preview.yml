@@ -1,19 +1,16 @@
-# Midlertidig forhåndsvisning av showcase-siden på GitHub Pages.
+# Forhåndsvisning av showcase-siden på GitHub Pages.
 #
-# Synker data, committer generated.json til showcase, bygger og deployer
+# Synker data, committer generated.json til main, bygger og deployer
 # til GitHub Pages som artefakt (build_type: workflow). Alt i samme
 # workflow — pushes gjort med GITHUB_TOKEN trigger ikke andre workflows,
 # så en delt sync-→-deploy-kjede ville aldri ha startet av seg selv.
 #
-# NB: `schedule` fyres kun fra standardgrenen (main) — en kopi av denne
-# filen går til main i egen PR for nattlig kjøring; denne kopien på
-# showcase betjener push- og manuelle kjøringer.
 
 name: Showcase-forhåndsvisning
 
 on:
   push:
-    branches: [showcase]
+    branches: [main]
     paths:
       - "site/**"
       - ".github/workflows/showcase-preview.yml"
@@ -70,7 +67,7 @@ jobs:
             echo "Ingen endringer i data."
           else
             git commit -m "chore: datasynk for showcase-forhåndsvisning"
-            git push origin HEAD:showcase
+            git push origin HEAD:main
           fi
 
       - name: Bygg
