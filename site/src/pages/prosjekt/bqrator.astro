@@ -1,0 +1,135 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Icons from "../../components/Icons.astro";
+import ProsjektHeader from "../../components/ProsjektHeader.astro";
+import ProsjektFooter from "../../components/ProsjektFooter.astro";
+
+import generated from "../../data/generated.json";
+
+/* Bespoke landingsside (PRD: håndlaget, aldri generert fra mal).
+   Motiv: «den minste -atoren». Én jobb, og stolt av det — derfor er siden
+   med vilje kort og stille: én skjerm og en bunnlinje. Restriksjonen ER
+   designet, i kontrast til de større søsknene. */
+const data = (generated.repos as any)["nais/bqrator"];
+---
+
+<Layout
+  title="bqrator — BigQuery-datasett som Kubernetes-ressurser"
+  description="En liten Kubernetes-operator fra Nav som oppretter BigQuery-datasett og holder tilgangene i tråd med det du har skrevet. Åpen kildekode, MIT."
+>
+  <ProsjektHeader navn="bqrator" />
+  <main id="hoved">
+    <Icons />
+
+    <section class="p-hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Fra Nais-plattformen · Bygd for gjenbruk</p>
+        <h1>bqrator</h1>
+        <p class="thesis">Én jobb. BigQuery-datasett som Kubernetes-ressurser.</p>
+
+        <figure class="manifest" aria-label="Eksempel på BigQueryDataset-ressurs">
+          <div class="manifest-bar">
+            <span class="fname">datasett.yaml</span>
+            <span class="kind-chip">kind: BigQueryDataset</span>
+          </div>
+          <pre><code><span class="yk">apiVersion</span><span class="yp">:</span> google.nais.io/v1
+<span class="yk">kind</span><span class="yp">:</span> BigQueryDataset
+<span class="yk">metadata</span><span class="yp">:</span>
+  <span class="yk">name</span><span class="yp">:</span> mitt-datasett
+  <span class="yk">namespace</span><span class="yp">:</span> mitt-team
+<span class="yk">spec</span><span class="yp">:</span>
+  <span class="yk">name</span><span class="yp">:</span> mitt_datasett
+  <span class="yk">location</span><span class="yp">:</span> europe-north1
+  <span class="yk">project</span><span class="yp">:</span> mitt-gcp-prosjekt
+  <span class="yk">access</span><span class="yp">:</span>
+    <span class="yp">-</span> <span class="yk">role</span><span class="yp">:</span> OWNER
+      <span class="yk">userByEmail</span><span class="yp">:</span> <span class="ys">ola.nordmann@etaten.no</span>
+    <span class="yp">-</span> <span class="yk">role</span><span class="yp">:</span> READER
+      <span class="yk">userByEmail</span><span class="yp">:</span> <span class="ys">kari.nordmann@etaten.no</span>
+  <span class="yk">cascadingDelete</span><span class="yp">:</span> <span class="ys">true</span></code></pre>
+        </figure>
+
+        <p class="what">Legg ressursen i clusteret. bqrator oppretter datasettet i BigQuery om det ikke finnes, og legger til og oppdaterer tilgangene etter reglene du har skrevet — rollene <code>READER</code>, <code>WRITER</code> og <code>OWNER</code> per e-postadresse. Endrer du filen, følger tilgangene etter. Det er hele grensesnittet.</p>
+
+        <p class="prereq detail">Forutsetter et Kubernetes-cluster med operatoren og et GCP-prosjekt der datasettet skal ligge. Region er foreløpig <code>europe-north1</code>.</p>
+
+        <div class="cta-row">
+          <a class="btn" href="https://github.com/nais/bqrator">Se koden på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
+        </div>
+
+        <p class="p-meta detail nums">
+          {data?.language && (
+            <>
+              <span><span class="lang-dot" style={`background:${data.languageColor ?? "var(--border-strong)"}`}></span>{data.language}</span>
+              <span class="sep">·</span>
+            </>
+          )}
+          <span>MIT-lisens</span>
+          <span class="sep">·</span>
+          <span>Kubernetes-operator</span>
+          {typeof data?.stars === "number" && (
+            <>
+              <span class="sep">·</span>
+              <span class="stars"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><use href="#star" /></svg>{data.stars}</span>
+            </>
+          )}
+        </p>
+
+        <p class="sibling detail">
+          Liten med vilje. bqrator gjør for BigQuery det <a href="../digdirator/">digdirator</a> gjør for ID&#8209;porten: én operator, én jobb.
+        </p>
+      </div>
+    </section>
+  </main>
+  <ProsjektFooter repo="nais/bqrator" lenker={[{ href: "https://nais.io", tekst: "nais.io" }, { href: "https://cloud.google.com/bigquery/docs", tekst: "BigQuery-dokumentasjon" }]} />
+</Layout>
+
+<style>
+  /* Én skjerm, ett spor. Alt sentrert i én smal kolonne — bevisst rolig. */
+  .p-hero { padding: 4rem 0 5rem; }
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+    max-width: 40rem;
+  }
+  .p-hero h1 { font-size: 3rem; letter-spacing: -0.01em; }
+  .thesis { font-size: 1.375rem; font-weight: 600; line-height: 1.35; max-width: var(--prose); }
+  @media (min-width: 768px) { .p-hero { padding: 6rem 0 7rem; } .p-hero h1 { font-size: 3.5rem; } }
+  @media (max-width: 639px) { .p-hero h1 { font-size: 2.5rem; } }
+
+  .manifest { width: 100%; text-align: left; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; margin-top: 0.5rem; }
+  .manifest-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.625rem 1rem; border-bottom: 1px solid var(--border); background: var(--bg-subtle); }
+  .manifest-bar .fname { font-family: var(--mono); font-size: 0.8125rem; color: var(--text-subtle); }
+  .kind-chip { font-family: var(--mono); font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: var(--radius-s); background: var(--tag-info-bg); color: var(--tag-info-text); white-space: nowrap; }
+  .manifest pre { padding: 1.25rem 1rem; overflow-x: auto; font-family: var(--mono); font-size: 0.875rem; line-height: 1.7; color: var(--text); }
+  .yk { color: var(--accent); }
+  .ys { color: var(--info-strong); }
+  .yp { color: var(--text-subtle); }
+
+  .what { font-size: 1.0625rem; line-height: 1.6; color: var(--text-subtle); max-width: var(--prose); }
+  .what code, .prereq code {
+    font-family: var(--mono);
+    font-size: 0.875em;
+    background: var(--tint-info);
+    color: var(--info-strong);
+    padding: 0.0625rem 0.3125rem;
+    border-radius: var(--radius-s);
+  }
+  .prereq { max-width: var(--prose); }
+
+  .cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 0.5rem; }
+  .p-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.5rem 0.75rem; }
+  .p-meta .sep { color: var(--border-strong); }
+  .p-meta .stars { display: inline-flex; align-items: center; gap: 0.3125rem; }
+  .p-meta .stars svg { color: var(--border-strong); }
+
+  .sibling {
+    max-width: var(--prose);
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+</style>

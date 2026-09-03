@@ -1,0 +1,224 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Icons from "../../components/Icons.astro";
+import ProsjektHeader from "../../components/ProsjektHeader.astro";
+import ProsjektFooter from "../../components/ProsjektFooter.astro";
+
+import generated from "../../data/generated.json";
+
+/* Bespoke landingsside (PRD: håndlaget, aldri generert fra mal).
+   Motiv: operatorens reconcile-løkke — manifestet er selve heltebildet. */
+const data = (generated.repos as any)["nais/digdirator"];
+---
+
+<Layout
+  title="digdirator — deklarativ klientregistrering hos ID-porten og Maskinporten"
+  description="Kubernetes-operator som registrerer og vedlikeholder klienter hos Digdir. Åpen kildekode fra Nav, klar for enhver norsk etat."
+>
+  <ProsjektHeader navn="digdirator" />
+  <main id="hoved">
+    <Icons />
+
+    <section class="p-hero">
+      <div class="container">
+        <div class="hero-copy">
+          <p class="eyebrow">Fra Nais-plattformen · Bygd for gjenbruk</p>
+          <h1>digdirator</h1>
+          <p class="thesis">Du beskriver klienten. Operatoren registrerer den hos ID&#8209;porten og Maskinporten — og holder den ved like.</p>
+          <p class="ingress">En Kubernetes-operator som snakker med Digdirs selvbetjenings-API for deg: oppretter klienter, legger legitimasjonen i en secret der applikasjonen finner den, og roterer nøkler uten at noen må huske det. I drift i Nav siden 2020 — klar for enhver norsk etat.</p>
+          <div class="cta-row">
+            <a class="btn" href="https://github.com/nais/digdirator">Kom i gang på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
+            <a class="btn btn-quiet" href="#slik-virker-det">Slik virker det</a>
+          </div>
+          <p class="p-meta detail nums">
+            {data?.language && (
+              <>
+                <span><span class="lang-dot" style={`background:${data.languageColor ?? "var(--border-strong)"}`}></span>{data.language}</span>
+                <span class="sep">·</span>
+              </>
+            )}
+            <span>MIT-lisens</span>
+            <span class="sep">·</span>
+            <span>Kubernetes-operator</span>
+          </p>
+        </div>
+
+        <figure class="manifest" aria-label="Eksempel på IDPortenClient-ressurs og operatorens hendelseslogg">
+          <div class="manifest-bar">
+            <span class="fname">idportenclient.yaml</span>
+            <span class="kind-chip">kind: IDPortenClient</span>
+          </div>
+          <pre><code><span class="yk">apiVersion</span><span class="yp">:</span> nais.io/v1
+<span class="yk">kind</span><span class="yp">:</span> IDPortenClient
+<span class="yk">metadata</span><span class="yp">:</span>
+  <span class="yk">name</span><span class="yp">:</span> min-app
+  <span class="yk">namespace</span><span class="yp">:</span> mitt-team
+<span class="yk">spec</span><span class="yp">:</span>
+  <span class="yk">clientURI</span><span class="yp">:</span> <span class="ys">"https://etaten.no"</span>
+  <span class="yk">redirectURIs</span><span class="yp">:</span>
+    <span class="yp">-</span> <span class="ys">"https://etaten.no/oauth2/callback"</span>
+  <span class="yk">secretName</span><span class="yp">:</span> <span class="ys">min-app-idporten</span></code></pre>
+          <div class="reconcile" id="reconcile" aria-live="polite">
+            <p class="rc-line ok"><span class="dot"></span>Ressurs mottatt<time>0,0 s</time></p>
+            <p class="rc-line ok"><span class="dot"></span>Klient registrert hos Digdir<time>1,8 s</time></p>
+            <p class="rc-line ok"><span class="dot"></span>Secret «min-app-idporten» opprettet<time>2,1 s</time></p>
+            <p class="rc-line ok live"><span class="dot"></span>Roterer nøkler automatisk<time>—</time></p>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section p-how" id="slik-virker-det">
+      <div class="container">
+        <div class="section-head">
+          <h2>Slik virker det</h2>
+          <p class="ingress">Registrering hos ID-porten og Maskinporten er skjemaer, nøkler og ting som utløper. digdirator gjør det om til én fil i clusteret ditt.</p>
+        </div>
+        <ol class="steps" style="list-style:none">
+          <li class="step">
+            <p class="num">Steg 1</p>
+            <h3>Beskriv klienten</h3>
+            <p>Legg en <code>IDPortenClient</code>- eller <code>MaskinportenClient</code>-ressurs i clusteret, som en hvilken som helst annen Kubernetes-ressurs. Filen er hele sannheten.</p>
+          </li>
+          <li class="step">
+            <p class="num">Steg 2</p>
+            <h3>Operatoren registrerer</h3>
+            <p>digdirator oppdager ressursen og oppretter eller oppdaterer klienten gjennom Digdirs selvbetjenings-API. Endrer du filen, følger registreringen etter.</p>
+          </li>
+          <li class="step">
+            <p class="num">Steg 3</p>
+            <h3>Nøklene lander — og roteres</h3>
+            <p>Privat nøkkel og all metadata legges i en Kubernetes-secret med navnet du valgte. Nøkler roteres automatisk, uten nedetid og uten kalenderpåminnelser.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section p-secret">
+      <div class="container">
+        <div class="section-head">
+          <h2>Det applikasjonen får</h2>
+          <p class="ingress">Applikasjonen leser alt den trenger fra secreten — ingen konfigurasjon limes inn for hånd, ingen nøkler på avveie.</p>
+          <div class="crd-chips">
+            <span class="kind-chip">IDPortenClient</span>
+            <span class="kind-chip">MaskinportenClient</span>
+            <span class="kind-chip">Maskinporten-scopes</span>
+          </div>
+        </div>
+        <dl class="kv">
+          <div class="kv-row"><dt>IDPORTEN_CLIENT_ID</dt><dd>Klientens ID hos ID-porten</dd></div>
+          <div class="kv-row"><dt>IDPORTEN_CLIENT_JWK</dt><dd>Privat nøkkel (JWK) for klientautentisering — den som roteres</dd></div>
+          <div class="kv-row"><dt>IDPORTEN_WELL_KNOWN_URL</dt><dd>Adressen til ID-portens metadata</dd></div>
+          <div class="kv-row"><dt>IDPORTEN_ISSUER</dt><dd>Utsteder, hentet fra metadata</dd></div>
+          <div class="kv-row"><dt>IDPORTEN_TOKEN_ENDPOINT</dt><dd>Token-endepunktet, hentet fra metadata</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section p-adopt" id="ta-i-bruk">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ta den i bruk i din virksomhet</h2>
+          <p class="ingress">digdirator er ikke bundet til Nav — alt den trenger finnes hos enhver norsk offentlig virksomhet med et Kubernetes-cluster.</p>
+        </div>
+        <div class="cols">
+          <div class="panel">
+            <h3>Det du trenger</h3>
+            <ul>
+              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Et Kubernetes-cluster der operatoren og applikasjonene dine kjører</li>
+              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Tilgang til Digdirs selvbetjenings-API for virksomheten din</li>
+              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>En YAML-fil per klient — det er hele grensesnittet</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Det du kan forvente</h3>
+            <p class="fine">MIT-lisensiert og fritt å bruke. Vi lover ingen support-SLA, men issues og pull requests er velkomne — koden driftes daglig i Nav, så den blir vedlikeholdt uansett.</p>
+            <p class="fine">Si gjerne fra hvis du tar den i bruk. Det er slik vi vet at det åpne arbeidet virker.</p>
+            <p class="fine">Kartverkets utviklerplattform <a href="https://github.com/kartverket/skiperator">SKIP</a> bruker digdirator for ID-porten og Maskinporten.</p>
+            <p class="adopter-note"><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Brukt av Kartverket — klar for enhver norsk etat</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <ProsjektFooter repo="nais/digdirator" lenker={[{ href: "https://nais.io", tekst: "nais.io" }, { href: "https://docs.digdir.no", tekst: "docs.digdir.no" }]} />
+</Layout>
+
+<style>
+  .p-hero { padding: 4rem 0; }
+  .p-hero .container { display: grid; gap: 3rem; align-items: center; }
+  .hero-copy { display: flex; flex-direction: column; gap: 1rem; max-width: var(--prose); }
+  .p-hero h1 { font-size: 3rem; letter-spacing: -0.01em; }
+  .thesis { font-size: 1.375rem; font-weight: 600; line-height: 1.35; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+  .btn-quiet { background: transparent; color: var(--text); border: 1px solid var(--border-strong); }
+  .btn-quiet:hover { background: var(--bg-subtle); color: var(--text); border-color: var(--text-subtle); }
+  .p-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; margin-top: 0.75rem; }
+  .p-meta .sep { color: var(--border-strong); }
+  @media (min-width: 768px) { .p-hero { padding: 6rem 0; } .p-hero h1 { font-size: 3.5rem; } }
+  @media (max-width: 639px) { .p-hero h1 { font-size: 2.5rem; } }
+  @media (min-width: 1024px) { .p-hero .container { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+
+  .manifest { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; }
+  .manifest-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.625rem 1rem; border-bottom: 1px solid var(--border); background: var(--bg-subtle); }
+  .manifest-bar .fname { font-family: var(--mono); font-size: 0.8125rem; color: var(--text-subtle); }
+  .kind-chip { font-family: var(--mono); font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: var(--radius-s); background: var(--tag-info-bg); color: var(--tag-info-text); white-space: nowrap; }
+  .manifest pre { padding: 1.25rem 1rem; overflow-x: auto; font-family: var(--mono); font-size: 0.875rem; line-height: 1.7; color: var(--text); }
+  .yk { color: var(--accent); }
+  .ys { color: var(--info-strong); }
+  .yp { color: var(--text-subtle); }
+  .reconcile { display: flex; flex-direction: column; gap: 0.375rem; padding: 0.875rem 1rem; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 0.8125rem; }
+  .rc-line { display: flex; align-items: center; gap: 0.625rem; color: var(--text-subtle); opacity: 0; transform: translateY(2px); transition: opacity 400ms ease, transform 400ms ease; }
+  .rc-line.on { opacity: 1; transform: none; }
+  .rc-line .dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--border-strong); flex-shrink: 0; }
+  .rc-line.ok .dot { background: var(--accent); }
+  .rc-line.live .dot { animation: pulse 2.4s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 var(--accent-soft); } 50% { box-shadow: 0 0 0 5px var(--accent-soft); } }
+  .rc-line time { margin-left: auto; font-variant-numeric: tabular-nums; color: var(--border-strong); }
+  @media (prefers-reduced-motion: reduce) { .rc-line.live .dot { animation: none; } }
+
+  .p-how { background: var(--bg-subtle); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .steps { display: grid; gap: 1.5rem; }
+  @media (min-width: 768px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+  .step { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-l); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.625rem; }
+  .step .num { font-size: 0.875rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--info-strong); }
+  .step h3 { font-size: 1.1875rem; }
+  .step p { color: var(--text-subtle); font-size: 1.0625rem; }
+  .step code { font-family: var(--mono); font-size: 0.875em; background: var(--tint-info); color: var(--info-strong); padding: 0.0625rem 0.3125rem; border-radius: var(--radius-s); }
+
+  .crd-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .kv { border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; }
+  .kv-row { display: grid; grid-template-columns: minmax(14rem, auto) 1fr; }
+  .kv-row + .kv-row { border-top: 1px solid var(--border); }
+  .kv-row dt { font-family: var(--mono); font-size: 0.8125rem; padding: 0.75rem 1rem; background: var(--bg-subtle); color: var(--text); border-right: 1px solid var(--border); word-break: break-all; }
+  .kv-row dd { font-size: 0.9375rem; padding: 0.75rem 1rem; color: var(--text-subtle); }
+  @media (max-width: 639px) {
+    .kv-row { grid-template-columns: 1fr; }
+    .kv-row dt { border-right: none; border-bottom: 1px solid var(--border); }
+  }
+
+  .p-adopt { background: var(--tint-info); border-top: 1px solid var(--border); }
+  .cols { display: grid; gap: 1.5rem; }
+  @media (min-width: 900px) { .cols { grid-template-columns: 1fr 1fr; } }
+  .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-l); padding: 2rem; display: flex; flex-direction: column; gap: 0.875rem; }
+  .panel h3 { font-size: 1.25rem; }
+  .panel ul { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; }
+  .panel li { display: flex; gap: 0.625rem; align-items: baseline; color: var(--text-subtle); font-size: 1.0625rem; }
+  .panel .check-icon, .adopter-note .check-icon { color: var(--accent); flex-shrink: 0; transform: translateY(2px); }
+  .panel .fine { font-size: 0.9375rem; color: var(--text-subtle); }
+  .adopter-note { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9375rem; color: var(--info-strong); font-weight: 600; }
+</style>
+
+<script is:inline>
+  // Reconcile-loggen spilles av én gang ved lasting; reduced-motion viser sluttbildet direkte
+  (function () {
+    var lines = document.querySelectorAll("#reconcile .rc-line");
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      lines.forEach(function (l) { l.classList.add("on"); });
+    } else {
+      lines.forEach(function (l, i) {
+        setTimeout(function () { l.classList.add("on"); }, 500 + i * 900);
+      });
+    }
+  })();
+</script>

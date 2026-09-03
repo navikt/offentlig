@@ -1,0 +1,301 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Icons from "../../components/Icons.astro";
+import ProsjektHeader from "../../components/ProsjektHeader.astro";
+import ProsjektFooter from "../../components/ProsjektFooter.astro";
+
+import generated from "../../data/generated.json";
+import { formatNumber } from "../../lib/format.mjs";
+
+/* Bespoke landingsside (PRD: håndlaget, aldri generert fra mal).
+   Motiv: en innlogging som alltid lykkes — token-utvekslingen mot /token
+   er selve heltebildet, og svaret kommer etter en takt. */
+const data = (generated.repos as any)["navikt/mock-oauth2-server"];
+---
+
+<Layout
+  title="mock-oauth2-server — en OAuth2-server som aldri sier nei"
+  description="Skriptbar OAuth2/OpenID Connect-server for JVM-tester og Docker Compose. Signerte JWT-er der du bestemmer innholdet. Åpen kildekode fra Nav, MIT-lisens."
+>
+  <ProsjektHeader navn="mock-oauth2-server" />
+  <main id="hoved">
+    <Icons />
+
+    <section class="p-hero">
+      <div class="container">
+        <div class="hero-copy">
+          <p class="eyebrow">Fra Nav · Bygd for gjenbruk</p>
+          <h1>mock-oauth2-server</h1>
+          <p class="thesis">En OAuth2-server som aldri sier nei.</p>
+          <p class="ingress">En skriptbar OAuth2- og OpenID&nbsp;Connect-server for JVM-tester og Docker&nbsp;Compose. Den utsteder signerte JWT-er der du bestemmer innholdet, verifiserbare gjennom vanlige JWKS- og discovery-endepunkter — så du kan teste innlogging uten en ekte identitetsleverandør, offline og i CI.</p>
+          <div class="cta-row">
+            <a class="btn" href="https://github.com/navikt/mock-oauth2-server">Kom i gang på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
+            <a class="btn btn-quiet" href="#hvorfor">Hvorfor den finnes</a>
+          </div>
+          <p class="p-meta detail nums">
+            {data?.language && (
+              <>
+                <span><span class="lang-dot" style={`background:${data.languageColor ?? "var(--border-strong)"}`}></span>{data.language}</span>
+                <span class="sep">·</span>
+              </>
+            )}
+            {data?.stars != null && (
+              <>
+                <span><svg class="star-icon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><use href="#star" /></svg>{formatNumber(data.stars)} stjerner</span>
+                <span class="sep">·</span>
+              </>
+            )}
+            <span>MIT-lisens</span>
+            <span class="sep">·</span>
+            <span>Kun for test</span>
+          </p>
+        </div>
+
+        <figure class="wire" aria-label="Eksempel: token-forespørsel mot /default/token og 200-svaret med en signert JWT">
+          <div class="wire-bar">
+            <span class="fname">token-utveksling</span>
+            <span class="verb-chip">POST /default/token</span>
+          </div>
+          <pre class="req"><code><span class="c"># be om et token — velg selv grant og scope</span>
+<span class="pr">$</span> curl -s http://localhost:8080/default/token \
+    -d <span class="s">grant_type=client_credentials</span> \
+    -d <span class="s">scope=my-api</span></code></pre>
+          <div class="res" id="res" aria-live="polite">
+            <pre><code><span class="st">200 OK</span>  <span class="c">application/json</span>
+{
+  <span class="jk">"access_token"</span>: <span class="jv">"eyJraWQiOiJkZWZhdWx0..."</span><span class="c">, // ← signert JWT</span>
+  <span class="jk">"token_type"</span>: <span class="jv">"Bearer"</span>,
+  <span class="jk">"expires_in"</span>: <span class="jn">3600</span>
+}</code></pre>
+            <div class="claims">
+              <p class="claims-h">Du bestemmer innholdet i payloaden</p>
+              <pre><code>{ <span class="jk">"iss"</span>: <span class="jv">"http://localhost:8080/default"</span>,
+  <span class="jk">"sub"</span>: <span class="jv">"user123"</span>, <span class="jk">"aud"</span>: <span class="jv">"my-api"</span>,
+  <span class="jk">"roles"</span>: [<span class="jv">"admin"</span>] }</code></pre>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section p-why" id="hvorfor">
+      <div class="container">
+        <div class="section-head">
+          <h2>Hvorfor den finnes</h2>
+          <p class="ingress">Applikasjoner som er avhengige av OAuth2 er vonde å teste: den ekte identitetsleverandøren er treg, delt og utenfor din kontroll. mock-oauth2-server lar deg teste med sikkerheten påslått — uten å skru av noe og uten spesialoppsett i testene.</p>
+        </div>
+        <div class="why-grid">
+          <div class="why">
+            <h3>Ekte signaturer</h3>
+            <p>Serveren utsteder signerte JWT-er som verifiseres gjennom standard JWKS og OpenID&nbsp;Connect-discovery. Appen din trenger ingen egen testkonfigurasjon — den peker bare på et annet <code>.well-known</code>.</p>
+          </div>
+          <div class="why">
+            <h3>Ingen IdP i CI</h3>
+            <p>Kjør den innebygd i JVM-testene eller som en frittstående prosess i Docker&nbsp;Compose. Alt går offline, uten nett og uten en ekte identitetsleverandør å vente på.</p>
+          </div>
+          <div class="why">
+            <h3>Multi-issuer gratis</h3>
+            <p>Det første leddet i URL-en avgjør hvilken issuer du snakker med — helt uten oppsett. Hver issuer får sin egen discovery, sitt token-endepunkt og sin JWKS.</p>
+          </div>
+        </div>
+        <div class="endpoints" aria-label="Standardendepunkter serveren eksponerer">
+          <span class="ep">/default/.well-known/openid-configuration</span>
+          <span class="ep">/default/token</span>
+          <span class="ep">/default/jwks</span>
+          <span class="ep">/isalive → 200</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section p-flows">
+      <div class="container">
+        <div class="section-head">
+          <h2>Flytene den snakker</h2>
+          <p class="ingress">Alle de store OAuth2-flytene er dekket, og tokenene er verifiserbare gjennom OpenID&nbsp;Connect Discovery og OAuth2 Authorization Server Metadata.</p>
+        </div>
+        <ul class="flows" style="list-style:none">
+          <li class="flow"><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>OpenID Connect Authorization Code Flow</li>
+          <li class="flow"><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>OAuth2 Client Credentials Grant</li>
+          <li class="flow"><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>OAuth2 JWT Bearer Grant (On-Behalf-Of)</li>
+          <li class="flow"><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>OAuth2 Token Exchange Grant</li>
+          <li class="flow"><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>OAuth2 Refresh Token Grant</li>
+          <li class="flow"><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>OAuth2 Resource Owner Password Credentials Grant</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section p-start" id="kom-i-gang">
+      <div class="container">
+        <div class="section-head">
+          <h2>Kom i gang</h2>
+          <p class="ingress">To måter å kjøre den på: innebygd i JVM-testene, eller som en frittstående container ved siden av appen din. Kodebitene under er hentet rett fra README-en.</p>
+        </div>
+        <div class="start-cols">
+          <div class="start-col">
+            <h3>I JVM-testene</h3>
+            <div class="code">
+              <div class="code-bar"><span class="code-name">build.gradle.kts</span><button class="copy" type="button" data-copy aria-label="Kopier">Kopier</button></div>
+              <pre><code>testImplementation("no.nav.security:mock-oauth2-server:$mockOAuth2ServerVersion")</code></pre>
+            </div>
+            <div class="code">
+              <div class="code-bar"><span class="code-name">MockOAuth2ServerTest.kt</span><button class="copy" type="button" data-copy aria-label="Kopier">Kopier</button></div>
+              <pre><code>val server = MockOAuth2Server()
+server.start()
+
+val token = server.issueToken(
+    issuerId = "default",
+    subject = "user123",
+    audience = "my-api",
+)
+
+val wellKnownUrl = server.wellKnownUrl("default").toString()
+server.shutdown()</code></pre>
+            </div>
+          </div>
+          <div class="start-col">
+            <h3>Som frittstående / Docker</h3>
+            <div class="code">
+              <div class="code-bar"><span class="code-name">terminal</span><button class="copy" type="button" data-copy aria-label="Kopier">Kopier</button></div>
+              <pre><code>docker run -p 8080:8080 \
+  ghcr.io/navikt/mock-oauth2-server:$MOCK_OAUTH2_SERVER_VERSION</code></pre>
+            </div>
+            <dl class="ep-list">
+              <div class="ep-row"><dt>Token</dt><dd>http://localhost:8080/default/token</dd></div>
+              <div class="ep-row"><dt>Discovery</dt><dd>http://localhost:8080/default/.well-known/openid-configuration</dd></div>
+              <div class="ep-row"><dt>JWKS</dt><dd>http://localhost:8080/default/jwks</dd></div>
+              <div class="ep-row"><dt>Helse</dt><dd>GET /isalive → 200 når serveren er klar</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section p-adopt" id="ta-i-bruk">
+      <div class="container">
+        <div class="adopt-wrap">
+          <div class="adopt-copy">
+            <h2>Ta den i bruk</h2>
+            <p class="fine">Du finner den i testoppsettet til blant andre <a href="https://github.com/elastic/elasticsearch/blob/main/x-pack/plugin/inference/qa/oauth2/build.gradle">Elasticsearch</a>, <a href="https://github.com/apache/kafka/blob/trunk/gradle/dependencies.gradle">Apache Kafka</a> og <a href="https://github.com/sigstore/sigstore-java/blob/main/sigstore-java/build.gradle.kts">Sigstore</a> — og hos <a href="https://github.com/nvdb-vegdata/nvdb-tnits-public">Statens vegvesen</a> og britiske <a href="https://github.com/ministryofjustice/spring-boot-microservice-reference">Ministry of Justice</a>.</p>
+            <p class="fine">MIT-lisensiert og fritt å bruke — i Nav og langt utenfor. Vi lover ingen support-SLA, men issues og pull requests er velkomne.</p>
+            <p class="warn"><strong>Kun for test.</strong> Serveren er laget for tester og lokal utvikling — den skal aldri kjøres i produksjon.</p>
+          </div>
+          <a class="btn" href="https://github.com/navikt/mock-oauth2-server">Åpne på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <ProsjektFooter repo="navikt/mock-oauth2-server" lenker={[{ href: "https://central.sonatype.com/artifact/no.nav.security/mock-oauth2-server", tekst: "Maven Central" }, { href: "https://openid.net/specs/openid-connect-core-1_0.html", tekst: "OpenID Connect" }]} />
+</Layout>
+
+<style>
+  .p-hero { padding: 4rem 0; }
+  .p-hero .container { display: grid; gap: 3rem; align-items: center; }
+  .hero-copy { display: flex; flex-direction: column; gap: 1rem; max-width: var(--prose); }
+  .p-hero h1 { font-size: 3rem; letter-spacing: -0.01em; font-family: var(--mono); }
+  .thesis { font-size: 1.5rem; font-weight: 600; line-height: 1.3; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+  .btn-quiet { background: transparent; color: var(--text); border: 1px solid var(--border-strong); }
+  .btn-quiet:hover { background: var(--bg-subtle); color: var(--text); border-color: var(--text-subtle); }
+  .p-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; margin-top: 0.75rem; }
+  .p-meta .sep { color: var(--border-strong); }
+  .p-meta .star-icon { color: var(--beige-strong); margin-right: 0.25rem; }
+  @media (min-width: 768px) { .p-hero { padding: 6rem 0; } .p-hero h1 { font-size: 3.25rem; } }
+  @media (max-width: 639px) { .p-hero h1 { font-size: 2.5rem; } }
+  @media (min-width: 1024px) { .p-hero .container { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+
+  /* Token-utvekslingen — heltebildet */
+  .wire { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; }
+  .wire-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.625rem 1rem; border-bottom: 1px solid var(--border); background: var(--bg-subtle); }
+  .wire-bar .fname { font-family: var(--mono); font-size: 0.8125rem; color: var(--text-subtle); }
+  .verb-chip { font-family: var(--mono); font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: var(--radius-s); background: var(--tag-info-bg); color: var(--tag-info-text); white-space: nowrap; }
+  .wire pre { padding: 1.125rem 1rem; overflow-x: auto; font-family: var(--mono); font-size: 0.8125rem; line-height: 1.7; color: var(--text); margin: 0; }
+  .wire .req .pr { color: var(--accent); }
+  .wire .c { color: var(--text-subtle); }
+  .wire .s { color: var(--info-strong); }
+  .wire .st { color: var(--accent); font-weight: 600; }
+  .wire .jk { color: var(--accent); }
+  .wire .jv { color: var(--info-strong); }
+  .wire .jn { color: var(--beige-strong); }
+  .res { border-top: 1px solid var(--border); opacity: 0; transform: translateY(4px); transition: opacity 500ms ease, transform 500ms ease; }
+  .res.on { opacity: 1; transform: none; }
+  .claims { border-top: 1px dashed var(--border); background: var(--tint-info); padding: 0.875rem 1rem 1rem; }
+  .claims-h { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--info-strong); margin-bottom: 0.5rem; }
+  .claims pre { padding: 0; font-size: 0.8125rem; }
+
+  /* Hvorfor den finnes */
+  .p-why { background: var(--bg-subtle); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .why-grid { display: grid; gap: 1.5rem; }
+  @media (min-width: 768px) { .why-grid { grid-template-columns: repeat(3, 1fr); } }
+  .why { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: var(--radius-l); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.625rem; }
+  .why h3 { font-size: 1.1875rem; }
+  .why p { color: var(--text-subtle); font-size: 1.0625rem; }
+  .why code { font-family: var(--mono); font-size: 0.875em; background: var(--tint-info); color: var(--info-strong); padding: 0.0625rem 0.3125rem; border-radius: var(--radius-s); }
+  .endpoints { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.75rem; }
+  .ep { font-family: var(--mono); font-size: 0.8125rem; padding: 0.3125rem 0.625rem; border-radius: var(--radius-s); background: var(--surface); border: 1px solid var(--border); color: var(--text-subtle); }
+
+  /* Flytene */
+  .flows { display: grid; gap: 0.75rem; }
+  @media (min-width: 720px) { .flows { grid-template-columns: 1fr 1fr; } }
+  .flow { display: flex; gap: 0.625rem; align-items: baseline; font-size: 1.0625rem; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-m); padding: 0.875rem 1rem; }
+  .flow .check-icon { color: var(--accent); flex-shrink: 0; transform: translateY(2px); }
+
+  /* Kom i gang */
+  .p-start { background: var(--bg-subtle); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .start-cols { display: grid; gap: 2rem; }
+  @media (min-width: 900px) { .start-cols { grid-template-columns: 1fr 1fr; } }
+  .start-col { display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
+  .start-col h3 { font-size: 1.25rem; }
+  .code { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; }
+  .code-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.5rem 0.5rem 0.5rem 1rem; border-bottom: 1px solid var(--border); background: var(--bg-subtle); }
+  .code-name { font-family: var(--mono); font-size: 0.8125rem; color: var(--text-subtle); }
+  .copy { font: inherit; font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.625rem; border-radius: var(--radius-s); border: 1px solid var(--border); background: var(--surface); color: var(--text-subtle); cursor: pointer; transition: color 150ms ease, border-color 150ms ease; }
+  .copy:hover { color: var(--text); border-color: var(--border-strong); }
+  @media (max-width: 767px) { .copy { min-height: 44px; } }
+  .copy.done { color: var(--accent); border-color: var(--accent); }
+  .code pre { padding: 1rem; overflow-x: auto; font-family: var(--mono); font-size: 0.8125rem; line-height: 1.7; color: var(--text); margin: 0; }
+  .ep-list { border: 1px solid var(--border); border-radius: var(--radius-l); overflow: hidden; background: var(--surface); }
+  .ep-row { display: grid; grid-template-columns: minmax(6rem, auto) 1fr; }
+  .ep-row + .ep-row { border-top: 1px solid var(--border); }
+  .ep-row dt { font-size: 0.8125rem; font-weight: 600; padding: 0.75rem 1rem; background: var(--bg-subtle); color: var(--text); border-right: 1px solid var(--border); }
+  .ep-row dd { font-family: var(--mono); font-size: 0.8125rem; padding: 0.75rem 1rem; color: var(--text-subtle); word-break: break-all; }
+  @media (max-width: 639px) {
+    .ep-row { grid-template-columns: 1fr; }
+    .ep-row dt { border-right: none; border-bottom: 1px solid var(--border); }
+  }
+
+  /* Ta den i bruk */
+  .p-adopt { background: var(--tint-info); border-top: 1px solid var(--border); }
+  .adopt-wrap { display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem; align-items: center; justify-content: space-between; }
+  .adopt-copy { max-width: var(--prose); display: flex; flex-direction: column; gap: 0.75rem; }
+  .adopt-copy h2 { font-size: 1.75rem; }
+  .adopt-copy .fine { font-size: 1.0625rem; color: var(--text-subtle); }
+  .adopt-copy .warn { font-size: 0.9375rem; color: var(--info-strong); }
+  .adopt-copy .warn strong { color: var(--info-strong); }
+</style>
+
+<script is:inline>
+  // Svaret på token-forespørselen kommer etter én takt; reduced-motion viser det direkte.
+  (function () {
+    var res = document.getElementById("res");
+    if (res) {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        res.classList.add("on");
+      } else {
+        setTimeout(function () { res.classList.add("on"); }, 900);
+      }
+    }
+    // Kopier-knapper for kodebitene
+    document.querySelectorAll("[data-copy]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var code = btn.closest(".code").querySelector("pre");
+        if (!code || !navigator.clipboard) return;
+        navigator.clipboard.writeText(code.textContent.trim()).then(function () {
+          var prev = btn.textContent;
+          btn.textContent = "Kopiert";
+          btn.classList.add("done");
+          setTimeout(function () { btn.textContent = prev; btn.classList.remove("done"); }, 1600);
+        });
+      });
+    });
+  })();
+</script>

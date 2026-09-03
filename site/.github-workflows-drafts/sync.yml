@@ -1,0 +1,78 @@
+# UTKAST — flyttes til .github/workflows/sync.yml når siden får eget repo.
+#
+# Nattlig datasynk: henter tall fra GitHub og npm, committer
+# site/src/data/generated.json.
+#
+# NB: pushen fra denne jobben gjøres med GITHUB_TOKEN, og slike pushes
+# trigger IKKE andre workflows (GitHubs beskyttelse mot trigger-løkker).
+# Pages-deployen startes derfor eksplisitt via `workflow_run` i deploy.yml.
+# (Alternativet er én selvstendig workflow som både synker og deployer —
+# se .github/workflows/showcase-preview.yml på showcase-grenen.)
+#
+# Feiler en delhenting, beholder sync-skriptet forrige gode verdi og
+# avslutter med exit 1: vi committer og deployer likevel (siste gode data),
+# men kjøringen går rød (PRD §7).
+
+name: Nattlig datasynk
+
+on:
+  schedule:
+    - cron: "28 3 * * *" # 05.28 norsk sommertid — utenom rushtid på API-ene
+  workflow_dispatch:
+
+concurrency:
+  group: nattlig-datasynk
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: site/pnpm-lock.yaml
+
+      - name: Installer avhengigheter
+        working-directory: site
+        run: pnpm install --frozen-lockfile
+
+      - name: Hent data fra GitHub og npm
+        id: sync
+        continue-on-error: true
+        working-directory: site
+        run: pnpm sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Kjøres alltid — også når synken feilet delvis beholdes/committes
+      # siste gode data (aldri 0-ere på siden, jf. PRD §5.7 pkt. 6).
+      - name: Commit oppdatert generated.json
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/src/data/generated.json
+          if git diff --cached --quiet; then
+            echo "Ingen endringer i data."
+          else
+            git commit -m "chore: nattlig datasynk"
+            git push
+          fi
+
+      # PRD §7: nightly-jobben skal feile høylytt. Koble på Slack-varsel
+      # (f.eks. slackapi/slack-github-action) med webhook når kanalen er avklart.
+      - name: Marker kjøringen som feilet hvis synken sviktet
+        if: always() && steps.sync.outcome == 'failure'
+        run: |
+          echo "::error::Datasynken feilet — generated.json beholder forrige gode verdier. Se sync-steget for detaljer."
+          exit 1
