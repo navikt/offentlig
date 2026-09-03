@@ -31,8 +31,7 @@ const ORG = "navikt";
 const NPM_PACKAGE = "@navikt/aksel-icons";
 const FNR_PACKAGE = "@navikt/fnrvalidator";
 
-/* GitHubs offisielle språkfarger (entitetsfarger — unntatt fra token-regelen,
-   som i mockupen). Fallback for språk GraphQL ikke gir oss farge på. */
+/* GitHubs offisielle språkfarger (entitetsfarger — unntatt fra token-regelen). Fallback for språk GraphQL ikke gir oss farge på. */
 const LANGUAGE_COLORS = {
   Kotlin: "#a97bff",
   TypeScript: "#3178c6",

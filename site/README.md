@@ -1,12 +1,11 @@
 # Åpen kildekode i Nav — showcase-nettside
 
-Prototype av én statisk side som viser frem Navs åpne kildekode:
+Showcase-nettside av én statisk side som viser frem Navs åpne kildekode:
 et håndplukket utvalg prosjekter med håndskrevne norske beskrivelser,
 levende nøkkeltall fra GitHub og npm, aktivitetskart, språkfordeling
 og en kondensert versjon av [retningslinjene for åpen kildekode](https://github.com/navikt/offentlig).
 
 Bakgrunn, innhold og bindende designspesifikasjon: [PRD.md](PRD.md).
-(Den opprinnelige designskissen ligger i git-historikken under `mockup/`.)
 
 ## Kom i gang
 

@@ -250,8 +250,7 @@ Dette er den viktigste ikke-funksjonelle egenskapen:
 2. **Eierskap:** Er @navikt/offentlig riktig eierteam, eller bør det ligge hos Nav Tech-kommunikasjon (detsombetyrnoe.no-miljøet)?
 3. **Navn:** «Åpen kildekode i Nav» er beskrivende; finnes det appetitt for noe med mer personlighet (jf. «Darkside»)?
 4. **Kuratert utvalg v1:** Forslaget i 4.3–4.5 er research-basert — trenger en runde med teamene som eier prosjektene (og deres OK til å stå som kontaktpunkt).
-5. **pdfgen → pdfgenrs:** pdfgen er merket deprecated til fordel for arvtakeren `pdfgenrs` (Rust, Typst-maler; opprettet mars 2026). Kuratert utvalg og landingsside beholder pdfgen så lenge produksjonshistorien er argumentet, med tydelig skilt om arvtakeren begge steder — byttes ut når pdfgenrs har egen produksjonshistorie å vise til.
-6. **Nais-org-en:** Skal nais-repoer kurateres inn på lik linje (anbefalt: ja, med tydelig org-merking), eller kun lenkes via nais.io?
+5  **Nais-org-en:** Skal nais-repoer kurateres inn på lik linje (anbefalt: ja, med tydelig org-merking), eller kun lenkes via nais.io?
 
 ---
 

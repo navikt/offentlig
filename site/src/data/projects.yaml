@@ -77,11 +77,11 @@ projects:
     side: https://ki-utvikling.nav.no/cplt
     gjenbruk: {}
 
-  - repo: navikt/pdfgen
+  - repo: navikt/pdfgenrs
     kategori: biblioteker
-    beskrivelse: HTML-mal inn, PDF ut. Har generert Navs dokumenter siden 2018.
+    beskrivelse: Json inn, PDF ut. Generert flere av Navs dokumenter.
     perle: false
-    side: prosjekt/pdfgen
+    side: prosjekt/pdfgenrs
     gjenbruk: {}
 
   - repo: nais/wonderwall
