@@ -1,56 +1,56 @@
 {
-  "syncedAt": "2026-07-21T19:49:36.607Z",
+  "syncedAt": "2026-09-03T17:19:50.806Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
   "repos": {
     "navikt/mock-oauth2-server": {
-      "stars": 401,
+      "stars": 413,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-07-20T22:14:11Z",
+      "pushedAt": "2026-09-03T09:01:23Z",
       "isArchived": false
     },
     "navikt/aksel": {
-      "stars": 184,
+      "stars": 185,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-07-21T13:25:46Z",
+      "pushedAt": "2026-09-03T14:28:49Z",
       "isArchived": false
     },
     "nais/naiserator": {
       "stars": 48,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-07-12T20:49:34Z",
+      "pushedAt": "2026-09-03T15:28:46Z",
       "isArchived": false
     },
     "navikt/helse-spleis": {
       "stars": 6,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-07-17T12:04:11Z",
+      "pushedAt": "2026-09-02T10:07:03Z",
       "isArchived": false
     },
     "navikt/cplt": {
-      "stars": 98,
+      "stars": 113,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-07-20T06:10:52Z",
+      "pushedAt": "2026-09-03T17:13:01Z",
       "isArchived": false
     },
-    "navikt/pdfgen": {
-      "stars": 25,
-      "language": "Kotlin",
-      "languageColor": "#A97BFF",
-      "pushedAt": "2026-07-21T12:20:52Z",
+    "navikt/pdfgenrs": {
+      "stars": 1,
+      "language": "Rust",
+      "languageColor": "#dea584",
+      "pushedAt": "2026-09-03T17:17:20Z",
       "isArchived": false
     },
     "nais/wonderwall": {
       "stars": 27,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-07-21T13:45:14Z",
+      "pushedAt": "2026-09-01T06:39:47Z",
       "isArchived": false
     },
     "navikt/rapids-and-rivers": {
@@ -71,14 +71,14 @@
       "stars": 11,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-07-20T07:07:20Z",
+      "pushedAt": "2026-08-31T07:06:17Z",
       "isArchived": false
     },
     "nais/device": {
       "stars": 18,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-07-10T06:36:12Z",
+      "pushedAt": "2026-09-02T07:48:45Z",
       "isArchived": false
     },
     "navikt/spraksjekk": {
@@ -89,31 +89,31 @@
       "isArchived": false
     },
     "navikt/copilot": {
-      "stars": 52,
+      "stars": 54,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-07-21T10:32:09Z",
+      "pushedAt": "2026-09-03T16:30:50Z",
       "isArchived": false
     },
     "navikt/token-support": {
       "stars": 19,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-07-21T14:46:50Z",
+      "pushedAt": "2026-09-01T14:48:38Z",
       "isArchived": false
     },
     "navikt/fnrvalidator": {
       "stars": 20,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-06-29T10:32:22Z",
+      "pushedAt": "2026-08-03T20:52:59Z",
       "isArchived": false
     },
     "nais/digdirator": {
       "stars": 11,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-07-13T07:03:14Z",
+      "pushedAt": "2026-08-27T06:55:58Z",
       "isArchived": false
     },
     "navikt/DSF": {
@@ -127,88 +127,88 @@
       "stars": 3,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-07-21T06:19:28Z",
+      "pushedAt": "2026-09-02T08:10:26Z",
       "isArchived": false
     },
     "nais/unleasherator": {
       "stars": 12,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-07-20T07:35:14Z",
+      "pushedAt": "2026-08-31T07:29:45Z",
       "isArchived": false
     },
     "nais/kafkarator": {
       "stars": 5,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-07-20T20:03:00Z",
+      "pushedAt": "2026-09-02T07:31:13Z",
       "isArchived": false
     },
     "nais/bqrator": {
       "stars": 1,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-07-20T17:42:55Z",
+      "pushedAt": "2026-08-31T17:43:22Z",
       "isArchived": false
     }
   },
   "stats": {
-    "publicRepos": 3115,
-    "commitsLast7Days": 3110,
-    "prsLast30Days": 13831,
-    "npmDownloadsLastMonth": 292462,
-    "fnrDownloadsLastMonth": 42659
+    "publicRepos": 3135,
+    "commitsLast7Days": 5848,
+    "prsLast30Days": 16782,
+    "npmDownloadsLastMonth": 165618,
+    "fnrDownloadsLastMonth": 36249
   },
   "recentlyUpdated": [
     {
-      "name": "bidrag-behandling",
-      "url": "https://github.com/navikt/bidrag-behandling",
-      "pushedAt": "2026-07-21T19:40:53Z",
+      "name": "offentlig",
+      "url": "https://github.com/navikt/offentlig",
+      "pushedAt": "2026-09-03T17:19:34Z",
+      "language": "Astro",
+      "languageColor": null
+    },
+    {
+      "name": "nav-office-search",
+      "url": "https://github.com/navikt/nav-office-search",
+      "pushedAt": "2026-09-03T17:18:29Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
+    },
+    {
+      "name": "macgyver",
+      "url": "https://github.com/navikt/macgyver",
+      "pushedAt": "2026-09-03T17:09:27Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "helse-sp-forsikring",
-      "url": "https://github.com/navikt/helse-sp-forsikring",
-      "pushedAt": "2026-07-21T19:32:39Z",
+      "name": "mulighetsrommet",
+      "url": "https://github.com/navikt/mulighetsrommet",
+      "pushedAt": "2026-09-03T17:04:31Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "helse-spesialist",
-      "url": "https://github.com/navikt/helse-spesialist",
-      "pushedAt": "2026-07-21T19:27:57Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
+      "name": "pam-stillingsok",
+      "url": "https://github.com/navikt/pam-stillingsok",
+      "pushedAt": "2026-09-03T17:01:44Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
     },
     {
-      "name": "melosys-skjema-api",
-      "url": "https://github.com/navikt/melosys-skjema-api",
-      "pushedAt": "2026-07-21T19:15:47Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "helse-sas-gradle-plugins",
-      "url": "https://github.com/navikt/helse-sas-gradle-plugins",
-      "pushedAt": "2026-07-21T18:48:50Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "kabal",
-      "url": "https://github.com/navikt/kabal",
-      "pushedAt": "2026-07-21T18:45:55Z",
+      "name": "reops-uurapport-frontend",
+      "url": "https://github.com/navikt/reops-uurapport-frontend",
+      "pushedAt": "2026-09-03T16:45:03Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     }
   ],
   "languages": {
-    "totalRepos": 1767,
+    "totalRepos": 1779,
     "entries": [
       {
         "name": "Kotlin",
-        "count": 707,
+        "count": 695,
         "color": "#a97bff"
       },
       {
@@ -218,17 +218,17 @@
       },
       {
         "name": "Java",
-        "count": 138,
+        "count": 147,
         "color": "#b07219"
       },
       {
         "name": "Python",
-        "count": 80,
+        "count": 84,
         "color": "#3572a5"
       },
       {
         "name": "JavaScript",
-        "count": 57,
+        "count": 63,
         "color": "#f1e05a"
       },
       {
@@ -243,7 +243,7 @@
       },
       {
         "name": "Annet",
-        "count": 354,
+        "count": 359,
         "color": null
       }
     ]
@@ -251,182 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-07-22",
-        "count": 541
-      },
-      {
-        "date": "2025-07-23",
-        "count": 457
-      },
-      {
-        "date": "2025-07-24",
-        "count": 472
-      },
-      {
-        "date": "2025-07-25",
-        "count": 420
-      },
-      {
-        "date": "2025-07-26",
-        "count": 1
-      },
-      {
-        "date": "2025-07-27",
-        "count": 20
-      },
-      {
-        "date": "2025-07-28",
-        "count": 578
-      },
-      {
-        "date": "2025-07-29",
-        "count": 615
-      },
-      {
-        "date": "2025-07-30",
-        "count": 513
-      },
-      {
-        "date": "2025-07-31",
-        "count": 398
-      },
-      {
-        "date": "2025-08-01",
-        "count": 410
-      },
-      {
-        "date": "2025-08-02",
-        "count": 16
-      },
-      {
-        "date": "2025-08-03",
-        "count": 16
-      },
-      {
-        "date": "2025-08-04",
-        "count": 817
-      },
-      {
-        "date": "2025-08-05",
-        "count": 862
-      },
-      {
-        "date": "2025-08-06",
-        "count": 817
-      },
-      {
-        "date": "2025-08-07",
-        "count": 716
-      },
-      {
-        "date": "2025-08-08",
-        "count": 759
-      },
-      {
-        "date": "2025-08-09",
-        "count": 25
-      },
-      {
-        "date": "2025-08-10",
-        "count": 24
-      },
-      {
-        "date": "2025-08-11",
-        "count": 785
-      },
-      {
-        "date": "2025-08-12",
-        "count": 917
-      },
-      {
-        "date": "2025-08-13",
-        "count": 822
-      },
-      {
-        "date": "2025-08-14",
-        "count": 815
-      },
-      {
-        "date": "2025-08-15",
-        "count": 828
-      },
-      {
-        "date": "2025-08-16",
-        "count": 117
-      },
-      {
-        "date": "2025-08-17",
-        "count": 46
-      },
-      {
-        "date": "2025-08-18",
-        "count": 854
-      },
-      {
-        "date": "2025-08-19",
-        "count": 855
-      },
-      {
-        "date": "2025-08-20",
-        "count": 1028
-      },
-      {
-        "date": "2025-08-21",
-        "count": 916
-      },
-      {
-        "date": "2025-08-22",
-        "count": 791
-      },
-      {
-        "date": "2025-08-23",
-        "count": 7
-      },
-      {
-        "date": "2025-08-24",
-        "count": 75
-      },
-      {
-        "date": "2025-08-25",
-        "count": 1005
-      },
-      {
-        "date": "2025-08-26",
-        "count": 771
-      },
-      {
-        "date": "2025-08-27",
-        "count": 704
-      },
-      {
-        "date": "2025-08-28",
-        "count": 769
-      },
-      {
-        "date": "2025-08-29",
-        "count": 681
-      },
-      {
-        "date": "2025-08-30",
-        "count": 88
-      },
-      {
-        "date": "2025-08-31",
-        "count": 83
-      },
-      {
-        "date": "2025-09-01",
-        "count": 762
-      },
-      {
-        "date": "2025-09-02",
-        "count": 1008
-      },
-      {
-        "date": "2025-09-03",
-        "count": 597
-      },
       {
         "date": "2025-09-04",
         "count": 699
@@ -1706,6 +1530,182 @@
       {
         "date": "2026-07-20",
         "count": 623
+      },
+      {
+        "date": "2026-07-21",
+        "count": 880
+      },
+      {
+        "date": "2026-07-22",
+        "count": 568
+      },
+      {
+        "date": "2026-07-23",
+        "count": 519
+      },
+      {
+        "date": "2026-07-24",
+        "count": 641
+      },
+      {
+        "date": "2026-07-25",
+        "count": 53
+      },
+      {
+        "date": "2026-07-26",
+        "count": 64
+      },
+      {
+        "date": "2026-07-27",
+        "count": 860
+      },
+      {
+        "date": "2026-07-28",
+        "count": 801
+      },
+      {
+        "date": "2026-07-29",
+        "count": 646
+      },
+      {
+        "date": "2026-07-30",
+        "count": 635
+      },
+      {
+        "date": "2026-07-31",
+        "count": 598
+      },
+      {
+        "date": "2026-08-01",
+        "count": 36
+      },
+      {
+        "date": "2026-08-02",
+        "count": 57
+      },
+      {
+        "date": "2026-08-03",
+        "count": 1046
+      },
+      {
+        "date": "2026-08-04",
+        "count": 1043
+      },
+      {
+        "date": "2026-08-05",
+        "count": 878
+      },
+      {
+        "date": "2026-08-06",
+        "count": 938
+      },
+      {
+        "date": "2026-08-07",
+        "count": 807
+      },
+      {
+        "date": "2026-08-08",
+        "count": 50
+      },
+      {
+        "date": "2026-08-09",
+        "count": 123
+      },
+      {
+        "date": "2026-08-10",
+        "count": 1171
+      },
+      {
+        "date": "2026-08-11",
+        "count": 1020
+      },
+      {
+        "date": "2026-08-12",
+        "count": 917
+      },
+      {
+        "date": "2026-08-13",
+        "count": 907
+      },
+      {
+        "date": "2026-08-14",
+        "count": 869
+      },
+      {
+        "date": "2026-08-15",
+        "count": 49
+      },
+      {
+        "date": "2026-08-16",
+        "count": 25
+      },
+      {
+        "date": "2026-08-17",
+        "count": 1231
+      },
+      {
+        "date": "2026-08-18",
+        "count": 1106
+      },
+      {
+        "date": "2026-08-19",
+        "count": 907
+      },
+      {
+        "date": "2026-08-20",
+        "count": 895
+      },
+      {
+        "date": "2026-08-21",
+        "count": 962
+      },
+      {
+        "date": "2026-08-22",
+        "count": 192
+      },
+      {
+        "date": "2026-08-23",
+        "count": 82
+      },
+      {
+        "date": "2026-08-24",
+        "count": 1327
+      },
+      {
+        "date": "2026-08-25",
+        "count": 1301
+      },
+      {
+        "date": "2026-08-26",
+        "count": 1204
+      },
+      {
+        "date": "2026-08-27",
+        "count": 1106
+      },
+      {
+        "date": "2026-08-28",
+        "count": 994
+      },
+      {
+        "date": "2026-08-29",
+        "count": 101
+      },
+      {
+        "date": "2026-08-30",
+        "count": 126
+      },
+      {
+        "date": "2026-08-31",
+        "count": 1451
+      },
+      {
+        "date": "2026-09-01",
+        "count": 1271
+      },
+      {
+        "date": "2026-09-02",
+        "count": 1012
       }
     ]
   }
