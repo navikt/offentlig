@@ -30,7 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: showcase
+          ref: main
 
       - uses: pnpm/action-setup@v4
         with:
