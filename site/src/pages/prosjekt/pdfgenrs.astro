@@ -7,17 +7,17 @@ import ProsjektFooter from "../../components/ProsjektFooter.astro";
 import generated from "../../data/generated.json";
 
 /* Bespoke landingsside (PRD: håndlaget, aldri generert fra mal).
-   Motiv: «papirmøllen» — den stille maskinen som gjør HTML-maler om til
+   Motiv: «papirmøllen» — den stille maskinen som gjør Typst-maler om til
    ferdige, arkivgyldige dokumenter. Heltebildet er selve forvandlingen:
    mal til venstre, ferdig dokument til høyre — samme data, to former. */
-const data = (generated.repos as any)["navikt/pdfgen"];
+const data = (generated.repos as any)["navikt/pdfgenrs"];
 ---
 
 <Layout
-  title="pdfgen — HTML-maler inn, ferdige dokumenter ut"
-  description="pdfgen gjør Handlebars-maler og JSON-data om til arkivgyldige PDF-er over HTTP. Åpen kildekode fra Nav, i produksjon siden 2018 — klar for enhver norsk etat."
+  title="pdfgenrs — Typst-maler inn, ferdige dokumenter ut"
+  description="pdfgenrs gjør Typst-maler og JSON-data om til arkivgyldige PDF-er over HTTP. Åpen kildekode fra Nav — klar for enhver norsk etat."
 >
-  <ProsjektHeader navn="pdfgen" />
+  <ProsjektHeader navn="pdfgenrs" />
   <main id="hoved">
     <Icons />
 
@@ -25,12 +25,11 @@ const data = (generated.repos as any)["navikt/pdfgen"];
       <div class="container">
         <div class="hero-copy">
           <p class="eyebrow">Fra Nav · Bygd for gjenbruk</p>
-          <h1>pdfgen</h1>
-          <p class="thesis">HTML-mal inn. Ferdig dokument ut.</p>
-          <p class="ingress">pdfgen tar en Handlebars-mal og litt JSON-data og gir deg en arkivgyldig PDF tilbake over HTTP. Samme oppskrift bak brev, vedtak og kvitteringer — i produksjon i Nav siden 2018.</p>
-          <p class="succ-note detail">Nav peker nye prosjekter mot etterfølgeren <a href="https://github.com/navikt/pdfgenrs">pdfgenrs</a> (Rust, med Typst-maler). pdfgen driftes og brukes fortsatt.</p>
+          <h1>pdfgenrs</h1>
+          <p class="thesis">Typst-mal inn. Ferdig dokument ut.</p>
+          <p class="ingress">pdfgenrs tar en Typst-mal og litt JSON-data og gir deg en arkivgyldig(PDF/A-2a og PDF/UA-1) PDF tilbake over HTTP. Samme oppskrift bak brev, vedtak og kvitteringer — i produksjon i Nav.</p>
           <div class="cta-row">
-            <a class="btn" href="https://github.com/navikt/pdfgen">Kom i gang på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
+            <a class="btn" href="https://github.com/navikt/pdfgenrs">Kom i gang på GitHub<svg class="ext-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-external" /></svg></a>
             <a class="btn btn-quiet" href="#slik-virker-det">Slik virker det</a>
           </div>
           <p class="p-meta detail nums">
@@ -46,26 +45,30 @@ const data = (generated.repos as any)["navikt/pdfgen"];
           </p>
         </div>
 
-        <figure class="transform" aria-label="Samme innhold vist som Handlebars-mal og som ferdig dokument">
+        <figure class="transform" aria-label="Samme innhold vist som Typst-mal og som ferdig dokument">
           <div class="artifact code" aria-hidden="false">
             <div class="artifact-bar">
-              <span class="fname">vedtak.hbs</span>
+              <span class="fname">vedtak.typ</span>
               <span class="kind-chip">mal</span>
             </div>
-            <pre><code>&lt;<span class="ht">h1</span>&gt;Vedtak om <span class="tok">&#123;&#123;ytelse&#125;&#125;</span>&lt;/<span class="ht">h1</span>&gt;
+            <pre><code><span class="ht">#heading(level: 1)</span>[Vedtak om <span class="tok">#ytelse</span>]
 
-&lt;<span class="ht">p</span>&gt;Til <span class="tok">&#123;&#123;navn&#125;&#125;</span>&lt;/<span class="ht">p</span>&gt;
-&lt;<span class="ht">p</span>&gt;Sak <span class="tok">&#123;&#123;saksnr&#125;&#125;</span>&lt;/<span class="ht">p</span>&gt;
+Til <span class="tok">#navn</span>
+Sak <span class="tok">#saksnr</span>
 
-&lt;<span class="ht">p</span>&gt;Vi har innvilget
-  søknaden din om
-  <span class="tok">&#123;&#123;ytelse&#125;&#125;</span>, datert
-  <span class="tok">&#123;&#123;dato&#125;&#125;</span>.&lt;/<span class="ht">p</span>&gt;</code></pre>
+Vi har innvilget
+søknaden din om
+<span class="tok">#ytelse</span>, datert
+<span class="tok">#dato</span></code>
+
+Med vennlig hilsen
+<span class="tok">#saksbehandlendeenhet</span>
+            </pre>
           </div>
 
           <div class="pipe" aria-hidden="true">
             <span class="pipe-line"></span>
-            <span class="pipe-badge">pdfgen</span>
+            <span class="pipe-badge">pdfgenrs</span>
             <span class="pipe-line"></span>
           </div>
 
@@ -90,23 +93,23 @@ const data = (generated.repos as any)["navikt/pdfgen"];
       <div class="container">
         <div class="section-head">
           <h2>Slik virker det</h2>
-          <p class="ingress">pdfgen er én liten Kotlin-tjeneste (Ktor) som lastes med malene dine og svarer på HTTP. Du eier malene og dataene — pdfgen står for forvandlingen.</p>
+          <p class="ingress">pdfgenrs er én liten rust-tjeneste (Axum) som lastes med malene dine og svarer på HTTP. Du eier malene og dataene — pdfgenrs står for forvandlingen.</p>
         </div>
         <ol class="steps" style="list-style:none">
           <li class="step">
             <p class="num">Steg 1</p>
             <h3>Skriv malen</h3>
-            <p>En <code>.hbs</code>-fil med Handlebars og HTML under <code>templates/ditt_lagnavn/</code>. Feltene <code>&#123;&#123;navn&#125;&#125;</code> og <code>&#123;&#123;dato&#125;&#125;</code> er hull som fylles av dataene.</p>
+            <p>En <code>.typ</code>-fil med Typst under <code>templates/ditt_teamnavn/</code>. Feltene <code>&#123;&#123;navn&#125;&#125;</code> og <code>&#123;&#123;dato&#125;&#125;</code> er hull som fylles av dataene.</p>
           </li>
           <li class="step">
             <p class="num">Steg 2</p>
             <h3>Send JSON-data</h3>
-            <p>Dataene kobles til malen over HTTP. Under utvikling leser pdfgen testdata fra <code>data/&lt;app&gt;/&lt;mal&gt;.json</code>, så du ser resultatet i nettleseren mens du jobber.</p>
+            <p>Dataene kobles til malen over HTTP. Under utvikling leser pdfgenrs testdata fra <code>data/&lt;app&gt;/&lt;mal&gt;.json</code>, så du ser resultatet i nettleseren mens du jobber.</p>
           </li>
           <li class="step">
             <p class="num">Steg 3</p>
             <h3>Få PDF-en tilbake</h3>
-            <p><code>GET /api/v1/genpdf/&lt;app&gt;/&lt;mal&gt;</code> gir en ferdig PDF. Trenger du HTML i stedet, slår du på <code>/api/v1/genhtml</code> med <code>ENABLE_HTML_ENDPOINT=true</code>.</p>
+            <p><code>GET /api/v1/genpdf/&lt;app&gt;/&lt;mal&gt;</code> gir en ferdig PDF.</p>
           </li>
         </ol>
       </div>
@@ -116,12 +119,12 @@ const data = (generated.repos as any)["navikt/pdfgen"];
       <div class="container">
         <div class="section-head">
           <h2>Bygd for arkivet — og for lesbarhet</h2>
-          <p class="ingress">Et offentlig dokument skal kunne arkiveres i årevis og leses av alle. pdfgen sikter mot standardene som gjør nettopp det, og har gjort det i produksjon lenge.</p>
+          <p class="ingress">Et offentlig dokument skal kunne arkiveres i årevis og leses av alle. pdfgenrs sikter mot standardene som gjør nettopp det, og har gjort det i produksjon.</p>
         </div>
         <dl class="facts">
           <div class="fact">
-            <dt>Siden 2018</dt>
-            <dd>pdfgen har generert dokumenter i Nav siden 2018 — brev, vedtak og kvitteringer bygget på det samme mønsteret.</dd>
+            <dt>Siden 2026</dt>
+            <dd>pdfgenrs har generert dokumenter i Nav siden 2026 — brev, vedtak og kvitteringer bygget på det samme mønsteret.</dd>
           </div>
           <div class="fact">
             <dt>PDF/A-2a</dt>
@@ -131,10 +134,6 @@ const data = (generated.repos as any)["navikt/pdfgen"];
             <dt>PDF/UA</dt>
             <dd>Universell utforming er et uttalt mål: dokumenter som også er tilgjengelige, ikke bare arkivgyldige.</dd>
           </div>
-          <div class="fact">
-            <dt>VeraPDF-validering</dt>
-            <dd>Standardene sjekkes med VeraPDF, og fonter bakes inn i dokumentet så det ser likt ut overalt.</dd>
-          </div>
         </dl>
       </div>
     </section>
@@ -143,7 +142,7 @@ const data = (generated.repos as any)["navikt/pdfgen"];
       <div class="container">
         <div class="section-head">
           <h2>Kom i gang</h2>
-          <p class="ingress">pdfgen brukes oftest som et basisbilde: du legger malene, fontene og ressursene dine oppå. Alt du trenger er Docker.</p>
+          <p class="ingress">pdfgenrs brukes oftest som et basisbilde: du legger malene, fontene og ressursene dine oppå. Alt du trenger er Docker.</p>
         </div>
         <div class="start-grid">
           <div class="start-block">
@@ -153,11 +152,10 @@ const data = (generated.repos as any)["navikt/pdfgen"];
                 <span class="fname">Dockerfile</span>
                 <button class="copy-btn" type="button" data-copy="snip-docker">Kopier</button>
               </div>
-              <pre id="snip-docker"><code><span class="dk">FROM</span> ghcr.io/navikt/pdfgen:&lt;release&gt;
+              <pre id="snip-docker"><code><span class="dk">FROM</span> ghcr.io/navikt/pdfgenrs:&lt;release&gt;
 
 <span class="dk">COPY</span> templates /app/templates
-<span class="dk">COPY</span> fonts     /app/fonts
-<span class="dk">COPY</span> resources /app/resources</code></pre>
+</code></pre>
             </div>
           </div>
           <div class="start-block">
@@ -168,12 +166,12 @@ const data = (generated.repos as any)["navikt/pdfgen"];
                 <button class="copy-btn" type="button" data-copy="snip-mkdir">Kopier</button>
               </div>
               <pre id="snip-mkdir"><code><span class="cm"># grunnstruktur</span>
-mkdir &#123;templates,fonts,resources,data&#125;
+mkdir &#123;templates,data&#125;
 
-<span class="cm"># én mappe per lag/app</span>
-mkdir &#123;templates,data&#125;/ditt_lagnavn</code></pre>
+<span class="cm"># én mappe per team/app</span>
+mkdir &#123;templates,data&#125;/ditt_teamnavn</code></pre>
             </div>
-            <p class="start-note detail">Legg <code>.hbs</code>-malene i <code>templates/ditt_lagnavn/</code> og tilhørende testdata i <code>data/ditt_lagnavn/</code>. Navnet blir en del av API-stien.</p>
+            <p class="start-note detail">Legg <code>.typ</code>-malene i <code>templates/ditt_teamnavn/</code> og tilhørende testdata i <code>data/ditt_teamnavn/</code>. Navnet blir en del av API-stien.</p>
           </div>
         </div>
       </div>
@@ -183,28 +181,27 @@ mkdir &#123;templates,data&#125;/ditt_lagnavn</code></pre>
       <div class="container">
         <div class="section-head">
           <h2>Ta den i bruk i din virksomhet</h2>
-          <p class="ingress">pdfgen er ikke bundet til Nav. Mønsteret — mal pluss data pluss en liten tjeneste — passer enhver virksomhet som må lage mange like dokumenter.</p>
+          <p class="ingress">pdfgenrs er ikke bundet til Nav. Mønsteret — mal pluss data pluss en liten tjeneste — passer enhver virksomhet som må lage mange like dokumenter.</p>
         </div>
         <div class="cols">
           <div class="panel">
             <h3>Det du trenger</h3>
             <ul>
-              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Docker til å kjøre basisbildet fra <code>ghcr.io/navikt/pdfgen</code></li>
-              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Handlebars-maler og JSON-data for dokumentene dine</li>
+              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Docker til å kjøre basisbildet fra <code>ghcr.io/navikt/pdfgenrs</code></li>
+              <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Typst-maler og JSON-data for dokumentene dine</li>
               <li><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Fontene du vil bake inn, om standardoppsettet ikke holder</li>
             </ul>
           </div>
           <div class="panel">
             <h3>Det du bør vite</h3>
             <p class="fine">MIT-lisensiert og fritt å bruke. Vi lover ingen support-SLA, men issues og pull requests er velkomne.</p>
-            <p class="fine">Vær oppmerksom: pdfgen har fått en etterfølger skrevet i Rust — <a href="https://github.com/navikt/pdfgenrs">pdfgenrs</a> — som Nav peker nye prosjekter mot. Ideen er den samme (mal + JSON inn, PDF ut), men malspråket er Typst i stedet for Handlebars. Starter du på nytt i dag, se på begge; pdfgen er den med åtte års produksjonshistorie.</p>
             <p class="adopter-note"><svg class="check-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-check" /></svg>Klar for enhver norsk etat</p>
           </div>
         </div>
       </div>
     </section>
   </main>
-  <ProsjektFooter repo="navikt/pdfgen" lenker={[{ href: "https://github.com/navikt/pdfgenrs", tekst: "pdfgenrs (Rust)" }, { href: "https://github.com/navikt/pdfgen-core", tekst: "pdfgen-core" }]} />
+  <ProsjektFooter repo="navikt/pdfgenrs" lenker={[{ href: "https://github.com/navikt/pdfgenrs", tekst: "pdfgenrs (Rust)" }]} />
 </Layout>
 
 <style>
