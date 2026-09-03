@@ -1,9 +1,8 @@
 # Forhåndsvisning av showcase-siden på GitHub Pages.
 #
-# Synker data, committer generated.json til main, bygger og deployer
-# til GitHub Pages som artefakt (build_type: workflow). Alt i samme
-# workflow — pushes gjort med GITHUB_TOKEN trigger ikke andre workflows,
-# så en delt sync-→-deploy-kjede ville aldri ha startet av seg selv.
+# Synker data, oppretter eller oppdaterer en PR med generated.json,
+# bygger og deployer til GitHub Pages som artefakt (build_type: workflow).
+# Synkroniserte data brukes også i den aktuelle deployen.
 #
 
 name: Showcase-forhåndsvisning
@@ -23,6 +22,7 @@ concurrency:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   preview:
@@ -57,17 +57,32 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-      - name: Commit oppdatert generated.json til showcase
+      - name: Opprett eller oppdater PR med synkroniserte data
         if: always() && steps.deps.outcome == 'success'
+        env:
+          BRANCH: showcase-data-sync
+          GH_TOKEN: ${{ github.token }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add site/src/data/generated.json
           if git diff --cached --quiet; then
             echo "Ingen endringer i data."
-          else
-            git commit -m "chore: datasynk for showcase-forhåndsvisning"
-            git push origin HEAD:main
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "+refs/heads/$BRANCH:refs/remotes/origin/$BRANCH" || true
+          git switch -c "$BRANCH"
+          git commit -m "chore: datasynk for showcase-forhåndsvisning"
+          git push --force-with-lease origin "HEAD:refs/heads/$BRANCH"
+
+          if ! gh pr list --repo "$GITHUB_REPOSITORY" --head "$BRANCH" --base main --state open --json number --jq 'length > 0' | grep -qx true; then
+            gh pr create \
+              --repo "$GITHUB_REPOSITORY" \
+              --base main \
+              --head "$BRANCH" \
+              --title "chore: datasynk for showcase-forhåndsvisning" \
+              --body "Automatisk oppdatering av \`site/src/data/generated.json\`."
           fi
 
       - name: Bygg
