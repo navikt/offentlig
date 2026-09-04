@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-04T18:29:01.206Z",
+  "syncedAt": "2026-09-04T18:43:49.269Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -36,7 +36,7 @@
       "stars": 113,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-04T18:26:30Z",
+      "pushedAt": "2026-09-04T18:35:22Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -154,25 +154,32 @@
   },
   "stats": {
     "publicRepos": 3137,
-    "commitsLast7Days": 5755,
-    "prsLast30Days": 16831,
+    "commitsLast7Days": 5756,
+    "prsLast30Days": 16833,
     "npmDownloadsLastMonth": 165618,
     "fnrDownloadsLastMonth": 36249
   },
   "recentlyUpdated": [
     {
+      "name": "cplt",
+      "url": "https://github.com/navikt/cplt",
+      "pushedAt": "2026-09-04T18:43:50Z",
+      "language": "Rust",
+      "languageColor": "#dea584"
+    },
+    {
       "name": "offentlig",
       "url": "https://github.com/navikt/offentlig",
-      "pushedAt": "2026-09-04T18:28:45Z",
+      "pushedAt": "2026-09-04T18:43:11Z",
       "language": "Astro",
       "languageColor": null
     },
     {
-      "name": "cplt",
-      "url": "https://github.com/navikt/cplt",
-      "pushedAt": "2026-09-04T18:26:30Z",
-      "language": "Rust",
-      "languageColor": "#dea584"
+      "name": "hotsak-frontend",
+      "url": "https://github.com/navikt/hotsak-frontend",
+      "pushedAt": "2026-09-04T18:36:08Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
     },
     {
       "name": "bidrag-backend",
@@ -192,13 +199,6 @@
       "name": "innblikk-frontend",
       "url": "https://github.com/navikt/innblikk-frontend",
       "pushedAt": "2026-09-04T17:57:25Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "helse-speil",
-      "url": "https://github.com/navikt/helse-speil",
-      "pushedAt": "2026-09-04T17:42:06Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     }
