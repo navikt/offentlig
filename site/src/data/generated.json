@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-04T17:48:45.091Z",
+  "syncedAt": "2026-09-04T18:29:01.206Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -36,7 +36,7 @@
       "stars": 113,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-04T17:48:02Z",
+      "pushedAt": "2026-09-04T18:26:30Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -154,8 +154,8 @@
   },
   "stats": {
     "publicRepos": 3137,
-    "commitsLast7Days": 5760,
-    "prsLast30Days": 16834,
+    "commitsLast7Days": 5755,
+    "prsLast30Days": 16831,
     "npmDownloadsLastMonth": 165618,
     "fnrDownloadsLastMonth": 36249
   },
@@ -163,21 +163,35 @@
     {
       "name": "offentlig",
       "url": "https://github.com/navikt/offentlig",
-      "pushedAt": "2026-09-04T17:48:30Z",
+      "pushedAt": "2026-09-04T18:28:45Z",
       "language": "Astro",
       "languageColor": null
     },
     {
       "name": "cplt",
       "url": "https://github.com/navikt/cplt",
-      "pushedAt": "2026-09-04T17:48:02Z",
+      "pushedAt": "2026-09-04T18:26:30Z",
       "language": "Rust",
       "languageColor": "#dea584"
     },
     {
+      "name": "bidrag-backend",
+      "url": "https://github.com/navikt/bidrag-backend",
+      "pushedAt": "2026-09-04T18:17:13Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "homebrew-tap",
+      "url": "https://github.com/navikt/homebrew-tap",
+      "pushedAt": "2026-09-04T18:11:01Z",
+      "language": "Ruby",
+      "languageColor": "#701516"
+    },
+    {
       "name": "innblikk-frontend",
       "url": "https://github.com/navikt/innblikk-frontend",
-      "pushedAt": "2026-09-04T17:43:33Z",
+      "pushedAt": "2026-09-04T17:57:25Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     },
@@ -187,20 +201,6 @@
       "pushedAt": "2026-09-04T17:42:06Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
-    },
-    {
-      "name": "tiltakspenger-pdfgenrs",
-      "url": "https://github.com/navikt/tiltakspenger-pdfgenrs",
-      "pushedAt": "2026-09-04T17:40:04Z",
-      "language": "Typst",
-      "languageColor": null
-    },
-    {
-      "name": "tiltakspenger-soknad-api",
-      "url": "https://github.com/navikt/tiltakspenger-soknad-api",
-      "pushedAt": "2026-09-04T17:35:35Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
     }
   ],
   "languages": {
