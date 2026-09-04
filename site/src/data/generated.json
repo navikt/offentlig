@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-04T03:37:38.152Z",
+  "syncedAt": "2026-09-04T04:46:56.682Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -154,51 +154,51 @@
   },
   "stats": {
     "publicRepos": 3135,
-    "commitsLast7Days": 5715,
-    "prsLast30Days": 16788,
+    "commitsLast7Days": 5734,
+    "prsLast30Days": 16794,
     "npmDownloadsLastMonth": 165618,
     "fnrDownloadsLastMonth": 36249
   },
   "recentlyUpdated": [
     {
-      "name": "su-se-bakover",
-      "url": "https://github.com/navikt/su-se-bakover",
-      "pushedAt": "2026-09-04T03:16:31Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
+      "name": "offentlig",
+      "url": "https://github.com/navikt/offentlig",
+      "pushedAt": "2026-09-04T04:46:40Z",
+      "language": "Astro",
+      "languageColor": null
     },
     {
-      "name": "modia-frontend",
-      "url": "https://github.com/navikt/modia-frontend",
-      "pushedAt": "2026-09-04T03:05:10Z",
+      "name": "sf-platform",
+      "url": "https://github.com/navikt/sf-platform",
+      "pushedAt": "2026-09-04T04:40:51Z",
+      "language": "Apex",
+      "languageColor": null
+    },
+    {
+      "name": "crm-workflows-base",
+      "url": "https://github.com/navikt/crm-workflows-base",
+      "pushedAt": "2026-09-04T04:38:46Z",
+      "language": null,
+      "languageColor": null
+    },
+    {
+      "name": "pam-stillingsok",
+      "url": "https://github.com/navikt/pam-stillingsok",
+      "pushedAt": "2026-09-04T04:37:08Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     },
     {
-      "name": "helse-sparkelapper",
-      "url": "https://github.com/navikt/helse-sparkelapper",
-      "pushedAt": "2026-09-04T02:29:18Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
+      "name": "sf-shared",
+      "url": "https://github.com/navikt/sf-shared",
+      "pushedAt": "2026-09-04T04:36:55Z",
+      "language": "Apex",
+      "languageColor": null
     },
     {
-      "name": "arbeidsplassen-lab",
-      "url": "https://github.com/navikt/arbeidsplassen-lab",
-      "pushedAt": "2026-09-04T01:49:48Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "sif-brukerdialog",
-      "url": "https://github.com/navikt/sif-brukerdialog",
-      "pushedAt": "2026-09-04T01:23:46Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "helse-sp-forsikring",
-      "url": "https://github.com/navikt/helse-sp-forsikring",
-      "pushedAt": "2026-09-03T23:50:20Z",
+      "name": "dp-stpeter",
+      "url": "https://github.com/navikt/dp-stpeter",
+      "pushedAt": "2026-09-04T04:36:32Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     }
