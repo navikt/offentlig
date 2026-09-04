@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-03T17:19:50.806Z",
+  "syncedAt": "2026-09-04T03:37:38.152Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -19,10 +19,10 @@
       "isArchived": false
     },
     "nais/naiserator": {
-      "stars": 48,
+      "stars": 49,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-03T15:28:46Z",
+      "pushedAt": "2026-09-03T19:54:56Z",
       "isArchived": false
     },
     "navikt/helse-spleis": {
@@ -36,7 +36,7 @@
       "stars": 113,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-03T17:13:01Z",
+      "pushedAt": "2026-09-03T21:29:09Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -92,7 +92,7 @@
       "stars": 54,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-03T16:30:50Z",
+      "pushedAt": "2026-09-03T21:53:42Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -154,53 +154,53 @@
   },
   "stats": {
     "publicRepos": 3135,
-    "commitsLast7Days": 5848,
-    "prsLast30Days": 16782,
+    "commitsLast7Days": 5715,
+    "prsLast30Days": 16788,
     "npmDownloadsLastMonth": 165618,
     "fnrDownloadsLastMonth": 36249
   },
   "recentlyUpdated": [
     {
-      "name": "offentlig",
-      "url": "https://github.com/navikt/offentlig",
-      "pushedAt": "2026-09-03T17:19:34Z",
-      "language": "Astro",
-      "languageColor": null
-    },
-    {
-      "name": "nav-office-search",
-      "url": "https://github.com/navikt/nav-office-search",
-      "pushedAt": "2026-09-03T17:18:29Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "macgyver",
-      "url": "https://github.com/navikt/macgyver",
-      "pushedAt": "2026-09-03T17:09:27Z",
+      "name": "su-se-bakover",
+      "url": "https://github.com/navikt/su-se-bakover",
+      "pushedAt": "2026-09-04T03:16:31Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "mulighetsrommet",
-      "url": "https://github.com/navikt/mulighetsrommet",
-      "pushedAt": "2026-09-03T17:04:31Z",
+      "name": "modia-frontend",
+      "url": "https://github.com/navikt/modia-frontend",
+      "pushedAt": "2026-09-04T03:05:10Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
+    },
+    {
+      "name": "helse-sparkelapper",
+      "url": "https://github.com/navikt/helse-sparkelapper",
+      "pushedAt": "2026-09-04T02:29:18Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "pam-stillingsok",
-      "url": "https://github.com/navikt/pam-stillingsok",
-      "pushedAt": "2026-09-03T17:01:44Z",
+      "name": "arbeidsplassen-lab",
+      "url": "https://github.com/navikt/arbeidsplassen-lab",
+      "pushedAt": "2026-09-04T01:49:48Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     },
     {
-      "name": "reops-uurapport-frontend",
-      "url": "https://github.com/navikt/reops-uurapport-frontend",
-      "pushedAt": "2026-09-03T16:45:03Z",
+      "name": "sif-brukerdialog",
+      "url": "https://github.com/navikt/sif-brukerdialog",
+      "pushedAt": "2026-09-04T01:23:46Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
+    },
+    {
+      "name": "helse-sp-forsikring",
+      "url": "https://github.com/navikt/helse-sp-forsikring",
+      "pushedAt": "2026-09-03T23:50:20Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     }
   ],
   "languages": {
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-09-04",
-        "count": 699
-      },
       {
         "date": "2025-09-05",
         "count": 757
@@ -1706,6 +1702,10 @@
       {
         "date": "2026-09-02",
         "count": 1012
+      },
+      {
+        "date": "2026-09-03",
+        "count": 786
       }
     ]
   }
