@@ -1,11 +1,11 @@
 {
-  "syncedAt": "2026-09-04T04:46:56.682Z",
+  "syncedAt": "2026-09-04T13:13:22.001Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
   "repos": {
     "navikt/mock-oauth2-server": {
-      "stars": 413,
+      "stars": 414,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
       "pushedAt": "2026-09-03T09:01:23Z",
@@ -15,7 +15,7 @@
       "stars": 185,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-09-03T14:28:49Z",
+      "pushedAt": "2026-09-04T12:59:42Z",
       "isArchived": false
     },
     "nais/naiserator": {
@@ -29,14 +29,14 @@
       "stars": 6,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-09-02T10:07:03Z",
+      "pushedAt": "2026-09-04T10:13:20Z",
       "isArchived": false
     },
     "navikt/cplt": {
       "stars": 113,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-03T21:29:09Z",
+      "pushedAt": "2026-09-04T13:12:29Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -92,7 +92,7 @@
       "stars": 54,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-03T21:53:42Z",
+      "pushedAt": "2026-09-04T09:43:12Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -127,7 +127,7 @@
       "stars": 3,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-02T08:10:26Z",
+      "pushedAt": "2026-09-04T05:41:36Z",
       "isArchived": false
     },
     "nais/unleasherator": {
@@ -153,58 +153,58 @@
     }
   },
   "stats": {
-    "publicRepos": 3135,
-    "commitsLast7Days": 5734,
-    "prsLast30Days": 16794,
+    "publicRepos": 3137,
+    "commitsLast7Days": 5756,
+    "prsLast30Days": 16810,
     "npmDownloadsLastMonth": 165618,
     "fnrDownloadsLastMonth": 36249
   },
   "recentlyUpdated": [
     {
-      "name": "offentlig",
-      "url": "https://github.com/navikt/offentlig",
-      "pushedAt": "2026-09-04T04:46:40Z",
-      "language": "Astro",
-      "languageColor": null
+      "name": "cplt",
+      "url": "https://github.com/navikt/cplt",
+      "pushedAt": "2026-09-04T13:13:29Z",
+      "language": "Rust",
+      "languageColor": "#dea584"
     },
     {
-      "name": "sf-platform",
-      "url": "https://github.com/navikt/sf-platform",
-      "pushedAt": "2026-09-04T04:40:51Z",
-      "language": "Apex",
-      "languageColor": null
+      "name": "pensjonsbrev",
+      "url": "https://github.com/navikt/pensjonsbrev",
+      "pushedAt": "2026-09-04T13:12:36Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
-      "name": "crm-workflows-base",
-      "url": "https://github.com/navikt/crm-workflows-base",
-      "pushedAt": "2026-09-04T04:38:46Z",
-      "language": null,
-      "languageColor": null
-    },
-    {
-      "name": "pam-stillingsok",
-      "url": "https://github.com/navikt/pam-stillingsok",
-      "pushedAt": "2026-09-04T04:37:08Z",
+      "name": "melosys-web",
+      "url": "https://github.com/navikt/melosys-web",
+      "pushedAt": "2026-09-04T13:11:13Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     },
     {
-      "name": "sf-shared",
-      "url": "https://github.com/navikt/sf-shared",
-      "pushedAt": "2026-09-04T04:36:55Z",
-      "language": "Apex",
-      "languageColor": null
+      "name": "dialogmote-frontend",
+      "url": "https://github.com/navikt/dialogmote-frontend",
+      "pushedAt": "2026-09-04T13:09:57Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
     },
     {
-      "name": "dp-stpeter",
-      "url": "https://github.com/navikt/dp-stpeter",
-      "pushedAt": "2026-09-04T04:36:32Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
+      "name": "rekrutteringsbistand-frontend",
+      "url": "https://github.com/navikt/rekrutteringsbistand-frontend",
+      "pushedAt": "2026-09-04T13:09:07Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
+    },
+    {
+      "name": "homebrew-tap",
+      "url": "https://github.com/navikt/homebrew-tap",
+      "pushedAt": "2026-09-04T13:09:00Z",
+      "language": "Ruby",
+      "languageColor": "#701516"
     }
   ],
   "languages": {
-    "totalRepos": 1779,
+    "totalRepos": 1781,
     "entries": [
       {
         "name": "Kotlin",
@@ -228,12 +228,12 @@
       },
       {
         "name": "JavaScript",
-        "count": 63,
+        "count": 64,
         "color": "#f1e05a"
       },
       {
         "name": "Shell",
-        "count": 50,
+        "count": 51,
         "color": "#89e051"
       },
       {
@@ -1701,11 +1701,11 @@
       },
       {
         "date": "2026-09-02",
-        "count": 1012
+        "count": 1016
       },
       {
         "date": "2026-09-03",
-        "count": 786
+        "count": 836
       }
     ]
   }
