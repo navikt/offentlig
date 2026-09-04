@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-04T17:38:32.253Z",
+  "syncedAt": "2026-09-04T17:48:45.091Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -36,7 +36,7 @@
       "stars": 113,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-04T17:33:52Z",
+      "pushedAt": "2026-09-04T17:48:02Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -154,8 +154,8 @@
   },
   "stats": {
     "publicRepos": 3137,
-    "commitsLast7Days": 5715,
-    "prsLast30Days": 16830,
+    "commitsLast7Days": 5760,
+    "prsLast30Days": 16834,
     "npmDownloadsLastMonth": 165618,
     "fnrDownloadsLastMonth": 36249
   },
@@ -163,42 +163,42 @@
     {
       "name": "offentlig",
       "url": "https://github.com/navikt/offentlig",
-      "pushedAt": "2026-09-04T17:38:20Z",
+      "pushedAt": "2026-09-04T17:48:30Z",
       "language": "Astro",
+      "languageColor": null
+    },
+    {
+      "name": "cplt",
+      "url": "https://github.com/navikt/cplt",
+      "pushedAt": "2026-09-04T17:48:02Z",
+      "language": "Rust",
+      "languageColor": "#dea584"
+    },
+    {
+      "name": "innblikk-frontend",
+      "url": "https://github.com/navikt/innblikk-frontend",
+      "pushedAt": "2026-09-04T17:43:33Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
+    },
+    {
+      "name": "helse-speil",
+      "url": "https://github.com/navikt/helse-speil",
+      "pushedAt": "2026-09-04T17:42:06Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
+    },
+    {
+      "name": "tiltakspenger-pdfgenrs",
+      "url": "https://github.com/navikt/tiltakspenger-pdfgenrs",
+      "pushedAt": "2026-09-04T17:40:04Z",
+      "language": "Typst",
       "languageColor": null
     },
     {
       "name": "tiltakspenger-soknad-api",
       "url": "https://github.com/navikt/tiltakspenger-soknad-api",
       "pushedAt": "2026-09-04T17:35:35Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "cplt",
-      "url": "https://github.com/navikt/cplt",
-      "pushedAt": "2026-09-04T17:33:52Z",
-      "language": "Rust",
-      "languageColor": "#dea584"
-    },
-    {
-      "name": "tiltakspenger-datadeling",
-      "url": "https://github.com/navikt/tiltakspenger-datadeling",
-      "pushedAt": "2026-09-04T17:17:36Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "innblikk-frontend",
-      "url": "https://github.com/navikt/innblikk-frontend",
-      "pushedAt": "2026-09-04T17:16:20Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "tiltakspenger-meldekort-api",
-      "url": "https://github.com/navikt/tiltakspenger-meldekort-api",
-      "pushedAt": "2026-09-04T17:14:01Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     }
