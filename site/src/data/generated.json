@@ -1,11 +1,11 @@
 {
-  "syncedAt": "2026-09-04T13:13:22.001Z",
+  "syncedAt": "2026-09-04T17:38:32.253Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
   "repos": {
     "navikt/mock-oauth2-server": {
-      "stars": 414,
+      "stars": 415,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
       "pushedAt": "2026-09-03T09:01:23Z",
@@ -15,7 +15,7 @@
       "stars": 185,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-09-04T12:59:42Z",
+      "pushedAt": "2026-09-04T16:13:26Z",
       "isArchived": false
     },
     "nais/naiserator": {
@@ -36,14 +36,14 @@
       "stars": 113,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-04T13:12:29Z",
+      "pushedAt": "2026-09-04T17:33:52Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
       "stars": 1,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-03T17:17:20Z",
+      "pushedAt": "2026-09-04T16:41:15Z",
       "isArchived": false
     },
     "nais/wonderwall": {
@@ -99,7 +99,7 @@
       "stars": 19,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-09-01T14:48:38Z",
+      "pushedAt": "2026-09-04T16:18:37Z",
       "isArchived": false
     },
     "navikt/fnrvalidator": {
@@ -154,53 +154,53 @@
   },
   "stats": {
     "publicRepos": 3137,
-    "commitsLast7Days": 5756,
-    "prsLast30Days": 16810,
+    "commitsLast7Days": 5715,
+    "prsLast30Days": 16830,
     "npmDownloadsLastMonth": 165618,
     "fnrDownloadsLastMonth": 36249
   },
   "recentlyUpdated": [
     {
-      "name": "cplt",
-      "url": "https://github.com/navikt/cplt",
-      "pushedAt": "2026-09-04T13:13:29Z",
-      "language": "Rust",
-      "languageColor": "#dea584"
+      "name": "offentlig",
+      "url": "https://github.com/navikt/offentlig",
+      "pushedAt": "2026-09-04T17:38:20Z",
+      "language": "Astro",
+      "languageColor": null
     },
     {
-      "name": "pensjonsbrev",
-      "url": "https://github.com/navikt/pensjonsbrev",
-      "pushedAt": "2026-09-04T13:12:36Z",
+      "name": "tiltakspenger-soknad-api",
+      "url": "https://github.com/navikt/tiltakspenger-soknad-api",
+      "pushedAt": "2026-09-04T17:35:35Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "melosys-web",
-      "url": "https://github.com/navikt/melosys-web",
-      "pushedAt": "2026-09-04T13:11:13Z",
+      "name": "cplt",
+      "url": "https://github.com/navikt/cplt",
+      "pushedAt": "2026-09-04T17:33:52Z",
+      "language": "Rust",
+      "languageColor": "#dea584"
+    },
+    {
+      "name": "tiltakspenger-datadeling",
+      "url": "https://github.com/navikt/tiltakspenger-datadeling",
+      "pushedAt": "2026-09-04T17:17:36Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "innblikk-frontend",
+      "url": "https://github.com/navikt/innblikk-frontend",
+      "pushedAt": "2026-09-04T17:16:20Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     },
     {
-      "name": "dialogmote-frontend",
-      "url": "https://github.com/navikt/dialogmote-frontend",
-      "pushedAt": "2026-09-04T13:09:57Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "rekrutteringsbistand-frontend",
-      "url": "https://github.com/navikt/rekrutteringsbistand-frontend",
-      "pushedAt": "2026-09-04T13:09:07Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "homebrew-tap",
-      "url": "https://github.com/navikt/homebrew-tap",
-      "pushedAt": "2026-09-04T13:09:00Z",
-      "language": "Ruby",
-      "languageColor": "#701516"
+      "name": "tiltakspenger-meldekort-api",
+      "url": "https://github.com/navikt/tiltakspenger-meldekort-api",
+      "pushedAt": "2026-09-04T17:14:01Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     }
   ],
   "languages": {
@@ -1705,7 +1705,7 @@
       },
       {
         "date": "2026-09-03",
-        "count": 836
+        "count": 837
       }
     ]
   }
