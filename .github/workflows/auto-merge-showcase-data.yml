@@ -1,0 +1,26 @@
+name: Auto-merge showcase data
+
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, reopened, synchronize]
+
+jobs:
+  enable-auto-merge:
+    if: >-
+      github.event.pull_request.number == 45 &&
+      github.event.pull_request.head.ref == 'showcase-data-sync' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Enable auto-merge
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh pr view 45 --repo "$GITHUB_REPOSITORY" --json autoMergeRequest --jq '.autoMergeRequest != null' | grep -qx true; then
+            exit 0
+          fi
+          gh pr merge 45 --repo "$GITHUB_REPOSITORY" --auto --squash
