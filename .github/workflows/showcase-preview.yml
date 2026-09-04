@@ -85,6 +85,8 @@ jobs:
               --body "Automatisk oppdatering av \`site/src/data/generated.json\`."
           fi
 
+          gh pr merge "$BRANCH" --repo "$GITHUB_REPOSITORY" --auto --squash
+
       - name: Bygg
         if: always() && steps.deps.outcome == 'success'
         working-directory: site
