@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-04T18:43:49.269Z",
+  "syncedAt": "2026-09-05T03:36:40.673Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -36,7 +36,7 @@
       "stars": 113,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-04T18:35:22Z",
+      "pushedAt": "2026-09-04T21:50:44Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -154,53 +154,53 @@
   },
   "stats": {
     "publicRepos": 3137,
-    "commitsLast7Days": 5756,
-    "prsLast30Days": 16833,
+    "commitsLast7Days": 5753,
+    "prsLast30Days": 16866,
     "npmDownloadsLastMonth": 165618,
     "fnrDownloadsLastMonth": 36249
   },
   "recentlyUpdated": [
     {
-      "name": "cplt",
-      "url": "https://github.com/navikt/cplt",
-      "pushedAt": "2026-09-04T18:43:50Z",
-      "language": "Rust",
-      "languageColor": "#dea584"
-    },
-    {
-      "name": "offentlig",
-      "url": "https://github.com/navikt/offentlig",
-      "pushedAt": "2026-09-04T18:43:11Z",
-      "language": "Astro",
-      "languageColor": null
-    },
-    {
-      "name": "hotsak-frontend",
-      "url": "https://github.com/navikt/hotsak-frontend",
-      "pushedAt": "2026-09-04T18:36:08Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "bidrag-backend",
-      "url": "https://github.com/navikt/bidrag-backend",
-      "pushedAt": "2026-09-04T18:17:13Z",
+      "name": "dp-regel-minsteinntekt",
+      "url": "https://github.com/navikt/dp-regel-minsteinntekt",
+      "pushedAt": "2026-09-05T00:46:36Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "homebrew-tap",
-      "url": "https://github.com/navikt/homebrew-tap",
-      "pushedAt": "2026-09-04T18:11:01Z",
-      "language": "Ruby",
-      "languageColor": "#701516"
+      "name": "dp-soknad-orkestrator",
+      "url": "https://github.com/navikt/dp-soknad-orkestrator",
+      "pushedAt": "2026-09-05T00:43:43Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
-      "name": "innblikk-frontend",
-      "url": "https://github.com/navikt/innblikk-frontend",
-      "pushedAt": "2026-09-04T17:57:25Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "dp-innsyn",
+      "url": "https://github.com/navikt/dp-innsyn",
+      "pushedAt": "2026-09-05T00:43:04Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "dp-manuell-behandling",
+      "url": "https://github.com/navikt/dp-manuell-behandling",
+      "pushedAt": "2026-09-05T00:40:53Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "dp-doffen",
+      "url": "https://github.com/navikt/dp-doffen",
+      "pushedAt": "2026-09-05T00:40:07Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "dp-regel-periode",
+      "url": "https://github.com/navikt/dp-regel-periode",
+      "pushedAt": "2026-09-05T00:34:17Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     }
   ],
   "languages": {
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-09-05",
-        "count": 757
-      },
       {
         "date": "2025-09-06",
         "count": 110
@@ -1706,6 +1702,10 @@
       {
         "date": "2026-09-03",
         "count": 837
+      },
+      {
+        "date": "2026-09-04",
+        "count": 933
       }
     ]
   }
