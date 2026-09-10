@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-09T03:38:04.933Z",
+  "syncedAt": "2026-09-10T03:38:19.453Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -15,7 +15,7 @@
       "stars": 185,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-09-08T18:01:05Z",
+      "pushedAt": "2026-09-09T08:26:02Z",
       "isArchived": false
     },
     "nais/naiserator": {
@@ -33,10 +33,10 @@
       "isArchived": false
     },
     "navikt/cplt": {
-      "stars": 114,
+      "stars": 116,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-08T22:43:13Z",
+      "pushedAt": "2026-09-09T13:56:28Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -78,7 +78,7 @@
       "stars": 18,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-08T08:00:41Z",
+      "pushedAt": "2026-09-09T06:48:49Z",
       "isArchived": false
     },
     "navikt/spraksjekk": {
@@ -92,7 +92,7 @@
       "stars": 54,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-09T01:12:53Z",
+      "pushedAt": "2026-09-10T02:15:29Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -113,7 +113,7 @@
       "stars": 11,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-08-27T06:55:58Z",
+      "pushedAt": "2026-09-09T14:45:01Z",
       "isArchived": false
     },
     "navikt/DSF": {
@@ -134,7 +134,7 @@
       "stars": 12,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-08T08:48:50Z",
+      "pushedAt": "2026-09-09T13:29:56Z",
       "isArchived": false
     },
     "nais/kafkarator": {
@@ -153,72 +153,72 @@
     }
   },
   "stats": {
-    "publicRepos": 3143,
+    "publicRepos": 3144,
     "commitsLast7Days": 5410,
-    "prsLast30Days": 17249,
+    "prsLast30Days": 16821,
     "npmDownloadsLastMonth": 129149,
     "fnrDownloadsLastMonth": 34482
   },
   "recentlyUpdated": [
     {
-      "name": "lumi",
-      "url": "https://github.com/navikt/lumi",
-      "pushedAt": "2026-09-09T03:24:09Z",
+      "name": "modiapersonoversikt",
+      "url": "https://github.com/navikt/modiapersonoversikt",
+      "pushedAt": "2026-09-10T03:18:11Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     },
     {
-      "name": "dinesykmeldte-sidemeny",
-      "url": "https://github.com/navikt/dinesykmeldte-sidemeny",
-      "pushedAt": "2026-09-09T03:23:46Z",
+      "name": "nada-markedsplassen",
+      "url": "https://github.com/navikt/nada-markedsplassen",
+      "pushedAt": "2026-09-10T02:28:54Z",
+      "language": "Go",
+      "languageColor": "#00add8"
+    },
+    {
+      "name": "dp-regel-api",
+      "url": "https://github.com/navikt/dp-regel-api",
+      "pushedAt": "2026-09-10T00:23:43Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "kaka-api",
+      "url": "https://github.com/navikt/kaka-api",
+      "pushedAt": "2026-09-10T00:23:20Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "delta-frontend",
+      "url": "https://github.com/navikt/delta-frontend",
+      "pushedAt": "2026-09-09T22:59:20Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     },
     {
-      "name": "sif-brukerdialog",
-      "url": "https://github.com/navikt/sif-brukerdialog",
-      "pushedAt": "2026-09-09T01:23:46Z",
+      "name": "esyfo-microfrontends",
+      "url": "https://github.com/navikt/esyfo-microfrontends",
+      "pushedAt": "2026-09-09T22:02:41Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
-    },
-    {
-      "name": "copilot",
-      "url": "https://github.com/navikt/copilot",
-      "pushedAt": "2026-09-09T01:12:53Z",
-      "language": "Go",
-      "languageColor": "#00add8"
-    },
-    {
-      "name": "ghep",
-      "url": "https://github.com/navikt/ghep",
-      "pushedAt": "2026-09-09T00:35:34Z",
-      "language": "Go",
-      "languageColor": "#00add8"
-    },
-    {
-      "name": "nada-quarto-proxy",
-      "url": "https://github.com/navikt/nada-quarto-proxy",
-      "pushedAt": "2026-09-09T00:33:35Z",
-      "language": "Go",
-      "languageColor": "#00add8"
     }
   ],
   "languages": {
-    "totalRepos": 1785,
+    "totalRepos": 1784,
     "entries": [
       {
         "name": "Kotlin",
-        "count": 696,
+        "count": 697,
         "color": "#a97bff"
       },
       {
         "name": "TypeScript",
-        "count": 339,
+        "count": 338,
         "color": "#3178c6"
       },
       {
         "name": "Java",
-        "count": 147,
+        "count": 146,
         "color": "#b07219"
       },
       {
@@ -228,12 +228,12 @@
       },
       {
         "name": "JavaScript",
-        "count": 64,
+        "count": 65,
         "color": "#f1e05a"
       },
       {
         "name": "Shell",
-        "count": 51,
+        "count": 50,
         "color": "#89e051"
       },
       {
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-09-10",
-        "count": 919
-      },
       {
         "date": "2025-09-11",
         "count": 920
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-09-08",
-        "count": 1143
+        "count": 1179
+      },
+      {
+        "date": "2026-09-09",
+        "count": 976
       }
     ]
   }
