@@ -1,56 +1,56 @@
 {
-  "syncedAt": "2026-09-10T03:38:19.453Z",
+  "syncedAt": "2026-09-12T03:37:46.832Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
   "repos": {
     "navikt/mock-oauth2-server": {
-      "stars": 416,
+      "stars": 418,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-09-07T08:53:19Z",
+      "pushedAt": "2026-09-10T13:11:36Z",
       "isArchived": false
     },
     "navikt/aksel": {
       "stars": 185,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-09-09T08:26:02Z",
+      "pushedAt": "2026-09-11T19:17:27Z",
       "isArchived": false
     },
     "nais/naiserator": {
       "stars": 49,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-08T13:03:41Z",
+      "pushedAt": "2026-09-11T12:53:24Z",
       "isArchived": false
     },
     "navikt/helse-spleis": {
       "stars": 6,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-09-08T14:00:48Z",
+      "pushedAt": "2026-09-11T14:38:51Z",
       "isArchived": false
     },
     "navikt/cplt": {
       "stars": 116,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-09T13:56:28Z",
+      "pushedAt": "2026-09-11T08:11:54Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
       "stars": 1,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-07T09:38:52Z",
+      "pushedAt": "2026-09-11T14:38:58Z",
       "isArchived": false
     },
     "nais/wonderwall": {
       "stars": 27,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-09T00:36:52Z",
+      "pushedAt": "2026-09-10T11:35:13Z",
       "isArchived": false
     },
     "navikt/rapids-and-rivers": {
@@ -71,14 +71,14 @@
       "stars": 11,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-07T07:05:07Z",
+      "pushedAt": "2026-09-10T11:34:34Z",
       "isArchived": false
     },
     "nais/device": {
       "stars": 18,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-09T06:48:49Z",
+      "pushedAt": "2026-09-11T05:32:24Z",
       "isArchived": false
     },
     "navikt/spraksjekk": {
@@ -92,7 +92,7 @@
       "stars": 54,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-10T02:15:29Z",
+      "pushedAt": "2026-09-11T09:49:45Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -113,7 +113,7 @@
       "stars": 11,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-09T14:45:01Z",
+      "pushedAt": "2026-09-10T10:40:26Z",
       "isArchived": false
     },
     "navikt/DSF": {
@@ -127,14 +127,14 @@
       "stars": 3,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-09T00:35:34Z",
+      "pushedAt": "2026-09-10T10:14:05Z",
       "isArchived": false
     },
     "nais/unleasherator": {
       "stars": 12,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-09T13:29:56Z",
+      "pushedAt": "2026-09-10T07:33:07Z",
       "isArchived": false
     },
     "nais/kafkarator": {
@@ -148,67 +148,67 @@
       "stars": 1,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-07T17:43:07Z",
+      "pushedAt": "2026-09-10T06:34:11Z",
       "isArchived": false
     }
   },
   "stats": {
-    "publicRepos": 3144,
-    "commitsLast7Days": 5410,
-    "prsLast30Days": 16821,
-    "npmDownloadsLastMonth": 129149,
-    "fnrDownloadsLastMonth": 34482
+    "publicRepos": 3148,
+    "commitsLast7Days": 5299,
+    "prsLast30Days": 17009,
+    "npmDownloadsLastMonth": 122690,
+    "fnrDownloadsLastMonth": 36185
   },
   "recentlyUpdated": [
     {
-      "name": "modiapersonoversikt",
-      "url": "https://github.com/navikt/modiapersonoversikt",
-      "pushedAt": "2026-09-10T03:18:11Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "nada-markedsplassen",
-      "url": "https://github.com/navikt/nada-markedsplassen",
-      "pushedAt": "2026-09-10T02:28:54Z",
-      "language": "Go",
-      "languageColor": "#00add8"
-    },
-    {
-      "name": "dp-regel-api",
-      "url": "https://github.com/navikt/dp-regel-api",
-      "pushedAt": "2026-09-10T00:23:43Z",
+      "name": "mulighetsrommet",
+      "url": "https://github.com/navikt/mulighetsrommet",
+      "pushedAt": "2026-09-12T00:22:59Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "kaka-api",
-      "url": "https://github.com/navikt/kaka-api",
-      "pushedAt": "2026-09-10T00:23:20Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "delta-frontend",
-      "url": "https://github.com/navikt/delta-frontend",
-      "pushedAt": "2026-09-09T22:59:20Z",
+      "name": "dp-brukerdialog-frontend",
+      "url": "https://github.com/navikt/dp-brukerdialog-frontend",
+      "pushedAt": "2026-09-12T00:09:58Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     },
     {
       "name": "esyfo-microfrontends",
       "url": "https://github.com/navikt/esyfo-microfrontends",
-      "pushedAt": "2026-09-09T22:02:41Z",
+      "pushedAt": "2026-09-11T23:25:45Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
+    },
+    {
+      "name": "aksel",
+      "url": "https://github.com/navikt/aksel",
+      "pushedAt": "2026-09-11T19:17:27Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
+    },
+    {
+      "name": "helse-sp-forsikring",
+      "url": "https://github.com/navikt/helse-sp-forsikring",
+      "pushedAt": "2026-09-11T18:19:09Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "lydia-radgiver-frontend",
+      "url": "https://github.com/navikt/lydia-radgiver-frontend",
+      "pushedAt": "2026-09-11T17:06:25Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     }
   ],
   "languages": {
-    "totalRepos": 1784,
+    "totalRepos": 1788,
     "entries": [
       {
         "name": "Kotlin",
-        "count": 697,
+        "count": 699,
         "color": "#a97bff"
       },
       {
@@ -223,7 +223,7 @@
       },
       {
         "name": "Python",
-        "count": 86,
+        "count": 87,
         "color": "#3572a5"
       },
       {
@@ -243,7 +243,7 @@
       },
       {
         "name": "Annet",
-        "count": 360,
+        "count": 361,
         "color": null
       }
     ]
@@ -251,14 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-09-11",
-        "count": 920
-      },
-      {
-        "date": "2025-09-12",
-        "count": 825
-      },
       {
         "date": "2025-09-13",
         "count": 61
@@ -1706,6 +1698,14 @@
       {
         "date": "2026-09-09",
         "count": 976
+      },
+      {
+        "date": "2026-09-10",
+        "count": 822
+      },
+      {
+        "date": "2026-09-11",
+        "count": 769
       }
     ]
   }
