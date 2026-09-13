@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-12T03:37:46.832Z",
+  "syncedAt": "2026-09-13T03:38:15.941Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -15,7 +15,7 @@
       "stars": 185,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-09-11T19:17:27Z",
+      "pushedAt": "2026-09-12T16:35:10Z",
       "isArchived": false
     },
     "nais/naiserator": {
@@ -33,7 +33,7 @@
       "isArchived": false
     },
     "navikt/cplt": {
-      "stars": 116,
+      "stars": 117,
       "language": "Rust",
       "languageColor": "#dea584",
       "pushedAt": "2026-09-11T08:11:54Z",
@@ -92,7 +92,7 @@
       "stars": 54,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-11T09:49:45Z",
+      "pushedAt": "2026-09-12T23:01:10Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -153,58 +153,58 @@
     }
   },
   "stats": {
-    "publicRepos": 3148,
-    "commitsLast7Days": 5299,
-    "prsLast30Days": 17009,
-    "npmDownloadsLastMonth": 122690,
-    "fnrDownloadsLastMonth": 36185
+    "publicRepos": 3149,
+    "commitsLast7Days": 5234,
+    "prsLast30Days": 16447,
+    "npmDownloadsLastMonth": 121874,
+    "fnrDownloadsLastMonth": 36575
   },
   "recentlyUpdated": [
     {
-      "name": "mulighetsrommet",
-      "url": "https://github.com/navikt/mulighetsrommet",
-      "pushedAt": "2026-09-12T00:22:59Z",
+      "name": "dp-regel-minsteinntekt",
+      "url": "https://github.com/navikt/dp-regel-minsteinntekt",
+      "pushedAt": "2026-09-13T00:53:37Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "dp-brukerdialog-frontend",
-      "url": "https://github.com/navikt/dp-brukerdialog-frontend",
-      "pushedAt": "2026-09-12T00:09:58Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "esyfo-microfrontends",
-      "url": "https://github.com/navikt/esyfo-microfrontends",
-      "pushedAt": "2026-09-11T23:25:45Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "aksel",
-      "url": "https://github.com/navikt/aksel",
-      "pushedAt": "2026-09-11T19:17:27Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "helse-sp-forsikring",
-      "url": "https://github.com/navikt/helse-sp-forsikring",
-      "pushedAt": "2026-09-11T18:19:09Z",
+      "name": "dp-soknad-orkestrator",
+      "url": "https://github.com/navikt/dp-soknad-orkestrator",
+      "pushedAt": "2026-09-13T00:50:08Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "lydia-radgiver-frontend",
-      "url": "https://github.com/navikt/lydia-radgiver-frontend",
-      "pushedAt": "2026-09-11T17:06:25Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "dp-innsyn",
+      "url": "https://github.com/navikt/dp-innsyn",
+      "pushedAt": "2026-09-13T00:49:28Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "dp-manuell-behandling",
+      "url": "https://github.com/navikt/dp-manuell-behandling",
+      "pushedAt": "2026-09-13T00:47:16Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "dp-doffen",
+      "url": "https://github.com/navikt/dp-doffen",
+      "pushedAt": "2026-09-13T00:46:12Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "klage-lookup",
+      "url": "https://github.com/navikt/klage-lookup",
+      "pushedAt": "2026-09-13T00:45:49Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     }
   ],
   "languages": {
-    "totalRepos": 1788,
+    "totalRepos": 1789,
     "entries": [
       {
         "name": "Kotlin",
@@ -213,7 +213,7 @@
       },
       {
         "name": "TypeScript",
-        "count": 338,
+        "count": 339,
         "color": "#3178c6"
       },
       {
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-09-13",
-        "count": 61
-      },
       {
         "date": "2025-09-14",
         "count": 33
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-09-11",
-        "count": 769
+        "count": 771
+      },
+      {
+        "date": "2026-09-12",
+        "count": 34
       }
     ]
   }
