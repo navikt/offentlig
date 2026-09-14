@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-14T03:41:01.629Z",
+  "syncedAt": "2026-09-14T06:48:29.175Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -15,14 +15,14 @@
       "stars": 185,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-09-13T05:03:45Z",
+      "pushedAt": "2026-09-14T06:34:20Z",
       "isArchived": false
     },
     "nais/naiserator": {
       "stars": 49,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-11T12:53:24Z",
+      "pushedAt": "2026-09-14T03:42:36Z",
       "isArchived": false
     },
     "navikt/helse-spleis": {
@@ -36,7 +36,7 @@
       "stars": 116,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-13T13:54:17Z",
+      "pushedAt": "2026-09-14T06:48:01Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -92,7 +92,7 @@
       "stars": 54,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-13T20:18:12Z",
+      "pushedAt": "2026-09-14T04:26:56Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -127,7 +127,7 @@
       "stars": 3,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-10T10:14:05Z",
+      "pushedAt": "2026-09-14T04:44:43Z",
       "isArchived": false
     },
     "nais/unleasherator": {
@@ -154,53 +154,53 @@
   },
   "stats": {
     "publicRepos": 3151,
-    "commitsLast7Days": 5275,
-    "prsLast30Days": 16141,
+    "commitsLast7Days": 5306,
+    "prsLast30Days": 16439,
     "npmDownloadsLastMonth": 121874,
     "fnrDownloadsLastMonth": 36575
   },
   "recentlyUpdated": [
     {
-      "name": "esyfo-observability",
-      "url": "https://github.com/navikt/esyfo-observability",
-      "pushedAt": "2026-09-14T03:36:31Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "apt",
-      "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-09-14T03:34:10Z",
-      "language": null,
+      "name": "offentlig",
+      "url": "https://github.com/navikt/offentlig",
+      "pushedAt": "2026-09-14T06:48:17Z",
+      "language": "Astro",
       "languageColor": null
     },
     {
-      "name": "helved-utbetaling",
-      "url": "https://github.com/navikt/helved-utbetaling",
-      "pushedAt": "2026-09-14T03:26:46Z",
+      "name": "sosialhjelp-modia-api",
+      "url": "https://github.com/navikt/sosialhjelp-modia-api",
+      "pushedAt": "2026-09-14T06:47:09Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "knaudit",
-      "url": "https://github.com/navikt/knaudit",
-      "pushedAt": "2026-09-14T03:23:23Z",
-      "language": "Go",
-      "languageColor": "#00add8"
+      "name": "sosialhjelp-innsyn-api",
+      "url": "https://github.com/navikt/sosialhjelp-innsyn-api",
+      "pushedAt": "2026-09-14T06:46:37Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
-      "name": "dbt-docs",
-      "url": "https://github.com/navikt/dbt-docs",
-      "pushedAt": "2026-09-14T03:18:03Z",
-      "language": "CSS",
-      "languageColor": "#663399"
+      "name": "sosialhjelp-soknad-api",
+      "url": "https://github.com/navikt/sosialhjelp-soknad-api",
+      "pushedAt": "2026-09-14T06:45:58Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
-      "name": "lumi",
-      "url": "https://github.com/navikt/lumi",
-      "pushedAt": "2026-09-14T03:11:49Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "historisk-superhelt",
+      "url": "https://github.com/navikt/historisk-superhelt",
+      "pushedAt": "2026-09-14T06:45:08Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "familie-tilbake",
+      "url": "https://github.com/navikt/familie-tilbake",
+      "pushedAt": "2026-09-14T06:44:55Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     }
   ],
   "languages": {
@@ -208,12 +208,12 @@
     "entries": [
       {
         "name": "Kotlin",
-        "count": 699,
+        "count": 700,
         "color": "#a97bff"
       },
       {
         "name": "TypeScript",
-        "count": 340,
+        "count": 339,
         "color": "#3178c6"
       },
       {
@@ -1705,7 +1705,7 @@
       },
       {
         "date": "2026-09-13",
-        "count": 134
+        "count": 139
       }
     ]
   }
