@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-12T03:37:46.832Z",
+  "syncedAt": "2026-09-14T03:41:01.629Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -15,7 +15,7 @@
       "stars": 185,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-09-11T19:17:27Z",
+      "pushedAt": "2026-09-13T05:03:45Z",
       "isArchived": false
     },
     "nais/naiserator": {
@@ -36,7 +36,7 @@
       "stars": 116,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-11T08:11:54Z",
+      "pushedAt": "2026-09-13T13:54:17Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -92,7 +92,7 @@
       "stars": 54,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-11T09:49:45Z",
+      "pushedAt": "2026-09-13T20:18:12Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -153,58 +153,58 @@
     }
   },
   "stats": {
-    "publicRepos": 3148,
-    "commitsLast7Days": 5299,
-    "prsLast30Days": 17009,
-    "npmDownloadsLastMonth": 122690,
-    "fnrDownloadsLastMonth": 36185
+    "publicRepos": 3151,
+    "commitsLast7Days": 5275,
+    "prsLast30Days": 16141,
+    "npmDownloadsLastMonth": 121874,
+    "fnrDownloadsLastMonth": 36575
   },
   "recentlyUpdated": [
     {
-      "name": "mulighetsrommet",
-      "url": "https://github.com/navikt/mulighetsrommet",
-      "pushedAt": "2026-09-12T00:22:59Z",
+      "name": "esyfo-observability",
+      "url": "https://github.com/navikt/esyfo-observability",
+      "pushedAt": "2026-09-14T03:36:31Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
+    },
+    {
+      "name": "apt",
+      "url": "https://github.com/navikt/apt",
+      "pushedAt": "2026-09-14T03:34:10Z",
+      "language": null,
+      "languageColor": null
+    },
+    {
+      "name": "helved-utbetaling",
+      "url": "https://github.com/navikt/helved-utbetaling",
+      "pushedAt": "2026-09-14T03:26:46Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "dp-brukerdialog-frontend",
-      "url": "https://github.com/navikt/dp-brukerdialog-frontend",
-      "pushedAt": "2026-09-12T00:09:58Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "knaudit",
+      "url": "https://github.com/navikt/knaudit",
+      "pushedAt": "2026-09-14T03:23:23Z",
+      "language": "Go",
+      "languageColor": "#00add8"
     },
     {
-      "name": "esyfo-microfrontends",
-      "url": "https://github.com/navikt/esyfo-microfrontends",
-      "pushedAt": "2026-09-11T23:25:45Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "dbt-docs",
+      "url": "https://github.com/navikt/dbt-docs",
+      "pushedAt": "2026-09-14T03:18:03Z",
+      "language": "CSS",
+      "languageColor": "#663399"
     },
     {
-      "name": "aksel",
-      "url": "https://github.com/navikt/aksel",
-      "pushedAt": "2026-09-11T19:17:27Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "helse-sp-forsikring",
-      "url": "https://github.com/navikt/helse-sp-forsikring",
-      "pushedAt": "2026-09-11T18:19:09Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "lydia-radgiver-frontend",
-      "url": "https://github.com/navikt/lydia-radgiver-frontend",
-      "pushedAt": "2026-09-11T17:06:25Z",
+      "name": "lumi",
+      "url": "https://github.com/navikt/lumi",
+      "pushedAt": "2026-09-14T03:11:49Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     }
   ],
   "languages": {
-    "totalRepos": 1788,
+    "totalRepos": 1791,
     "entries": [
       {
         "name": "Kotlin",
@@ -213,7 +213,7 @@
       },
       {
         "name": "TypeScript",
-        "count": 338,
+        "count": 340,
         "color": "#3178c6"
       },
       {
@@ -243,7 +243,7 @@
       },
       {
         "name": "Annet",
-        "count": 361,
+        "count": 362,
         "color": null
       }
     ]
@@ -251,14 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-09-13",
-        "count": 61
-      },
-      {
-        "date": "2025-09-14",
-        "count": 33
-      },
       {
         "date": "2025-09-15",
         "count": 1102
@@ -1706,6 +1698,14 @@
       {
         "date": "2026-09-11",
         "count": 769
+      },
+      {
+        "date": "2026-09-12",
+        "count": 35
+      },
+      {
+        "date": "2026-09-13",
+        "count": 134
       }
     ]
   }
