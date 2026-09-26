@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-26T03:38:42.642Z",
+  "syncedAt": "2026-09-26T14:23:21.986Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -36,7 +36,7 @@
       "stars": 123,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-25T15:42:39Z",
+      "pushedAt": "2026-09-26T14:02:18Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -92,7 +92,7 @@
       "stars": 54,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-25T21:19:49Z",
+      "pushedAt": "2026-09-26T14:22:32Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -154,53 +154,53 @@
   },
   "stats": {
     "publicRepos": 3162,
-    "commitsLast7Days": 6052,
-    "prsLast30Days": 18240,
+    "commitsLast7Days": 6025,
+    "prsLast30Days": 17727,
     "npmDownloadsLastMonth": 95441,
     "fnrDownloadsLastMonth": 36201
   },
   "recentlyUpdated": [
     {
-      "name": "apt",
-      "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-09-26T03:31:19Z",
-      "language": null,
+      "name": "offentlig",
+      "url": "https://github.com/navikt/offentlig",
+      "pushedAt": "2026-09-26T14:23:04Z",
+      "language": "Astro",
       "languageColor": null
     },
     {
-      "name": "dp-regel-api",
-      "url": "https://github.com/navikt/dp-regel-api",
-      "pushedAt": "2026-09-26T01:26:47Z",
+      "name": "copilot",
+      "url": "https://github.com/navikt/copilot",
+      "pushedAt": "2026-09-26T14:22:32Z",
+      "language": "Go",
+      "languageColor": "#00add8"
+    },
+    {
+      "name": "amt-altinn-acl",
+      "url": "https://github.com/navikt/amt-altinn-acl",
+      "pushedAt": "2026-09-26T13:35:02Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "innblikk-frontend",
-      "url": "https://github.com/navikt/innblikk-frontend",
-      "pushedAt": "2026-09-26T00:16:27Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "mlx-workspace",
+      "url": "https://github.com/navikt/mlx-workspace",
+      "pushedAt": "2026-09-26T13:33:01Z",
+      "language": "Python",
+      "languageColor": "#3572a5"
     },
     {
-      "name": "esyfo-microfrontends",
-      "url": "https://github.com/navikt/esyfo-microfrontends",
-      "pushedAt": "2026-09-25T23:25:20Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "homebrew-tap",
+      "url": "https://github.com/navikt/homebrew-tap",
+      "pushedAt": "2026-09-26T13:31:00Z",
+      "language": "Ruby",
+      "languageColor": "#701516"
     },
     {
-      "name": "sokos-spk-mottak",
-      "url": "https://github.com/navikt/sokos-spk-mottak",
-      "pushedAt": "2026-09-25T23:24:14Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "aksel",
-      "url": "https://github.com/navikt/aksel",
-      "pushedAt": "2026-09-25T21:37:16Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "apt",
+      "url": "https://github.com/navikt/apt",
+      "pushedAt": "2026-09-26T13:24:26Z",
+      "language": null,
+      "languageColor": null
     }
   ],
   "languages": {
@@ -1705,7 +1705,7 @@
       },
       {
         "date": "2026-09-25",
-        "count": 935
+        "count": 939
       }
     ]
   }
