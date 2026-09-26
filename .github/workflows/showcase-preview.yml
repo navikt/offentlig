@@ -85,8 +85,11 @@ jobs:
               --body "Automatisk oppdatering av \`site/src/data/generated.json\`."
           fi
 
-          gh pr merge "$BRANCH" --repo "$GITHUB_REPOSITORY" --auto --squash
-
+          if ! gh pr merge "$BRANCH" --repo "$GITHUB_REPOSITORY" --auto --squash; then
+            echo "Auto-merge er ikke tilgjengelig; prøver vanlig squash-merge."
+            gh pr merge "$BRANCH" --repo "$GITHUB_REPOSITORY" --squash
+          fi
+          
       - name: Bygg
         if: always() && steps.deps.outcome == 'success'
         working-directory: site
