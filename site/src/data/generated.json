@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-30T03:42:52.737Z",
+  "syncedAt": "2026-10-01T03:46:27.949Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -15,7 +15,7 @@
       "stars": 186,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-09-29T16:54:28Z",
+      "pushedAt": "2026-09-30T17:15:46Z",
       "isArchived": false
     },
     "nais/naiserator": {
@@ -29,21 +29,21 @@
       "stars": 6,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-09-28T13:35:07Z",
+      "pushedAt": "2026-09-30T12:51:41Z",
       "isArchived": false
     },
     "navikt/cplt": {
-      "stars": 123,
+      "stars": 124,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-29T23:56:19Z",
+      "pushedAt": "2026-09-30T22:02:28Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
       "stars": 1,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-09-29T17:15:36Z",
+      "pushedAt": "2026-09-30T06:13:20Z",
       "isArchived": false
     },
     "nais/wonderwall": {
@@ -92,7 +92,7 @@
       "stars": 54,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-29T23:09:25Z",
+      "pushedAt": "2026-09-30T21:33:46Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -141,7 +141,7 @@
       "stars": 5,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-28T20:03:01Z",
+      "pushedAt": "2026-09-30T20:14:48Z",
       "isArchived": false
     },
     "nais/bqrator": {
@@ -153,54 +153,54 @@
     }
   },
   "stats": {
-    "publicRepos": 3162,
-    "commitsLast7Days": 6547,
-    "prsLast30Days": 18988,
-    "npmDownloadsLastMonth": 107777,
-    "fnrDownloadsLastMonth": 36599
+    "publicRepos": 3163,
+    "commitsLast7Days": 6577,
+    "prsLast30Days": 18411,
+    "npmDownloadsLastMonth": 112276,
+    "fnrDownloadsLastMonth": 38939
   },
   "recentlyUpdated": [
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-09-30T03:36:23Z",
+      "pushedAt": "2026-10-01T03:41:31Z",
       "language": null,
       "languageColor": null
     },
     {
       "name": "helse-sparkelapper",
       "url": "https://github.com/navikt/helse-sparkelapper",
-      "pushedAt": "2026-09-30T02:28:02Z",
+      "pushedAt": "2026-10-01T02:32:37Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "sosialhjelp-modia-api",
+      "url": "https://github.com/navikt/sosialhjelp-modia-api",
+      "pushedAt": "2026-10-01T02:16:33Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "kabal-innstillinger",
+      "url": "https://github.com/navikt/kabal-innstillinger",
+      "pushedAt": "2026-10-01T01:04:23Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
       "name": "helse-spenn",
       "url": "https://github.com/navikt/helse-spenn",
-      "pushedAt": "2026-09-30T00:33:11Z",
+      "pushedAt": "2026-10-01T00:34:21Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "homebrew-tap",
-      "url": "https://github.com/navikt/homebrew-tap",
-      "pushedAt": "2026-09-30T00:28:15Z",
-      "language": "Ruby",
-      "languageColor": "#701516"
-    },
-    {
-      "name": "security-playbook",
-      "url": "https://github.com/navikt/security-playbook",
-      "pushedAt": "2026-09-30T00:06:51Z",
-      "language": "JavaScript",
-      "languageColor": "#f1e05a"
-    },
-    {
-      "name": "cplt",
-      "url": "https://github.com/navikt/cplt",
-      "pushedAt": "2026-09-29T23:56:19Z",
-      "language": "Rust",
-      "languageColor": "#dea584"
+      "name": "kaka-api",
+      "url": "https://github.com/navikt/kaka-api",
+      "pushedAt": "2026-10-01T00:30:55Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     }
   ],
   "languages": {
@@ -238,12 +238,12 @@
       },
       {
         "name": "Go",
-        "count": 42,
+        "count": 41,
         "color": "#00add8"
       },
       {
         "name": "Annet",
-        "count": 360,
+        "count": 361,
         "color": null
       }
     ]
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-10-01",
-        "count": 887
-      },
       {
         "date": "2025-10-02",
         "count": 1101
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-09-29",
-        "count": 1256
+        "count": 1320
+      },
+      {
+        "date": "2026-09-30",
+        "count": 1107
       }
     ]
   }
