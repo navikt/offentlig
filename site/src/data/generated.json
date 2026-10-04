@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-03T03:55:07.393Z",
+  "syncedAt": "2026-10-04T05:04:22.411Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -29,7 +29,7 @@
       "stars": 6,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-02T15:26:00Z",
+      "pushedAt": "2026-10-03T07:18:38Z",
       "isArchived": false
     },
     "navikt/cplt": {
@@ -92,7 +92,7 @@
       "stars": 54,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-02T20:01:06Z",
+      "pushedAt": "2026-10-03T17:09:40Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -154,8 +154,8 @@
   },
   "stats": {
     "publicRepos": 3160,
-    "commitsLast7Days": 6607,
-    "prsLast30Days": 18623,
+    "commitsLast7Days": 6672,
+    "prsLast30Days": 18134,
     "npmDownloadsLastMonth": 115253,
     "fnrDownloadsLastMonth": 39469
   },
@@ -163,42 +163,42 @@
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-10-03T03:43:54Z",
+      "pushedAt": "2026-10-04T04:36:42Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "crm-arbeidsforhold",
-      "url": "https://github.com/navikt/crm-arbeidsforhold",
-      "pushedAt": "2026-10-03T01:11:51Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "dp-aktivitetslogg-frontend",
-      "url": "https://github.com/navikt/dp-aktivitetslogg-frontend",
-      "pushedAt": "2026-10-03T00:24:23Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "esyfo-microfrontends",
-      "url": "https://github.com/navikt/esyfo-microfrontends",
-      "pushedAt": "2026-10-02T23:30:20Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "helse-sprute",
-      "url": "https://github.com/navikt/helse-sprute",
-      "pushedAt": "2026-10-02T22:17:01Z",
+      "name": "dp-innsyn",
+      "url": "https://github.com/navikt/dp-innsyn",
+      "pushedAt": "2026-10-04T01:21:23Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "ekspertbistand",
-      "url": "https://github.com/navikt/ekspertbistand",
-      "pushedAt": "2026-10-02T21:44:52Z",
+      "name": "dp-speider",
+      "url": "https://github.com/navikt/dp-speider",
+      "pushedAt": "2026-10-04T01:05:12Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "dp-behov-soknad-pdf",
+      "url": "https://github.com/navikt/dp-behov-soknad-pdf",
+      "pushedAt": "2026-10-04T00:58:57Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "security-playbook",
+      "url": "https://github.com/navikt/security-playbook",
+      "pushedAt": "2026-10-04T00:51:04Z",
+      "language": "JavaScript",
+      "languageColor": "#f1e05a"
+    },
+    {
+      "name": "amt-person-service",
+      "url": "https://github.com/navikt/amt-person-service",
+      "pushedAt": "2026-10-03T23:38:31Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     }
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-10-04",
-        "count": 76
-      },
       {
         "date": "2025-10-05",
         "count": 51
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-10-02",
-        "count": 1093
+        "count": 1096
+      },
+      {
+        "date": "2026-10-03",
+        "count": 196
       }
     ]
   }
