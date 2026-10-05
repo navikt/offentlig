@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-04T05:04:22.411Z",
+  "syncedAt": "2026-10-05T03:50:08.752Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -22,7 +22,7 @@
       "stars": 49,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-28T03:42:29Z",
+      "pushedAt": "2026-10-05T03:43:45Z",
       "isArchived": false
     },
     "navikt/helse-spleis": {
@@ -36,7 +36,7 @@
       "stars": 126,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-10-02T15:48:14Z",
+      "pushedAt": "2026-10-04T20:38:08Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -92,7 +92,7 @@
       "stars": 54,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-03T17:09:40Z",
+      "pushedAt": "2026-10-04T06:49:10Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -154,51 +154,51 @@
   },
   "stats": {
     "publicRepos": 3160,
-    "commitsLast7Days": 6672,
-    "prsLast30Days": 18134,
-    "npmDownloadsLastMonth": 115253,
-    "fnrDownloadsLastMonth": 39469
+    "commitsLast7Days": 6606,
+    "prsLast30Days": 17701,
+    "npmDownloadsLastMonth": 116703,
+    "fnrDownloadsLastMonth": 39898
   },
   "recentlyUpdated": [
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-10-04T04:36:42Z",
+      "pushedAt": "2026-10-05T03:43:52Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "dp-innsyn",
-      "url": "https://github.com/navikt/dp-innsyn",
-      "pushedAt": "2026-10-04T01:21:23Z",
+      "name": "helved-utbetaling",
+      "url": "https://github.com/navikt/helved-utbetaling",
+      "pushedAt": "2026-10-05T03:26:49Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "dp-speider",
-      "url": "https://github.com/navikt/dp-speider",
-      "pushedAt": "2026-10-04T01:05:12Z",
+      "name": "dbt-docs",
+      "url": "https://github.com/navikt/dbt-docs",
+      "pushedAt": "2026-10-05T03:20:13Z",
+      "language": "CSS",
+      "languageColor": "#663399"
+    },
+    {
+      "name": "sykepengesoknad-backend",
+      "url": "https://github.com/navikt/sykepengesoknad-backend",
+      "pushedAt": "2026-10-05T03:03:04Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "dp-behov-soknad-pdf",
-      "url": "https://github.com/navikt/dp-behov-soknad-pdf",
-      "pushedAt": "2026-10-04T00:58:57Z",
+      "name": "helse-spedisjon",
+      "url": "https://github.com/navikt/helse-spedisjon",
+      "pushedAt": "2026-10-05T02:40:23Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "security-playbook",
-      "url": "https://github.com/navikt/security-playbook",
-      "pushedAt": "2026-10-04T00:51:04Z",
-      "language": "JavaScript",
-      "languageColor": "#f1e05a"
-    },
-    {
-      "name": "amt-person-service",
-      "url": "https://github.com/navikt/amt-person-service",
-      "pushedAt": "2026-10-03T23:38:31Z",
+      "name": "helse-sparkelapper",
+      "url": "https://github.com/navikt/helse-sparkelapper",
+      "pushedAt": "2026-10-05T02:29:30Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     }
@@ -213,7 +213,7 @@
       },
       {
         "name": "TypeScript",
-        "count": 340,
+        "count": 339,
         "color": "#3178c6"
       },
       {
@@ -243,7 +243,7 @@
       },
       {
         "name": "Annet",
-        "count": 360,
+        "count": 361,
         "color": null
       }
     ]
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-10-05",
-        "count": 51
-      },
       {
         "date": "2025-10-06",
         "count": 1035
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-10-03",
-        "count": 196
+        "count": 200
+      },
+      {
+        "date": "2026-10-04",
+        "count": 121
       }
     ]
   }
