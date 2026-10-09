@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-08T03:46:07.993Z",
+  "syncedAt": "2026-10-09T03:46:27.316Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -8,35 +8,35 @@
       "stars": 432,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-05T08:56:12Z",
+      "pushedAt": "2026-10-08T18:36:31Z",
       "isArchived": false
     },
     "navikt/aksel": {
       "stars": 186,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-10-07T13:02:09Z",
+      "pushedAt": "2026-10-08T19:15:39Z",
       "isArchived": false
     },
     "nais/naiserator": {
       "stars": 49,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-05T03:43:45Z",
+      "pushedAt": "2026-10-08T21:47:14Z",
       "isArchived": false
     },
     "navikt/helse-spleis": {
       "stars": 6,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-05T14:30:51Z",
+      "pushedAt": "2026-10-08T08:26:35Z",
       "isArchived": false
     },
     "navikt/cplt": {
-      "stars": 128,
+      "stars": 131,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-10-07T21:16:15Z",
+      "pushedAt": "2026-10-08T22:46:51Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -92,14 +92,14 @@
       "stars": 54,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-07T21:37:44Z",
+      "pushedAt": "2026-10-08T23:05:47Z",
       "isArchived": false
     },
     "navikt/token-support": {
       "stars": 19,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-05T14:53:16Z",
+      "pushedAt": "2026-10-08T14:45:54Z",
       "isArchived": false
     },
     "navikt/fnrvalidator": {
@@ -141,7 +141,7 @@
       "stars": 5,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-06T20:12:58Z",
+      "pushedAt": "2026-10-08T20:04:03Z",
       "isArchived": false
     },
     "nais/bqrator": {
@@ -153,62 +153,62 @@
     }
   },
   "stats": {
-    "publicRepos": 3170,
-    "commitsLast7Days": 6781,
-    "prsLast30Days": 19481,
-    "npmDownloadsLastMonth": 114299,
-    "fnrDownloadsLastMonth": 38236
+    "publicRepos": 3176,
+    "commitsLast7Days": 6966,
+    "prsLast30Days": 19657,
+    "npmDownloadsLastMonth": 123465,
+    "fnrDownloadsLastMonth": 41615
   },
   "recentlyUpdated": [
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-10-08T03:38:27Z",
+      "pushedAt": "2026-10-09T03:40:02Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "amt-tiltaksarrangor-flate",
-      "url": "https://github.com/navikt/amt-tiltaksarrangor-flate",
-      "pushedAt": "2026-10-08T03:08:19Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "helse-spedisjon",
+      "url": "https://github.com/navikt/helse-spedisjon",
+      "pushedAt": "2026-10-09T02:38:55Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "helse-sparkelapper",
+      "url": "https://github.com/navikt/helse-sparkelapper",
+      "pushedAt": "2026-10-09T02:29:29Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
       "name": "dp-innsyn",
       "url": "https://github.com/navikt/dp-innsyn",
-      "pushedAt": "2026-10-08T00:49:03Z",
+      "pushedAt": "2026-10-09T00:50:39Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
       "name": "dp-speider",
       "url": "https://github.com/navikt/dp-speider",
-      "pushedAt": "2026-10-08T00:25:07Z",
+      "pushedAt": "2026-10-09T00:26:59Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
       "name": "dp-behov-soknad-pdf",
       "url": "https://github.com/navikt/dp-behov-soknad-pdf",
-      "pushedAt": "2026-10-08T00:16:23Z",
+      "pushedAt": "2026-10-09T00:17:41Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
-    },
-    {
-      "name": "security-playbook",
-      "url": "https://github.com/navikt/security-playbook",
-      "pushedAt": "2026-10-08T00:06:31Z",
-      "language": "JavaScript",
-      "languageColor": "#f1e05a"
     }
   ],
   "languages": {
-    "totalRepos": 1792,
+    "totalRepos": 1798,
     "entries": [
       {
         "name": "Kotlin",
-        "count": 700,
+        "count": 706,
         "color": "#a97bff"
       },
       {
@@ -238,12 +238,12 @@
       },
       {
         "name": "Go",
-        "count": 41,
+        "count": 42,
         "color": "#00add8"
       },
       {
         "name": "Annet",
-        "count": 361,
+        "count": 360,
         "color": null
       }
     ]
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-10-09",
-        "count": 875
-      },
       {
         "date": "2025-10-10",
         "count": 767
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-10-07",
-        "count": 1025
+        "count": 1057
+      },
+      {
+        "date": "2026-10-08",
+        "count": 1245
       }
     ]
   }
