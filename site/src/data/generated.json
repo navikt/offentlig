@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-10T03:44:48.714Z",
+  "syncedAt": "2026-10-11T03:47:15.888Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -92,7 +92,7 @@
       "stars": 54,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-09T21:06:49Z",
+      "pushedAt": "2026-10-11T00:01:51Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -154,53 +154,53 @@
   },
   "stats": {
     "publicRepos": 3178,
-    "commitsLast7Days": 7213,
-    "prsLast30Days": 19764,
-    "npmDownloadsLastMonth": 129998,
-    "fnrDownloadsLastMonth": 43636
+    "commitsLast7Days": 7183,
+    "prsLast30Days": 19093,
+    "npmDownloadsLastMonth": 132627,
+    "fnrDownloadsLastMonth": 44496
   },
   "recentlyUpdated": [
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-10-10T03:38:02Z",
+      "pushedAt": "2026-10-11T03:41:24Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "kabal",
-      "url": "https://github.com/navikt/kabal",
-      "pushedAt": "2026-10-10T00:41:32Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "kabal-innstillinger",
+      "url": "https://github.com/navikt/kabal-innstillinger",
+      "pushedAt": "2026-10-11T01:01:42Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
-      "name": "esyfo-microfrontends",
-      "url": "https://github.com/navikt/esyfo-microfrontends",
-      "pushedAt": "2026-10-10T00:03:32Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "kabal-file-api",
+      "url": "https://github.com/navikt/kabal-file-api",
+      "pushedAt": "2026-10-11T00:58:23Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
-      "name": "mlx-workspace",
-      "url": "https://github.com/navikt/mlx-workspace",
-      "pushedAt": "2026-10-09T21:13:07Z",
-      "language": "Python",
-      "languageColor": "#3572a5"
+      "name": "dp-innsyn",
+      "url": "https://github.com/navikt/dp-innsyn",
+      "pushedAt": "2026-10-11T00:53:57Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
-      "name": "copilot",
-      "url": "https://github.com/navikt/copilot",
-      "pushedAt": "2026-10-09T21:06:49Z",
-      "language": "Go",
-      "languageColor": "#00add8"
+      "name": "klage-fss-proxy",
+      "url": "https://github.com/navikt/klage-fss-proxy",
+      "pushedAt": "2026-10-11T00:53:35Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
-      "name": "reops-slack-bots",
-      "url": "https://github.com/navikt/reops-slack-bots",
-      "pushedAt": "2026-10-09T19:43:43Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "kaptein-api",
+      "url": "https://github.com/navikt/kaptein-api",
+      "pushedAt": "2026-10-11T00:50:36Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     }
   ],
   "languages": {
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-10-11",
-        "count": 83
-      },
       {
         "date": "2025-10-12",
         "count": 77
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-10-09",
-        "count": 1291
+        "count": 1298
+      },
+      {
+        "date": "2026-10-10",
+        "count": 170
       }
     ]
   }
