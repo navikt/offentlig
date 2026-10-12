@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-11T03:47:15.888Z",
+  "syncedAt": "2026-10-12T03:56:11.372Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -8,7 +8,7 @@
       "stars": 434,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-08T18:36:31Z",
+      "pushedAt": "2026-10-11T19:55:00Z",
       "isArchived": false
     },
     "navikt/aksel": {
@@ -92,7 +92,7 @@
       "stars": 54,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-11T00:01:51Z",
+      "pushedAt": "2026-10-11T23:23:30Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -154,53 +154,53 @@
   },
   "stats": {
     "publicRepos": 3178,
-    "commitsLast7Days": 7183,
-    "prsLast30Days": 19093,
-    "npmDownloadsLastMonth": 132627,
-    "fnrDownloadsLastMonth": 44496
+    "commitsLast7Days": 7201,
+    "prsLast30Days": 18755,
+    "npmDownloadsLastMonth": 134091,
+    "fnrDownloadsLastMonth": 45871
   },
   "recentlyUpdated": [
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-10-11T03:41:24Z",
+      "pushedAt": "2026-10-12T03:48:11Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "kabal-innstillinger",
-      "url": "https://github.com/navikt/kabal-innstillinger",
-      "pushedAt": "2026-10-11T01:01:42Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "kabal-file-api",
-      "url": "https://github.com/navikt/kabal-file-api",
-      "pushedAt": "2026-10-11T00:58:23Z",
+      "name": "helse-spenn",
+      "url": "https://github.com/navikt/helse-spenn",
+      "pushedAt": "2026-10-12T01:48:35Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
       "name": "dp-innsyn",
       "url": "https://github.com/navikt/dp-innsyn",
-      "pushedAt": "2026-10-11T00:53:57Z",
+      "pushedAt": "2026-10-12T00:54:55Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "klage-fss-proxy",
-      "url": "https://github.com/navikt/klage-fss-proxy",
-      "pushedAt": "2026-10-11T00:53:35Z",
+      "name": "dp-speider",
+      "url": "https://github.com/navikt/dp-speider",
+      "pushedAt": "2026-10-12T00:29:24Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "kaptein-api",
-      "url": "https://github.com/navikt/kaptein-api",
-      "pushedAt": "2026-10-11T00:50:36Z",
+      "name": "dp-behov-soknad-pdf",
+      "url": "https://github.com/navikt/dp-behov-soknad-pdf",
+      "pushedAt": "2026-10-12T00:19:53Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
+    },
+    {
+      "name": "copilot",
+      "url": "https://github.com/navikt/copilot",
+      "pushedAt": "2026-10-11T23:23:30Z",
+      "language": "Go",
+      "languageColor": "#00add8"
     }
   ],
   "languages": {
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-10-12",
-        "count": 77
-      },
       {
         "date": "2025-10-13",
         "count": 1012
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-10-10",
-        "count": 170
+        "count": 174
+      },
+      {
+        "date": "2026-10-11",
+        "count": 160
       }
     ]
   }
