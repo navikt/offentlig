@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-13T03:50:37.445Z",
+  "syncedAt": "2026-10-14T03:40:39.238Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -8,35 +8,35 @@
       "stars": 434,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-13T01:29:36Z",
+      "pushedAt": "2026-10-13T21:22:34Z",
       "isArchived": false
     },
     "navikt/aksel": {
       "stars": 186,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-10-12T16:49:06Z",
+      "pushedAt": "2026-10-13T12:27:16Z",
       "isArchived": false
     },
     "nais/naiserator": {
       "stars": 49,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-12T09:37:41Z",
+      "pushedAt": "2026-10-13T14:31:16Z",
       "isArchived": false
     },
     "navikt/helse-spleis": {
       "stars": 6,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-12T13:41:47Z",
+      "pushedAt": "2026-10-13T12:44:46Z",
       "isArchived": false
     },
     "navikt/cplt": {
       "stars": 131,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-10-12T20:50:50Z",
+      "pushedAt": "2026-10-13T12:05:10Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -50,7 +50,7 @@
       "stars": 28,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-12T20:58:42Z",
+      "pushedAt": "2026-10-13T06:28:36Z",
       "isArchived": false
     },
     "navikt/rapids-and-rivers": {
@@ -92,14 +92,14 @@
       "stars": 54,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-13T02:47:57Z",
+      "pushedAt": "2026-10-13T22:48:07Z",
       "isArchived": false
     },
     "navikt/token-support": {
       "stars": 19,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-08T14:45:54Z",
+      "pushedAt": "2026-10-13T16:17:09Z",
       "isArchived": false
     },
     "navikt/fnrvalidator": {
@@ -127,98 +127,98 @@
       "stars": 3,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-12T15:11:46Z",
+      "pushedAt": "2026-10-13T10:35:10Z",
       "isArchived": false
     },
     "nais/unleasherator": {
       "stars": 13,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-12T21:22:39Z",
+      "pushedAt": "2026-10-13T21:45:23Z",
       "isArchived": false
     },
     "nais/kafkarator": {
       "stars": 5,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-08T20:04:03Z",
+      "pushedAt": "2026-10-14T02:40:50Z",
       "isArchived": false
     },
     "nais/bqrator": {
       "stars": 1,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-28T17:43:42Z",
+      "pushedAt": "2026-10-13T22:24:50Z",
       "isArchived": false
     }
   },
   "stats": {
-    "publicRepos": 3179,
-    "commitsLast7Days": 7100,
-    "prsLast30Days": 19950,
-    "npmDownloadsLastMonth": 136230,
-    "fnrDownloadsLastMonth": 48279
+    "publicRepos": 3180,
+    "commitsLast7Days": 7163,
+    "prsLast30Days": 20707,
+    "npmDownloadsLastMonth": 145161,
+    "fnrDownloadsLastMonth": 52906
   },
   "recentlyUpdated": [
     {
-      "name": "tbd-libs",
-      "url": "https://github.com/navikt/tbd-libs",
-      "pushedAt": "2026-10-13T03:48:08Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-10-13T03:42:59Z",
+      "pushedAt": "2026-10-14T03:33:59Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "copilot",
-      "url": "https://github.com/navikt/copilot",
-      "pushedAt": "2026-10-13T02:47:57Z",
-      "language": "Go",
-      "languageColor": "#00add8"
-    },
-    {
-      "name": "helse-risk-mock",
-      "url": "https://github.com/navikt/helse-risk-mock",
-      "pushedAt": "2026-10-13T01:25:07Z",
+      "name": "helse-spock",
+      "url": "https://github.com/navikt/helse-spock",
+      "pushedAt": "2026-10-14T02:38:29Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "nada-quarto",
-      "url": "https://github.com/navikt/nada-quarto",
-      "pushedAt": "2026-10-13T00:51:58Z",
-      "language": "Python",
-      "languageColor": "#3572a5"
-    },
-    {
-      "name": "sykepenger-libs",
-      "url": "https://github.com/navikt/sykepenger-libs",
-      "pushedAt": "2026-10-13T00:50:53Z",
+      "name": "entra-proxy",
+      "url": "https://github.com/navikt/entra-proxy",
+      "pushedAt": "2026-10-14T02:13:07Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
+    },
+    {
+      "name": "sparkiv-subsumsjon",
+      "url": "https://github.com/navikt/sparkiv-subsumsjon",
+      "pushedAt": "2026-10-14T00:53:59Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "helse-spredning",
+      "url": "https://github.com/navikt/helse-spredning",
+      "pushedAt": "2026-10-14T00:16:23Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "security-playbook",
+      "url": "https://github.com/navikt/security-playbook",
+      "pushedAt": "2026-10-14T00:08:34Z",
+      "language": "JavaScript",
+      "languageColor": "#f1e05a"
     }
   ],
   "languages": {
-    "totalRepos": 1800,
+    "totalRepos": 1799,
     "entries": [
       {
         "name": "Kotlin",
-        "count": 707,
+        "count": 705,
         "color": "#a97bff"
       },
       {
         "name": "TypeScript",
-        "count": 336,
+        "count": 337,
         "color": "#3178c6"
       },
       {
         "name": "Java",
-        "count": 152,
+        "count": 153,
         "color": "#b07219"
       },
       {
@@ -243,7 +243,7 @@
       },
       {
         "name": "Annet",
-        "count": 362,
+        "count": 361,
         "color": null
       }
     ]
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-10-14",
-        "count": 865
-      },
       {
         "date": "2025-10-15",
         "count": 793
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-10-12",
-        "count": 1401
+        "count": 1493
+      },
+      {
+        "date": "2026-10-13",
+        "count": 1496
       }
     ]
   }
