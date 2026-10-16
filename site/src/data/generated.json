@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-15T03:40:23.512Z",
+  "syncedAt": "2026-10-16T03:40:51.915Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -8,14 +8,14 @@
       "stars": 434,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-14T12:42:37Z",
+      "pushedAt": "2026-10-15T22:43:27Z",
       "isArchived": false
     },
     "navikt/aksel": {
       "stars": 186,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-10-14T16:00:56Z",
+      "pushedAt": "2026-10-15T13:20:41Z",
       "isArchived": false
     },
     "nais/naiserator": {
@@ -29,21 +29,21 @@
       "stars": 6,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-14T14:02:40Z",
+      "pushedAt": "2026-10-15T13:35:10Z",
       "isArchived": false
     },
     "navikt/cplt": {
       "stars": 131,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-10-14T20:54:44Z",
+      "pushedAt": "2026-10-15T18:34:33Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
       "stars": 1,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-10-09T13:58:36Z",
+      "pushedAt": "2026-10-15T14:22:31Z",
       "isArchived": false
     },
     "nais/wonderwall": {
@@ -92,7 +92,7 @@
       "stars": 55,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-14T22:12:56Z",
+      "pushedAt": "2026-10-15T22:34:45Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -153,9 +153,9 @@
     }
   },
   "stats": {
-    "publicRepos": 3182,
-    "commitsLast7Days": 7372,
-    "prsLast30Days": 20497,
+    "publicRepos": 3183,
+    "commitsLast7Days": 7561,
+    "prsLast30Days": 20740,
     "npmDownloadsLastMonth": 145161,
     "fnrDownloadsLastMonth": 52906
   },
@@ -163,42 +163,42 @@
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-10-15T03:33:37Z",
+      "pushedAt": "2026-10-16T03:34:21Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "pam-stillingsok",
-      "url": "https://github.com/navikt/pam-stillingsok",
-      "pushedAt": "2026-10-15T03:16:55Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "modiapersonoversikt",
-      "url": "https://github.com/navikt/modiapersonoversikt",
-      "pushedAt": "2026-10-15T03:11:02Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "amt-tiltaksarrangor-flate",
-      "url": "https://github.com/navikt/amt-tiltaksarrangor-flate",
-      "pushedAt": "2026-10-15T03:04:22Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
       "name": "helse-spedisjon",
       "url": "https://github.com/navikt/helse-spedisjon",
-      "pushedAt": "2026-10-15T02:39:09Z",
+      "pushedAt": "2026-10-16T02:39:25Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
       "name": "helse-spenn",
       "url": "https://github.com/navikt/helse-spenn",
-      "pushedAt": "2026-10-15T00:29:10Z",
+      "pushedAt": "2026-10-16T00:28:25Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "dp-speider",
+      "url": "https://github.com/navikt/dp-speider",
+      "pushedAt": "2026-10-16T00:20:53Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "bidrag-reisekostnad-ui",
+      "url": "https://github.com/navikt/bidrag-reisekostnad-ui",
+      "pushedAt": "2026-10-15T23:14:29Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
+    },
+    {
+      "name": "mock-oauth2-server",
+      "url": "https://github.com/navikt/mock-oauth2-server",
+      "pushedAt": "2026-10-15T22:43:27Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     }
@@ -218,7 +218,7 @@
       },
       {
         "name": "Java",
-        "count": 153,
+        "count": 152,
         "color": "#b07219"
       },
       {
@@ -233,7 +233,7 @@
       },
       {
         "name": "Shell",
-        "count": 48,
+        "count": 49,
         "color": "#89e051"
       },
       {
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-10-16",
-        "count": 871
-      },
       {
         "date": "2025-10-17",
         "count": 844
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-10-14",
-        "count": 1211
+        "count": 1283
+      },
+      {
+        "date": "2026-10-15",
+        "count": 1455
       }
     ]
   }
