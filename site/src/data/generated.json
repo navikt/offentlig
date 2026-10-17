@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-16T03:40:51.915Z",
+  "syncedAt": "2026-10-17T03:39:04.078Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -8,14 +8,14 @@
       "stars": 434,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-15T22:43:27Z",
+      "pushedAt": "2026-10-16T21:28:40Z",
       "isArchived": false
     },
     "navikt/aksel": {
       "stars": 186,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-10-15T13:20:41Z",
+      "pushedAt": "2026-10-16T08:34:52Z",
       "isArchived": false
     },
     "nais/naiserator": {
@@ -36,21 +36,21 @@
       "stars": 131,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-10-15T18:34:33Z",
+      "pushedAt": "2026-10-16T14:26:14Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
       "stars": 1,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-10-15T14:22:31Z",
+      "pushedAt": "2026-10-16T14:27:48Z",
       "isArchived": false
     },
     "nais/wonderwall": {
       "stars": 28,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-13T06:28:36Z",
+      "pushedAt": "2026-10-16T11:18:07Z",
       "isArchived": false
     },
     "navikt/rapids-and-rivers": {
@@ -78,7 +78,7 @@
       "stars": 18,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-09-15T08:32:40Z",
+      "pushedAt": "2026-10-16T08:56:20Z",
       "isArchived": false
     },
     "navikt/spraksjekk": {
@@ -92,14 +92,14 @@
       "stars": 55,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-15T22:34:45Z",
+      "pushedAt": "2026-10-16T19:55:38Z",
       "isArchived": false
     },
     "navikt/token-support": {
       "stars": 19,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-13T16:17:09Z",
+      "pushedAt": "2026-10-16T14:49:30Z",
       "isArchived": false
     },
     "navikt/fnrvalidator": {
@@ -154,8 +154,8 @@
   },
   "stats": {
     "publicRepos": 3183,
-    "commitsLast7Days": 7561,
-    "prsLast30Days": 20740,
+    "commitsLast7Days": 7303,
+    "prsLast30Days": 20692,
     "npmDownloadsLastMonth": 145161,
     "fnrDownloadsLastMonth": 52906
   },
@@ -163,42 +163,42 @@
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-10-16T03:34:21Z",
+      "pushedAt": "2026-10-17T03:31:42Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "helse-spedisjon",
-      "url": "https://github.com/navikt/helse-spedisjon",
-      "pushedAt": "2026-10-16T02:39:25Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "helse-spenn",
-      "url": "https://github.com/navikt/helse-spenn",
-      "pushedAt": "2026-10-16T00:28:25Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "dp-speider",
-      "url": "https://github.com/navikt/dp-speider",
-      "pushedAt": "2026-10-16T00:20:53Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "bidrag-reisekostnad-ui",
-      "url": "https://github.com/navikt/bidrag-reisekostnad-ui",
-      "pushedAt": "2026-10-15T23:14:29Z",
+      "name": "pam-stillingsok",
+      "url": "https://github.com/navikt/pam-stillingsok",
+      "pushedAt": "2026-10-17T02:23:28Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     },
     {
+      "name": "esyfo-microfrontends",
+      "url": "https://github.com/navikt/esyfo-microfrontends",
+      "pushedAt": "2026-10-16T23:24:19Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
+    },
+    {
+      "name": "decision-tree-navigator",
+      "url": "https://github.com/navikt/decision-tree-navigator",
+      "pushedAt": "2026-10-16T21:41:02Z",
+      "language": "JavaScript",
+      "languageColor": "#f1e05a"
+    },
+    {
       "name": "mock-oauth2-server",
       "url": "https://github.com/navikt/mock-oauth2-server",
-      "pushedAt": "2026-10-15T22:43:27Z",
+      "pushedAt": "2026-10-16T21:28:40Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "tsm-bq-sink",
+      "url": "https://github.com/navikt/tsm-bq-sink",
+      "pushedAt": "2026-10-16T21:26:57Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     }
@@ -233,7 +233,7 @@
       },
       {
         "name": "Shell",
-        "count": 49,
+        "count": 50,
         "color": "#89e051"
       },
       {
@@ -243,7 +243,7 @@
       },
       {
         "name": "Annet",
-        "count": 362,
+        "count": 361,
         "color": null
       }
     ]
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-10-17",
-        "count": 844
-      },
       {
         "date": "2025-10-18",
         "count": 17
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-10-15",
-        "count": 1455
+        "count": 1500
+      },
+      {
+        "date": "2026-10-16",
+        "count": 1011
       }
     ]
   }
