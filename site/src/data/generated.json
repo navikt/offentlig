@@ -1,14 +1,14 @@
 {
-  "syncedAt": "2026-10-18T03:40:02.042Z",
+  "syncedAt": "2026-10-19T03:43:48.830Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
   "repos": {
     "navikt/mock-oauth2-server": {
-      "stars": 434,
+      "stars": 435,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-17T17:01:55Z",
+      "pushedAt": "2026-10-18T21:24:52Z",
       "isArchived": false
     },
     "navikt/aksel": {
@@ -22,7 +22,7 @@
       "stars": 49,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-13T14:31:16Z",
+      "pushedAt": "2026-10-19T03:42:26Z",
       "isArchived": false
     },
     "navikt/helse-spleis": {
@@ -33,7 +33,7 @@
       "isArchived": false
     },
     "navikt/cplt": {
-      "stars": 131,
+      "stars": 130,
       "language": "Rust",
       "languageColor": "#dea584",
       "pushedAt": "2026-10-17T19:16:16Z",
@@ -92,7 +92,7 @@
       "stars": 55,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-17T20:39:35Z",
+      "pushedAt": "2026-10-18T06:48:43Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -103,7 +103,7 @@
       "isArchived": false
     },
     "navikt/fnrvalidator": {
-      "stars": 20,
+      "stars": 21,
       "language": "TypeScript",
       "languageColor": "#3178c6",
       "pushedAt": "2026-09-28T08:44:08Z",
@@ -154,8 +154,8 @@
   },
   "stats": {
     "publicRepos": 3183,
-    "commitsLast7Days": 7189,
-    "prsLast30Days": 20026,
+    "commitsLast7Days": 7076,
+    "prsLast30Days": 19815,
     "npmDownloadsLastMonth": 136081,
     "fnrDownloadsLastMonth": 49566
   },
@@ -163,44 +163,44 @@
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-10-18T03:33:37Z",
+      "pushedAt": "2026-10-19T03:36:58Z",
       "language": null,
       "languageColor": null
     },
     {
+      "name": "dbt-docs",
+      "url": "https://github.com/navikt/dbt-docs",
+      "pushedAt": "2026-10-19T03:18:01Z",
+      "language": "CSS",
+      "languageColor": "#663399"
+    },
+    {
+      "name": "crm-workflows-base",
+      "url": "https://github.com/navikt/crm-workflows-base",
+      "pushedAt": "2026-10-19T03:06:27Z",
+      "language": null,
+      "languageColor": null
+    },
+    {
+      "name": "crm-workflows-dev",
+      "url": "https://github.com/navikt/crm-workflows-dev",
+      "pushedAt": "2026-10-19T03:05:55Z",
+      "language": "Apex",
+      "languageColor": null
+    },
+    {
+      "name": "flex-testdata-generator",
+      "url": "https://github.com/navikt/flex-testdata-generator",
+      "pushedAt": "2026-10-19T03:03:42Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
+    },
+    {
       "name": "dp-innsyn",
       "url": "https://github.com/navikt/dp-innsyn",
-      "pushedAt": "2026-10-18T00:45:39Z",
+      "pushedAt": "2026-10-19T00:45:08Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
-    },
-    {
-      "name": "dp-speider",
-      "url": "https://github.com/navikt/dp-speider",
-      "pushedAt": "2026-10-18T00:24:32Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "dp-behov-soknad-pdf",
-      "url": "https://github.com/navikt/dp-behov-soknad-pdf",
-      "pushedAt": "2026-10-18T00:15:54Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "copilot",
-      "url": "https://github.com/navikt/copilot",
-      "pushedAt": "2026-10-17T20:39:35Z",
-      "language": "Go",
-      "languageColor": "#00add8"
-    },
-    {
-      "name": "homebrew-tap",
-      "url": "https://github.com/navikt/homebrew-tap",
-      "pushedAt": "2026-10-17T20:08:06Z",
-      "language": "Ruby",
-      "languageColor": "#701516"
     }
   ],
   "languages": {
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-10-19",
-        "count": 46
-      },
       {
         "date": "2025-10-20",
         "count": 978
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-10-17",
-        "count": 54
+        "count": 55
+      },
+      {
+        "date": "2026-10-18",
+        "count": 64
       }
     ]
   }
