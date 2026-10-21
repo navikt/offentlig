@@ -1,21 +1,21 @@
 {
-  "syncedAt": "2026-10-20T03:40:57.877Z",
+  "syncedAt": "2026-10-21T03:41:13.515Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
   "repos": {
     "navikt/mock-oauth2-server": {
-      "stars": 435,
+      "stars": 436,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-19T08:53:19Z",
+      "pushedAt": "2026-10-20T22:15:59Z",
       "isArchived": false
     },
     "navikt/aksel": {
       "stars": 186,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-10-19T15:02:45Z",
+      "pushedAt": "2026-10-21T00:18:58Z",
       "isArchived": false
     },
     "nais/naiserator": {
@@ -29,7 +29,7 @@
       "stars": 6,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-19T13:54:48Z",
+      "pushedAt": "2026-10-20T20:08:40Z",
       "isArchived": false
     },
     "navikt/cplt": {
@@ -43,14 +43,14 @@
       "stars": 1,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-10-17T09:20:36Z",
+      "pushedAt": "2026-10-20T11:32:15Z",
       "isArchived": false
     },
     "nais/wonderwall": {
       "stars": 28,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-16T11:18:07Z",
+      "pushedAt": "2026-10-20T06:51:28Z",
       "isArchived": false
     },
     "navikt/rapids-and-rivers": {
@@ -92,7 +92,7 @@
       "stars": 55,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-20T01:51:05Z",
+      "pushedAt": "2026-10-20T06:07:22Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -127,7 +127,7 @@
       "stars": 3,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-19T17:51:26Z",
+      "pushedAt": "2026-10-20T08:55:19Z",
       "isArchived": false
     },
     "nais/unleasherator": {
@@ -153,9 +153,9 @@
     }
   },
   "stats": {
-    "publicRepos": 3186,
-    "commitsLast7Days": 7185,
-    "prsLast30Days": 21000,
+    "publicRepos": 3188,
+    "commitsLast7Days": 7055,
+    "prsLast30Days": 21667,
     "npmDownloadsLastMonth": 134132,
     "fnrDownloadsLastMonth": 48006
   },
@@ -163,57 +163,57 @@
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-10-20T03:32:57Z",
+      "pushedAt": "2026-10-21T03:33:37Z",
       "language": null,
       "languageColor": null
     },
     {
       "name": "modiapersonoversikt",
       "url": "https://github.com/navikt/modiapersonoversikt",
-      "pushedAt": "2026-10-20T03:28:04Z",
+      "pushedAt": "2026-10-21T03:19:40Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     },
     {
       "name": "helse-spedisjon",
       "url": "https://github.com/navikt/helse-spedisjon",
-      "pushedAt": "2026-10-20T02:38:44Z",
+      "pushedAt": "2026-10-21T02:37:13Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "copilot",
-      "url": "https://github.com/navikt/copilot",
-      "pushedAt": "2026-10-20T01:51:05Z",
-      "language": "Go",
-      "languageColor": "#00add8"
+      "name": "helse-sporhund",
+      "url": "https://github.com/navikt/helse-sporhund",
+      "pushedAt": "2026-10-21T00:58:43Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
-      "name": "security-playbook",
-      "url": "https://github.com/navikt/security-playbook",
-      "pushedAt": "2026-10-20T00:06:13Z",
-      "language": "JavaScript",
-      "languageColor": "#f1e05a"
+      "name": "helse-spenn",
+      "url": "https://github.com/navikt/helse-spenn",
+      "pushedAt": "2026-10-21T00:29:20Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
-      "name": "pam-stillingsok",
-      "url": "https://github.com/navikt/pam-stillingsok",
-      "pushedAt": "2026-10-19T23:43:41Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "dp-speider",
+      "url": "https://github.com/navikt/dp-speider",
+      "pushedAt": "2026-10-21T00:21:19Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     }
   ],
   "languages": {
-    "totalRepos": 1802,
+    "totalRepos": 1800,
     "entries": [
       {
         "name": "Kotlin",
-        "count": 705,
+        "count": 703,
         "color": "#a97bff"
       },
       {
         "name": "TypeScript",
-        "count": 339,
+        "count": 338,
         "color": "#3178c6"
       },
       {
@@ -223,7 +223,7 @@
       },
       {
         "name": "Python",
-        "count": 90,
+        "count": 91,
         "color": "#3572a5"
       },
       {
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-10-21",
-        "count": 990
-      },
       {
         "date": "2025-10-22",
         "count": 917
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-10-19",
-        "count": 1511
+        "count": 1641
+      },
+      {
+        "date": "2026-10-20",
+        "count": 1285
       }
     ]
   }
