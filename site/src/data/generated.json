@@ -1,11 +1,11 @@
 {
-  "syncedAt": "2026-10-24T03:40:06.806Z",
+  "syncedAt": "2026-10-25T03:43:18.929Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
   "repos": {
     "navikt/mock-oauth2-server": {
-      "stars": 437,
+      "stars": 438,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
       "pushedAt": "2026-10-23T22:01:09Z",
@@ -22,7 +22,7 @@
       "stars": 49,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-23T08:16:49Z",
+      "pushedAt": "2026-10-24T09:04:54Z",
       "isArchived": false
     },
     "navikt/helse-spleis": {
@@ -33,10 +33,10 @@
       "isArchived": false
     },
     "navikt/cplt": {
-      "stars": 137,
+      "stars": 138,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-10-23T22:19:50Z",
+      "pushedAt": "2026-10-25T03:19:49Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -92,7 +92,7 @@
       "stars": 56,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-23T22:20:36Z",
+      "pushedAt": "2026-10-25T03:36:35Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -154,53 +154,53 @@
   },
   "stats": {
     "publicRepos": 3192,
-    "commitsLast7Days": 7354,
-    "prsLast30Days": 21855,
+    "commitsLast7Days": 7524,
+    "prsLast30Days": 21121,
     "npmDownloadsLastMonth": 126155,
     "fnrDownloadsLastMonth": 44631
   },
   "recentlyUpdated": [
     {
+      "name": "copilot",
+      "url": "https://github.com/navikt/copilot",
+      "pushedAt": "2026-10-25T03:36:35Z",
+      "language": "Go",
+      "languageColor": "#00add8"
+    },
+    {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-10-24T03:32:49Z",
+      "pushedAt": "2026-10-25T03:35:17Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "dp-speider",
-      "url": "https://github.com/navikt/dp-speider",
-      "pushedAt": "2026-10-24T00:22:00Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
+      "name": "cplt",
+      "url": "https://github.com/navikt/cplt",
+      "pushedAt": "2026-10-25T03:19:49Z",
+      "language": "Rust",
+      "languageColor": "#dea584"
     },
     {
-      "name": "dp-behov-soknad-pdf",
-      "url": "https://github.com/navikt/dp-behov-soknad-pdf",
-      "pushedAt": "2026-10-24T00:14:27Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "crm-arbeidsforhold",
-      "url": "https://github.com/navikt/crm-arbeidsforhold",
-      "pushedAt": "2026-10-24T00:03:11Z",
-      "language": "Apex",
+      "name": "crm-workflows-base",
+      "url": "https://github.com/navikt/crm-workflows-base",
+      "pushedAt": "2026-10-25T02:34:04Z",
+      "language": null,
       "languageColor": null
     },
     {
-      "name": "esyfo-microfrontends",
-      "url": "https://github.com/navikt/esyfo-microfrontends",
-      "pushedAt": "2026-10-23T23:27:31Z",
+      "name": "dp-innsyn",
+      "url": "https://github.com/navikt/dp-innsyn",
+      "pushedAt": "2026-10-25T00:45:09Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "aap-paw-patrol",
+      "url": "https://github.com/navikt/aap-paw-patrol",
+      "pushedAt": "2026-10-25T00:37:07Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
-    },
-    {
-      "name": "crm-platform-integration",
-      "url": "https://github.com/navikt/crm-platform-integration",
-      "pushedAt": "2026-10-23T22:52:15Z",
-      "language": "Apex",
-      "languageColor": null
     }
   ],
   "languages": {
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-10-25",
-        "count": 62
-      },
       {
         "date": "2025-10-26",
         "count": 117
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-10-23",
-        "count": 1135
+        "count": 1146
+      },
+      {
+        "date": "2026-10-24",
+        "count": 212
       }
     ]
   }
