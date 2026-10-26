@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-25T03:43:18.929Z",
+  "syncedAt": "2026-10-26T03:46:37.084Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -8,7 +8,7 @@
       "stars": 438,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-23T22:01:09Z",
+      "pushedAt": "2026-10-25T22:21:31Z",
       "isArchived": false
     },
     "navikt/aksel": {
@@ -22,7 +22,7 @@
       "stars": 49,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-24T09:04:54Z",
+      "pushedAt": "2026-10-26T03:43:47Z",
       "isArchived": false
     },
     "navikt/helse-spleis": {
@@ -36,7 +36,7 @@
       "stars": 138,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-10-25T03:19:49Z",
+      "pushedAt": "2026-10-25T07:16:35Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -92,7 +92,7 @@
       "stars": 56,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-25T03:36:35Z",
+      "pushedAt": "2026-10-25T22:08:41Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -154,53 +154,53 @@
   },
   "stats": {
     "publicRepos": 3192,
-    "commitsLast7Days": 7524,
-    "prsLast30Days": 21121,
+    "commitsLast7Days": 7561,
+    "prsLast30Days": 20816,
     "npmDownloadsLastMonth": 126155,
     "fnrDownloadsLastMonth": 44631
   },
   "recentlyUpdated": [
     {
-      "name": "copilot",
-      "url": "https://github.com/navikt/copilot",
-      "pushedAt": "2026-10-25T03:36:35Z",
-      "language": "Go",
-      "languageColor": "#00add8"
-    },
-    {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-10-25T03:35:17Z",
+      "pushedAt": "2026-10-26T03:40:24Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "cplt",
-      "url": "https://github.com/navikt/cplt",
-      "pushedAt": "2026-10-25T03:19:49Z",
-      "language": "Rust",
-      "languageColor": "#dea584"
+      "name": "dbt-docs",
+      "url": "https://github.com/navikt/dbt-docs",
+      "pushedAt": "2026-10-26T03:18:22Z",
+      "language": "CSS",
+      "languageColor": "#663399"
     },
     {
-      "name": "crm-workflows-base",
-      "url": "https://github.com/navikt/crm-workflows-base",
-      "pushedAt": "2026-10-25T02:34:04Z",
-      "language": null,
-      "languageColor": null
-    },
-    {
-      "name": "dp-innsyn",
-      "url": "https://github.com/navikt/dp-innsyn",
-      "pushedAt": "2026-10-25T00:45:09Z",
+      "name": "flex-sykmeldinger-backend",
+      "url": "https://github.com/navikt/flex-sykmeldinger-backend",
+      "pushedAt": "2026-10-26T03:05:12Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "aap-paw-patrol",
-      "url": "https://github.com/navikt/aap-paw-patrol",
-      "pushedAt": "2026-10-25T00:37:07Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "flex-syketilfelle",
+      "url": "https://github.com/navikt/flex-syketilfelle",
+      "pushedAt": "2026-10-26T03:03:08Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "dp-innsyn",
+      "url": "https://github.com/navikt/dp-innsyn",
+      "pushedAt": "2026-10-26T00:44:06Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "dp-speider",
+      "url": "https://github.com/navikt/dp-speider",
+      "pushedAt": "2026-10-26T00:23:19Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     }
   ],
   "languages": {
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-10-26",
-        "count": 117
-      },
       {
         "date": "2025-10-27",
         "count": 1136
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-10-24",
-        "count": 212
+        "count": 222
+      },
+      {
+        "date": "2026-10-25",
+        "count": 133
       }
     ]
   }
