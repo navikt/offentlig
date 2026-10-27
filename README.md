@@ -13,7 +13,7 @@ Følge disse stegene:
 
 1. **Risikovurdering**: Vurder om koden er trygg å distribuere som åpen kildekode. Team Tryggnok har et verktøy, TryggNok, som brukes til risikovurderinger, og det finnes en mal for ansvarsavklaring ved åpning av kildekode. Ta kontakt på Slack i #tryggnok for hjelp.
 2. **Sanering**: Vask både Git-historikk og kode for eventuelle hemmeligheter og personsensitive opplysninger. Se [guide for sikkerhetsvask](guider/sikkerhetsvask.md) 
-3. **Oppfyll krav**: Sørg for at repository oppfyller kravene listet under "Krav til åpne repo"
+3. **Oppfyll krav**: Sørg for at repository oppfyller kravene listet under [Krav til åpne repo](#Krav-til-åpne-repo-under-github.com/navikt)
 4. **Publiser**: Kildekoden legges på https://github.com/navikt
 
 ## Åpen kildekode 
