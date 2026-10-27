@@ -1,21 +1,21 @@
 {
-  "syncedAt": "2026-10-26T03:46:37.084Z",
+  "syncedAt": "2026-10-27T03:42:57.948Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
   "repos": {
     "navikt/mock-oauth2-server": {
-      "stars": 438,
+      "stars": 439,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-25T22:21:31Z",
+      "pushedAt": "2026-10-26T21:25:25Z",
       "isArchived": false
     },
     "navikt/aksel": {
       "stars": 186,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-10-23T19:27:37Z",
+      "pushedAt": "2026-10-26T16:46:00Z",
       "isArchived": false
     },
     "nais/naiserator": {
@@ -29,28 +29,28 @@
       "stars": 6,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-23T12:08:22Z",
+      "pushedAt": "2026-10-26T10:22:17Z",
       "isArchived": false
     },
     "navikt/cplt": {
-      "stars": 138,
+      "stars": 139,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-10-25T07:16:35Z",
+      "pushedAt": "2026-10-27T00:16:32Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
       "stars": 1,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-10-23T13:15:41Z",
+      "pushedAt": "2026-10-26T09:11:57Z",
       "isArchived": false
     },
     "nais/wonderwall": {
       "stars": 27,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-22T10:50:46Z",
+      "pushedAt": "2026-10-26T08:03:39Z",
       "isArchived": false
     },
     "navikt/rapids-and-rivers": {
@@ -71,7 +71,7 @@
       "stars": 11,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-10-19T07:04:50Z",
+      "pushedAt": "2026-10-26T10:45:11Z",
       "isArchived": false
     },
     "nais/device": {
@@ -89,17 +89,17 @@
       "isArchived": false
     },
     "navikt/copilot": {
-      "stars": 56,
+      "stars": 57,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-25T22:08:41Z",
+      "pushedAt": "2026-10-26T13:48:59Z",
       "isArchived": false
     },
     "navikt/token-support": {
       "stars": 19,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-23T17:17:12Z",
+      "pushedAt": "2026-10-26T14:47:32Z",
       "isArchived": false
     },
     "navikt/fnrvalidator": {
@@ -113,7 +113,7 @@
       "stars": 11,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-23T06:40:25Z",
+      "pushedAt": "2026-10-26T07:27:12Z",
       "isArchived": false
     },
     "navikt/DSF": {
@@ -127,14 +127,14 @@
       "stars": 3,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-23T06:04:05Z",
+      "pushedAt": "2026-10-26T11:43:34Z",
       "isArchived": false
     },
     "nais/unleasherator": {
       "stars": 13,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-23T08:25:39Z",
+      "pushedAt": "2026-10-26T08:16:13Z",
       "isArchived": false
     },
     "nais/kafkarator": {
@@ -153,87 +153,87 @@
     }
   },
   "stats": {
-    "publicRepos": 3192,
-    "commitsLast7Days": 7561,
-    "prsLast30Days": 20816,
-    "npmDownloadsLastMonth": 126155,
-    "fnrDownloadsLastMonth": 44631
+    "publicRepos": 3196,
+    "commitsLast7Days": 8167,
+    "prsLast30Days": 22442,
+    "npmDownloadsLastMonth": 449507,
+    "fnrDownloadsLastMonth": 56662
   },
   "recentlyUpdated": [
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-10-26T03:40:24Z",
+      "pushedAt": "2026-10-27T03:36:42Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "dbt-docs",
-      "url": "https://github.com/navikt/dbt-docs",
-      "pushedAt": "2026-10-26T03:18:22Z",
-      "language": "CSS",
-      "languageColor": "#663399"
-    },
-    {
-      "name": "flex-sykmeldinger-backend",
-      "url": "https://github.com/navikt/flex-sykmeldinger-backend",
-      "pushedAt": "2026-10-26T03:05:12Z",
+      "name": "helse-spedisjon",
+      "url": "https://github.com/navikt/helse-spedisjon",
+      "pushedAt": "2026-10-27T02:39:51Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "flex-syketilfelle",
-      "url": "https://github.com/navikt/flex-syketilfelle",
-      "pushedAt": "2026-10-26T03:03:08Z",
+      "name": "helse-sparkelapper",
+      "url": "https://github.com/navikt/helse-sparkelapper",
+      "pushedAt": "2026-10-27T02:32:11Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "amt-deltaker-flate",
+      "url": "https://github.com/navikt/amt-deltaker-flate",
+      "pushedAt": "2026-10-27T01:52:53Z",
+      "language": "TypeScript",
+      "languageColor": "#3178c6"
+    },
+    {
+      "name": "helse-sporhund",
+      "url": "https://github.com/navikt/helse-sporhund",
+      "pushedAt": "2026-10-27T01:00:49Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
       "name": "dp-innsyn",
       "url": "https://github.com/navikt/dp-innsyn",
-      "pushedAt": "2026-10-26T00:44:06Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "dp-speider",
-      "url": "https://github.com/navikt/dp-speider",
-      "pushedAt": "2026-10-26T00:23:19Z",
+      "pushedAt": "2026-10-27T00:42:32Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     }
   ],
   "languages": {
-    "totalRepos": 1801,
+    "totalRepos": 1794,
     "entries": [
       {
         "name": "Kotlin",
-        "count": 700,
+        "count": 699,
         "color": "#a97bff"
       },
       {
         "name": "TypeScript",
-        "count": 339,
+        "count": 337,
         "color": "#3178c6"
       },
       {
         "name": "Java",
-        "count": 153,
+        "count": 152,
         "color": "#b07219"
       },
       {
         "name": "Python",
-        "count": 93,
+        "count": 92,
         "color": "#3572a5"
       },
       {
         "name": "JavaScript",
-        "count": 63,
+        "count": 62,
         "color": "#f1e05a"
       },
       {
         "name": "Shell",
-        "count": 48,
+        "count": 47,
         "color": "#89e051"
       },
       {
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-10-27",
-        "count": 1136
-      },
       {
         "date": "2025-10-28",
         "count": 1145
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-10-25",
-        "count": 133
+        "count": 188
+      },
+      {
+        "date": "2026-10-26",
+        "count": 2112
       }
     ]
   }
