@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-30T03:34:35.071Z",
+  "syncedAt": "2026-10-30T05:23:58.893Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -154,51 +154,51 @@
   },
   "stats": {
     "publicRepos": 3203,
-    "commitsLast7Days": 8987,
-    "prsLast30Days": 23055,
+    "commitsLast7Days": 8940,
+    "prsLast30Days": 23093,
     "npmDownloadsLastMonth": 127804,
     "fnrDownloadsLastMonth": 50011
   },
   "recentlyUpdated": [
     {
+      "name": "offentlig",
+      "url": "https://github.com/navikt/offentlig",
+      "pushedAt": "2026-10-30T05:23:44Z",
+      "language": "Astro",
+      "languageColor": null
+    },
+    {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-10-30T03:26:33Z",
+      "pushedAt": "2026-10-30T05:23:36Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "sykepengesoknad-backend",
-      "url": "https://github.com/navikt/sykepengesoknad-backend",
-      "pushedAt": "2026-10-30T03:03:18Z",
+      "name": "dp-oppslag-inntekt",
+      "url": "https://github.com/navikt/dp-oppslag-inntekt",
+      "pushedAt": "2026-10-30T05:23:24Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "helse-spedisjon",
-      "url": "https://github.com/navikt/helse-spedisjon",
-      "pushedAt": "2026-10-30T02:39:12Z",
+      "name": "dp-doh",
+      "url": "https://github.com/navikt/dp-doh",
+      "pushedAt": "2026-10-30T05:23:13Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "helse-sparkelapper",
-      "url": "https://github.com/navikt/helse-sparkelapper",
-      "pushedAt": "2026-10-30T02:26:51Z",
+      "name": "dp-behov-soknad-pdf",
+      "url": "https://github.com/navikt/dp-behov-soknad-pdf",
+      "pushedAt": "2026-10-30T05:23:12Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "helse-sporhund",
-      "url": "https://github.com/navikt/helse-sporhund",
-      "pushedAt": "2026-10-30T01:02:45Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "helse-spenn",
-      "url": "https://github.com/navikt/helse-spenn",
-      "pushedAt": "2026-10-30T00:30:33Z",
+      "name": "dp-dataprodukter",
+      "url": "https://github.com/navikt/dp-dataprodukter",
+      "pushedAt": "2026-10-30T05:23:06Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     }
