@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-10-31T03:33:11.083Z",
+  "syncedAt": "2026-11-01T03:33:29.984Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -36,7 +36,7 @@
       "stars": 140,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-10-30T11:16:57Z",
+      "pushedAt": "2026-10-31T20:53:09Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -92,7 +92,7 @@
       "stars": 60,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-30T22:46:34Z",
+      "pushedAt": "2026-10-31T21:00:41Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -154,8 +154,8 @@
   },
   "stats": {
     "publicRepos": 3206,
-    "commitsLast7Days": 9220,
-    "prsLast30Days": 23178,
+    "commitsLast7Days": 9099,
+    "prsLast30Days": 22276,
     "npmDownloadsLastMonth": 129871,
     "fnrDownloadsLastMonth": 50665
   },
@@ -163,44 +163,44 @@
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-10-31T03:21:51Z",
+      "pushedAt": "2026-11-01T03:25:13Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "dp-innsyn",
-      "url": "https://github.com/navikt/dp-innsyn",
-      "pushedAt": "2026-10-31T00:27:18Z",
+      "name": "archiving-infrastructure",
+      "url": "https://github.com/navikt/archiving-infrastructure",
+      "pushedAt": "2026-10-31T21:03:02Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "dp-speider",
-      "url": "https://github.com/navikt/dp-speider",
-      "pushedAt": "2026-10-31T00:14:43Z",
+      "name": "copilot",
+      "url": "https://github.com/navikt/copilot",
+      "pushedAt": "2026-10-31T21:00:41Z",
+      "language": "Go",
+      "languageColor": "#00add8"
+    },
+    {
+      "name": "cplt",
+      "url": "https://github.com/navikt/cplt",
+      "pushedAt": "2026-10-31T20:53:09Z",
+      "language": "Rust",
+      "languageColor": "#dea584"
+    },
+    {
+      "name": "amt-deltakelser",
+      "url": "https://github.com/navikt/amt-deltakelser",
+      "pushedAt": "2026-10-31T20:49:05Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "navansatt",
-      "url": "https://github.com/navikt/navansatt",
-      "pushedAt": "2026-10-31T00:10:47Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "dp-behov-soknad-pdf",
-      "url": "https://github.com/navikt/dp-behov-soknad-pdf",
-      "pushedAt": "2026-10-31T00:09:52Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "innblikk-frontend",
-      "url": "https://github.com/navikt/innblikk-frontend",
-      "pushedAt": "2026-10-31T00:03:24Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "skyra-data-wrapper",
+      "url": "https://github.com/navikt/skyra-data-wrapper",
+      "pushedAt": "2026-10-31T19:52:37Z",
+      "language": "Python",
+      "languageColor": "#3572a5"
     }
   ],
   "languages": {
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-11-01",
-        "count": 92
-      },
       {
         "date": "2025-11-02",
         "count": 44
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-10-30",
-        "count": 1343
+        "count": 1373
+      },
+      {
+        "date": "2026-10-31",
+        "count": 137
       }
     ]
   }
