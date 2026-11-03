@@ -1,42 +1,42 @@
 {
-  "syncedAt": "2026-11-02T03:33:29.712Z",
+  "syncedAt": "2026-11-03T03:32:59.938Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
   "repos": {
     "navikt/mock-oauth2-server": {
-      "stars": 439,
+      "stars": 440,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-11-01T19:00:26Z",
+      "pushedAt": "2026-11-02T23:10:08Z",
       "isArchived": false
     },
     "navikt/aksel": {
       "stars": 186,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-10-30T16:55:44Z",
+      "pushedAt": "2026-11-02T17:32:30Z",
       "isArchived": false
     },
     "nais/naiserator": {
       "stars": 49,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-29T07:53:48Z",
+      "pushedAt": "2026-11-02T08:13:43Z",
       "isArchived": false
     },
     "navikt/helse-spleis": {
       "stars": 6,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-30T10:54:51Z",
+      "pushedAt": "2026-11-02T21:03:23Z",
       "isArchived": false
     },
     "navikt/cplt": {
-      "stars": 140,
+      "stars": 141,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-10-31T20:53:09Z",
+      "pushedAt": "2026-11-02T22:56:57Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -71,7 +71,7 @@
       "stars": 11,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-10-29T20:31:54Z",
+      "pushedAt": "2026-11-02T07:56:10Z",
       "isArchived": false
     },
     "nais/device": {
@@ -92,14 +92,14 @@
       "stars": 60,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-31T21:00:41Z",
+      "pushedAt": "2026-11-02T21:27:52Z",
       "isArchived": false
     },
     "navikt/token-support": {
       "stars": 19,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-10-27T14:44:01Z",
+      "pushedAt": "2026-11-02T14:46:08Z",
       "isArchived": false
     },
     "navikt/fnrvalidator": {
@@ -113,7 +113,7 @@
       "stars": 11,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-26T07:27:12Z",
+      "pushedAt": "2026-11-02T15:13:12Z",
       "isArchived": false
     },
     "navikt/DSF": {
@@ -127,14 +127,14 @@
       "stars": 3,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-26T11:43:34Z",
+      "pushedAt": "2026-11-02T08:33:06Z",
       "isArchived": false
     },
     "nais/unleasherator": {
       "stars": 13,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-10-26T08:16:13Z",
+      "pushedAt": "2026-11-02T08:19:03Z",
       "isArchived": false
     },
     "nais/kafkarator": {
@@ -153,62 +153,62 @@
     }
   },
   "stats": {
-    "publicRepos": 3206,
-    "commitsLast7Days": 9062,
-    "prsLast30Days": 21887,
-    "npmDownloadsLastMonth": 129871,
-    "fnrDownloadsLastMonth": 50665
+    "publicRepos": 3210,
+    "commitsLast7Days": 8750,
+    "prsLast30Days": 23236,
+    "npmDownloadsLastMonth": 123219,
+    "fnrDownloadsLastMonth": 51691
   },
   "recentlyUpdated": [
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-11-02T03:24:51Z",
+      "pushedAt": "2026-11-03T03:23:09Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "dbt-docs",
-      "url": "https://github.com/navikt/dbt-docs",
-      "pushedAt": "2026-11-02T03:19:35Z",
-      "language": "CSS",
-      "languageColor": "#663399"
-    },
-    {
-      "name": "helse-spedisjon",
-      "url": "https://github.com/navikt/helse-spedisjon",
-      "pushedAt": "2026-11-02T02:39:19Z",
+      "name": "pdfgen-core",
+      "url": "https://github.com/navikt/pdfgen-core",
+      "pushedAt": "2026-11-03T01:22:58Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "helse-sparkelapper",
-      "url": "https://github.com/navikt/helse-sparkelapper",
-      "pushedAt": "2026-11-02T02:31:01Z",
+      "name": "flex-bigquery-soda",
+      "url": "https://github.com/navikt/flex-bigquery-soda",
+      "pushedAt": "2026-11-03T00:56:55Z",
+      "language": "Makefile",
+      "languageColor": null
+    },
+    {
+      "name": "navansatt",
+      "url": "https://github.com/navikt/navansatt",
+      "pushedAt": "2026-11-03T00:11:20Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "innblikk-frontend",
-      "url": "https://github.com/navikt/innblikk-frontend",
-      "pushedAt": "2026-11-02T01:54:53Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
+      "name": "dp-behov-soknad-pdf",
+      "url": "https://github.com/navikt/dp-behov-soknad-pdf",
+      "pushedAt": "2026-11-03T00:09:38Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     },
     {
-      "name": "helse-sporhund",
-      "url": "https://github.com/navikt/helse-sporhund",
-      "pushedAt": "2026-11-02T01:01:55Z",
+      "name": "familie-kontrakter",
+      "url": "https://github.com/navikt/familie-kontrakter",
+      "pushedAt": "2026-11-03T00:06:31Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     }
   ],
   "languages": {
-    "totalRepos": 1787,
+    "totalRepos": 1792,
     "entries": [
       {
         "name": "Kotlin",
-        "count": 697,
+        "count": 701,
         "color": "#a97bff"
       },
       {
@@ -243,7 +243,7 @@
       },
       {
         "name": "Annet",
-        "count": 356,
+        "count": 357,
         "color": null
       }
     ]
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-11-03",
-        "count": 1182
-      },
       {
         "date": "2025-11-04",
         "count": 1059
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-11-01",
-        "count": 135
+        "count": 156
+      },
+      {
+        "date": "2026-11-02",
+        "count": 1834
       }
     ]
   }
