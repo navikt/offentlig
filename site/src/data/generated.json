@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-07T03:33:12.741Z",
+  "syncedAt": "2026-11-08T03:33:04.928Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -43,7 +43,7 @@
       "stars": 1,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-11-06T13:50:18Z",
+      "pushedAt": "2026-11-07T18:00:43Z",
       "isArchived": false
     },
     "nais/wonderwall": {
@@ -154,51 +154,51 @@
   },
   "stats": {
     "publicRepos": 3210,
-    "commitsLast7Days": 7393,
-    "prsLast30Days": 22880,
-    "npmDownloadsLastMonth": 149678,
-    "fnrDownloadsLastMonth": 63175
+    "commitsLast7Days": 7413,
+    "prsLast30Days": 21992,
+    "npmDownloadsLastMonth": 151069,
+    "fnrDownloadsLastMonth": 63964
   },
   "recentlyUpdated": [
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-11-07T03:22:22Z",
+      "pushedAt": "2026-11-08T03:24:03Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "navansatt",
-      "url": "https://github.com/navikt/navansatt",
-      "pushedAt": "2026-11-07T00:09:41Z",
+      "name": "kabal-innstillinger",
+      "url": "https://github.com/navikt/kabal-innstillinger",
+      "pushedAt": "2026-11-08T00:34:26Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "dp-behov-soknad-pdf",
-      "url": "https://github.com/navikt/dp-behov-soknad-pdf",
-      "pushedAt": "2026-11-07T00:08:42Z",
+      "name": "dp-innsyn",
+      "url": "https://github.com/navikt/dp-innsyn",
+      "pushedAt": "2026-11-08T00:30:14Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "esyfo-microfrontends",
-      "url": "https://github.com/navikt/esyfo-microfrontends",
-      "pushedAt": "2026-11-06T23:25:03Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "pdfgen",
-      "url": "https://github.com/navikt/pdfgen",
-      "pushedAt": "2026-11-06T23:12:36Z",
+      "name": "klage-fss-proxy",
+      "url": "https://github.com/navikt/klage-fss-proxy",
+      "pushedAt": "2026-11-08T00:29:51Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "entra-proxy",
-      "url": "https://github.com/navikt/entra-proxy",
-      "pushedAt": "2026-11-06T22:41:57Z",
+      "name": "klage-lookup",
+      "url": "https://github.com/navikt/klage-lookup",
+      "pushedAt": "2026-11-08T00:28:06Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "kaptein-api",
+      "url": "https://github.com/navikt/kaptein-api",
+      "pushedAt": "2026-11-08T00:28:00Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     }
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-11-08",
-        "count": 37
-      },
       {
         "date": "2025-11-09",
         "count": 41
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-11-06",
-        "count": 1095
+        "count": 1117
+      },
+      {
+        "date": "2026-11-07",
+        "count": 135
       }
     ]
   }
