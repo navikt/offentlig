@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-08T03:33:04.928Z",
+  "syncedAt": "2026-11-09T03:33:26.606Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -33,7 +33,7 @@
       "isArchived": false
     },
     "navikt/cplt": {
-      "stars": 143,
+      "stars": 144,
       "language": "Rust",
       "languageColor": "#dea584",
       "pushedAt": "2026-11-06T07:47:10Z",
@@ -43,7 +43,7 @@
       "stars": 1,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-11-07T18:00:43Z",
+      "pushedAt": "2026-11-08T19:44:58Z",
       "isArchived": false
     },
     "nais/wonderwall": {
@@ -127,7 +127,7 @@
       "stars": 3,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-11-03T12:57:25Z",
+      "pushedAt": "2026-11-08T19:04:46Z",
       "isArchived": false
     },
     "nais/unleasherator": {
@@ -154,51 +154,51 @@
   },
   "stats": {
     "publicRepos": 3210,
-    "commitsLast7Days": 7413,
-    "prsLast30Days": 21992,
-    "npmDownloadsLastMonth": 151069,
-    "fnrDownloadsLastMonth": 63964
+    "commitsLast7Days": 7342,
+    "prsLast30Days": 21474,
+    "npmDownloadsLastMonth": 146839,
+    "fnrDownloadsLastMonth": 62485
   },
   "recentlyUpdated": [
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-11-08T03:24:03Z",
+      "pushedAt": "2026-11-09T03:25:56Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "kabal-innstillinger",
-      "url": "https://github.com/navikt/kabal-innstillinger",
-      "pushedAt": "2026-11-08T00:34:26Z",
+      "name": "sp-avslagsdager",
+      "url": "https://github.com/navikt/sp-avslagsdager",
+      "pushedAt": "2026-11-09T03:24:04Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "dp-innsyn",
-      "url": "https://github.com/navikt/dp-innsyn",
-      "pushedAt": "2026-11-08T00:30:14Z",
+      "name": "knaudit",
+      "url": "https://github.com/navikt/knaudit",
+      "pushedAt": "2026-11-09T03:22:02Z",
+      "language": "Go",
+      "languageColor": "#00add8"
+    },
+    {
+      "name": "dbt-docs",
+      "url": "https://github.com/navikt/dbt-docs",
+      "pushedAt": "2026-11-09T03:17:49Z",
+      "language": "CSS",
+      "languageColor": "#663399"
+    },
+    {
+      "name": "helse-spedisjon",
+      "url": "https://github.com/navikt/helse-spedisjon",
+      "pushedAt": "2026-11-09T02:39:05Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "klage-fss-proxy",
-      "url": "https://github.com/navikt/klage-fss-proxy",
-      "pushedAt": "2026-11-08T00:29:51Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "klage-lookup",
-      "url": "https://github.com/navikt/klage-lookup",
-      "pushedAt": "2026-11-08T00:28:06Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "kaptein-api",
-      "url": "https://github.com/navikt/kaptein-api",
-      "pushedAt": "2026-11-08T00:28:00Z",
+      "name": "helse-sparkelapper",
+      "url": "https://github.com/navikt/helse-sparkelapper",
+      "pushedAt": "2026-11-09T02:29:38Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     }
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-11-09",
-        "count": 41
-      },
       {
         "date": "2025-11-10",
         "count": 1185
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-11-07",
-        "count": 135
+        "count": 136
+      },
+      {
+        "date": "2026-11-08",
+        "count": 115
       }
     ]
   }
