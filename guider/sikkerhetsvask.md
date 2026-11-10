@@ -45,7 +45,7 @@ Skrive om Git-historikk
 -----------------------
 
 Har det lekket en secret (passord, token, API-nøkkel, sertifikat), må du
-rotere eller tilbakekalle den først. Bare det stopper misbruk med sikkerhet.
+rotere eller tilbakekalle den først. Det er den eneste måten å stoppe misbruk på.
 Å fjerne den fra historikken kommer i tillegg, ikke i stedet.
 
 Har det lekket personopplysninger, er det et avvik. Meld det etter Navs
@@ -60,7 +60,7 @@ på GitHub:
 * i forks og i lokale kloner hos andre
 
 Bare GitHub Support kan fjerne de to første. Forks og kloner må eierne rydde
-selv.
+selv. Kloner hos andre utenfor organisasjonen er utenfor Navs kontroll.
 
 ### Rydde lokalt med git-filter-repo
 
