@@ -1,11 +1,11 @@
 {
-  "syncedAt": "2026-11-10T03:32:56.171Z",
+  "syncedAt": "2026-11-11T03:33:28.787Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
   "repos": {
     "navikt/mock-oauth2-server": {
-      "stars": 440,
+      "stars": 442,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
       "pushedAt": "2026-11-09T12:07:13Z",
@@ -15,7 +15,7 @@
       "stars": 186,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-11-09T17:55:59Z",
+      "pushedAt": "2026-11-10T15:07:11Z",
       "isArchived": false
     },
     "nais/naiserator": {
@@ -29,7 +29,7 @@
       "stars": 6,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-11-09T14:37:56Z",
+      "pushedAt": "2026-11-10T15:41:38Z",
       "isArchived": false
     },
     "navikt/cplt": {
@@ -43,7 +43,7 @@
       "stars": 1,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-11-09T13:28:24Z",
+      "pushedAt": "2026-11-10T17:53:32Z",
       "isArchived": false
     },
     "nais/wonderwall": {
@@ -92,14 +92,14 @@
       "stars": 61,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-11-09T12:19:45Z",
+      "pushedAt": "2026-11-10T14:26:59Z",
       "isArchived": false
     },
     "navikt/token-support": {
       "stars": 19,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-11-09T14:47:45Z",
+      "pushedAt": "2026-11-10T08:07:31Z",
       "isArchived": false
     },
     "navikt/fnrvalidator": {
@@ -153,54 +153,54 @@
     }
   },
   "stats": {
-    "publicRepos": 3203,
-    "commitsLast7Days": 6966,
-    "prsLast30Days": 22678,
-    "npmDownloadsLastMonth": 147722,
-    "fnrDownloadsLastMonth": 62978
+    "publicRepos": 3205,
+    "commitsLast7Days": 6886,
+    "prsLast30Days": 23412,
+    "npmDownloadsLastMonth": 148291,
+    "fnrDownloadsLastMonth": 62570
   },
   "recentlyUpdated": [
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-11-10T03:23:41Z",
+      "pushedAt": "2026-11-11T03:24:13Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "amt-stottetjenester",
-      "url": "https://github.com/navikt/amt-stottetjenester",
-      "pushedAt": "2026-11-10T02:09:16Z",
+      "name": "helse-sparkelapper",
+      "url": "https://github.com/navikt/helse-sparkelapper",
+      "pushedAt": "2026-11-11T02:29:15Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "amt-deltakelser",
-      "url": "https://github.com/navikt/amt-deltakelser",
-      "pushedAt": "2026-11-10T02:06:10Z",
+      "name": "helse-sporhund",
+      "url": "https://github.com/navikt/helse-sporhund",
+      "pushedAt": "2026-11-11T00:56:48Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "kafka-manager",
-      "url": "https://github.com/navikt/kafka-manager",
-      "pushedAt": "2026-11-10T00:30:56Z",
+      "name": "helse-spenn",
+      "url": "https://github.com/navikt/helse-spenn",
+      "pushedAt": "2026-11-11T00:27:37Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "ufore-dokument-mottak",
-      "url": "https://github.com/navikt/ufore-dokument-mottak",
-      "pushedAt": "2026-11-09T23:49:12Z",
+      "name": "dp-innsyn",
+      "url": "https://github.com/navikt/dp-innsyn",
+      "pushedAt": "2026-11-11T00:27:35Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "esyfo-pdfgen",
-      "url": "https://github.com/navikt/esyfo-pdfgen",
-      "pushedAt": "2026-11-09T23:48:44Z",
-      "language": "Typst",
-      "languageColor": null
+      "name": "dp-speider",
+      "url": "https://github.com/navikt/dp-speider",
+      "pushedAt": "2026-11-11T00:14:43Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     }
   ],
   "languages": {
@@ -218,7 +218,7 @@
       },
       {
         "name": "Java",
-        "count": 148,
+        "count": 149,
         "color": "#b07219"
       },
       {
@@ -228,7 +228,7 @@
       },
       {
         "name": "JavaScript",
-        "count": 60,
+        "count": 61,
         "color": "#f1e05a"
       },
       {
@@ -243,7 +243,7 @@
       },
       {
         "name": "Annet",
-        "count": 362,
+        "count": 360,
         "color": null
       }
     ]
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-11-11",
-        "count": 966
-      },
       {
         "date": "2025-11-12",
         "count": 904
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-11-09",
-        "count": 1446
+        "count": 1558
+      },
+      {
+        "date": "2026-11-10",
+        "count": 1234
       }
     ]
   }
