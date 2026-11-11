@@ -1,6 +1,9 @@
 Retningslinjer for åpen kildekode i Nav
 ====================
 
+> **Lurer du på noe?**
+> Er du usikker på noe, eller har du noe du vil diskutere? Ta kontakt med hvem som helst i @github-owners-gruppen på Slack, eller skriv direkte i #github-support. Ingen spørsmål er for små.
+
 ## Introduksjon
 Det er avgjørende viktig for Navs samfunnsoppdrag at det eksisterer et tillitsforhold mellom Nav og Navs brukere. Et viktig element for å skape tillit er åpenhet og gjennomsiktighet i det Nav gjør. Derfør bør mest mulig av koden og dokumentasjonen vi skriver være åpent tilgjengelig, på lik linje med lovene som vi implementerer. Offentlig finansierte løsninger bør være offentlig tilgjengelig. Motivasjonen er da ikke hovedsakelig gjenbruk, selv om det selvsagt er en heldig bieffekt. Motivasjonen er først og fremst åpenhet og gjennomsiktighet i de digitale løsningene.  Disse retningslinjene legger seg tett opptil retningslinjene fra [tilsvarende retningslinjer fra gov.uk](https://www.gov.uk/government/publications/open-source-guidance).
 
