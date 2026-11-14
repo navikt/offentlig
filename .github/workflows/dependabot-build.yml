@@ -1,0 +1,28 @@
+name: Dependabot build
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  build:
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: site/pnpm-lock.yaml
+      - name: Install dependencies
+        working-directory: site
+        run: pnpm install --frozen-lockfile
+      - name: Build
+        working-directory: site
+        run: pnpm build
+        env:
+          SITE_URL: https://navikt.github.io
+          BASE_PATH: /offentlig
