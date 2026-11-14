@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-14T03:33:07.779Z",
+  "syncedAt": "2026-11-14T08:16:00.991Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -33,7 +33,7 @@
       "isArchived": false
     },
     "navikt/cplt": {
-      "stars": 148,
+      "stars": 149,
       "language": "Rust",
       "languageColor": "#dea584",
       "pushedAt": "2026-11-09T06:14:48Z",
@@ -92,7 +92,7 @@
       "stars": 61,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-11-13T10:30:29Z",
+      "pushedAt": "2026-11-14T06:04:15Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -141,7 +141,7 @@
       "stars": 5,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-11-13T20:03:07Z",
+      "pushedAt": "2026-11-14T04:36:17Z",
       "isArchived": false
     },
     "nais/bqrator": {
@@ -154,53 +154,53 @@
   },
   "stats": {
     "publicRepos": 3194,
-    "commitsLast7Days": 6681,
-    "prsLast30Days": 22432,
+    "commitsLast7Days": 6683,
+    "prsLast30Days": 22153,
     "npmDownloadsLastMonth": 138941,
     "fnrDownloadsLastMonth": 57179
   },
   "recentlyUpdated": [
     {
+      "name": "offentlig",
+      "url": "https://github.com/navikt/offentlig",
+      "pushedAt": "2026-11-14T08:15:49Z",
+      "language": "Astro",
+      "languageColor": null
+    },
+    {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-11-14T03:23:09Z",
+      "pushedAt": "2026-11-14T07:21:49Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "tilleggsstonader-sak-frontend",
-      "url": "https://github.com/navikt/tilleggsstonader-sak-frontend",
-      "pushedAt": "2026-11-14T00:27:18Z",
+      "name": "pensjon-regler-satsviewer",
+      "url": "https://github.com/navikt/pensjon-regler-satsviewer",
+      "pushedAt": "2026-11-14T07:11:37Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     },
     {
-      "name": "navansatt",
-      "url": "https://github.com/navikt/navansatt",
-      "pushedAt": "2026-11-14T00:10:58Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "esyfo-pdfgen",
-      "url": "https://github.com/navikt/esyfo-pdfgen",
-      "pushedAt": "2026-11-13T23:47:46Z",
-      "language": "Typst",
-      "languageColor": null
-    },
-    {
-      "name": "ufore-dokument-mottak",
-      "url": "https://github.com/navikt/ufore-dokument-mottak",
-      "pushedAt": "2026-11-13T23:47:21Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "esyfo-microfrontends",
-      "url": "https://github.com/navikt/esyfo-microfrontends",
-      "pushedAt": "2026-11-13T23:27:10Z",
+      "name": "pensjon-regler-beregn",
+      "url": "https://github.com/navikt/pensjon-regler-beregn",
+      "pushedAt": "2026-11-14T07:02:09Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
+    },
+    {
+      "name": "eux-adresse-oppdatering",
+      "url": "https://github.com/navikt/eux-adresse-oppdatering",
+      "pushedAt": "2026-11-14T06:38:17Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "dakan-api-digdir",
+      "url": "https://github.com/navikt/dakan-api-digdir",
+      "pushedAt": "2026-11-14T06:06:20Z",
+      "language": "Python",
+      "languageColor": "#3572a5"
     }
   ],
   "languages": {
@@ -1705,7 +1705,7 @@
       },
       {
         "date": "2026-11-13",
-        "count": 991
+        "count": 994
       }
     ]
   }
