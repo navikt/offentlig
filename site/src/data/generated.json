@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-14T08:16:00.991Z",
+  "syncedAt": "2026-11-15T03:33:18.282Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -8,7 +8,7 @@
       "stars": 443,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-11-09T12:07:13Z",
+      "pushedAt": "2026-11-14T23:14:35Z",
       "isArchived": false
     },
     "navikt/aksel": {
@@ -154,53 +154,53 @@
   },
   "stats": {
     "publicRepos": 3194,
-    "commitsLast7Days": 6683,
-    "prsLast30Days": 22153,
-    "npmDownloadsLastMonth": 138941,
-    "fnrDownloadsLastMonth": 57179
+    "commitsLast7Days": 6717,
+    "prsLast30Days": 21534,
+    "npmDownloadsLastMonth": 144007,
+    "fnrDownloadsLastMonth": 59709
   },
   "recentlyUpdated": [
     {
-      "name": "offentlig",
-      "url": "https://github.com/navikt/offentlig",
-      "pushedAt": "2026-11-14T08:15:49Z",
-      "language": "Astro",
-      "languageColor": null
-    },
-    {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-11-14T07:21:49Z",
+      "pushedAt": "2026-11-15T03:24:58Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "pensjon-regler-satsviewer",
-      "url": "https://github.com/navikt/pensjon-regler-satsviewer",
-      "pushedAt": "2026-11-14T07:11:37Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "pensjon-regler-beregn",
-      "url": "https://github.com/navikt/pensjon-regler-beregn",
-      "pushedAt": "2026-11-14T07:02:09Z",
-      "language": "TypeScript",
-      "languageColor": "#3178c6"
-    },
-    {
-      "name": "eux-adresse-oppdatering",
-      "url": "https://github.com/navikt/eux-adresse-oppdatering",
-      "pushedAt": "2026-11-14T06:38:17Z",
+      "name": "kabal-innstillinger",
+      "url": "https://github.com/navikt/kabal-innstillinger",
+      "pushedAt": "2026-11-15T00:34:47Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "dakan-api-digdir",
-      "url": "https://github.com/navikt/dakan-api-digdir",
-      "pushedAt": "2026-11-14T06:06:20Z",
-      "language": "Python",
-      "languageColor": "#3572a5"
+      "name": "kaptein-api",
+      "url": "https://github.com/navikt/kaptein-api",
+      "pushedAt": "2026-11-15T00:27:47Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "klage-lookup",
+      "url": "https://github.com/navikt/klage-lookup",
+      "pushedAt": "2026-11-15T00:27:32Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "kabal-text-templates",
+      "url": "https://github.com/navikt/kabal-text-templates",
+      "pushedAt": "2026-11-15T00:25:03Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "klage-notifications-api",
+      "url": "https://github.com/navikt/klage-notifications-api",
+      "pushedAt": "2026-11-15T00:18:39Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
     }
   ],
   "languages": {
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-11-15",
-        "count": 102
-      },
       {
         "date": "2025-11-16",
         "count": 166
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-11-13",
-        "count": 994
+        "count": 1000
+      },
+      {
+        "date": "2026-11-14",
+        "count": 172
       }
     ]
   }
