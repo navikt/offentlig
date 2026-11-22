@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-21T03:33:02.076Z",
+  "syncedAt": "2026-11-22T03:33:10.251Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -15,7 +15,7 @@
       "stars": 186,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-11-20T21:23:50Z",
+      "pushedAt": "2026-11-21T11:23:44Z",
       "isArchived": false
     },
     "nais/naiserator": {
@@ -89,10 +89,10 @@
       "isArchived": false
     },
     "navikt/copilot": {
-      "stars": 63,
+      "stars": 64,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-11-20T22:10:18Z",
+      "pushedAt": "2026-11-22T00:40:54Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -153,67 +153,67 @@
     }
   },
   "stats": {
-    "publicRepos": 3197,
-    "commitsLast7Days": 7316,
-    "prsLast30Days": 22999,
-    "npmDownloadsLastMonth": 166257,
-    "fnrDownloadsLastMonth": 70000
+    "publicRepos": 3199,
+    "commitsLast7Days": 7239,
+    "prsLast30Days": 22047,
+    "npmDownloadsLastMonth": 168525,
+    "fnrDownloadsLastMonth": 70215
   },
   "recentlyUpdated": [
     {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-11-21T03:25:14Z",
+      "pushedAt": "2026-11-22T03:25:25Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "amt-stottetjenester",
-      "url": "https://github.com/navikt/amt-stottetjenester",
-      "pushedAt": "2026-11-21T01:50:01Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
+      "name": "homebrew-tap",
+      "url": "https://github.com/navikt/homebrew-tap",
+      "pushedAt": "2026-11-22T00:46:49Z",
+      "language": "Ruby",
+      "languageColor": "#701516"
     },
     {
       "name": "common-java-modules",
       "url": "https://github.com/navikt/common-java-modules",
-      "pushedAt": "2026-11-21T01:37:18Z",
+      "pushedAt": "2026-11-22T00:42:58Z",
       "language": "Java",
       "languageColor": "#b07219"
     },
     {
-      "name": "amt-deltakelser",
-      "url": "https://github.com/navikt/amt-deltakelser",
-      "pushedAt": "2026-11-21T00:47:58Z",
+      "name": "copilot",
+      "url": "https://github.com/navikt/copilot",
+      "pushedAt": "2026-11-22T00:40:54Z",
+      "language": "Go",
+      "languageColor": "#00add8"
+    },
+    {
+      "name": "mcp-server-kotlin-template",
+      "url": "https://github.com/navikt/mcp-server-kotlin-template",
+      "pushedAt": "2026-11-21T23:11:42Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "ufore-dokument-mottak",
-      "url": "https://github.com/navikt/ufore-dokument-mottak",
-      "pushedAt": "2026-11-20T23:46:40Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
-      "name": "esyfo-microfrontends",
-      "url": "https://github.com/navikt/esyfo-microfrontends",
-      "pushedAt": "2026-11-20T23:23:35Z",
+      "name": "sp-sas-ticket-graf",
+      "url": "https://github.com/navikt/sp-sas-ticket-graf",
+      "pushedAt": "2026-11-21T23:09:08Z",
       "language": "TypeScript",
       "languageColor": "#3178c6"
     }
   ],
   "languages": {
-    "totalRepos": 1771,
+    "totalRepos": 1773,
     "entries": [
       {
         "name": "Kotlin",
-        "count": 690,
+        "count": 691,
         "color": "#a97bff"
       },
       {
         "name": "TypeScript",
-        "count": 332,
+        "count": 333,
         "color": "#3178c6"
       },
       {
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-11-22",
-        "count": 79
-      },
       {
         "date": "2025-11-23",
         "count": 77
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-11-20",
-        "count": 1055
+        "count": 1061
+      },
+      {
+        "date": "2026-11-21",
+        "count": 85
       }
     ]
   }
