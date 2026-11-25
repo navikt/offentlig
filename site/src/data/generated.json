@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-11-24T03:33:15.579Z",
+  "syncedAt": "2026-11-25T03:34:26.465Z",
   "org": "navikt",
   "npmPackage": "@navikt/aksel-icons",
   "fnrPackage": "@navikt/fnrvalidator",
@@ -8,14 +8,14 @@
       "stars": 444,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-11-23T13:12:08Z",
+      "pushedAt": "2026-11-24T21:12:35Z",
       "isArchived": false
     },
     "navikt/aksel": {
-      "stars": 186,
+      "stars": 187,
       "language": "TypeScript",
       "languageColor": "#3178c6",
-      "pushedAt": "2026-11-23T17:43:15Z",
+      "pushedAt": "2026-11-24T14:02:01Z",
       "isArchived": false
     },
     "nais/naiserator": {
@@ -29,14 +29,14 @@
       "stars": 6,
       "language": "Kotlin",
       "languageColor": "#A97BFF",
-      "pushedAt": "2026-11-23T20:30:18Z",
+      "pushedAt": "2026-11-24T06:15:31Z",
       "isArchived": false
     },
     "navikt/cplt": {
-      "stars": 152,
+      "stars": 153,
       "language": "Rust",
       "languageColor": "#dea584",
-      "pushedAt": "2026-11-24T02:06:59Z",
+      "pushedAt": "2026-11-24T22:11:02Z",
       "isArchived": false
     },
     "navikt/pdfgenrs": {
@@ -50,7 +50,7 @@
       "stars": 27,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-11-23T08:03:19Z",
+      "pushedAt": "2026-11-24T14:31:58Z",
       "isArchived": false
     },
     "navikt/rapids-and-rivers": {
@@ -92,7 +92,7 @@
       "stars": 64,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-11-24T03:20:42Z",
+      "pushedAt": "2026-11-24T21:32:53Z",
       "isArchived": false
     },
     "navikt/token-support": {
@@ -127,7 +127,7 @@
       "stars": 3,
       "language": "Go",
       "languageColor": "#00ADD8",
-      "pushedAt": "2026-11-23T13:51:22Z",
+      "pushedAt": "2026-11-24T10:10:14Z",
       "isArchived": false
     },
     "nais/unleasherator": {
@@ -153,58 +153,58 @@
     }
   },
   "stats": {
-    "publicRepos": 3200,
-    "commitsLast7Days": 7436,
-    "prsLast30Days": 23136,
-    "npmDownloadsLastMonth": 167172,
-    "fnrDownloadsLastMonth": 67151
+    "publicRepos": 3202,
+    "commitsLast7Days": 7059,
+    "prsLast30Days": 23828,
+    "npmDownloadsLastMonth": 176353,
+    "fnrDownloadsLastMonth": 70489
   },
   "recentlyUpdated": [
     {
-      "name": "homebrew-tap",
-      "url": "https://github.com/navikt/homebrew-tap",
-      "pushedAt": "2026-11-24T03:31:12Z",
-      "language": "Ruby",
-      "languageColor": "#701516"
-    },
-    {
       "name": "apt",
       "url": "https://github.com/navikt/apt",
-      "pushedAt": "2026-11-24T03:26:53Z",
+      "pushedAt": "2026-11-25T03:27:26Z",
       "language": null,
       "languageColor": null
     },
     {
-      "name": "copilot",
-      "url": "https://github.com/navikt/copilot",
-      "pushedAt": "2026-11-24T03:20:42Z",
-      "language": "Go",
-      "languageColor": "#00add8"
-    },
-    {
-      "name": "kant-api",
-      "url": "https://github.com/navikt/kant-api",
-      "pushedAt": "2026-11-24T03:08:16Z",
-      "language": "Kotlin",
-      "languageColor": "#a97bff"
-    },
-    {
       "name": "helse-sparkelapper",
       "url": "https://github.com/navikt/helse-sparkelapper",
-      "pushedAt": "2026-11-24T02:30:10Z",
+      "pushedAt": "2026-11-25T02:29:45Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     },
     {
-      "name": "amt-stottetjenester",
-      "url": "https://github.com/navikt/amt-stottetjenester",
-      "pushedAt": "2026-11-24T02:08:13Z",
+      "name": "kafka-manager",
+      "url": "https://github.com/navikt/kafka-manager",
+      "pushedAt": "2026-11-25T02:03:35Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "helse-sporhund",
+      "url": "https://github.com/navikt/helse-sporhund",
+      "pushedAt": "2026-11-25T00:58:37Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "helse-spenn",
+      "url": "https://github.com/navikt/helse-spenn",
+      "pushedAt": "2026-11-25T00:27:07Z",
+      "language": "Kotlin",
+      "languageColor": "#a97bff"
+    },
+    {
+      "name": "navansatt",
+      "url": "https://github.com/navikt/navansatt",
+      "pushedAt": "2026-11-25T00:11:14Z",
       "language": "Kotlin",
       "languageColor": "#a97bff"
     }
   ],
   "languages": {
-    "totalRepos": 1771,
+    "totalRepos": 1775,
     "entries": [
       {
         "name": "Kotlin",
@@ -213,7 +213,7 @@
       },
       {
         "name": "TypeScript",
-        "count": 334,
+        "count": 335,
         "color": "#3178c6"
       },
       {
@@ -223,7 +223,7 @@
       },
       {
         "name": "Python",
-        "count": 88,
+        "count": 89,
         "color": "#3572a5"
       },
       {
@@ -243,7 +243,7 @@
       },
       {
         "name": "Annet",
-        "count": 359,
+        "count": 361,
         "color": null
       }
     ]
@@ -251,10 +251,6 @@
   "heatmap": {
     "source": "search-org-daily",
     "days": [
-      {
-        "date": "2025-11-25",
-        "count": 1234
-      },
       {
         "date": "2025-11-26",
         "count": 1045
@@ -1705,7 +1701,11 @@
       },
       {
         "date": "2026-11-23",
-        "count": 1788
+        "count": 1843
+      },
+      {
+        "date": "2026-11-24",
+        "count": 1197
       }
     ]
   }
